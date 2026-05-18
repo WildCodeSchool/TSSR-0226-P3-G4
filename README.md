@@ -31,7 +31,15 @@ Ce sont autant de **manquemants** de sécurité qui font de notre projet de **re
 
 
 # 3. Objectifs finaux
-Avoir une infrastructure rséaux
+
+### Sécuriser et structurer le réseau
+Remplacer l'infrastructure réseau actuelle par une solution professionnelle dotée d'un firewall, d'une segmentation en VLANs par département et d'un plan d'adressage IP cohérent. Prévoir aussi les accès pour les partenaires externes et le télétravail via VPN.
+
+### Centraliser la gestion des utilisateurs
+Déployer un annuaire unique qui est alimenté par des données RH. Ce référentiel permettra de gérer les droits d'accès de l'ensemble des 218 collaborateurs et d'automatiser les procédures d'arrivée et de départ pour éviter tout compte orphelin ou obsolète.
+
+### Garantir la continuité et le suivi
+Mettre en place un stockage centralisé couplé à une stratégie de sauvegarde automatisée pour protéger les données de l'entreprise. Standardiser et inventorier le parc matériel hétérogène afin d'en assurer un suivi rigoureux, et passer à une administration monitorée et documentée.
 
 # 4. Vue d'ensemble des composants
 
