@@ -69,7 +69,7 @@ XenTech est une strat-up innovante fondée il y a moins de deux ans, dont les lo
 
 # 3. Besoins fonctionnels principaux
 
-# 4. Besoins fonctionenels secondaires
+# 4. Besoins fonctionnels secondaires
 
 
 
