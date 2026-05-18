@@ -2,7 +2,7 @@
 
 1. [Résumé de la situation (réseau actuel)](#Résumé-de-la-situation-(réseau-actuel))
 2. [Objectifs du projet](#Objectifs-du-projet)
-3. [Shéma global de l'infrastructure](#Shéma-global-de-l'infrastructure)
+3. [Shéma global de l'infrastructure](#Shéma-global-de-l-infrastructure)
 4. [Liste des briques techniques](#Liste-des-briques-techniques)
 5. [Lien vers les autres fichiers HLD](#Lien-vers-les-autres-fichiers-HLD)
 
