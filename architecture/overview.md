@@ -45,3 +45,4 @@ L'assainissement préalable du fichier ListeRHCollaborateurs est une étape crit
 
 # Shéma global
 
+<img width="19021" height="11010" alt="image" src="https://github.com/user-attachments/assets/91211d82-0e07-4cc2-a1eb-f1560d57b146" />
