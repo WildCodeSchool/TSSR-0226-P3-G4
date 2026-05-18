@@ -19,6 +19,7 @@ Xen-Tech est une start-up innovante fondée il y a moins de deux ans, elle est b
 
 ### Contexte actuelle de l'entreprise
 La société comprend actuellement **218 personnes** réparties dans **11 services** (appelés "départements"). Des personnels extérieurs travaillent ponctuellement ou à temps plein avec **certains services**.  
+
 L'entreprise a pour l'heure une infrastructure presentant de nombreux **problemes** et/ou **manquemants**.
 - Aucun serveur ni materiel réseau pour le moment.
 - Il n'y a actuellement qu'un seul réseau pour toute l'entreprise.
