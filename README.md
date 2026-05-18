@@ -41,10 +41,10 @@ Avoir une infrastructure rséaux
 
 # 6. Retrouver notre documentation ici
 ### Architecture (HLD) 
-Pour une compréhension de la conception globale de l'infrastructure. [architecture](architecture)
+Pour une compréhension de la conception globale de l'infrastructure cliquez-ici -> [architecture](architecture)
 ### Components (LLD) 
-Pour avoir l'accès a tous les éléments de l'infrastructure. [components](components)
+Pour avoir l'accès a tous les éléments de l'infrastructure cliquez-ici -> [components](components)
 ### Opérations (DEX)
-Pour consulter la doc d'exploitation de l'infrastucture. [operations](operations)
+Pour consulter la doc d'exploitation de l'infrastucture cliquez-ici -> [operations](operations)
 ### Sprints (chronologie)
-Pour suivre l'avancement du projet sprint après sprint. [sprints](sprints)
+Pour suivre l'avancement du projet sprint après sprint cliquez-ici -> [sprints](sprints)
