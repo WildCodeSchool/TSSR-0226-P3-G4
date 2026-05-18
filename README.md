@@ -14,10 +14,7 @@
 # 1. Notre projet
 Ce projet a pour but **la conception** d'une infrastructure de réseau **sécurisé** pour la start-Up Xen-Tech, de la mise en place des outils a la maintenance de ceux-ci grace a la documentation faite tout au long du projet pour une maintenance claire et efficace.
 
-# 2. Xen-Tech
-Xen-Tech est une start-up innovante fondée il y a moins de deux ans, elle est basé dans le 8ème arrondissement de paris. Cette start-up a pour ambition de **révolutionner l'approche de l'écologie** via des produits et services écologiques novateurs qui **bénéficient** à la fois à **l'environnement** ainsi qu'aux **individus**. La start-up comprend actuellement **218 personnes** réparties dans **11 services** (appelés "départements"). Des personnels extérieurs travaillent ponctuellement ou à temps plein avec **certains services**.  
-
-### **Contexte actuelle de la start-up**
+# 2. Contexte actuelle de la start-up
 
 On peut observer que pour l'heure cette start-up a une infrastructure presentant de nombreux **problemes** et/ou **manquemants** comme :
 - Aucun serveur ni materiel réseau pour le moment.
