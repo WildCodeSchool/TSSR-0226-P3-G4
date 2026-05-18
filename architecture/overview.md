@@ -2,8 +2,9 @@
 
 1. [Résumé de la situation (réseau actuel)](#Résumé-de-la-situation-(réseau-actuel))
 2. [Objectifs du projet](#Objectifs-du-projet)
-3. [Shéma global](#Shéma-global)
-4. [Périmètre d'Intervention](#Périmètre-d'Intervention)
+3. [Shéma global de l'infrastructure](#Shéma-global-de-l'infrastructure)
+4. [Liste des briques techniques](#Liste-des-briques-techniques)
+5. [Lien vers les autres fichiers HLD](#Lien-vers-les-autres-fichiers-HLD)
 
 # 1. Résumé de la situation (réseau actuel)
 XenTech est une start-up en pleine expansion (218 collaborateurs) qui repose actuellement sur une infrastructure informatique "domestique" et non professionnelle. Malgré une levée de fonds réussie, le système actuel présente des failles critiques :
@@ -46,3 +47,9 @@ L'assainissement préalable du fichier ListeRHCollaborateurs est une étape crit
 # Shéma global
 
 <img width="19021" height="11010" alt="image" src="https://github.com/user-attachments/assets/91211d82-0e07-4cc2-a1eb-f1560d57b146" />
+
+# 4. Liste des briques techniques
+
+# 5. Lien vers les autres fichiers HLD
+
+
