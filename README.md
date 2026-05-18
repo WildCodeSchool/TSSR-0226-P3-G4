@@ -31,7 +31,7 @@ Ce sont autant de **manquemants** de sécurité qui font de notre projet de **re
 
 
 # 3. Objectifs finaux
-
+Avoir une infrastructure rséaux
 
 # 4. Vue d'ensemble des composants
 
@@ -40,3 +40,11 @@ Ce sont autant de **manquemants** de sécurité qui font de notre projet de **re
 
 
 # 6. Retrouver notre documentation ici
+### Architecture (HLD) 
+Pour une compréhension de la conception globale de l'infrastructure. [architecture](architecture)
+### Components (LLD) 
+Pour avoir l'accès a tous les éléments de l'infrastructure. [components](components)
+### Opérations (DEX)
+Pour consulter la doc d'exploitation de l'infrastucture. [operations](operations)
+### Sprints (chronologie)
+Pour suivre l'avancement du projet sprint après sprint. [sprints](sprints)
