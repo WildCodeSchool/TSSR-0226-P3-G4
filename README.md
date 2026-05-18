@@ -19,7 +19,7 @@ Xen-Tech est une start-up innovante fondée il y a moins de deux ans, elle est b
 
 ### Contexte actuelle de la start-up
 
-On peut observer que pour l'heure cette start-up a une infrastructure presentant de nombreux **problemes** et/ou **manquemants**.
+On peut observer que pour l'heure cette start-up a une infrastructure presentant de nombreux **problemes** et/ou **manquemants** comme :
 - Aucun serveur ni materiel réseau pour le moment.
 - Il n'y a actuellement qu'un seul réseau pour toute l'entreprise.
 - Le service de messagerie est hébergée sur un coud avec un format ultra basique.
