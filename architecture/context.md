@@ -11,7 +11,7 @@ nous sommes une société prestataire de services mandatée par la société Xen
 
 # 2. Présentation de l'entreprise
 ## XenTech : 
-XenTech est une strat-up innovante fondée il y a moins de deux ans, dont les locaux sont a paris (dans le 8 éme arrondissement). Elle a pouur ambition de révolutionner l'approche de l'écologie. Son fondateur aspire à introduire des pratiques, produits et services écologiques novateurs qui béénéficient à la fois à l'environnement et aux individus. Elle est oriente vers les marchés professionnels (B2B) et consommateurs (B2C. Recemment, l'entreprise a réussi une levée de fonds significative, positionnant XenTech pour une expension prometteuse.
+XenTech est une strat-up innovante fondée il y a moins de deux ans, dont les locaux sont a paris (dans le 8 éme arrondissement). Elle a pour ambition de révolutionner l'approche de l'écologie. Son fondateur aspire à introduire des pratiques, produits et services écologiques novateurs qui béénéficient à la fois à l'environnement et aux individus. Elle est oriente vers les marchés professionnels (B2B) et consommateurs (B2C. Recemment, l'entreprise a réussi une levée de fonds significative, positionnant XenTech pour une expension prometteuse.
 
 ## informations supplémentaires :
 - structures :
