@@ -44,7 +44,7 @@ Professionnalisation : Passer d'une gestion "artisanale" à une administration c
 
 L'assainissement préalable du fichier ListeRHCollaborateurs est une étape critique et obligatoire. L'importation de données brutes contenant des doublons ou des incohérences dans le futur système de gestion d'identité (annuaire) compromettrait l'intégrité de toute l'infrastructure dès son déploiement. Un nettoyage rigoureux est le gage d'une base saine pour la sécurité future de XenTech.
 
-# Shéma global
+# Shéma global de l'infrastructure
 
 <img width="19021" height="11010" alt="image" src="https://github.com/user-attachments/assets/91211d82-0e07-4cc2-a1eb-f1560d57b146" />
 
