@@ -17,7 +17,7 @@ Ce projet a pour but **la conception** d'une infrastructure de réseau **sécuri
 # 2. Xen-Tech
 Xen-Tech est une start-up innovante fondée il y a moins de deux ans, elle est basé dans le 8ème arrondissement de paris. Cette start-up a pour ambition de **révolutionner l'approche de l'écologie** via des produits et services écologiques novateurs qui **bénéficient** à la fois à **l'environnement** ainsi qu'aux **individus**. La start-up comprend actuellement **218 personnes** réparties dans **11 services** (appelés "départements"). Des personnels extérieurs travaillent ponctuellement ou à temps plein avec **certains services**.  
 
-### Contexte actuelle de la start-up
+### **Contexte actuelle de la start-up**
 
 On peut observer que pour l'heure cette start-up a une infrastructure presentant de nombreux **problemes** et/ou **manquemants** comme :
 - Aucun serveur ni materiel réseau pour le moment.
@@ -32,13 +32,13 @@ Ce sont autant de **manquemants** de sécurité qui font de notre projet de **re
 
 # 3. Objectifs finaux
 
-### Sécuriser et structurer le réseau
+### **Sécuriser et structurer le réseau**
 Remplacer l'infrastructure réseau actuelle par une solution professionnelle dotée d'un firewall, d'une segmentation en VLANs par département et d'un plan d'adressage IP cohérent. Prévoir aussi les accès pour les partenaires externes et le télétravail via VPN.
 
-### Centraliser la gestion des utilisateurs
+### **Centraliser la gestion des utilisateurs**
 Déployer un annuaire unique qui est alimenté par des données RH. Ce référentiel permettra de gérer les droits d'accès de l'ensemble des 218 collaborateurs et d'automatiser les procédures d'arrivée et de départ pour éviter tout compte orphelin ou obsolète.
 
-### Garantir la continuité et le suivi
+### **Garantir la continuité et le suivi**
 Mettre en place un stockage centralisé couplé à une stratégie de sauvegarde automatisée pour protéger les données de l'entreprise. Standardiser et inventorier le parc matériel hétérogène afin d'en assurer un suivi rigoureux, et passer à une administration monitorée et documentée.
 
 # 4. Vue d'ensemble des composants
@@ -48,11 +48,11 @@ Mettre en place un stockage centralisé couplé à une stratégie de sauvegarde 
 
 
 # 6. Retrouver notre documentation ici
-### Architecture (HLD) 
+### **Architecture** (HLD) 
 Pour une compréhension de la conception globale de l'infrastructure cliquez-ici -> [architecture](architecture)
-### Components (LLD) 
+### **Components** (LLD) 
 Pour avoir l'accès a tous les éléments de l'infrastructure cliquez-ici -> [components](components)
-### Opérations (DEX)
+### **Opérations** (DEX)
 Pour consulter la doc d'exploitation de l'infrastucture cliquez-ici -> [operations](operations)
-### Sprints (chronologie)
+### **Sprints** (chronologie)
 Pour suivre l'avancement du projet sprint après sprint cliquez-ici -> [sprints](sprints)
