@@ -27,7 +27,7 @@ On peut observer que pour l'heure cette start-up a une infrastructure presentant
 - Les anciens mot de passes sont recyclés pour le donner au nouveaux personnels.
 - ...
 
-Ce sont autant de **manquemants** de sécurité qui font de notre projet de **refonte totale** de l'infrastructure réseau un besoin **vitale** pour cette strat-up.
+Ce sont autant de **manquemants** de sécurité qui font de notre projet de **reconstruction totale** de l'infrastructure réseau un besoin **vitale** pour cette strat-up.
 
 
 # 3. Objectifs finaux
