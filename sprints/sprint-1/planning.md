@@ -1,7 +1,8 @@
 # Sommaire 
-[1. Objectif](#objectif)
-
-[2. Liste et détails des taches de chaque objectifs](#2-liste-et-détails-des-tâches-de-chaque-objectifs)
+- [1. Objectif](#objectif)
+- [2. Liste et détails des taches de chaque objectifs](#2-liste-et-détails-des-tâches-de-chaque-objectifs)
+- [3. Estimation du temps](#3-estimation-de-temps-en-heures)
+- [4. Synthèse sous forme de tableau Excel/Gant](#4-synthèse-sous-forme-de-tableau-excelgant)
 
 # 1. objectif 
 ### objectif principaux :
@@ -24,7 +25,7 @@
    - Objectifs prévisionnels à J+10 semaine
    - Calcul ETP à effectuer
  
-# 3. Estimation de temps (en heures)
+# 3. Estimation du temps (en heures)
  Des tâches de chaque objectifs
  => De chaque objectif
 # 4. Synthèse sous forme de tableau Excel/Gant
