@@ -11,13 +11,16 @@ Nous avons choisi de nommer nos serveurs de la facon suivante:
 |----------|-------|
 |  | XTR-1 |
 |  | XTR-2 |
-|  | XTR-3 |
 ## 1.3 Nom des switchs
 | Roles | Nom |
 |----------|-------|
 |  | XTS-1 |
 |  | XTS-2 |
 |  | XTS-3 |
+|  | XTS-4 |
+|  | XTS-5 |
+|  | XTS-6 |
+|  | XTS-7 |
 # 2. Nomenclature des ordinateurs (VM/CT)
 # 3. Active directory
 ## 3.1 Nom des utilisateurs
