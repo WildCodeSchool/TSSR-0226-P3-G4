@@ -29,6 +29,7 @@ Nous avons choisi de nommer les switchs de la facon suivante
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
 **XT-departement-service**
 | Département | Abréviation |
+| ----------- | ----------- |
 | Communication | COM |
 | Développement | DEV |
 | Direction Financiere | DF |
