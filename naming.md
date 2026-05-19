@@ -6,6 +6,7 @@ Nous avons choisi de nommer nos serveurs de la facon suivante:
 | ADDS DHCP DNS | XT-201 |
 | Stockage | XT-202 |
 | BackUp | XT-203 |
+| Messagerie | XT-204 |
 ## 1.2 Nom des routeurs
 | Roles | Nom |
 |----------|-------|
