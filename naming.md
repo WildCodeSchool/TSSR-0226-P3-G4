@@ -1,6 +1,6 @@
 # 1. Nomenclature des matériels
 ## 1.1 Nom des serveurs
-Nous avons choisi de nommer nos serveurs de la facon suivante:
+Nous avons choisi de nommer les serveurs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
 | ADDS DHCP DNS | XT-201 |
@@ -23,6 +23,8 @@ Nous avons choisi de nommer nos serveurs de la facon suivante:
 |  | XTS-6 |
 |  | XTS-7 |
 # 2. Nomenclature des ordinateurs (VM/CT)
+Nous avons choisi de nommer les ordinateurs de la facon suivante :
+XT-departement-service
 # 3. Active directory
 ## 3.1 Nom des utilisateurs
 ## 3.2 Nom des groupes
