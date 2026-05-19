@@ -1,6 +1,7 @@
 # 1. Nomenclature des matériels
 ## 1.1 Nom des serveurs
 Nous avons choisi de nommer les serveurs de la facon suivante :
+**XT-NomduVLAN+ID unique**
 | Roles | Nom |
 |----------|-------|
 | ADDS DHCP DNS | XT-201 |
@@ -8,11 +9,13 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | BackUp | XT-203 |
 | Messagerie | XT-204 |
 ## 1.2 Nom des routeurs
+Nous avons choisi de nommer les routeurs de la facon suivante
 | Roles | Nom |
 |----------|-------|
 |  | XTR-1 |
 |  | XTR-2 |
 ## 1.3 Nom des switchs
+Nous avons choisi de nommer les switchs de la facon suivante
 | Roles | Nom |
 |----------|-------|
 |  | XTS-1 |
@@ -25,6 +28,12 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 # 2. Nomenclature des ordinateurs (VM/CT)
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
 **XT-departement-service**
+| Département | Abréviation |
+| Communication | COM |
+| Développement | DEV |
+| Direction Financiere | DF |
+Direction 
+
 # 3. Active directory
 ## 3.1 Nom des utilisateurs
 ## 3.2 Nom des groupes
