@@ -7,7 +7,7 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | ADDS DHCP DNS | XT-200-15.1|
 | Stockage | XT-200-15.2 |
 | BackUp | XT-200-15.3 |
-| Messagerie | XT-204 |
+| Messagerie | XT-200- |
 ## 1.2 Nom des routeurs
 Nous avons choisi de nommer les routeurs de la facon suivante
 | Roles | Nom |
@@ -25,6 +25,11 @@ Nous avons choisi de nommer les switchs de la facon suivante
 |  | XTS-5 |
 |  | XTS-6 |
 |  | XTS-7 |
+|  | XTS-8 |
+|  | XTS-9 |
+|  | XTS-10 |
+|  | XTS-11 |
+|  | XTS-12 |
 # 2. Nomenclature des ordinateurs (VM/CT)
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
 **XT-departement-service**
@@ -33,7 +38,8 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 | Communication | COM |
 | Développement | DEV |
 | Direction Financiere | DF |
-Direction 
+| Direction Générale | DG |
+| Direction Marketing | 
 
 # 3. Active directory
 ## 3.1 Nom des utilisateurs
