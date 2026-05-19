@@ -4,7 +4,7 @@ Nous avons choisi de nommer nos serveurs de la facon suivante:
 | Roles | Nom |
 |----------|-------|
 | ADDS DHCP DNS | XT-201 |
-| stockge | XT-202 |
+| stockage | XT-202 |
 | Backup | XT-203 |
 ## 1.2 Nom des routeurs
 ## 1.3 Nom des switchs
