@@ -4,9 +4,9 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 **XT-NomduVLAN+ID unique**
 | Roles | Nom |
 |----------|-------|
-| ADDS DHCP DNS | XT-201 |
-| Stockage | XT-202 |
-| BackUp | XT-203 |
+| ADDS DHCP DNS | XT-200-15.1|
+| Stockage | XT-200-15.2 |
+| BackUp | XT-200-15.3 |
 | Messagerie | XT-204 |
 ## 1.2 Nom des routeurs
 Nous avons choisi de nommer les routeurs de la facon suivante
