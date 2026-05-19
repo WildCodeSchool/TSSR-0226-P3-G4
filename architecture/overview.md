@@ -6,16 +6,14 @@
 4. [Liste des briques techniques](#Liste-des-briques-techniques)
 5. [Lien vers les autres fichiers HLD](#Lien-vers-les-autres-fichiers-HLD)
 
-# Résumé de la situation (réseau actuel)
+# Résumé 
 XenTech est une start-up en pleine expansion (218 collaborateurs) qui repose actuellement sur une infrastructure informatique "domestique" et non professionnelle. Malgré une levée de fonds réussie, le système actuel présente des failles critiques :
 
-Risque de Sécurité Majeur : Absence de gestion centralisée des identités (Workgroups). Les mots de passe sont réutilisés et tournent physiquement entre les collaborateurs, ce qui rend le système vulnérable aux intrusions internes et externes.
+Risque de Sécurité Majeur : Absence de gestion centralisée des identités (Workgroups). 
 
-Absence de Sauvegarde : 100% des données critiques sont stockées localement sur des PC portables. Une panne matérielle, un vol ou un ransomware entraînerait une perte de données irréversible.
+Absence de Sauvegarde : 100% des données critiques sont stockées localement sur des PC portables. 
 
-Infrastructure Réseau Saturée : Le réseau repose sur une simple box FAI et des répéteurs Wi-Fi. Le plan d'adressage actuel (172.16.40.0/24) est proche de la saturation et ne permet aucune séparation de flux entre les 11 départements.
-
-Manque de Flexibilité : Aucun accès distant sécurisé n'est possible, freinant les besoins de nomadisme inhérents à une start-up moderne.
+Infrastructure Réseau Saturée : Le réseau repose sur une simple box FAI et des répéteurs Wi-Fi. 
 
 # Objectifs du projet
 L'objectif principal est de concevoir et déployer une infrastructure réseau et système de classe entreprise, sécurisée, évolutive et prête pour les futurs partenariats.
@@ -23,7 +21,7 @@ L'objectif principal est de concevoir et déployer une infrastructure réseau et
 ## Objectifs Techniques
 Centralisation de l'Identité : Déployer un annuaire (type Active Directory ou LDAP) pour gérer les 218 utilisateurs et les accès aux ressources.
 
-Refonte du Réseau : * Mettre en place un routeur/firewall professionnel.
+Refonte du Réseau : Mettre en place un routeur/firewall professionnel.
 
 Segmenter le réseau en VLANs (un par département) pour accroître la sécurité et la performance.
 
