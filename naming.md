@@ -33,7 +33,8 @@ Nous avons choisi de nommer les switchs de la facon suivante
 # 2. Nomenclature des ordinateurs (VM/CT)
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
 [Entreprise]-[nom du departement + nom du service]-[numérotation]  
-**[XT]-[departement+service]-[001]**  
+**[XT]-[departement+service]-[001]** 
+
 | Département | Service | Nom |
 | ----------- | ----------- | ---- |
 |  | Publicité | XT-COMPUB-001 |
@@ -70,51 +71,42 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 
 | Département | Service | Nom |
 | ----------- | ----------- | ---- |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| R&D | Innovation et Stratégie | XT-RDIS-001 |
+|  | Laboratoire | XT-RDL-001 |
 
 | Département | Service | Nom |
 | ----------- | ----------- | ---- |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
+|  | Formation | XT-RHF-001 |
+| RH | Gestion des performances | XT-RHGP-001 |
+|  | Recrutement | XT-RHR-001 |
+|  | Santé et sécurité au travail | XT-RHSST-001 |
 
 | Département | Service | Nom |
 | ----------- | ----------- | ---- |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| Service Généraux | Logistique | XT-SGL-001 |
+|  | Gestion Immobilière | XT-SGGI-001 |
 
 | Département | Service | Nom |
 | ----------- | ----------- | ---- |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| Service Juridique | Contentieux | XT-SJCTX-001 |
+|  | Contrats | XT-CT-001 |
 
 | Département | Service | Nom |
 | ----------- | ----------- | ---- |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
+|  | ADV | XT-VDCADV-001 |
+|  | B2B | XT-VDCC2B-001 |
+|  | B2C | XT-VDVB2C-001 |
+| Ventes et Développement Commercial | Développement internationnal | XT-VDCDI-001 |
+|  | Grands Comptes | XT-VDCGC-001 |
+|  | Service achat | XT-VDCSA-001 |
+|  | Service Client | XT-VDCSC-001 |
 
 | Département | Service | Nom |
 | ----------- | ----------- | ---- |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
+|  | Directeur adjoint | XT-DGDA-001 |
+|  | Assistant de direction | XT-DGAD-001 |
+| Direction Générale | CEO | XT-DGC-001 |
+|  | Secrétaire | XT-DGS-001 |
 
 # 3. Active directory
 ## 3.1 Nom des utilisateurs
