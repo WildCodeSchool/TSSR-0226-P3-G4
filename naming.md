@@ -45,6 +45,7 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 
 | Département | Service | Nom |
 | :-----------: | :-----------: | :----: |
+| ............. |  |  |
 |  | frontend    | XT-DEVFE-001 |
 | Développement | backend    | XT-DEVBE-001 |
 |  | Recherche et prototype    | XT-DEVRP-001 |
