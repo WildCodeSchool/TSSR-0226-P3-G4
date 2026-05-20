@@ -9,13 +9,13 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | BackUp | XT-200-153 |
 | Messagerie | XT-200-154 |
 ## 1.2 Nom des routeurs
-Nous avons choisi de nommer les routeurs de la facon suivante
+Nous avons choisi de nommer les routeurs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
 | Routeur VLAN | XTR-1 |
 | Routeur SERVER | XTR-2 |
 ## 1.3 Nom des switchs
-Nous avons choisi de nommer les switchs de la facon suivante
+Nous avons choisi de nommer les switchs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
 | Switch VLAN 10&20 | XTS-1 |
@@ -83,10 +83,10 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 |  | CEO | XT-DGC-001 |
 |  | Secrétaire | XT-DGS-001 |
 
-# 3. Active directory
+# 3. Active Directory
 ## 3.1 Nom des utilisateurs
 ## 3.2 Nom des groupes
 ## 3.3 Nom des Unités d'Organisation
 ## 3.4 Nom des GPO
 ## 3.5 Nom de domaine
-nous avons choisi le nom de domaine Xtech.lan
+Nous avons choisi le nom de domaine **Xtech.green**
