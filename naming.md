@@ -37,19 +37,17 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 
 | Département | Service | Nom |
 | :-----------: | :-----------: | :----: |
-|  | Publicité | XT-COMPUB-001 |
+| Communication | Publicité | XT-COMPUB-001 |
 |  | Communication externe | XT-COMEX-001 |
-| Communication | Événementiel | XT-COMEV-001 |
+|  | Événementiel | XT-COMEV-001 |
 |  | Gestion des réseaux sociaux | XT-COMGRS-001 |
 |  | Relation Publique et Presse | XT-COMRPP-001 |
-| Département | Service | Nom |
-|  | frontend    | XT-DEVFE-001 |
-| Développement | backend    | XT-DEVBE-001 |
+| Développement | frontend    | XT-DEVFE-001 |
+|  | backend    | XT-DEVBE-001 |
 |  | Recherche et prototype    | XT-DEVRP-001 |
 |  | Analyse et conception    | XT-DEVAC-001 |
-| Département | Service | Nom ||
-|  | Controle de gestion | XT-DFCG-001 |
-| Direction Financière | Finance | XT-DFFI-001 |
+| Direction Financière | Controle de gestion | XT-DFCG-001 |
+|  | Finance | XT-DFFI-001 |
 |  | Comptabilité | XT-DFCB-001 |
 | Département | Service | Nom |
 |  | Digital | XT-DMDT-001 |
