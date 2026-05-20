@@ -44,7 +44,7 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 |  | Relation Publique et Presse | XT-COMRPP-001 |
 
 | Département | Service | Nom |
-| :-----------: | :---------------------: | :----: |
+| :-----------: | :-----------: | :----: |
 |  | frontend    | XT-DEVFE-001 |
 | Développement | backend    | XT-DEVBE-001 |
 |  | Recherche et prototype    | XT-DEVRP-001 |
