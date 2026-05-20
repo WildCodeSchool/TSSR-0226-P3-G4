@@ -91,4 +91,3 @@ Notre nom de domaine sera :
 ## 3.3 Nom des groupes
 ## 3.4 Nom des Unités d'Organisation
 ## 3.5 Nom des GPO
-Nous avons choisi le nom de domaine **Xtech.green**
