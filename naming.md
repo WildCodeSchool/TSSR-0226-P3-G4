@@ -12,24 +12,20 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 Nous avons choisi de nommer les routeurs de la facon suivante
 | Roles | Nom |
 |----------|-------|
-|  | XTR-1 |
-|  | XTR-2 |
+| Routeur VLAN | XTR-1 |
+| Routeur SERVER | XTR-2 |
 ## 1.3 Nom des switchs
 Nous avons choisi de nommer les switchs de la facon suivante
 | Roles | Nom |
 |----------|-------|
-|  | XTS-1 |
-|  | XTS-2 |
-|  | XTS-3 |
-|  | XTS-4 |
-|  | XTS-5 |
-|  | XTS-6 |
-|  | XTS-7 |
-|  | XTS-8 |
-|  | XTS-9 |
-|  | XTS-10 |
-|  | XTS-11 |
-|  | XTS-12 |
+| Switch VLAN 10&20 | XTS-1 |
+| Switch VLAN 30&40 | XTS-2 |
+| Switch VLAN 50&60 | XTS-3 |
+| Switch VLAN 70&80 | XTS-4 |
+| Switch VLAN 90&100 | XTS-5 |
+| Switch VLAN 110 | XTS-6 |
+| Switch SERVER | XTS-7 |
+
 # 2. Nomenclature des ordinateurs (VM/CT)
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
 [Entreprise]-[nom du departement + nom du service]-[numérotation]  
