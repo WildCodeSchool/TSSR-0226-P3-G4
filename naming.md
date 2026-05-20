@@ -56,7 +56,7 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 |  | Comptabilité | XT-DFCB-001 |
 
 | Département | Service | Nom |
-| ----------- | ----------- | ---- |
+| ----------- | -------------- | ---- |
 |  | Digital | XT-DMDT-001 |
 | Direction Marketing | Operationnel | XT-DMOP-001 |
 |  | Produit | XT-DMPT-001 |
