@@ -32,41 +32,41 @@ Nous avons choisi de nommer les switchs de la facon suivante
 |  | XTS-12 |
 # 2. Nomenclature des ordinateurs (VM/CT)
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
-[Entreprise]-[nom du departement]-[nom du service]-[numérotation]  
-**[XT]-[departement]-[service]-[001]**  
+[Entreprise]-[nom du departement + nom du service]-[numérotation]  
+**[XT]-[departement+service]-[001]**  
 | Département | Service | Nom |
 | ----------- | ----------- | ---- |
-|  | Publicité | XT-COM-PUB
-|  | Communication externe | XT-COM-EX
-| Communication | Événementiel | XT-COM-EV
-|  | Gestion des réseaux sociaux | XT-COM-GRS
-|  | Relation Publique et Presse | XT-COM-RPP
+|  | Publicité | XT-COMPUB-001 |
+|  | Communication externe | XT-COMEX-001 |
+| Communication | Événementiel | XT-COMEV-001 |
+|  | Gestion des réseaux sociaux | XT-COMGRS-001 |
+|  | Relation Publique et Presse | XT-COMRPP-001 |
 
 | Département | Service | Nom |
 | ----------- | ----------- | ---- |
-|  | frontend | XT-DEV-FE |
-| Développement | backend | XT-DEV-BE |
-|  | Recherche et prototype | XT-DEV-RP |
-|  | Analyse et conception | XT-DEV-AC |
+|  | frontend | XT-DEVFE-001 |
+| Développement | backend | XT-DEVBE-001 |
+|  | Recherche et prototype | XT-DEVRP-001 |
+|  | Analyse et conception | XT-DEVAC-001 |
 
 | Département | Service | Nom |
 | ----------- | ----------- | ---- |
-|  | Controle de gestion | XT-DF-CG |
-| Direction Financière | Finance | XT-DF-FI |
-|  | Comptabilité | XT-DF-CB |
+|  | Controle de gestion | XT-DFCG-001 |
+| Direction Financière | Finance | XT-DFFI-001 |
+|  | Comptabilité | XT-DFCB-001 |
 
 | Département | Service | Nom |
 | ----------- | ----------- | ---- |
-|  | Digital | XT-DM-DT |
-| Direction Marketing | Operationnel | XT-DM-OP |
-|  | Produit | XT-DM-PT |
-|  | Strategique | XT-DM-ST |
+|  | Digital | XT-DMDT-001 |
+| Direction Marketing | Operationnel | XT-DMOP-001 |
+|  | Produit | XT-DMPT-001 |
+|  | Strategique | XT-DMST-001 |
 
 | Département | Service | Nom |
 | ----------- | ----------- | ---- |
-|  | Data | XT-DSI-D |
-| DSI | Dev logiciel | XT-DSI-L |
-|  | Support | XT-DSI-SU |
+|  | Data | XT-DSID-001 |
+| DSI | Dev logiciel | XT-DSIL-001 |
+|  | Support | XT-DSISU-001 |
 
 | Département | Service | Nom |
 | ----------- | ----------- | ---- |
