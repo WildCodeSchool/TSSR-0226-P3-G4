@@ -34,7 +34,7 @@ Nous avons choisi de nommer les switchs de la facon suivante
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
 **XT-departement-service**
 | Département | Service | Nom |
-| ----------- | ----------- |
+| ----------- | ----------- | ---- |
 | Communication | Publicité |
 | Communication | Communication externe |
 | Communication | Événementiel |
