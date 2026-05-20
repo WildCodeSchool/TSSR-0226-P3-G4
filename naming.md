@@ -33,13 +33,14 @@ Nous avons choisi de nommer les switchs de la facon suivante
 # 2. Nomenclature des ordinateurs (VM/CT)
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
 **XT-departement-service**
-| Département | Abréviation |
+| Département | Service | Nom |
 | ----------- | ----------- |
-| Communication | COM |
-| Développement | DEV |
-| Direction Financiere | DF |
-| Direction Générale | DG |
-| Direction Marketing | 
+|  | Publicité |
+|  | Communication externe |
+| Communication | Événementiel |
+|  | Gestion des réseaux sociaux |
+|  | Publicité |
+|  | Relation Publique et Presse |
 
 # 3. Active directory
 ## 3.1 Nom des utilisateurs
