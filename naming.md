@@ -45,10 +45,10 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 
 | Département | Service | Nom |
 | :-----------: | :---------------------: | :----: |
-|  | frontend | XT-DEVFE-001 |
-| Développement | backend | XT-DEVBE-001 |
-|  | Recherche et prototype | XT-DEVRP-001 |
-|  | Analyse et conception | XT-DEVAC-001 |
+|  | frontend    | XT-DEVFE-001 |
+| Développement | backend    | XT-DEVBE-001 |
+|  | Recherche et prototype    | XT-DEVRP-001 |
+|  | Analyse et conception    | XT-DEVAC-001 |
 
 | Département | Service | Nom |
 | :-----------: | :-----------: | :----: |
