@@ -1,7 +1,7 @@
 # Sommaire 
-- [1. Objectif](#objectif)
+- [1. Objectif](#1-objectif)
 - [2. Liste et détails des taches de chaque objectifs](#2-liste-et-détails-des-tâches-de-chaque-objectifs)
-- [3. Estimation du temps](#3-estimation-de-temps-en-heures)
+- [3. Estimation du temps](#3-estimation-du-temps-en-heures)
 - [4. Synthèse sous forme de tableau Excel/Gant](#4-synthèse-sous-forme-de-tableau-excelgant)
 
 # 1. objectif 
