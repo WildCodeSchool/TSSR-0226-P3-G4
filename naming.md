@@ -31,9 +31,9 @@ Nous avons choisi de nommer les switchs de la facon suivante
 |  | XTS-11 |
 |  | XTS-12 |
 # 2. Nomenclature des ordinateurs (VM/CT)
-Nous avons choisi de nommer les ordinateurs de la facon suivante : 
-[Entreprise]-[nom du departement]-[nom du service]-[numérotation]
-**[XT]-[departement]-[service]-[001]**
+Nous avons choisi de nommer les ordinateurs de la facon suivante :  
+[Entreprise]-[nom du departement]-[nom du service]-[numérotation]  
+**[XT]-[departement]-[service]-[001]**  
 | Département | Service | Nom |
 | ----------- | ----------- | ---- |
 |  | Publicité | XT-COM-PUB
