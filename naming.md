@@ -66,7 +66,7 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 |  | Gestion Immobilière | XT-SGGI-001 |
 | Service Juridique | Contentieux | XT-SJCTX-001 |
 |  | Contrats | XT-CT-001 |
-| Ventes et Dév Commercial | ADV | XT-VDCADV-001 |
+| Ventes et Dev Commercial | ADV | XT-VDCADV-001 |
 |  | B2B | XT-VDCC2B-001 |
 |  | B2C | XT-VDVB2C-001 |
 |  | Grands Comptes | XT-VDCGC-001 |
