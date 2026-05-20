@@ -43,11 +43,83 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 
 | Département | Service | Nom |
 | ----------- | ----------- | ---- |
-|  | Publicité | XT-COM-PUB
-|  | Communication externe | XT-COM-EX
-| Communication | Événementiel | XT-COM-EV
-|  | Gestion des réseaux sociaux | XT-COM-GRS
-|  | Relation Publique et Presse | XT-COM-RPP
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+| Département | Service | Nom |
+| ----------- | ----------- | ---- |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+| Département | Service | Nom |
+| ----------- | ----------- | ---- |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+| Département | Service | Nom |
+| ----------- | ----------- | ---- |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+| Département | Service | Nom |
+| ----------- | ----------- | ---- |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+| Département | Service | Nom |
+| ----------- | ----------- | ---- |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+| Département | Service | Nom |
+| ----------- | ----------- | ---- |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+| Département | Service | Nom |
+| ----------- | ----------- | ---- |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+| Département | Service | Nom |
+| ----------- | ----------- | ---- |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+| Département | Service | Nom |
+| ----------- | ----------- | ---- |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
 
 # 3. Active directory
 ## 3.1 Nom des utilisateurs
