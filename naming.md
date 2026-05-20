@@ -85,8 +85,7 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 
 # 3. Active Directory
 ## 3.1 Nom de domaine
-Notre nom de domaine sera :
-## **Xtech.green**
+Notre nom de domaine sera : ### **Xtech.green**
 ## 3.2 Nom des utilisateurs
 ## 3.3 Nom des groupes
 ## 3.4 Nom des Unités d'Organisation
