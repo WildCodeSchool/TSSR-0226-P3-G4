@@ -43,65 +43,45 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 |  | Gestion des réseaux sociaux | XT-COMGRS-001 |
 |  | Relation Publique et Presse | XT-COMRPP-001 |
 | Département | Service | Nom |
-| :-----------: | :-----------: | :----: |
 |  | frontend    | XT-DEVFE-001 |
 | Développement | backend    | XT-DEVBE-001 |
 |  | Recherche et prototype    | XT-DEVRP-001 |
 |  | Analyse et conception    | XT-DEVAC-001 |
-
-| Département | Service | Nom |
-| :-----------: | :-----------: | :----: |
+| Département | Service | Nom ||
 |  | Controle de gestion | XT-DFCG-001 |
 | Direction Financière | Finance | XT-DFFI-001 |
 |  | Comptabilité | XT-DFCB-001 |
-
 | Département | Service | Nom |
-| :-----------: | :-----------: | :----: |
 |  | Digital | XT-DMDT-001 |
 | Direction Marketing | Operationnel | XT-DMOP-001 |
 |  | Produit | XT-DMPT-001 |
 |  | Strategique | XT-DMST-001 |
-
 | Département | Service | Nom |
-| :-----------: | :-----------: | :----: |
 |  | Data | XT-DSID-001 |
 | DSI | Dev logiciel | XT-DSIL-001 |
 |  | Support | XT-DSISU-001 |
-
 | Département | Service | Nom |
-| :-----------: | :-----------: | :----: |
 | R&D | Innovation et Stratégie | XT-RDIS-001 |
 |  | Laboratoire | XT-RDL-001 |
-
 | Département | Service | Nom |
-| :-----------: | :-----------: | :----: |
 |  | Formation | XT-RHF-001 |
 | RH | Gestion des performances | XT-RHGP-001 |
 |  | Recrutement | XT-RHR-001 |
 |  | Santé et sécurité au travail | XT-RHSST-001 |
-
 | Département | Service | Nom |
-| :-----------: | :-----------: | :----: |
 | Service Généraux | Logistique | XT-SGL-001 |
 |  | Gestion Immobilière | XT-SGGI-001 |
-
 | Département | Service | Nom |
-| :-----------: | :-----------: | :----: |
 | Service Juridique | Contentieux | XT-SJCTX-001 |
 |  | Contrats | XT-CT-001 |
-
 | Département | Service | Nom |
-| :-----------: | :-----------: | :----: |
 |  | ADV | XT-VDCADV-001 |
 |  | B2B | XT-VDCC2B-001 |
 |  | B2C | XT-VDVB2C-001 |
-| Ventes et Développement Commercial | Développement internationnal | XT-VDCDI-001 |
 |  | Grands Comptes | XT-VDCGC-001 |
 |  | Service achat | XT-VDCSA-001 |
 |  | Service Client | XT-VDCSC-001 |
-
 | Département | Service | Nom |
-| :-----------: | :-----------: | :----: |
 |  | Directeur adjoint | XT-DGDA-001 |
 |  | Assistant de direction | XT-DGAD-001 |
 | Direction Générale | CEO | XT-DGC-001 |
