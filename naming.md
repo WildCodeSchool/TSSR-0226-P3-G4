@@ -42,7 +42,6 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 | Communication | Événementiel | XT-COMEV-001 |
 |  | Gestion des réseaux sociaux | XT-COMGRS-001 |
 |  | Relation Publique et Presse | XT-COMRPP-001 |
-
 | Département | Service | Nom |
 | :-----------: | :-----------: | :----: |
 |  | frontend    | XT-DEVFE-001 |
