@@ -35,12 +35,12 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 **XT-departement-service**
 | Département | Service | Nom |
 | ----------- | ----------- |
-|  | Publicité |
-|  | Communication externe |
+| Communication | Publicité |
+| Communication | Communication externe |
 | Communication | Événementiel |
-|  | Gestion des réseaux sociaux |
-|  | Publicité |
-|  | Relation Publique et Presse |
+| Communication | Gestion des réseaux sociaux |
+| Communication | Publicité |
+| Communication | Relation Publique et Presse |
 
 # 3. Active directory
 ## 3.1 Nom des utilisateurs
