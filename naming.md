@@ -36,7 +36,7 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 **[XT]-[departement+service]-[001]** 
 
 | Département | Service | Nom |
-| :-----------: | :-----------: | :----: |
+| :----------- | :-----------: | ----: |
 | Communication | Publicité | XT-COMPUB-001 |
 |  | Communication externe | XT-COMEX-001 |
 |  | Événementiel | XT-COMEV-001 |
