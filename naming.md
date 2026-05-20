@@ -1,5 +1,5 @@
-# 1. Nomenclature des matériels
-## 1.1 Nom des serveurs
+# 2. Nomenclature des matériels
+## 2.1 Nom des serveurs
 Nous avons choisi de nommer les serveurs de la facon suivante :
 **XT-NomduVLAN+ID unique**
 | Roles | Nom |
@@ -8,13 +8,13 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | Stockage | XT-200-152 |
 | BackUp | XT-200-153 |
 | Messagerie | XT-200-154 |
-## 1.2 Nom des routeurs
+## 2.2 Nom des routeurs
 Nous avons choisi de nommer les routeurs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
 | Routeur VLAN | XTR-1 |
 | Routeur SERVER | XTR-2 |
-## 1.3 Nom des switchs
+## 2.3 Nom des switchs
 Nous avons choisi de nommer les switchs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
@@ -26,7 +26,7 @@ Nous avons choisi de nommer les switchs de la facon suivante :
 | Switch VLAN 110 | XTS-6 |
 | Switch SERVER | XTS-7 |
 
-# 2. Nomenclature des ordinateurs (VM/CT)
+# 3. Nomenclature des ordinateurs (VM/CT)
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
 [Entreprise]-[nom du departement + nom du service]-[numérotation]  
 **[XT]-[departement+service]-[001]** 
@@ -84,9 +84,11 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 |  | Secrétaire | XT-DGS-001 |
 
 # 3. Active Directory
-## 3.1 Nom des utilisateurs
-## 3.2 Nom des groupes
-## 3.3 Nom des Unités d'Organisation
-## 3.4 Nom des GPO
-## 3.5 Nom de domaine
+## 3.1 Nom de domaine
+Notre nom de domaine sera :
+## **Xtech.green**
+## 3.2 Nom des utilisateurs
+## 3.3 Nom des groupes
+## 3.4 Nom des Unités d'Organisation
+## 3.5 Nom des GPO
 Nous avons choisi le nom de domaine **Xtech.green**
