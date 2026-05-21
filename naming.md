@@ -2,29 +2,45 @@
 ## 2.1 Nom des serveurs
 Nous avons choisi de nommer les serveurs de la facon suivante :
 **XT-NomduVLAN+ID unique**
+
 | Roles | Nom |
 |----------|-------|
-| ADDS DHCP DNS | XT-200-151|
-| Stockage | XT-200-152 |
-| BackUp | XT-200-153 |
-| Messagerie | XT-200-154 |
+| ADDS DHCP DNS | XT-200-101|
+| Stockage | XT-200-102 |
+| BackUp | XT-200-103 |
+| Messagerie | XT-200-104 |
+| Sauvergarde | XTR-210-105 |
+| Bastion | XTR-220-106 |
+
 ## 2.2 Nom des routeurs
 Nous avons choisi de nommer les routeurs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
 | Routeur VLAN | XTR-1 |
-| Routeur SERVER | XTR-2 |
+| Routeur Bastion | XTR-2 |
+| Routeur Messagerie/Sauvergarde | XTR-3 |
+
 ## 2.3 Nom des switchs
 Nous avons choisi de nommer les switchs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
-| Switch VLAN 10&20 | XTS-1 |
-| Switch VLAN 30&40 | XTS-2 |
-| Switch VLAN 50&60 | XTS-3 |
-| Switch VLAN 70&80 | XTS-4 |
-| Switch VLAN 90&100 | XTS-5 |
-| Switch VLAN 110 | XTS-6 |
-| Switch SERVER | XTS-7 |
+| Switch VLAN 10 | XTS-0 |
+| Switch VLAN 20 | XTS-1 |
+| Switch VLAN 30 | XTS-2 |
+| Switch VLAN 40 | XTS-3 |
+| Switch VLAN 50 | XTS-4 |
+| Switch VLAN 60 | XTS-5 |
+| Switch VLAN 70 | XTS-6 |
+| Switch VLAN 80 | XTS-7 |
+| Switch VLAN 90 | XTS-8 |
+| Switch VLAN 100 | XTS-9 |
+| Switch VLAN 110 | XTS-10 |
+| Switch L3 VLAN 10-20-30 | XTSL-1 |
+| Switch L3 VLAN 40-50-60 | XTSL-2 |
+| Switch L3 | XTSL-3 |
+| Switch VLAN 200 | XTS-11 |
+| Switch VLAN 210 | XTS-12 |
+| Switch VLAN 220 | XTS-13 |
 
 # 3. Nomenclature des ordinateurs (VM/CT)
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
@@ -57,7 +73,7 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 |  | Dev logiciel | XT-DSIL-001 |
 |  | Support | XT-DSISU-001 |
 |  |  |  |
-| **R&D** | Innovation et Stratégie | XT-RDIS-001 |
+| **R&D** | Innovation et Straté-2gie | XT-RDIS-001 |
 |  | Laboratoire | XT-RDL-001 |
 |  |  |  |
 | **RH** | Formation | XT-RHF-001 |
