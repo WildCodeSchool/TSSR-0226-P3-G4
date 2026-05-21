@@ -1,16 +1,15 @@
 # 2. Nomenclature des matériels
 ## 2.1 Nom des serveurs
-Nous avons choisi de nommer les serveurs de la facon suivante :
-**XT-NomduVLAN+ID unique**
+Nous avons choisi de nommer les serveurs de la facon suivante :  
 
 | Roles | Nom |
 |----------|-------|
-| ADDS DHCP DNS | XT-200-101|
-| Stockage | XT-200-102 |
-| BackUp | XT-200-103 |
-| Messagerie | XT-200-104 |
-| Sauvergarde | XTR-210-105 |
-| Bastion | XTR-220-106 |
+| ADDS DHCP DNS | XTS-101|
+| Stockage | XTS-102 |
+| BackUp | XTS-103 |
+| Messagerie | XTS-104 |
+| Sauvergarde | XTS-105 |
+| Bastion | XTS-106 |
 
 ## 2.2 Nom des routeurs
 Nous avons choisi de nommer les routeurs de la facon suivante :
@@ -24,23 +23,23 @@ Nous avons choisi de nommer les routeurs de la facon suivante :
 Nous avons choisi de nommer les switchs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
-| Switch VLAN 10 | XTS-0 |
-| Switch VLAN 20 | XTS-1 |
-| Switch VLAN 30 | XTS-2 |
-| Switch VLAN 40 | XTS-3 |
-| Switch VLAN 50 | XTS-4 |
-| Switch VLAN 60 | XTS-5 |
-| Switch VLAN 70 | XTS-6 |
-| Switch VLAN 80 | XTS-7 |
-| Switch VLAN 90 | XTS-8 |
-| Switch VLAN 100 | XTS-9 |
-| Switch VLAN 110 | XTS-10 |
+| Switch VLAN 10 | XTSW-0 |
+| Switch VLAN 20 | XTSW-1 |
+| Switch VLAN 30 | XTSW-2 |
+| Switch VLAN 40 | XTSW-3 |
+| Switch VLAN 50 | XTSX-4 |
+| Switch VLAN 60 | XTSW-5 |
+| Switch VLAN 70 | XTSW-6 |
+| Switch VLAN 80 | XTSW-7 |
+| Switch VLAN 90 | XTSW-8 |
+| Switch VLAN 100 | XTSW-9 |
+| Switch VLAN 110 | XTSW-10 |
 | Switch L3 VLAN 10-20-30 | XTSL-1 |
 | Switch L3 VLAN 40-50-60 | XTSL-2 |
 | Switch L3 | XTSL-3 |
-| Switch VLAN 200 | XTS-11 |
-| Switch VLAN 210 | XTS-12 |
-| Switch VLAN 220 | XTS-13 |
+| Switch VLAN 200 | XTSW-11 |
+| Switch VLAN 210 | XTSW-12 |
+| Switch VLAN 220 | XTSW-13 |
 
 # 3. Nomenclature des ordinateurs (VM/CT)
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
