@@ -34,12 +34,12 @@ Nous avons choisi de nommer les switchs de la facon suivante :
 | Switch VLAN 90 | XTSW-8 |
 | Switch VLAN 100 | XTSW-9 |
 | Switch VLAN 110 | XTSW-10 |
-| Switch L3 VLAN 10-20-30 | XTSL-1 |
-| Switch L3 VLAN 40-50-60 | XTSL-2 |
-| Switch L3 | XTSL-3 |
 | Switch VLAN 200 | XTSW-11 |
 | Switch VLAN 210 | XTSW-12 |
 | Switch VLAN 220 | XTSW-13 |
+| Switch L3 VLAN 10-20-30 | XTSL-1 |
+| Switch L3 VLAN 40-50-60 | XTSL-2 |
+| Switch L3 VLAN 70-...-110| XTSL-3 |
 
 # 3. Nomenclature des ordinateurs (VM/CT)
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
