@@ -12,8 +12,7 @@
 
 
 # 1. Notre projet
-Ce projet a pour but **la conception** d'une infrastructure de réseau **sécurisé** pour la start-Up Xen-Tech, de la mise en place des outils a la maintenance de ceux-ci grace a la documentation faite tout au long du projet pour une maintenance claire et efficace.  
-
+Ce projet a pour but **la conception** d'une infrastructure de réseau **sécurisé** pour la start-Up Xen-Tech, L'objectif est de faire evoluer votre réseau initialement basé sur une box grand public et des machines isolées en Workgroups, vers une architecture cible hautement disponible, segmenté et gouvernée par la securité.
 ![Schéma](architecture/ressources/Schéma_FossFlow_Readmemd.png)
 
 # 2. Contexte actuelle de la start-up
