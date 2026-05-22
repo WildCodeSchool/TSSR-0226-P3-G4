@@ -17,6 +17,8 @@
 | Minjha   | SM         |
 | Jeremy   | tech       |
 # 4. problèmes rencontrés
+- shéma packet tracer
+- documentation
 # 5. décisions techniques
 # 6. Ce qu’il reste à faire
 
