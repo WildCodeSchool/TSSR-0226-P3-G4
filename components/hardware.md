@@ -4,7 +4,9 @@ Ce document recense l'ensemble des équipements matériels constitutifs de la to
 
 ---
 
-## 1. Liste des Serveurs (7 Serveurs)
+1. [Liste des Serveurs](#Liste-des-Serveurs)
+
+# Liste des Serveurs (7 Serveurs)
 
 | Nom du Matériel | Type | Rôle / Description | Zone / Réseau |
 | :--- | :--- | :--- | :--- |
