@@ -8,7 +8,7 @@
 - nomenclature matériel
 - planning
 # 2. La finalité de ces objectifs à la fin du sprint
-
+## Tout les objectifs de ce sprint ont été réaliser à 100%
 # 3. membre de l'equipe
 
 | Membre   | Rôle       |
