@@ -1,6 +1,6 @@
 # TSSR-0226-P3-G4
 # Projet 3 – Construction d’une infrastructure réseau
-
+![Schéma](architecture/ressources/Schéma_FossFlow_Readmemd.png)
 # Sommaire
 
 1.  [**Notre projet**](#1-Notre-projet)
@@ -9,9 +9,6 @@
 4. [**Vue d'ensemble des composants**](#4-vue-densemble-des-composants)
 5. [**Services déployés**](#5-services-déployés)
 6. [**Retrouver notre documentation ici**](#7-Retrouver-notre-documentation-ici)
-
-
-![Schéma](architecture/ressources/Schéma_FossFlow_Readmemd.png)
 
 
 # 1. Notre projet
