@@ -5,6 +5,9 @@ Ce document recense l'ensemble des équipements matériels constitutifs de la to
 ---
 
 1. [Liste des Serveurs](#Liste-des-Serveurs)
+2. [Liste des Routeurs](#Liste-des-Routeurs)
+3. [Liste des Commutateurs](#Liste-des-Commutateurs)
+4. [Explications Fonctionnelles des Rôles](#Explications-Fonctionnelles-des-Rôles)
 
 # Liste des Serveurs (7 Serveurs)
 
@@ -20,7 +23,7 @@ Ce document recense l'ensemble des équipements matériels constitutifs de la to
 
 ---
 
-## 2. Liste des Routeurs (3 Routeurs)
+# Liste des Routeurs (3 Routeurs)
 
 | Nom du Matériel | Type | Rôle / Description | Interfaces Principales |
 | :--- | :--- | :--- | :--- |
@@ -30,7 +33,7 @@ Ce document recense l'ensemble des équipements matériels constitutifs de la to
 
 ---
 
-## 3. Liste des Commutateurs (17 Commutateurs)
+# Liste des Commutateurs (17 Commutateurs)
 
 ### A. Commutateurs de Distribution / Multicouches (3)
 * **Multilayer Switch0** (Cisco 3560-24PS) : Cœur de réseau distribution haut, interconnecte les VLANs utilisateurs majeurs vers R1.
@@ -57,7 +60,7 @@ Ce document recense l'ensemble des équipements matériels constitutifs de la to
 
 ---
 
-## 4. Explications Fonctionnelles des Rôles
+# Explications Fonctionnelles des Rôles
 
 ### Serveur AD DHCP DNS (Active Directory, DHCP, DNS)
 C'est le pilier logique du réseau local de l'entreprise :
