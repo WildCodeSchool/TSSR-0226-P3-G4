@@ -64,9 +64,9 @@ Ce document recense l'ensemble des équipements matériels constitutifs de la to
 
 ### Serveur AD DHCP DNS (Active Directory, DHCP, DNS)
 C'est le pilier logique du réseau local de l'entreprise :
-* **Active Directory (AD) :** Centralise la sécurité et la gestion des utilisateurs et des machines. Il permet aux collaborateurs de se connecter à n'importe quel poste informatique de leur VLAN avec un identifiant unique (Single Sign-On) et d'appliquer des stratégies de groupe (GPO).
+* **Active Directory (AD) :** Centralise la sécurité et la gestion des utilisateurs et des machines. Il permet aux collaborateurs de se connecter à n'importe quel poste informatique de leur VLAN avec un identifiant unique et d'appliquer des stratégies de groupe (GPO).
 * **DHCP (Dynamic Host Configuration Protocol) :** Distribue automatiquement la configuration IP (Adresse IP, masque, passerelle, serveur DNS) à l'ensemble des équipements (PC, Laptops) du réseau lorsqu'ils se connectent, évitant ainsi les conflits d'adresses.
-* **DNS (Domain Name System) :** Traduit les noms de domaine lisibles par l'homme (ex: `srv-fichiers.entreprise.lan`) en adresses IP compréhensibles par les machines. Sans lui, les utilisateurs devraient retenir l'adresse IP exacte de chaque serveur pour y accéder.
+* **DNS (Domain Name System) :** Traduit les noms de domaine lisibles par l'homme (ex: `srv-fichiers.xtech.green`) en adresses IP compréhensibles par les machines. Sans lui, les utilisateurs devraient retenir l'adresse IP exacte de chaque serveur pour y accéder.
 
 ### Serveur Bastion
 Le Bastion est une passerelle de sécurité indispensable dans une architecture réseau d'entreprise. Il sert de point d'entrée unique et obligatoire pour l'administration à distance (souvent via SSH ou RDP) des serveurs internes de l'entreprise depuis l'extérieur. Toutes les connexions y sont auditées, journalisées et contrôlées. Idéalement placé dans une zone à haut niveau de sécurité, il empêche l'exposition directe des serveurs sensibles sur Internet.
