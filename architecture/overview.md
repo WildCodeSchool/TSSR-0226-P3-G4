@@ -44,7 +44,7 @@ L'assainissement préalable du fichier ListeRHCollaborateurs est une étape crit
 
 # Shéma global
 
-<img width="19021" height="11010" alt="image" src="https://github.com/user-attachments/assets/91211d82-0e07-4cc2-a1eb-f1560d57b146" />
+<img width="9455" height="5751" alt="image" src="https://github.com/user-attachments/assets/629caafc-5be5-46ef-8a5f-1270786bd563" />
 
 # Liste des briques techniques
 
