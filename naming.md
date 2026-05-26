@@ -4,12 +4,12 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 
 | Roles | Nom |
 |----------|-------|
-| ADDS DHCP DNS | XTS-101|
-| Stockage | XTS-102 |
-| BackUp | XTS-103 |
-| Messagerie | XTS-104 |
-| Sauvergarde | XTS-105 |
-| Bastion | XTS-106 |
+| ADDS DHCP DNS | XTS-451|
+| Stockage | XTS-452 |
+| BackUp | XTS-453 |
+| Messagerie | XTS-454 |
+| Sauvergarde | XTS-455 |
+| Bastion | XTS-456 |
 
 ## 2.2 Nom des routeurs
 Nous avons choisi de nommer les routeurs de la facon suivante :
