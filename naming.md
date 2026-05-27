@@ -11,7 +11,12 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | Sauvergarde | XTS-455 |
 | Bastion | XTS-456 |
 
-## 2.2 Nom des routeurs
+## 2.2 Nom du PC administrateur
+| Roles | Nom |
+|----------|-------|
+| ADDS DHCP DNS | XTA-457 |
+
+## 2.3 Nom des routeurs
 Nous avons choisi de nommer les routeurs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
@@ -19,7 +24,7 @@ Nous avons choisi de nommer les routeurs de la facon suivante :
 | Routeur Bastion | XTR-461 |
 | Routeur Messagerie/Sauvergarde | XTR-462 |
 
-## 2.3 Nom des switchs
+## 2.4 Nom des switchs
 Nous avons choisi de nommer les switchs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
