@@ -22,8 +22,9 @@ Nous avons choisi de nommer les routeurs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
 | Routeur VLAN | XTR-420 |
-| Routeur Bastion | XTR-421 |
-| Routeur Messagerie/Sauvergarde | XTR-422 |
+| Routeur Messagerie/Sauvegarde | XTR-421 |
+| Routeur Bastion | XTR-422 |
+| Routeur PC-admin | XTR-423 |
 
 ## 2.4 Nom des switchs
 Nous avons choisi de nommer les switchs de la facon suivante :
