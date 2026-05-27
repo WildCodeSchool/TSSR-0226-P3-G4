@@ -14,8 +14,8 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 ## 2.2 Nom du PC administrateur 
 | Roles | Nom |
 |----------|-------|
-| Admin Windows | XTA-457 |
-| Admin Linux | XTA-458 |
+| Admin Windows | XTA-401 |
+| Admin Linux | XTA-402 |
 
 ## 2.3 Nom des routeurs
 Nous avons choisi de nommer les routeurs de la facon suivante :
