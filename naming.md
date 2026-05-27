@@ -21,31 +21,31 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 Nous avons choisi de nommer les routeurs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
-| Routeur VLAN | XTR-460 |
-| Routeur Bastion | XTR-461 |
-| Routeur Messagerie/Sauvergarde | XTR-462 |
+| Routeur VLAN | XTR-420 |
+| Routeur Bastion | XTR-421 |
+| Routeur Messagerie/Sauvergarde | XTR-422 |
 
 ## 2.4 Nom des switchs
 Nous avons choisi de nommer les switchs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
-| Switch VLAN 10 | XTSW-470 |
-| Switch VLAN 20 | XTSW-471 |
-| Switch VLAN 30 | XTSW-472 |
-| Switch VLAN 40 | XTSW-473 |
-| Switch VLAN 50 | XTSX-474 |
-| Switch VLAN 60 | XTSW-475 |
-| Switch VLAN 70 | XTSW-476 |
-| Switch VLAN 80 | XTSW-477 |
-| Switch VLAN 90 | XTSW-478 |
-| Switch VLAN 100 | XTSW-479 |
-| Switch VLAN 110 | XTSW-480 |
-| Switch VLAN 200 | XTSW-481 |
-| Switch VLAN 210 | XTSW-482 |
-| Switch VLAN 220 | XTSW-483 |
-| Switch L3 VLAN 10-20-30 | XTSL-490 |
-| Switch L3 VLAN 40-50-60 | XTSL-491 |
-| Switch L3 VLAN 70-...-110| XTSL-493 |
+| Switch VLAN 10 | XTSW-430 |
+| Switch VLAN 20 | XTSW-431 |
+| Switch VLAN 30 | XTSW-432 |
+| Switch VLAN 40 | XTSW-433 |
+| Switch VLAN 50 | XTSX-434 |
+| Switch VLAN 60 | XTSW-435 |
+| Switch VLAN 70 | XTSW-436 |
+| Switch VLAN 80 | XTSW-437 |
+| Switch VLAN 90 | XTSW-438 |
+| Switch VLAN 100 | XTSW-439 |
+| Switch VLAN 110 | XTSW-440 |
+| Switch VLAN 200 | XTSW-441 |
+| Switch VLAN 210 | XTSW-442 |
+| Switch VLAN 220 | XTSW-443 |
+| Switch L3 VLAN 10-20-30 | XTSL-444 |
+| Switch L3 VLAN 40-50-60 | XTSL-445 |
+| Switch L3 VLAN 70-...-110| XTSL-446 |
 
 # 3. Nomenclature des ordinateurs (VM/CT)
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
