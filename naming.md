@@ -11,10 +11,11 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | Sauvergarde | XTS-455 |
 | Bastion | XTS-456 |
 
-## 2.2 Nom du PC administrateur
+## 2.2 Nom du PC administrateur 
 | Roles | Nom |
 |----------|-------|
-| ADDS DHCP DNS | XTA-457 |
+| Admin Windows | XTA-457 |
+| Admin Linux | XTA-458 |
 
 ## 2.3 Nom des routeurs
 Nous avons choisi de nommer les routeurs de la facon suivante :
