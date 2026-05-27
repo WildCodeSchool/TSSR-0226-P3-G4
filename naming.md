@@ -4,12 +4,12 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 
 | Roles | Nom |
 |----------|-------|
-| ADDS DHCP DNS | XTS-451|
-| Stockage | XTS-452 |
-| BackUp | XTS-453 |
-| Messagerie | XTS-454 |
-| Sauvergarde | XTS-455 |
-| Bastion | XTS-456 |
+| ADDS DHCP DNS | XTS-411|
+| Stockage | XTS-412 |
+| BackUp | XTS-413 |
+| Messagerie | XTS-414 |
+| Sauvergarde | XTS-415 |
+| Bastion | XTS-416 |
 
 ## 2.2 Nom du PC administrateur 
 | Roles | Nom |
