@@ -116,25 +116,15 @@ Nom.Prenom@Xtech.
 ## 3.3 Nom des groupes
 Pour la nommenclature nous avons choisi :
 Groupe de sécurité/distribution + departement + service
-| Groupe | Scope | Département | Service | Exemple |
+| Groupe | Scope | Service | ID utilisateur | Exemple |
 | :----- | :---------- | :------ | :------- | :------- |
-| Utilisateurs | Local/Global | Communication | Publicité |GU-COM-PUB |
-| Ordinateurs | Local/Global | Communication | Publicité |GU-COM-PUB |
+| Utilisateurs | Local/Global | Publicité | 001 |GUL/GPUB001 |
+| Ordinateurs | Local/Global | Publicité | 001 |GUL/GPUB001 |
 
 ## 3.4 Nom des Unités d'Organisation
 ```
 Xtech.green
-├── Administrateurs
-├── Groupes
-   ├── Sécurité
-         └── Local
-         └── Global
-   └── Distribution
-         └── Local
-         └── Global
 ├── Ordinateurs
-   ├── Clients
-   └── Serveurs
 ├── Utilisateurs
    ├── Département (ex:RH)
          └── Service (ex:Formation)
