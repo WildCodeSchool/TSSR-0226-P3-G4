@@ -117,7 +117,7 @@ Nom.Prenom@Xtech.
 Pour la nommenclature nous avons choisi :
 Groupe de sécurité/distribution + departement + service
 | Groupe | Scope | Département | Service | Exemple |
-| :----- | :---------- | :------ | :-------|
+| :----- | :---------- | :------ | :------- | :------- |
 | Utilisateurs | Local/Global | Communication | Publicité | ID | GU-COM-PUB |
 |
 
