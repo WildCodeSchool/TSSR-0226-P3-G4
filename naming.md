@@ -127,7 +127,11 @@ Xtech.green
 ├── Administrateurs
 ├── Groupes
    ├── Sécurité
+         └── Local
+         └── Global
    └── Distribution
+         └── Local
+         └── Global
 ├── Ordinateurs
    ├── Clients
    └── Serveurs
