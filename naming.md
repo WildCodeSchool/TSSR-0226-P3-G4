@@ -113,6 +113,10 @@ Notre nom de domaine sera :
 Pour la nommenclature nous avons choisi : Nom.Prenom
 
 ## 3.3 Nom des groupes
+Pour la nommenclature nous avons choisi :
+Groupe de sécurité + 
+| Groupe | Nom |
+
 ## 3.4 Nom des Unités d'Organisation
 ```
 Xtech.green
