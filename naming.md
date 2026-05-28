@@ -110,6 +110,19 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 Notre nom de domaine sera :
 ### **Xtech.green**
 ## 3.2 Nom des utilisateurs
+Pour la nommenclature nous avons choisi : Nom.Prenom
+
 ## 3.3 Nom des groupes
 ## 3.4 Nom des Unités d'Organisation
+Xtech.green
+├── _Utilisateurs
+│   ├── Département (ex:RH)
+│          └── Service (ex:Formation)
+├── _Groupes
+│   ├── Sécurité
+│   └── Distribution
+├── _Ordinateurs
+│   ├── Clients
+│   └── Serveurs
+└── _Administrateurs
 ## 3.5 Nom des GPO
