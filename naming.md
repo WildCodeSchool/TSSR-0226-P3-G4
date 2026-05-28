@@ -121,13 +121,13 @@ Groupe de sécurité +
 ```
 Xtech.green
 ├── Administrateurs
-├── _Groupes
-│   ├── Sécurité
-│   └── Distribution
-├── _Ordinateurs
-│   ├── Clients
-│   └── Serveurs
-└── Utilisateurs
+├── Groupes
+   ├── Sécurité
+   └── Distribution
+├── Ordinateurs
+   ├── Clients
+   └── Serveurs
+├── Utilisateurs
 │   ├── Département (ex:RH)
          └── Service (ex:Formation)
 ```
