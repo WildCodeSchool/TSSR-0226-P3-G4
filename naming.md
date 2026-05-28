@@ -118,8 +118,8 @@ Pour la nommenclature nous avons choisi :
 Groupe de sécurité/distribution + departement + service
 | Groupe | Scope | Département | Service | Exemple |
 | :----- | :---------- | :------ | :------- | :------- |
-| Utilisateurs | Local/Global | Communication | Publicité | ID | GU-COM-PUB |
-|
+| Utilisateurs | Local/Global | Communication | Publicité |GU-COM-PUB |
+| Ordinateurs | Local/Global | Communication | Publicité |GU-COM-PUB |
 
 ## 3.4 Nom des Unités d'Organisation
 ```
