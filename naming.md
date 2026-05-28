@@ -120,15 +120,15 @@ Groupe de sécurité +
 ## 3.4 Nom des Unités d'Organisation
 ```
 Xtech.green
-├── _Utilisateurs
-│   ├── Département (ex:RH)
-│          └── Service (ex:Formation)
+├── Administrateurs
 ├── _Groupes
 │   ├── Sécurité
 │   └── Distribution
 ├── _Ordinateurs
 │   ├── Clients
 │   └── Serveurs
-└── _Administrateurs
+└── Utilisateurs
+│   ├── Département (ex:RH)
+│        └── Service (ex:Formation)
 ```
 ## 3.5 Nom des GPO
