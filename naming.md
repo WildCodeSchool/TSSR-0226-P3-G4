@@ -115,14 +115,14 @@ Pour la nommenclature nous avons choisi : Nom.Prenom
 ## 3.3 Nom des groupes
 ## 3.4 Nom des Unités d'Organisation
 Xtech.green
-├── _Utilisateurs
-│   ├── Département (ex:RH)
-│          └── Service (ex:Formation)
-├── _Groupes
-│   ├── Sécurité
-│   └── Distribution
-├── _Ordinateurs
-│   ├── Clients
-│   └── Serveurs
-└── _Administrateurs
+├── _Utilisateurs  
+│   ├── Département (ex:RH)  
+│          └── Service (ex:Formation)  
+├── _Groupes  
+│   ├── Sécurité  
+│   └── Distribution  
+├── _Ordinateurs  
+│   ├── Clients  
+│   └── Serveurs  
+└── _Administrateurs  
 ## 3.5 Nom des GPO
