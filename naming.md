@@ -115,11 +115,11 @@ Nom.Prenom@Xtech.
 
 ## 3.3 Nom des groupes
 Pour la nommenclature nous avons choisi :
-Groupe de sécurité/distribution + departement + service + ID
-| Groupe | Département | Service | ID | Exemple |
-| :----- | :---------- | :------ | :--| :-------|
-| Utilisateurs | Communication | Publicité | ID | GU-COM-PUB-001 |
-
+Groupe de sécurité/distribution + departement + service
+| Groupe | Scope | Département | Service | Exemple |
+| :----- | :---------- | :------ | :-------|
+| Utilisateurs | Local/Global | Communication | Publicité | ID | GU-COM-PUB |
+|
 
 ## 3.4 Nom des Unités d'Organisation
 ```
