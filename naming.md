@@ -129,6 +129,6 @@ Xtech.green
 │   └── Serveurs
 └── Utilisateurs
 │   ├── Département (ex:RH)
-│        └── Service (ex:Formation)
+         └── Service (ex:Formation)
 ```
 ## 3.5 Nom des GPO
