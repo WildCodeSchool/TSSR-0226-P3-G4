@@ -130,3 +130,8 @@ Xtech.green
          └── Service (ex:Formation)
 ```
 ## 3.5 Nom des GPO
+
+| Nom | Type | Cible | Paramètre | Effet |
+|-----|------|-------|-----------|-------|
+| XTG-SEC-PanneauDeConfig-Block | Sécurité | OU Utilisateurs | Prohibit access to Control Panel and PC Settings->Enabled | Blocage complet du complet de configuration et des paramètres PC |
+
