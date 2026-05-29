@@ -134,4 +134,7 @@ Xtech.green
 | Nom | Type | Cible | Paramètre | Effet |
 |-----|------|-------|-----------|-------|
 | XTG-SEC-PanneauDeConfig-Block | Sécurité | OU Utilisateurs | Prohibit access to Control Panel and PC Settings->Enabled | Blocage complet du complet de configuration et des paramètres PC |
+| XTG-GPO-GestionWindowsUpdate | Sécurité | OU Ordinateurs | Prohibit access to Control Panel and PC Settings->Enabled | Blocage complet du complet de configuration et des paramètres PC |
+| XTG-GPO-GestionWindowsUpdate | Sécurité | OU Ordinateurs | Prohibit access to Control Panel and PC Settings->Enabled | Blocage complet du complet de configuration et des paramètres PC |
+
 
