@@ -136,7 +136,7 @@ Xtech.green
 | Nom | Type | Cible | Paramètre | Effet |
 |-----|------|-------|-----------|-------|
 | XTG-SEC-PanneauDeConfig-Block | Sécurité | OU Utilisateurs | Prohibit access to Control Panel and PC Settings->Enabled | Blocage complet du complet de configuration et des paramètres PC |
-| XTG-SEC-WindowsUpdate | Sécurité | OU Ordinateurs | Configure Automatic Upadtes->Enabled| Installation automatique à  3h00, pas de redémarrage forcé, vérification toutes les 22h |
+| XTG-SEC-WindowsUpdate | Sécurité | OU Ordinateurs | Configure Automatic Upadtes->Enabled | Installation automatique à  3h00, pas de redémarrage forcé, vérification toutes les 22h |
 
 ### GPO Stantard 
 
