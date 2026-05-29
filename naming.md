@@ -55,55 +55,55 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 
 | Département | Service | Nom |
 | :----------- | :----------- | :---- |
-| **Communication** | Publicité | XT-COMPUB-001 |
-|  | Communication externe | XT-COMEX-001 |
-|  | Événementiel | XT-COMEV-001 |
-|  | Gestion des réseaux sociaux | XT-COMGRS-001 |
-|  | Relation Publique et Presse | XT-COMRPP-001 |
+| **Communication** | Publicité | XT-PUB-001 |
+|  | Communication externe | XT-EX-001 |
+|  | Événementiel | XT-EV-001 |
+|  | Gestion des réseaux sociaux | XT-GRS-001 |
+|  | Relation Publique et Presse | XT-RPP-001 |
 |  |  |  |
-| **Développement** | frontend    | XT-DEVFE-001 |
-|  | backend    | XT-DEVBE-001 |
-|  | Recherche et prototype    | XT-DEVRP-001 |
-|  | Analyse et conception    | XT-DEVAC-001 |
+| **Développement** | frontend    | XT-FE-001 |
+|  | backend    | XT-BE-001 |
+|  | Recherche et prototype    | XT-RP-001 |
+|  | Analyse et conception    | XT-AC-001 |
 |  |  |  |
-| **Direction Financière** | Controle de gestion | XT-DFCG-001 |
-|  | Finance | XT-DFFI-001 |
-|  | Comptabilité | XT-DFCB-001 |
+| **Direction Financière** | Controle de gestion | XT-CG-001 |
+|  | Finance | XT-FI-001 |
+|  | Comptabilité | XT-CB-001 |
 |  |  |  |
-| **Direction Marketing** | Digital | XT-DMDT-001 |
-|  | Operationnel | XT-DMOP-001 |
-|  | Produit | XT-DMPT-001 |
-|  | Strategique | XT-DMST-001 |
+| **Direction Marketing** | Digital | XT-DT-001 |
+|  | Operationnel | XT-OP-001 |
+|  | Produit | XT-PT-001 |
+|  | Strategique | XT-ST-001 |
 |  |  |  |
-| **DSI** | Data | XT-DSID-001 |
-|  | Dev logiciel | XT-DSIL-001 |
-|  | Support | XT-DSISU-001 |
+| **DSI** | Data | XT-D-001 |
+|  | Dev logiciel | XT-L-001 |
+|  | Support | XT-SU-001 |
 |  |  |  |
-| **R&D** | Innovation et Straté-2gie | XT-RDIS-001 |
-|  | Laboratoire | XT-RDL-001 |
+| **R&D** | Innovation et Straté-2gie | XT-IS-001 |
+|  | Laboratoire | XT-L-001 |
 |  |  |  |
-| **RH** | Formation | XT-RHF-001 |
-|  | Gestion des performances | XT-RHGP-001 |
-|  | Recrutement | XT-RHR-001 |
-|  | Santé et sécurité au travail | XT-RHSST-001 |
+| **RH** | Formation | XT-F-001 |
+|  | Gestion des performances | XT-GP-001 |
+|  | Recrutement | XT-R-001 |
+|  | Santé et sécurité au travail | XT-SST-001 |
 |  |  |  |
-| **Service Généraux** | Logistique | XT-SGL-001 |
-|  | Gestion Immobilière | XT-SGGI-001 |
+| **Service Généraux** | Logistique | XT-L-001 |
+|  | Gestion Immobilière | XT-GI-001 |
 |  |  |  |
-| **Service Juridique** | Contentieux | XT-SJCTX-001 |
+| **Service Juridique** | Contentieux | XT-CTX-001 |
 |  | Contrats | XT-CT-001 |
 |  |  |  |
-| **Ventes et Dev Commercial** | ADV | XT-VDCADV-001 |
-|  | B2B | XT-VDCC2B-001 |
-|  | B2C | XT-VDVB2C-001 |
-|  | Grands Comptes | XT-VDCGC-001 |
-|  | Service achat | XT-VDCSA-001 |
-|  | Service Client | XT-VDCSC-001 |
+| **Ventes et Dev Commercial** | ADV | XT-ADV-001 |
+|  | B2B | XT-B2B-001 |
+|  | B2C | XT-B2C-001 |
+|  | Grands Comptes | XT-GC-001 |
+|  | Service achat | XT-SA-001 |
+|  | Service Client | XT-SC-001 |
 |  |  |  |
-| **Direction Générale** | Directeur adjoint | XT-DGDA-001 |
-|  | Assistant de direction | XT-DGAD-001 |
-|  | CEO | XT-DGC-001 |
-|  | Secrétaire | XT-DGS-001 |
+| **Direction Générale** | Directeur adjoint | XT-DA-001 |
+|  | Assistant de direction | XT-AD-001 |
+|  | CEO | XT-C-001 |
+|  | Secrétaire | XT-S-001 |
 
 # 3. Active Directory
 ## 3.1 Nom de domaine
