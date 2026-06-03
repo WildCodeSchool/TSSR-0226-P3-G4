@@ -112,6 +112,59 @@ Notre nom de domaine sera : **Xtech.green**
 ## 3.2 Nom des utilisateurs
 Pour la nommenclature nous avons choisi :  
 Nom.Prenom
+| Département | Service | matricule |
+| :----------- | :----------- | :---- |
+| **Communication** | Publicité | uc0100 |
+|  | Communication externe | uc0200 |
+|  | Événementiel | uc0300 |
+|  | Gestion des réseaux sociaux | uc400 |
+|  | Relation Publique et Presse | uc500 |
+|  |  |  |
+| **Développement** | frontend    | XT-FE-001 |
+|  | backend    | XT-BE-001 |
+|  | Recherche et prototype    | XT-RP-001 |
+|  | Analyse et conception    | XT-AC-001 |
+|  |  |  |
+| **Direction Financière** | Controle de gestion | XT-CG-001 |
+|  | Finance | XT-FI-001 |
+|  | Comptabilité | XT-CB-001 |
+|  |  |  |
+| **Direction Marketing** | Digital | XT-DT-001 |
+|  | Operationnel | XT-OP-001 |
+|  | Produit | XT-PT-001 |
+|  | Strategique | XT-ST-001 |
+|  |  |  |
+| **DSI** | Data | XT-D-001 |
+|  | Dev logiciel | XT-L-001 |
+|  | Support | XT-SU-001 |
+|  |  |  |
+| **R&D** | Innovation et Straté-2gie | XT-IS-001 |
+|  | Laboratoire | XT-L-001 |
+|  |  |  |
+| **RH** | Formation | XT-F-001 |
+|  | Gestion des performances | XT-GP-001 |
+|  | Recrutement | XT-R-001 |
+|  | Santé et sécurité au travail | XT-SST-001 |
+|  |  |  |
+| **Service Généraux** | Logistique | XT-L-001 |
+|  | Gestion Immobilière | XT-GI-001 |
+|  |  |  |
+| **Service Juridique** | Contentieux | XT-CTX-001 |
+|  | Contrats | XT-CT-001 |
+|  |  |  |
+| **Ventes et Dev Commercial** | ADV | XT-ADV-001 |
+|  | B2B | XT-B2B-001 |
+|  | B2C | XT-B2C-001 |
+|  | Grands Comptes | XT-GC-001 |
+|  | Service achat | XT-SA-001 |
+|  | Service Client | XT-SC-001 |
+|  |  |  |
+| **Direction Générale** | Directeur adjoint | XT-DA-001 |
+|  | Assistant de direction | XT-AD-001 |
+|  | CEO | XT-C-001 |
+|  | Secrétaire | XT-S-001 |
+
+
 
 ## 3.3 Nom des groupes
 Pour la nommenclature nous avons choisi :
