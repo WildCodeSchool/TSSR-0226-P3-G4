@@ -117,8 +117,8 @@ Nom.Prenom
 | **Communication** | Publicité | uc0100 |
 |  | Communication externe | uc0200 |
 |  | Événementiel | uc0300 |
-|  | Gestion des réseaux sociaux | uc400 |
-|  | Relation Publique et Presse | uc500 |
+|  | Gestion des réseaux sociaux | uc0400 |
+|  | Relation Publique et Presse | uc0500 |
 |  |  |  |
 | **Développement** | frontend    | XT-FE-001 |
 |  | backend    | XT-BE-001 |
