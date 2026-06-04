@@ -168,11 +168,15 @@ Nom.Prenom
 
 ## 3.3 Nom des groupes
 Pour la nommenclature nous avons choisi :
-Groupe de sécurité/distribution + departement + service
-| Groupe | Scope | Service | ID utilisateur | Exemple |
-| :----- | :---------- | :------ | :------- | :------- |
-| Utilisateurs | Local/Global | Publicité | 001 |GUL/GPUB001 |
-| Ordinateurs | Local/Global | Publicité | 001 |GUL/GPUB001 |
+Convention :
+`GRP_TYPE_CIBLE_ROLE`
+
+| Élément | Description |
+|-------|------------|
+| GRP | Groupe Active Directory |
+| TYPE | Type de groupe (SEC = sécurité) |
+| CIBLE | Service ou ressource |
+| ROLE | Fonction du groupe |
 
 ## 3.4 Nom des Unités d'Organisation
 ```
