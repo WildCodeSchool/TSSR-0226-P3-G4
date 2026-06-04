@@ -113,10 +113,10 @@ Notre nom de domaine sera : **Xtech.green**
 Pour la nommenclature nous avons choisi :  
 Format : nom.prenom
 
-en minuscules
-sans accents
-sans espaces
-sans caractères spéciaux
+- en minuscules
+- sans accents
+- sans espaces
+- sans caractères spéciaux  
 En cas d’homonymie : nom.prenomX (X = chiffre incrémental)
 
 Les comptes utilisateurs sont personnels et non partagés.
