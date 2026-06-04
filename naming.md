@@ -11,7 +11,7 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | Sauvergarde | XTS-415 |
 | Bastion | XTS-416 |
 
-## 2.2 Nom du PC administrateur 
+## 2.2 Nom des PC administrateurs 
 | Roles | Nom |
 |----------|-------|
 | Admin Windows | XTA-401 |
@@ -56,10 +56,10 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 | Département | Service | Nom |
 | :----------- | :----------- | :---- |
 | **Communication** | Publicité | XT-PUB-001 |
-|  | Communication externe | XT-EX-001 |
+|  | Communication externe | XT-CE-001 |
 |  | Événementiel | XT-EV-001 |
 |  | Gestion des réseaux sociaux | XT-GRS-001 |
-|  | Relation Publique et Presse | XT-RPP-001 |
+|  | Relation Publique et Presse | XT-RPR   -001 |
 |  |  |  |
 | **Développement** | frontend    | XT-FE-001 |
 |  | backend    | XT-BE-001 |
@@ -110,66 +110,21 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 Notre nom de domaine sera : **Xtech.green**
 ### **Xtech.green**
 ## 3.2 Nom des utilisateurs
-Pour la nommenclature nous avons choisi :  
-Format : initialenom.prenom
+### 3.2.1 Comptes Utilisateur Standard
+Les comptes standards sont utilisés pour les tâches classiques (bureautique,...).
+Pour la nommenclature nous avons choisi le Format :  
+<initialenom><prenom>
 - en minuscules  
 **exemple** `mpham`  
 
-En cas d’homonymie : initialenom.prenomX (X = chiffre incrémental)  
+En cas d’homonymie : <initialenom>.<prenom><X> (X = chiffre incrémental)  
 **exemple** : `mpham1`
+### 3.2.2 Comptes Administrateurs
+Pour pouvoir garantir un certain niveau de sécurité nous devons respecter le principe du moindre privilège et masquer les comptes critiques, nous utilisons le code neutre XTA (PC administrateurs) suivi du chiffre du niveau de sécurité du compte.
+**Tiering 0** : XTA0-mpham
 
-Les comptes utilisateurs sont personnels et non partagés.
-| Département | Service | matricule |
-| :----------- | :----------- | :---- |
-| **Communication** | Publicité | uc0100 |
-|  | Communication externe | uc0200 |
-|  | Événementiel | uc0300 |
-|  | Gestion des réseaux sociaux | uc0400 |
-|  | Relation Publique et Presse | uc0500 |
-|  |  |  |
-| **Développement** | frontend    | ud0100 |
-|  | backend    | ud0200 |
-|  | Recherche et prototype    | ud0300 |
-|  | Analyse et conception    | ud0400 |
-|  |  |  |
-| **Direction Financière** | Controle de gestion | udf0100 |
-|  | Finance | udf0200 |
-|  | Comptabilité | udf0300 |
-|  |  |  |
-| **Direction Marketing** | Digital | udm0100 |
-|  | Operationnel | udm0200 |
-|  | Produit | udm0300 |
-|  | Strategique | udm0400 |
-|  |  |  |
-| **DSI** | Data | ud0100 |
-|  | Dev logiciel | ud0200 |
-|  | Support | ud0300 |
-|  |  |  |
-| **R&D** | Innovation et Straté-2gie | urd0100 |
-|  | Laboratoire | urd0200 |
-|  |  |  |
-| **RH** | Formation | urh0100 |
-|  | Gestion des performances | urh0200 |
-|  | Recrutement | urh0300 |
-|  | Santé et sécurité au travail | urh0300 |
-|  |  |  |
-| **Service Généraux** | Logistique | usg0100 |
-|  | Gestion Immobilière | usg0200 |
-|  |  |  |
-| **Service Juridique** | Contentieux | usj0100 |
-|  | Contrats | usj0200 |
-|  |  |  |
-| **Ventes et Dev Commercial** | ADV | uvdc0100 |
-|  | B2B | uvdc0200 |
-|  | B2C | uvdc0300 |
-|  | Grands Comptes | uvdc0400 |
-|  | Service achat | uvdc0500 |
-|  | Service Client | uvdc0600 |
-|  |  |  |
-| **Direction Générale** | Directeur adjoint | udg0100 |
-|  | Assistant de direction | udg0200 |
-|  | CEO | udg0300 |
-|  | Secrétaire | udg0400 |
+
+**Tiering 1** : XTA1-mpham
 
 
 
@@ -183,7 +138,7 @@ Convention :
 | G | Groupe Active Directory |
 | TYPE | Type de groupe (SEC=sécurité)/(DIS=Distribution) |
 | ETENDUE | (G=Global)(U=Universel)(LDG=Localdedomaine) |
-| CIBLE | Service |
+| CIBLE | departement |
 | ROLE | Fonction |
 
 `exemple :
