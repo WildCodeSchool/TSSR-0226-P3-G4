@@ -111,13 +111,11 @@ Notre nom de domaine sera : **Xtech.green**
 ### **Xtech.green**
 ## 3.2 Nom des utilisateurs
 Pour la nommenclature nous avons choisi :  
-Format : nom.prenom
-
+Format : initialenom.prenom
 - en minuscules
-- sans accents
-- sans espaces
-- sans caractères spéciaux  
-En cas d’homonymie : nom.prenomX (X = chiffre incrémental)
+exemple `mpham`  
+En cas d’homonymie : initialenom.prenomX (X = chiffre incrémental)  
+exemple : `mpham1`
 
 Les comptes utilisateurs sont personnels et non partagés.
 | Département | Service | matricule |
@@ -187,7 +185,9 @@ Convention :
 | CIBLE | Service |
 | ROLE | Fonction |
 
-exemple : G-SEC-G-BE-ADMINS
+`exemple :
+GDIS-GPUB-USER
+GSEC-GBE-ADMINS`
 
 ## 3.4 Nom des Unités d'Organisation
 ```
