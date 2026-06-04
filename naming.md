@@ -50,8 +50,8 @@ Nous avons choisi de nommer les switchs de la facon suivante :
 
 # 3. Nomenclature des ordinateurs (VM/CT)
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
-[Entreprise]-[nom du departement + nom du service]-[numérotation]  
-**[XT]-[departement+service]-[001]** 
+[Entreprise]-[nom du service]-[numérotation]  
+**[XT]-[service]-[001]** 
 
 | Département | Service | Nom |
 | :----------- | :----------- | :---- |
