@@ -113,9 +113,10 @@ Notre nom de domaine sera : **Xtech.green**
 Pour la nommenclature nous avons choisi :  
 Format : initialenom.prenom
 - en minuscules  
-exemple `mpham`  
+**exemple** `mpham`  
+
 En cas d’homonymie : initialenom.prenomX (X = chiffre incrémental)  
-exemple : `mpham1`
+**exemple** : `mpham1`
 
 Les comptes utilisateurs sont personnels et non partagés.
 | Département | Service | matricule |
