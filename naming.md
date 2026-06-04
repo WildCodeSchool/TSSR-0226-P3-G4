@@ -111,7 +111,15 @@ Notre nom de domaine sera : **Xtech.green**
 ### **Xtech.green**
 ## 3.2 Nom des utilisateurs
 Pour la nommenclature nous avons choisi :  
-Nom.Prenom
+Format : nom.prenom
+
+en minuscules
+sans accents
+sans espaces
+sans caractères spéciaux
+En cas d’homonymie : nom.prenomX (X = chiffre incrémental)
+
+Les comptes utilisateurs sont personnels et non partagés.
 | Département | Service | matricule |
 | :----------- | :----------- | :---- |
 | **Communication** | Publicité | uc0100 |
@@ -169,15 +177,17 @@ Nom.Prenom
 ## 3.3 Nom des groupes
 Pour la nommenclature nous avons choisi :  
 Convention :
-`GRP_TYPE_ETENDUE_CIBLE_ROLE`
+`GRP-TYPE-ETENDUE-CIBLE-ROLE`
 
 | Élément | Description |
 |-------|------------|
-| GRP | Groupe Active Directory |
+| G | Groupe Active Directory |
 | TYPE | Type de groupe (SEC=sécurité)/(DIS=Distribution) |
 | ETENDUE | (G=Global)(U=Universel)(LDG=Localdedomaine) |
 | CIBLE | Service |
 | ROLE | Fonction |
+
+exemple : G-SEC-G-BE-ADMINS
 
 ## 3.4 Nom des Unités d'Organisation
 ```
