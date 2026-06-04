@@ -167,7 +167,7 @@ Nom.Prenom
 
 
 ## 3.3 Nom des groupes
-Pour la nommenclature nous avons choisi :
+Pour la nommenclature nous avons choisi :  
 Convention :
 `GRP_TYPE_CIBLE_ROLE`
 
