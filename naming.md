@@ -112,9 +112,8 @@ Notre nom de domaine sera : **Xtech.green**
 ## 3.2 Nom des utilisateurs
 Pour la nommenclature nous avons choisi :  
 Format : initialenom.prenom
-- en minuscules
+- en minuscules  
 exemple `mpham`  
-
 En cas d’homonymie : initialenom.prenomX (X = chiffre incrémental)  
 exemple : `mpham1`
 
