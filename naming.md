@@ -169,13 +169,13 @@ Nom.Prenom
 ## 3.3 Nom des groupes
 Pour la nommenclature nous avons choisi :  
 Convention :
-`GRP_TYPE_CIBLE_ROLE`
+`GRP_TYPE_ETENDUE_CIBLE_ROLE`
 
 | Élément | Description |
 |-------|------------|
 | GRP | Groupe Active Directory |
 | TYPE | Type de groupe (SEC=sécurité)/(DIS=Distribution) |
-| étendue | (G=Global)(U=Universel)(LDG=Localdedomaine) |
+| ETENDUE | (G=Global)(U=Universel)(LDG=Localdedomaine) |
 | CIBLE | Service |
 | ROLE | Fonction |
 
