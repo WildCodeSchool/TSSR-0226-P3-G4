@@ -174,9 +174,10 @@ Convention :
 | Élément | Description |
 |-------|------------|
 | GRP | Groupe Active Directory |
-| TYPE | Type de groupe (SEC = sécurité) |
-| CIBLE | Service ou ressource |
-| ROLE | Fonction du groupe |
+| TYPE | Type de groupe (SEC=sécurité)/(DIS=Distribution) |
+| étendue | (G=Global)(U=Universel)(LDG=Localdedomaine) |
+| CIBLE | Service |
+| ROLE | Fonction |
 
 ## 3.4 Nom des Unités d'Organisation
 ```
