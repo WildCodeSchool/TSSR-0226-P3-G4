@@ -135,7 +135,7 @@ Pour pouvoir garantir un certain niveau de sécurité nous devons respecter le p
 ## 3.3 Nom des groupes
 Pour la nommenclature nous avons choisi :  
 Convention :
-`GRP-TYPE-ETENDUE-CIBLE-ROLE`
+`G-TYPE-ETENDUE-CIBLE-ROLE`
 
 | Élément | Description |
 |-------|------------|
