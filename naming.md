@@ -172,8 +172,22 @@ Pour offusquer la société et avoir un bon niveau de sécurité nous avons déc
 **D8** -> RH  
 **D9** -> Service Généraux  
 **D10** -> Service Juridique  
-**D11** -> Ventes et Développement Commercial  
-**D12** -> Direction Générale  
+**D11** -> Ventes et Développement Commercial   
+
+### 3.4.3 Les Services
+Pour les services nous avons reprenons les départements et y ajoutons un - suivi du du numéro de service
+**D1**
+**D2**
+**D3**
+**D4**
+**D5**
+**D6**
+**D7**
+**D8**
+**D9**
+**D10**
+**D10**
+
 
 | Niveau | Code |
 |-------|------------|
