@@ -7,6 +7,15 @@ Ce document recense l'ensemble des logiciels et outils d'administration install�
 ### 1. Administration des serveurs Windows
 
 * **RSAT** - Gestion de consoles serveurs distants - Permet l'administration centralisée des rôles Active Directory (AD), DNS, DHCP, etc.
+```powershell
+# Exemples de commandes via les modules RSAT (Active Directory) installés localement
+# Valider la connectivité AD vers le contrôleur de domaine XTS-411
+Get-ADDomainController -Identity "XTS-411"
+
+# Créer un nouvel utilisateur dans l'OU Xentech à distance depuis XTA-401
+New-ADUser -Name "Abel Abe" -SamAccountName "aabe" -Path "OU=Utilisateurs,OU=Xentech,DC=xtech,DC=green"
+```
+
 * **Windows RDP** - Prise de main à distance - Client officiel pour l'accès aux interfaces graphiques des serveurs Windows.
 * **Remote PowerShell** - CLI à distance - Permet l'exécution de scripts et de commandes à distance sur les serveurs Windows.
 * **Serveur RDP** - Portail RDP - Service permettant l'accès distant entrant vers ce PC d'administration (si autorisé par la politique de sécurité).
