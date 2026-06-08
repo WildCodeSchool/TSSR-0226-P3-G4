@@ -160,7 +160,7 @@ Pour les OU nous avons fais le choix d'une hiérarchie à 5 niveaux permettant d
 **Niveau 5** : Service dans les départements -> U1-1 U étant le département et le -1 le service  
 
 ### 3.4.2 Les Départements
-Pour offusquer la société et avoir un bon nioveau de sécurité nous avons décidé de donné des numeros d'identification pour chaque département.  
+Pour offusquer la société et avoir un bon niveau de sécurité nous avons décidé de donné des numeros d'identification pour chaque département.  
 
 **D1** -> Communication  
 **D2** -> Développement  
