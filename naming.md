@@ -115,10 +115,10 @@ Les comptes standards sont utilisés pour les tâches classiques (bureautique,..
 Pour la nommenclature nous avons choisi le Format :  
 <initialenom><prenom>
 - en minuscules  
-**exemple** `mpham`  
+**exemple** `jmachado`  
 
 En cas d’homonymie : <initialenom>.<prenom><X> (X = chiffre incrémental)  
-**exemple** : `mpham1`
+**exemple** : `jmachado`
 ### 3.2.2 Comptes Administrateurs
 Pour pouvoir garantir un certain niveau de sécurité nous devons respecter le principe du moindre privilège et masquer les comptes critiques, nous utilisons le code neutre XTA (PC administrateurs) suivi du chiffre du niveau de sécurité du compte.
 
