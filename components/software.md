@@ -117,7 +117,7 @@ wsl nmap -sV XTS-414
 * **VNC (et dérivés)** - Prise en main à distance GUI - Permet l'accès et le contrôle des interfaces graphiques (X11/Wayland) des serveurs Linux.
 ```powershell
 # Connexion via un tunnel SSH sécurisé préalable (recommandé pour VNC)
-# Étape 1 (SSH tunnel) : ssh -L 5901:localhost:5901 admin_tech@srv-linux-01
+# Étape 1 (SSH tunnel) : ssh -L 5901:localhost:5901 T2@414
 # Étape 2 (VNC client) : Connecter le client VNC sur l'adresse suivante
 vncviewer.exe localhost:1
 ```
@@ -136,10 +136,10 @@ trip XTS-411 -p tcp
 * **OpenSSH** - Connectivité sécurisée - Client et serveur pour les connexions chiffrées et la gestion des clés SSH.
 ```bash
 # Transférer votre clé publique d'administration vers un serveur Linux cible
-ssh-copy-id -i ~/.ssh/id_ed25519.pub admin_tech@srv-linux-01.xentech.local
+ssh-copy-id -i ~/.ssh/id_ed25519.pub T2@XTS-414
 
 # Tester la configuration et afficher les logs de débogage lors de la connexion
-ssh -v admin_tech@srv-linux-01.xentech.local
+ssh -v T2@XTS-414
 ```
 ---------
 * **Wireshark** - Analyse réseau - Analyseur de protocoles pour la capture et l'inspection approfondie du trafic réseau.
