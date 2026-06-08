@@ -166,7 +166,7 @@ Xtech.green
 |-----|------|-------|-----------|-------|
 | XTG-SEC-BlocageRegistre | Sécurité | OU Utilisateurs |||
 | XTG-SEC-WindowsUpdate | Sécurité | OU Utilisateurs |||
-| XTG-SEC-VerrouillageCompte | Sécurité | OU Utilisateurs |||
+| XTG-SEC-VerrouillageCompte | Sécurité | Xtech.green |||
 | XTG-SEC-RestrictionInstallLogiciel | Sécurité | OU Utilisateurs |||
 | XTG-SEC-RestrictionPeripheriquesAmovibles | Sécurité | OU Utilisateurs |||
 | XTG-SEC-PanneauDeConfig-Block | Sécurité | OU Utilisateurs | Prohibit access to Control Panel and PC Settings->Enabled | Blocage complet du complet de configuration et des paramètres PC |
