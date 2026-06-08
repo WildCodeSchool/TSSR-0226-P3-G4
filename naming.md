@@ -89,7 +89,8 @@ Pour les services nous avons reprenons les départements et y ajoutons un - suiv
    - D11-3 -> CEO
    - D11-4 -> Secrétaire
 
-Le chemin complet pour l'utilisateur qui est dans le service communication externe du département communication serait donc : **XTech.green -> PRS -> A/U/O -> D1 -> -1**
+Le chemin complet pour l'utilisateur qui est dans le service communication externe du département communication serait donc : 
+**XTech.green -> PRS -> A/U/O -> D1 -> -1**
 
 ## 1.3 Nom des utilisateurs
 ### 1.3.1 Comptes Utilisateur Standard
