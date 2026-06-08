@@ -125,17 +125,17 @@ Pour pouvoir garantir un certain niveau de sécurité nous devons respecter le p
 **Tiering 0 : Gestion de L'ADDS DNS DHCP**  
 `XTA0-jmachado`
 
-**Tiering 1 : Gestion de base de donnée**
+**Tiering 1 : Gestion de base de donnée**  
 `XTA1-jmachado`
 
 **Tiering 2 : Support Helpdesk**  
 `XTA2-jmachado`
 
-**Tiering 3 : Gestion du SRV-CORE**
+**Tiering 3 : Gestion du SRV-CORE**  
 `XTA3-jmachado`
 
-**Tiering 4 : Gestion du CT-Debian**
-
+**Tiering 4 : Gestion du CT-Debian**  
+`XTA4-jmachado`
 
 ## 3.3 Nom des groupes
 Pour la nommenclature nous avons choisi :  
