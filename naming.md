@@ -120,6 +120,9 @@ exemple :`XTA1-jmachado`
 **Tiering 4 : Gestion du CT-Debian**  
 exemple :`XTA4-jmachado`
 
+**Tiering 5 : Gestion du SRV-Fichiers**  
+exemple :`XTA5-jmachado`
+
 ## 1.4 Nom des groupes
 Pour la nommenclature nous avons choisi :  
 Convention :
