@@ -123,13 +123,13 @@ En cas d’homonymie : <initialenom>.<prenom><X> (X = chiffre incrémental)
 Pour pouvoir garantir un certain niveau de sécurité nous devons respecter le principe du moindre privilège et masquer les comptes critiques, nous utilisons le code neutre XTA (PC administrateurs) suivi du chiffre du niveau de sécurité du compte.
 
 **Tiering 0 : Gestion de L'ADDS DNS DHCP**  
-`XTA0-mpham`
+`XTA0-jmachado`
 
 **Tiering 1 : Gestion de base de donnée**
-`XTA1-mpham`
+`XTA1-jmachado`
 
 **Tiering 2 : Support Helpdesk**  
-`XTA2-mpham`
+`XTA2-jmachado`
 
 
 ## 3.3 Nom des groupes
@@ -177,6 +177,9 @@ Pour offusquer la société et avoir un bon niveau de sécurité nous avons déc
 ### 3.4.3 Les Services
 Pour les services nous avons reprenons les départements et y ajoutons un - suivi du du numéro de service
 **D1**
+
+
+   
 **D2**
 **D3**
 **D4**
