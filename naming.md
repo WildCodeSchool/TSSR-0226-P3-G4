@@ -131,6 +131,11 @@ Pour pouvoir garantir un certain niveau de sécurité nous devons respecter le p
 **Tiering 2 : Support Helpdesk**  
 `XTA2-jmachado`
 
+**Tiering 3 : Gestion du SRV-CORE**
+`XTA3-jmachado`
+
+**Tiering 4 : Gestion du CT-Debian**
+
 
 ## 3.3 Nom des groupes
 Pour la nommenclature nous avons choisi :  
