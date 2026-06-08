@@ -123,19 +123,19 @@ En cas d’homonymie : <initialenom>.<prenom><X> (X = chiffre incrémental)
 Pour pouvoir garantir un certain niveau de sécurité nous devons respecter le principe du moindre privilège et masquer les comptes critiques, nous utilisons le code neutre XTA (PC administrateurs) suivi du chiffre du niveau de sécurité du compte.
 
 **Tiering 0 : Gestion de L'ADDS DNS DHCP**  
-`XTA0-jmachado`
+exemple :`XTA0-jmachado`
 
 **Tiering 1 : Gestion de base de donnée**  
-`XTA1-jmachado`
+exemple :`XTA1-jmachado`
 
 **Tiering 2 : Support Helpdesk**  
-`XTA2-jmachado`
+exemple :`XTA2-jmachado`
 
 **Tiering 3 : Gestion du SRV-CORE**  
-`XTA3-jmachado`
+exemple :`XTA3-jmachado`
 
 **Tiering 4 : Gestion du CT-Debian**  
-`XTA4-jmachado`
+exemple :`XTA4-jmachado`
 
 ## 3.3 Nom des groupes
 Pour la nommenclature nous avons choisi :  
