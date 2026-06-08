@@ -12,8 +12,8 @@ Ce document recense l'ensemble des logiciels et outils d'administration install�
 # Valider la connectivité AD vers le contrôleur de domaine XTS-411
 Get-ADDomainController -Identity "XTS-411"
 
-# Créer un nouvel utilisateur dans l'OU Xentech à distance depuis XTA-401
-New-ADUser -Name "Abel Abe" -SamAccountName "aabe" -Path "OU=Utilisateurs,OU=Xentech,DC=xtech,DC=green"
+# Créer un nouvel utilisateur dans l'OU Utilisateurs à distance depuis XTA-401
+New-ADUser -Name "Abel Abe" -SamAccountName "aabe" -Path "OU=Utilisateurs,DC=xtech,DC=green"
 ```
 
 * **Windows RDP** - Prise de main à distance - Client officiel pour l'accès aux interfaces graphiques des serveurs Windows.
