@@ -179,55 +179,55 @@ Pour offusquer la société et avoir un bon niveau de sécurité nous avons déc
 **D10** -> Ventes et Développement Commercial   
 **D11** -> Direction Générale
 ### 3.4.3 Les Services
-Pour les services nous avons reprenons les départements et y ajoutons un - suivi du du numéro de service
-**D1**
+Pour les services nous avons reprenons les départements et y ajoutons un - suivi du du numéro de service  
+- **D1**
    - D1-1 -> Communication externe  
    - D1-2 -> Evenementiel  
    - D1-3 -> Gestion des réseaux sociaux  
    - D1-4 -> Publicité  
    - D1-5 -> Relation publique et Presse
 
-**D2**
+- **D2**
    - D2-1 -> frontend  
    - D2-2 -> backend  
    - D2-3 -> Recherche et prototype  
    - D2-4 -> Analyse et conception
  
-**D3**
+- **D3**
    - D3-1 -> Controle de gestion
    - D3-2 -> Finance
    - D3-3 -> Comptabilité
 
-**D4**
+- **D4**
    - D4- -> Digital
    - D4- -> Operationnel
    - D4- -> Produit
    - D4- -> Strategique
 
-**D5**
+- **D5**
    - D5- -> Data
    - D5- -> Dev logiciel
    - D5- -> Support
 
-**D6**
+- **D6**
    - D5- -> Innovation et Straté-2gie
    - D5- -> Laboratoire
 
-**D7**
+- **D7**
    - D5- -> Formation
    - D5- -> Gestion des performances
    - D5- -> Recrutement
    - D5- -> Santé et sécurité au travail
 
-**D8**
+- **D8**
    - D5- -> Logistique
    - D5- -> Gestion Immobilière
 
-**D9**
+- **D9**
    - D5- -> Contentieux
    - D5- -> Contrats
 
-**D10**
+- **D10**
    - D5- -> ADV
    - D5- -> B2B
    - D5- -> B2C
@@ -235,7 +235,7 @@ Pour les services nous avons reprenons les départements et y ajoutons un - suiv
    - D5- -> Service achat
    - D5- -> Service Client
 
-**D11**
+- **D11**
    - D5- -> Directeur adjoint
    - D5- -> Assistant de direction
    - D5- -> CEO
