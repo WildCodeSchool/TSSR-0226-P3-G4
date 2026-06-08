@@ -150,6 +150,38 @@ GDIS-GPUB-USER
 GSEC-GBE-ADMINS`
 
 ## 3.4 Nom des Unités d'Organisation
+### 3.4.1 Structure arborescence OU
+Pour les OU nous avons fais le choix d'une hiérarchie à 5 niveaux permettant de classer les objets par société, site, type et département et service.
+
+Niveau 1 : Nom de la société -> XenTech
+Niveau 2 : Le site -> Paris
+Niveau 3 : Les objets -> Administrateur (A) ; Utilisateurs (U) ; Ordinateurs (O)
+Niveau 4 : Département dans U et O -> UD1-...-UD12 pour les utilisateurs et OD1-...-OD12 pour les ordinateurs
+Niveau 5 : Service dans les départements -> U1-1 U étant le département et le -1 le service
+
+### 3.4.2 Les Départements
+Pour offusquer la société et avoir un bon nioveau de sécurité nous avons décidé de donné des numeros d'identification pour chaque département.
+
+D1 -> Communication
+D2 -> Développement
+D3 -> Direction Financière
+D4 -> Direction Générale
+D5 -> Direction Marketing
+D6 -> DSI
+D7 -> R&D
+D8 -> RH
+D9 -> Service Généraux
+D10 -> Service Juridique
+D11 -> Ventes et Développement Commercial
+D12 -> Direction Générale
+
+| Niveau | Code |
+|-------|------------|
+| Société  | XT |
+| Site | PRS |
+| Type | A/U/O |
+| Département | U1...U11 |
+| Service | U11/U12 |
 ```
 Xtech.green
 ├── Administration
