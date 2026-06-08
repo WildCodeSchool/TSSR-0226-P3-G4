@@ -221,15 +221,15 @@ Pour les services nous avons reprenons les départements et y ajoutons un - suiv
 **D10**
    - D5- -> ADV
    - D5- -> B2B
-   - D5- -> 
-   - D5- -> 
-   - D5- -> 
-   - D5- -> 
+   - D5- -> B2C
+   - D5- -> Grands Comptes
+   - D5- -> Service achat
+   - D5- -> Service Client
 **D11**
-   - D5- -> 
-   - D5- -> 
-   - D5- -> 
-   - D5- -> 
+   - D5- -> Directeur adjoint
+   - D5- -> Assistant de direction
+   - D5- -> CEO
+   - D5- -> Secrétaire
 
 
 
