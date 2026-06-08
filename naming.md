@@ -75,35 +75,35 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 |  | Produit | XT-PT-001 |
 |  | Strategique | XT-ST-001 |
 |  |  |  |
-| **DSI** | Data | XT-D-001 |
-|  | Dev logiciel | XT-L-001 |
+| **DSI** | Data | XT-DT-001 |
+|  | Dev logiciel | XT-DL-001 |
 |  | Support | XT-SU-001 |
 |  |  |  |
 | **R&D** | Innovation et Straté-2gie | XT-IS-001 |
-|  | Laboratoire | XT-L-001 |
+|  | Laboratoire | XT-LB-001 |
 |  |  |  |
-| **RH** | Formation | XT-F-001 |
+| **RH** | Formation | XT-FR-001 |
 |  | Gestion des performances | XT-GP-001 |
-|  | Recrutement | XT-R-001 |
+|  | Recrutement | XT-RC-001 |
 |  | Santé et sécurité au travail | XT-SST-001 |
 |  |  |  |
-| **Service Généraux** | Logistique | XT-L-001 |
+| **Service Généraux** | Logistique | XT-LG-001 |
 |  | Gestion Immobilière | XT-GI-001 |
 |  |  |  |
-| **Service Juridique** | Contentieux | XT-CTX-001 |
+| **Service Juridique** | Contentieux | XT-CX-001 |
 |  | Contrats | XT-CT-001 |
 |  |  |  |
-| **Ventes et Dev Commercial** | ADV | XT-ADV-001 |
-|  | B2B | XT-B2B-001 |
-|  | B2C | XT-B2C-001 |
+| **Ventes et Dev Commercial** | ADV | XT-AV-001 |
+|  | B2B | XT-BB-001 |
+|  | B2C | XT-BC-001 |
 |  | Grands Comptes | XT-GC-001 |
 |  | Service achat | XT-SA-001 |
 |  | Service Client | XT-SC-001 |
 |  |  |  |
 | **Direction Générale** | Directeur adjoint | XT-DA-001 |
 |  | Assistant de direction | XT-AD-001 |
-|  | CEO | XT-C-001 |
-|  | Secrétaire | XT-S-001 |
+|  | CEO | XT-CO-001 |
+|  | Secrétaire | XT-SC-001 |
 
 # 3. Active Directory
 ## 3.1 Nom de domaine
