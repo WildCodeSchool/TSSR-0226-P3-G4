@@ -36,58 +36,58 @@ Pour les services nous avons reprenons les départements et y ajoutons un - suiv
    - D1-5 -> Relation publique et Presse
 
 **D2**
-   - D4-1 -> frontend  
-   - D4-2 -> backend  
-   - D4-3 -> Recherche et prototype  
-   - D4-4 -> Analyse et conception
+   - D2-1 -> frontend  
+   - D2-2 -> backend  
+   - D2-3 -> Recherche et prototype  
+   - D2-4 -> Analyse et conception
  
 **D3**
-   - D1-1 -> Controle de gestion
-   - D1-2 -> Finance
-   - D1-3 -> Comptabilité
+   - D3-1 -> Controle de gestion
+   - D3-2 -> Finance
+   - D3-3 -> Comptabilité
 
 **D4**
-   - D4- -> Digital
-   - D4- -> Operationnel
-   - D4- -> Produit
-   - D4- -> Strategique
+   - D4-1 -> Digital
+   - D4-2 -> Operationnel
+   - D4-3 -> Produit
+   - D4-4 -> Strategique
 
 **D5**
-   - D5- -> Data
-   - D5- -> Dev logiciel
-   - D5- -> Support
+   - D5-1 -> Data
+   - D5-2 -> Dev logiciel
+   - D5-3 -> Support
 
 **D6**
-   - D6- -> Innovation et Stratégie
-   - D6- -> Laboratoire
+   - D6-1 -> Innovation et Stratégie
+   - D6-2 -> Laboratoire
 
 **D7**
-   - D7- -> Formation
-   - D7- -> Gestion des performances
-   - D7- -> Recrutement
-   - D7- -> Santé et sécurité au travail
+   - D7-1 -> Formation
+   - D7-2 -> Gestion des performances
+   - D7-3 -> Recrutement
+   - D7-4 -> Santé et sécurité au travail
 
 **D8**
-   - D8- -> Logistique
-   - D8- -> Gestion Immobilière
+   - D8-1 -> Logistique
+   - D8-2 -> Gestion Immobilière
 
 **D9**
-   - D9- -> Contentieux
-   - D9- -> Contrats
+   - D9-1 -> Contentieux
+   - D9-2 -> Contrats
 
 **D10**
-   - D10- -> ADV
-   - D10- -> B2B
-   - D10- -> B2C
-   - D10- -> Grands Comptes
-   - D10- -> Service achat
-   - D10- -> Service Client
+   - D10-1 -> ADV
+   - D10-2 -> B2B
+   - D10-3 -> B2C
+   - D10-4 -> Grands Comptes
+   - D10-5 -> Service achat
+   - D10-6 -> Service Client
 
 **D11**
-   - D11- -> Directeur adjoint
-   - D11- -> Assistant de direction
-   - D11- -> CEO
-   - D11- -> Secrétaire
+   - D11-1 -> Directeur adjoint
+   - D11-2 -> Assistant de direction
+   - D11-3 -> CEO
+   - D11-4 -> Secrétaire
 
 Le chemin complet pour l'utilisateur qui est dans le service communication externe du département communication serait donc : **XTech.green -> PRS -> A/U/O -> D1 -> -1**
 
