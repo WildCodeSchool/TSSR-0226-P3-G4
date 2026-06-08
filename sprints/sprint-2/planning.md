@@ -30,5 +30,14 @@
   - 3 GPO standard 
  
 # 3. Estimation du temps (en heures)
+   - server windows GUI avec le role AD DS => 1H
+   - Arborescence AD DS => 10H
+   - Integration des utilisateur => 5H
+   - mise en place d'un pc administration => 4H
+   - restriction d'accés sur ce pc =>
+   - création d'une zone direct => 2H
+   - Création de plages DHCP => 2H
+  - 7 GPO de sécurité => 2H
+  - 3 GPO standard =>  2H
 
 ## TEMPS TOTAL ESTIMER : 39 H
