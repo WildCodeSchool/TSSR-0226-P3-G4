@@ -166,8 +166,9 @@ Xtech.green
 |-----|------|-------|-----------|-------|
 | XTG-SEC-BlocageRegistre | Sécurité | OU Utilisateurs |||
 | XTG-SEC-WindowsUpdate | Sécurité | OU Utilisateurs |||
-| XTG-SEC-ConfigNavigateur | Sécurité | OU Utilisateurs |||
+| XTG-SEC-VerrouillageCompte | Sécurité | OU Utilisateurs |||
 | XTG-SEC-RestrictionInstallLogiciel | Sécurité | OU Utilisateurs |||
+| XTG-SEC-RestrictionPeripheriquesAmovibles | OU Utilisateurs ||||
 | XTG-SEC-PanneauDeConfig-Block | Sécurité | OU Utilisateurs | Prohibit access to Control Panel and PC Settings->Enabled | Blocage complet du complet de configuration et des paramètres PC |
 | XTG-SEC-WindowsUpdate | Sécurité | OU Ordinateurs | Configure Automatic Upadtes->Enabled | Installation automatique à  3h00, pas de redémarrage forcé, vérification toutes les 22h |
 
@@ -176,5 +177,6 @@ Xtech.green
 | Nom | Type | Cible | Paramètres | Effet |
 |-----|------|-------|------------|-------|
 | XTG-STD-FondEcran | Standard | OU Utilisateurs |||
-
+| XTG-STD-ConfiNavigateur | Standard | OU Utilisateurs ||||
+| XTG-STD-MappageLecteurs | Standard | OU Utilisateurs |||
 
