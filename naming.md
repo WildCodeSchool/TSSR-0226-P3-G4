@@ -15,7 +15,7 @@ Pour les OU nous avons fais le choix d'une hiérarchie à 5 niveaux permettant d
 ### 1.2.4 Les Départements
 Pour offusquer la société et avoir un bon niveau de sécurité nous avons décidé de donné des numeros d'identification pour chaque département.  
 
-**D1** -> Communication  
+**D1** -> Communication 
 **D2** -> Développement  
 **D3** -> Direction Financière  
 **D4** -> Direction Marketing  
@@ -29,11 +29,12 @@ Pour offusquer la société et avoir un bon niveau de sécurité nous avons déc
 ### 1.2.1 Les Services
 Pour les services nous avons reprenons les départements et y ajoutons un - suivi du du numéro de service  
 **D1**
-   - D1-s1 -> Communication externe  
-   - D1-s2 -> Evenementiel  
-   - D1-s3 -> Gestion des réseaux sociaux  
-   - D1-s4 -> Publicité  
-   - D1-s5 -> Relation publique et Presse
+   - D1-s1 -> Communication externe
+   - D1-s2 -> Communication interne  
+   - D1-s3 -> Evenementiel  
+   - D1-s4 -> Gestion des réseaux sociaux  
+   - D1-s5 -> Publicité  
+   - D1-s6 -> Relation publique et Presse
 
 **D2**
    - D2-s1 -> frontend  
