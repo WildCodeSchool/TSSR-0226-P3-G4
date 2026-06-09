@@ -177,8 +177,8 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
 | ADDS DHCP DNS | XTS-411|
-| Stockage | XTS-414 |
-| BackUp | XTS-414 |
+| Stockage | XTS-412 |
+| BackUp | XTS-413 |
 | Messagerie | XTS-414 |
 | Sauvergarde | XTS-415 |
 | Bastion | XTS-416 |
@@ -187,35 +187,35 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
 | Admin Windows | XTA-401 |
-| Admin Linux | XTA-404 |
+| Admin Linux | XTA-402 |
 
 ## 2.3 Nom des routeurs
 Nous avons choisi de nommer les routeurs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
-| Routeur VLAN | XTR-440 |
-| Routeur Messagerie/Sauvegarde | XTR-441 |
-| Routeur Bastion | XTR-444 |
-| Routeur PC-admin | XTR-444 |
+| Routeur VLAN | XTR-420 |
+| Routeur Messagerie/Sauvegarde | XTR-421 |
+| Routeur Bastion | XTR-423 |
+| Routeur PC-admin | XTR-424 |
 
 ## 2.4 Nom des switchs
 Nous avons choisi de nommer les switchs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
-| Switch VLAN 10 | XTSW-440 |
-| Switch VLAN 40 | XTSW-441 |
-| Switch VLAN 40 | XTSW-444 |
-| Switch VLAN 40 | XTSW-444 |
-| Switch VLAN 50 | XTSX-444 |
-| Switch VLAN 60 | XTSW-445 |
-| Switch VLAN 70 | XTSW-446 |
-| Switch VLAN 80 | XTSW-447 |
-| Switch VLAN 90 | XTSW-448 |
-| Switch VLAN 100 | XTSW-449 |
+| Switch VLAN 10 | XTSW-430 |
+| Switch VLAN 40 | XTSW-431 |
+| Switch VLAN 40 | XTSW-434 |
+| Switch VLAN 40 | XTSW-434 |
+| Switch VLAN 50 | XTSX-434 |
+| Switch VLAN 60 | XTSW-435 |
+| Switch VLAN 70 | XTSW-436 |
+| Switch VLAN 80 | XTSW-437 |
+| Switch VLAN 90 | XTSW-438 |
+| Switch VLAN 100 | XTSW-439 |
 | Switch VLAN 110 | XTSW-440 |
 | Switch VLAN 400 | XTSW-441 |
-| Switch VLAN 410 | XTSW-444 |
-| Switch VLAN 440 | XTSW-444 |
+| Switch VLAN 410 | XTSW-442 |
+| Switch VLAN 440 | XTSW-443 |
 | Switch L4 VLAN 10-40-40 | XTSL-444 |
 | Switch L4 VLAN 40-50-60 | XTSL-445 |
 | Switch L4 VLAN 70-...-110| XTSL-446 |
