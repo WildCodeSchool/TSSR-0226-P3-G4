@@ -41,6 +41,7 @@ Pour les services nous avons reprenons les départements et y ajoutons un - suiv
    - D2-s2 -> backend  
    - D2-s3 -> Recherche et prototype  
    - D2-s4 -> Analyse et conception
+   - D2-s5 -> Tests et qualité
  
 **D3**
    - D3-s1 -> Controle de gestion
