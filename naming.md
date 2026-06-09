@@ -78,12 +78,13 @@ Pour les services nous avons reprenons les départements et y ajoutons un - suiv
    - D9-s2 -> Contrats
 
 **D10**
-   - D10-s1 -> ADV
-   - D10-s2 -> B2B
-   - D10-s3 -> B2C
-   - D10-s4 -> Grands Comptes
-   - D10-s5 -> Service achat
-   - D10-s6 -> Service Client
+   - D10-s1 -> ADV  
+   - D10-s2 -> B2B  
+   - D10-s3 -> B2C  
+   - D10-s4 -> Développement internationnal  
+   - D10-s5 -> Grands Comptes  
+   - D10-s6 -> Service achat  
+   - D10-s7 -> Service Client  
 
 **D11**
    - D11-s1 -> Directeur adjoint
