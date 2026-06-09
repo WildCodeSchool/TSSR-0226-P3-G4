@@ -111,10 +111,10 @@ exemple :`XTA0-jmachado`
 **Tiering 1 : Gestion de base de donnée**  
 exemple :`XTA1-jmachado`
 
-**Tiering 4 : Support Helpdesk**  
+**Tiering 2 : Support Helpdesk**  
 exemple :`XTA4-jmachado`
 
-**Tiering 1 : Gestion du SRV-CORE**  
+**Tiering 3 : Gestion du SRV-CORE**  
 exemple :`XTA1-jmachado`
 
 **Tiering 4 : Gestion du CT-Debian**  
