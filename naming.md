@@ -29,65 +29,65 @@ Pour offusquer la société et avoir un bon niveau de sécurité nous avons déc
 ### 1.2.1 Les Services
 Pour les services nous avons reprenons les départements et y ajoutons un - suivi du du numéro de service  
 **D1**
-   - D1-1 -> Communication externe  
-   - D1-2 -> Evenementiel  
-   - D1-3 -> Gestion des réseaux sociaux  
-   - D1-4 -> Publicité  
-   - D1-5 -> Relation publique et Presse
+   - D1-s1 -> Communication externe  
+   - D1-s2 -> Evenementiel  
+   - D1-s3 -> Gestion des réseaux sociaux  
+   - D1-s4 -> Publicité  
+   - D1-s5 -> Relation publique et Presse
 
 **D2**
-   - D2-1 -> frontend  
-   - D2-2 -> backend  
-   - D2-3 -> Recherche et prototype  
-   - D2-4 -> Analyse et conception
+   - D2-s1 -> frontend  
+   - D2-s2 -> backend  
+   - D2-s3 -> Recherche et prototype  
+   - D2-s4 -> Analyse et conception
  
 **D3**
-   - D3-1 -> Controle de gestion
-   - D3-2 -> Finance
-   - D3-3 -> Comptabilité
+   - D3-s1 -> Controle de gestion
+   - D3-s2 -> Finance
+   - D3-s3 -> Comptabilité
 
 **D4**
-   - D4-1 -> Digital
-   - D4-2 -> Operationnel
-   - D4-3 -> Produit
-   - D4-4 -> Strategique
+   - D4-s1 -> Digital
+   - D4-s2 -> Operationnel
+   - D4-s3 -> Produit
+   - D4-s4 -> Strategique
 
 **D5**
-   - D5-1 -> Data
-   - D5-2 -> Dev logiciel
-   - D5-3 -> Support
+   - D5-s1 -> Data
+   - D5-s2 -> Dev logiciel
+   - D5-s3 -> Support
 
 **D6**
-   - D6-1 -> Innovation et Stratégie
-   - D6-2 -> Laboratoire
+   - D6-s1 -> Innovation et Stratégie
+   - D6-s2 -> Laboratoire
 
 **D7**
-   - D7-1 -> Formation
-   - D7-2 -> Gestion des performances
-   - D7-3 -> Recrutement
-   - D7-4 -> Santé et sécurité au travail
+   - D7-s1 -> Formation
+   - D7-s2 -> Gestion des performances
+   - D7-s3 -> Recrutement
+   - D7-s4 -> Santé et sécurité au travail
 
 **D8**
-   - D8-1 -> Logistique
-   - D8-2 -> Gestion Immobilière
+   - D8-s1 -> Logistique
+   - D8-s2 -> Gestion Immobilière
 
 **D9**
-   - D9-1 -> Contentieux
-   - D9-2 -> Contrats
+   - D9-s1 -> Contentieux
+   - D9-s2 -> Contrats
 
 **D10**
-   - D10-1 -> ADV
-   - D10-2 -> B2B
-   - D10-3 -> B2C
-   - D10-4 -> Grands Comptes
-   - D10-5 -> Service achat
-   - D10-6 -> Service Client
+   - D10-s1 -> ADV
+   - D10-s2 -> B2B
+   - D10-s3 -> B2C
+   - D10-s4 -> Grands Comptes
+   - D10-s5 -> Service achat
+   - D10-s6 -> Service Client
 
 **D11**
-   - D11-1 -> Directeur adjoint
-   - D11-2 -> Assistant de direction
-   - D11-3 -> CEO
-   - D11-4 -> Secrétaire
+   - D11-s1 -> Directeur adjoint
+   - D11-s2 -> Assistant de direction
+   - D11-s3 -> CEO
+   - D11-s4 -> Secrétaire
 
 Le chemin complet pour l'utilisateur qui est dans le service communication externe du département communication serait donc : 
 **XTech.green -> PRS -> A/U/O -> D1 -> -1**
