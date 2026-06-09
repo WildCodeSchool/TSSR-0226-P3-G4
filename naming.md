@@ -9,7 +9,7 @@ Pour les OU nous avons fais le choix d'une hiérarchie à 5 niveaux permettant d
 **Niveau 1** : Nom de l'AD -> Xtech.green  
 **Niveau 2** : Le site -> Paris  
 **Niveau 3** : Les objets -> Administration ; Utilisateurs ; Ordinateurs  
-**Niveau 4** : Département dans U et O -> UD1-...-UD11 pour les utilisateurs et OD1-...-OD11 pour les ordinateurs  
+**Niveau 4** : Département dans l'OU correspondante -> UD1-...-UD11 pour les utilisateurs et OD1-...-OD11 pour les ordinateurs  
 **Niveau 5** : Service dans les départements -> U1-1 U étant le département et le -1 le service  
 
 ### 1.2.4 Les Départements
