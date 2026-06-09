@@ -15,7 +15,7 @@ Pour les OU nous avons fais le choix d'une hiérarchie à 5 niveaux permettant d
 ### 1.2.4 Les Départements
 Pour offusquer la société et avoir un bon niveau de sécurité nous avons décidé de donné des numeros d'identification pour chaque département.  
 
-**D1** -> Communication 
+**D1** -> Communication  
 **D2** -> Développement  
 **D3** -> Direction Financière  
 **D4** -> Direction Marketing  
