@@ -10,7 +10,7 @@ Pour les OU nous avons fais le choix d'une hiérarchie à 5 niveaux permettant d
 **Niveau 2** : Le site -> Paris  
 **Niveau 3** : Les objets -> Administration ; Utilisateurs ; Ordinateurs  
 **Niveau 4** : Département dans l'OU correspondante -> D1-...-D11 pour les utilisateurs et D1-...-D11 pour les ordinateurs  
-**Niveau 5** : Service dans les départements -> U1-1 U étant le département et le -1 le service  
+**Niveau 5** : Service dans les départements -> s1-...-s11  
 
 ### 1.2.4 Les Départements
 Pour offusquer la société et avoir un bon niveau de sécurité nous avons décidé de donné des numeros d'identification pour chaque département.  
