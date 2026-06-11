@@ -134,8 +134,8 @@ Convention :
 | Élément | Description |
 |-------|------------|
 | G | Groupe Active Directory |
-| TYPE | Type de groupe (SEC=sécurité)/(DIS=Distribution) |
-| ETENDUE | (G=Global)(U=Universel)(LDG=Localdedomaine) |
+| TYPE | Type de groupe (SE=sécurité)/(DI=Distribution) |
+| ETENDUE | (GL=Global)(UN=Universel)(LO=Localdedomaine) |
 | CIBLE | departement |
 | ROLE | Fonction |
 
