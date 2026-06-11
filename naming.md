@@ -140,8 +140,8 @@ Convention :
 | ROLE | Fonction |
 
 `exemple :
-GDIS-GPUB-USER
-GSEC-GBE-ADMINS`
+GDI-GLD1-USER
+GSE-UND1-ADMINS`
 
 ```
 Xtech.green
