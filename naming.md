@@ -92,7 +92,7 @@ Pour les services nous avons reprenons les départements et y ajoutons un - suiv
    - D11-s3 -> CEO
    - D11-s4 -> Secrétaire
 
-Chemin complet pour un le service communication externe du département communication sera donc : `**XTech.green -> PRS -> A/U/O -> D1 -> s1**`  
+Chemin complet pour un le service communication externe du département communication sera: `**XTech.green -> PRS -> A/U/O -> D1 -> s1**`  
   
 Exemple pour l'OU Communication externe utilisateur: `PRS-UD1-s1`  
   
