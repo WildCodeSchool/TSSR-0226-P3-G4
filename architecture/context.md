@@ -6,7 +6,7 @@
 - [5. Public cible](#5-public-cible)
 # 1. Contexte 
 ## contexte du projet :
-nous sommes une société prestataire de services mandatée par la société XenTech. Avec pour objectif final de mettre en place une nouvelle infrastructure réseau , afin de préparer au mieux les partenariat qui pourrait probablement aboutir dans les prochains mois   
+Nous sommes une société prestataire de services mandatée par la société XenTech. Avec pour objectif final de mettre en place une nouvelle infrastructure réseau , afin de préparer au mieux les partenariat qui pourrait probablement aboutir dans les prochains mois   
 
 
 # 2. Présentation de l'entreprise
