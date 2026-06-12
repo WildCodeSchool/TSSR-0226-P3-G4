@@ -1,3 +1,8 @@
+## Le parc informatique de Xentech dispose actuellement de :  
+1 PC-ADMIN, 7 SRV, 5 PC-CLIENT, 1 ROUTEUR, 1 PARE-FEU
+
+----------
+
 PC-ADMIN XTA-403
 - IP : 172.16.40.2/24
 - DG : 172.16.40.254
@@ -28,4 +33,16 @@ SRV-BKP (Linux) XTS-418
 
  SRV-BKP (Windows) XTS-419
  - IP : 172.16.40.19/24
- - DG : 172.16.40.254 
+ - DG : 172.16.40.254
+
+PC-CLIENT (Windows) XT-1-001
+- IP : DHCP
+- DG : 172.16.40.254
+- DNS : 172.16.40.3
+
+ROUTEUR (Vyos) XTR-423
+- (g0/0) : 
+- (g0/1) :
+
+PARE-FEU (pfSense) 
+- DG : 172.16.40.254
