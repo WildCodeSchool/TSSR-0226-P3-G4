@@ -103,11 +103,9 @@ Exemple pour l'OU Communication externe ordinateur: `PRS-OD1-s1`
 Les comptes standards sont utilisés pour les tâches classiques (bureautique,...).
 Pour la nommenclature nous avons choisi le Format :  
 <initialenom><prenom>
-- en minuscules  
-**exemple** `jmachado`  
+- en minuscules **exemple** `jmachado`  
 
-En cas d’homonymie : <initialenom>.<prenom><X> (X = chiffre incrémental)  
-**exemple** : `jmachado1`
+En cas d’homonymie : <initialenom><prenom><X> (X = chiffre incrémental) **exemple** : `jmachado1`
 ### 1.3.4 Comptes Administrateurs
 Pour pouvoir garantir un certain niveau de sécurité nous devons respecter le principe du moindre privilège et masquer les comptes critiques, nous utilisons le code neutre XTA (PC administrateurs) suivi du chiffre du niveau de sécurité du compte.
 
