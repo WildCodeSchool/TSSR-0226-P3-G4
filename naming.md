@@ -94,12 +94,12 @@ Pour les services nous avons reprenons les départements et y ajoutons un - suiv
 
 Le chemin complet pour l'utilisateur qui est dans le service communication externe du département communication serait donc : 
 `
-**XTech.green -> PRS -> A/U/O -> D1 -> s1**
+**XTech.green -> PRS -> A/U/O -> D1 -> s1**  
 `
-Exemple pour l'OU Communication externe utilisateur:
+Exemple pour l'OU Communication externe utilisateur:  
 `PRS-UD1-s1`  
-Exemple pour l'OU Communication externe ordinateur:
-`PRS-OD1-s1`
+Exemple pour l'OU Communication externe ordinateur:  
+`PRS-OD1-s1`  
 
 ## 1.3 Nom des utilisateurs
 ### 1.3.1 Comptes Utilisateur Standard
