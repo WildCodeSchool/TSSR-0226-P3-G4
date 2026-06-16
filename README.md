@@ -40,9 +40,20 @@ Mettre en place un stockage centralisé couplé à une stratégie de sauvegarde 
 
 # 4. Vue d'ensemble des composants
 
+Le projet d'infrastructure réseau sera composé des technologies suivantes :
+
+**Hyperviseur** : Proxmox VE pour la virtualisation des serveurs et postes clients.
+**Pare-feu** : PfSense pour le filtrage et la segmentation des flux.
+**Serveurs** : Windows Server 2022 (Standard et Core) et serveurs Linux Debian.
+**Postes Clients** : Postes de travail sous Windows 10/11 et Ubuntu.
 
 # 5. Services déployés
+Les services principaux qui seront deployés sont :
 
+**Gestion d'identité** : Active Directory Domain Services (ADDS).
+**Services réseau** : DNS (Domain Name System) et DHCP (Dynamic Host Configuration Protocol).
+**Fichiers** : Serveurs de fichiers sécurisés.
+**Maintenance** : Solution de sauvegarde, restauration et outils de supervision.
 
 # 6. Retrouver notre documentation ici
 ### **Architecture** (HLD) 
