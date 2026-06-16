@@ -70,33 +70,33 @@ Pour les services nous avons reprenons les départements et y ajoutons un - suiv
    - D07-s04 -> Santé et sécurité au travail
 
 **D8**
-   - D8-s1 -> Logistique
-   - D8-s2 -> Gestion Immobilière
+   - D08-s01 -> Logistique
+   - D08-s02 -> Gestion Immobilière
 
 **D9**
-   - D9-s1 -> Contentieux
-   - D9-s2 -> Contrats
+   - D09-s01 -> Contentieux
+   - D09-s02 -> Contrats
 
 **D10**
-   - D10-s1 -> ADV  
-   - D10-s2 -> B2B  
-   - D10-s3 -> B2C  
-   - D10-s4 -> Développement internationnal  
-   - D10-s5 -> Grands Comptes  
-   - D10-s6 -> Service achat  
-   - D10-s7 -> Service Client  
+   - D10-s01 -> ADV  
+   - D10-s02 -> B2B  
+   - D10-s03 -> B2C  
+   - D10-s04 -> Développement internationnal  
+   - D10-s05 -> Grands Comptes  
+   - D10-s06 -> Service achat  
+   - D10-s07 -> Service Client  
 
 **D11**
-   - D11-s1 -> Directeur adjoint
-   - D11-s2 -> Assistant de direction
-   - D11-s3 -> CEO
-   - D11-s4 -> Secrétaire
+   - D11-s01 -> Directeur adjoint
+   - D11-s02 -> Assistant de direction
+   - D11-s03 -> CEO
+   - D11-s04 -> Secrétaire
 
-Chemin complet pour le service communication externe du département communication sera: `**XTech.green -> PRS -> A/U/O -> D1 -> s1**`  
+Chemin complet pour le service communication externe du département communication sera: `**XTech.green -> PRS -> A/U/O -> D01 -> s01**`  
   
-Exemple pour l'OU Communication externe utilisateur: `PRS-UD1-s1`  
+Exemple pour l'OU Communication externe utilisateur: `PRS-UD01-s01`  
   
-Exemple pour l'OU Communication externe ordinateur: `PRS-OD1-s1`  
+Exemple pour l'OU Communication externe ordinateur: `PRS-OD01-s01`  
 
 ## 1.3 Nom des utilisateurs
 ### 1.3.1 Comptes Utilisateur Standard
@@ -141,8 +141,8 @@ Convention :
 | SERVICE | s1 -> s7 |
 
 `exemple :
-GDI-GLD1-USER
-GSE-UND1-ADMINS`
+GDI-GLUD1-s1
+GSE-GLUD1-s1`
 
 ```
 Xtech.green
