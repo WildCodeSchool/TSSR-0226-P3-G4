@@ -175,37 +175,41 @@ Xtech.green
 
 
 # 2. Nomenclature des matériels
+Nous avons fait le choix du format suivant : 
+- Initiale entreprise : XT (Xentech)
+- Code l'objet
+     - 
 ## 2.1 Nom des serveurs
 Nous avons choisi de nommer les serveurs de la facon suivante :  
 
 | Roles | Nom |
 |----------|-------|
-| ADDS DHCP DNS | XTS-410 |
-| Stockage De Fichiers | XTS-411 |
-| Backup AD Core | XTS-412 |
-| Messagerie | XTS-413 |
-| Sauvergarde Windows Veeam | XTS-414 |
-| Sauvergarde Linux RSync | XTS-415 |
-| Zabbix | XTS-416 |
-| GLPI | XTS-417 |
-| Syslog | XTS-418 |
-| IRedMai | XTS-419 |
+| ADDS DHCP DNS | XTSE-410 |
+| Stockage De Fichiers | XTSE-411 |
+| Backup AD Core | XTSE-412 |
+| Messagerie | XTSE-413 |
+| Sauvergarde Windows Veeam | XTSE-414 |
+| Sauvergarde Linux RSync | XTSE-415 |
+| Zabbix | XTSE-416 |
+| GLPI | XTSE-417 |
+| Syslog | XTSE-418 |
+| IRedMai | XTSE-419 |
 
 
 ## 2.2 Nom des PC d'administration 
 | Roles | Nom |
 |----------|-------|
-| Admin Windows | XTA-401 |
-| Admin Linux | XTA-402 |
+| Admin Windows | XTAD-401 |
+| Admin Linux | XTAD-402 |
 
 ## 2.3 Nom des routeurs
 Nous avons choisi de nommer les routeurs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
-| Routeur VLAN | XTR-420 |
-| Routeur Messagerie/Sauvegarde | XTR-421 |
-| Routeur Bastion | XTR-423 |
-| Routeur PC-admin | XTR-424 |
+| Routeur VLAN | XTRO-420 |
+| Routeur Messagerie/Sauvegarde | XTRO-421 |
+| Routeur Bastion | XTRO-423 |
+| Routeur PC-admin | XTRO-424 |
 
 ## 2.4 Nom des switchs
 Nous avons choisi de nommer les switchs de la facon suivante :
@@ -231,58 +235,8 @@ Nous avons choisi de nommer les switchs de la facon suivante :
 
 # 3. Nomenclature des ordinateurs (VM/CT)
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
-[Entreprise]-[nom du service]-[numérotation]  
-**[XT]-[service]-[001]** 
+[Entreprise]-[département]-[numérotation]  
+**[XT][FI/PO]-[service]-[001]** 
 
-| Département | Service | Nom |
-| :----------- | :----------- | :---- |
-| **D1** | Publicité | XT-s1-001 |
-|  | Communication externe | XT-s2-001 |
-|  | Événementiel | XT-s3-001 |
-|  | Gestion des réseaux sociaux | XT-s4-001 |
-|  | Relation Publique et Presse | XT-s5-001 |
-|  |  |  |
-| **D2** | frontend    | XT-s1-001 |
-|  | backend    | XT-s2-001 |
-|  | Recherche et prototype    | XT-s3-001 |
-|  | Analyse et conception    | XT-s4-001 |
-|  |  |  |
-| **D3** | Controle de gestion | XT-s1-001 |
-|  | Finance | XT-s2-001 |
-|  | Comptabilité | XT-s3-001 |
-|  |  |  |
-| **D4** | Digital | XT-s1-001 |
-|  | Operationnel | XT-s2-001 |
-|  | Produit | XT-s3-001 |
-|  | Strategique | XT-s4-001 |
-|  |  |  |
-| **D5** | Data | XT-s1-001 |
-|  | Dev logiciel | XT-s2-001 |
-|  | Support | XT-s3-001 |
-|  |  |  |
-| **D6** | Innovation et Straté-4gie | XT-s1-001 |
-|  | Laboratoire | XT-s2-001 |
-|  |  |  |
-| **D7** | Formation | XT-s1-001 |
-|  | Gestion des performances | XT-s2-001 |
-|  | Recrutement | XT-s3-001 |
-|  | Santé et sécurité au travail | XT-s4-001 |
-|  |  |  |
-| **D8** | Logistique | XT-s1-001 |
-|  | Gestion Immobilière | XT-s2-001 |
-|  |  |  |
-| **D9** | Contentieux | XT-s1-001 |
-|  | Contrats | XT-s2-001 |
-|  |  |  |
-| **D10** | ADV | XT-s1-001 |
-|  | B4B | XT-s2-001 |
-|  | B4C | XT-s3-001 |
-|  | Grands Comptes | XT-s4-001 |
-|  | Service achat | XT-s5-001 |
-|  | Service Client | XT-s6-001 |
-|  |  |  |
-| **D11** | Directeur adjoint | XT-s1-001 |
-|  | Assistant de direction | XT-s2-001 |
-|  | CEO | XT-s3-001 |
-|  | Secrétaire | XT-s4-001 |
-
+Exemple pour un ordinateurs fixe se situant dans le département communication : XTFI-OD1-001
+Autres exemple avec un ordinatuers cette fois ci portable se situant dans le departement communication : XTPO-OD1-001
