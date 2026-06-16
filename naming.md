@@ -29,45 +29,45 @@ Pour offusquer la société et avoir un bon niveau de sécurité nous avons déc
 ### 1.2.1 Les Services
 Pour les services nous avons reprenons les départements et y ajoutons un - suivi du du numéro de service  
 **D1**
-   - D1-s1 -> Communication externe
-   - D1-s2 -> Communication interne  
-   - D1-s3 -> Evenementiel  
-   - D1-s4 -> Gestion des réseaux sociaux  
-   - D1-s5 -> Publicité  
-   - D1-s6 -> Relation publique et Presse
+   - D01-s01 -> Communication externe
+   - D01-s02 -> Communication interne  
+   - D01-s03 -> Evenementiel  
+   - D01-s04 -> Gestion des réseaux sociaux  
+   - D01-s05 -> Publicité  
+   - D01-s06 -> Relation publique et Presse
 
 **D2**
-   - D2-s1 -> frontend  
-   - D2-s2 -> backend  
-   - D2-s3 -> Recherche et prototype  
-   - D2-s4 -> Analyse et conception
-   - D2-s5 -> Tests et qualité
+   - D02-s01 -> frontend  
+   - D02-s02 -> backend  
+   - D02-s03 -> Recherche et prototype  
+   - D0-s04 -> Analyse et conception
+   - D02-s05 -> Tests et qualité
  
 **D3**
-   - D3-s1 -> Controle de gestion
-   - D3-s2 -> Finance
-   - D3-s3 -> Comptabilité
+   - D03-s01 -> Controle de gestion
+   - D03-s02 -> Finance
+   - D03-s03 -> Comptabilité
 
 **D4**
-   - D4-s1 -> Digital
-   - D4-s2 -> Operationnel
-   - D4-s3 -> Produit
-   - D4-s4 -> Strategique
+   - D04-s01 -> Digital
+   - D04-s02 -> Operationnel
+   - D04-s03 -> Produit
+   - D04-s04 -> Strategique
 
 **D5**
-   - D5-s1 -> Data
-   - D5-s2 -> Dev logiciel
-   - D5-s3 -> Support
+   - D05-s01 -> Data
+   - D05-s02 -> Dev logiciel
+   - D05-s03 -> Support
 
 **D6**
-   - D6-s1 -> Innovation et Stratégie
-   - D6-s2 -> Laboratoire
+   - D06-s01 -> Innovation et Stratégie
+   - D06-s02 -> Laboratoire
 
 **D7**
-   - D7-s1 -> Formation
-   - D7-s2 -> Gestion des performances
-   - D7-s3 -> Recrutement
-   - D7-s4 -> Santé et sécurité au travail
+   - D07-s01 -> Formation
+   - D07-s02 -> Gestion des performances
+   - D07-s03 -> Recrutement
+   - D07-s04 -> Santé et sécurité au travail
 
 **D8**
    - D8-s1 -> Logistique
@@ -137,8 +137,8 @@ Convention :
 | G | Groupe Active Directory |
 | TYPE | Type de groupe (SE=sécurité)/(DI=Distribution) |
 | ETENDUE | (GL=Global)(UN=Universel)(LO=Localdedomaine) |
-| CIBLE | departement |
-| ROLE | Fonction |
+| DEPARTEMENT | D1 -> D11 |
+| SERVICE | s1 -> s7 |
 
 `exemple :
 GDI-GLD1-USER
