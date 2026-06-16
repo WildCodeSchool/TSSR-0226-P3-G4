@@ -1,9 +1,23 @@
+1.  [**Active Directory**](#1.-Active-Directory)
+   1.1  [**## 1.1 Nom de domaine**](##1.1-Nom-de-domaine)
+   1.2  [**## 1.2 Nom des Unités d'Organisation**](##1.2-Nom-des-Unités-d'Organisation)
+   1.3  [**### 1.3 Les Départements**](###1.3-Les-Départements)
+   1.4  [**### 1.4 Les Services**](###-1.4-Les-Services)
+   1.5  [**## 1.5 Nom des utilisateurs**](##1.5-Nom-des-utilisateurs)
+   1.6  [**## 1.6 Nom des GPO**](##1.6-Nom-des-GPO)
+2.  [**Nomenclature des matériels**](#2.-Nomenclature-des-matériels)
+   2.1  [**## 2.1 Nom des serveurs**](##2.1-Nom-des-serveurs)
+   2.2  [**## 2.2 Nom des PC d'administration**](##2.2-Nom-des-PC-d'administration)
+   2.3  [**## 2.3 Nom des routeurs**](##-2.3-Nom-des-routeurs)
+   2.4  [**## 2.4 Nom des switchs**](##-2.4-Nom-des-switchs)
+3.  [**Nomenclature des ordinateurs (VM/CT)**](#3.-Nomenclature-des-ordinateurs (VM/CT))
+
 # 1. Active Directory
 ## 1.1 Nom de domaine
 Notre nom de domaine sera : **Xtech.green**
 Le NetBIOS est : XTECH
 ## 1.2 Nom des Unités d'Organisation
-### 1.2.1 Structure arborescence OU
+### Structure arborescence OU
 Pour les OU nous avons fais le choix d'une hiérarchie à 5 niveaux permettant de classer les objets par société, site, type et département et service.
 
 **Niveau 1** : Nom de l'AD -> Xtech.green  
@@ -12,7 +26,7 @@ Pour les OU nous avons fais le choix d'une hiérarchie à 5 niveaux permettant d
 **Niveau 4** : Département dans l'OU correspondante -> D1-...-D11 pour les utilisateurs et D1-...-D11 pour les ordinateurs  
 **Niveau 5** : Service dans les départements -> s1-...-s11  
 
-### 1.2.4 Les Départements
+### 1.3 Les Départements
 Pour offusquer la société et avoir un bon niveau de sécurité nous avons décidé de donné des numeros d'identification pour chaque département.  
 
 **D1** -> Communication  
@@ -27,7 +41,7 @@ Pour offusquer la société et avoir un bon niveau de sécurité nous avons déc
 **D10** -> Ventes et Développement Commercial   
 **D11** -> Direction Générale
 
-### 1.2.1 Les Services
+### 1.4 Les Services
 Pour les services nous avons reprenons les départements et y ajoutons un - suivi du du numéro de service  
 **D1**
    - D01-s01 -> Communication externe
@@ -99,15 +113,15 @@ Exemple pour l'OU Communication externe utilisateur: `PRS-UD01-s01`
   
 Exemple pour l'OU Communication externe ordinateur: `PRS-OD01-s01`  
 
-## 1.3 Nom des utilisateurs
-### 1.3.1 Comptes Utilisateur Standard
+## 1.5 Nom des utilisateurs
+### 1.5.1 Comptes Utilisateur Standard
 Les comptes standards sont utilisés pour les tâches classiques (bureautique,...).
 Pour la nommenclature nous avons choisi le Format :  
 <initialenom><prenom>
 - en minuscules **exemple** `jmachado`  
 
 En cas d’homonymie : <initialenom><prenom><X> (X = chiffre incrémental) **exemple** : `jmachado1`
-### 1.3.4 Comptes Administrateurs
+### 1.5.2 Comptes Administrateurs
 Pour pouvoir garantir un certain niveau de sécurité nous devons respecter le principe du moindre privilège et masquer les comptes critiques, nous utilisons le code neutre XTA (PC administrateurs) suivi du chiffre du niveau de sécurité du compte.
 
 **Tiering 0 : Gestion de L'ADDS DNS DHCP**  
@@ -153,8 +167,8 @@ Xtech.green
    ├── Département (ex:RH)
          └── Service (ex:Formation)
 ```
-## 1.5 Nom des GPO
-### 1.5.1 GPO de Sécurité
+## 1.6 Nom des GPO
+### 1.6.1 GPO de Sécurité
 | Nom | Type | Cible | Paramètre | Effet |
 |-----|------|-------|-----------|-------|
 | XTG-SEC-BlocageRegistre | Sécurité | OU Utilisateurs |||
@@ -165,7 +179,7 @@ Xtech.green
 | XTG-SEC-PanneauDeConfig-Block | Sécurité | OU Utilisateurs | Prohibit access to Control Panel and PC Settings->Enabled | Blocage complet du complet de configuration et des paramètres PC |
 | XTG-SEC-WindowsUpdate | Sécurité | OU Ordinateurs | Configure Automatic Upadtes->Enabled | Installation automatique à  3h00, pas de redémarrage forcé, vérification toutes les 22h |
 
-### 1.5.2 GPO Stantard 
+### 1.6.2 GPO Stantard 
 | Nom | Type | Cible | Paramètres | Effet |
 |-----|------|-------|------------|-------|
 | XTG-STD-FondEcran | Standard | OU Utilisateurs |||
