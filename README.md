@@ -1,6 +1,6 @@
-# Projet 3 – Construction d’une infrastructure réseau
 ![Schéma](architecture/ressources/Schéma_FossFlow_Readmemd.png)
-# Projet 3 – Construction d’une infrastructure réseau
+# Projet 3 – Construction d’une infrastructure réseau  
+
 # Sommaire
 
 1.  [**Notre projet**](#1-Notre-projet)
