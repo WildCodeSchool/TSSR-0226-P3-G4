@@ -177,8 +177,14 @@ Xtech.green
 # 2. Nomenclature des matériels
 Nous avons fait le choix du format suivant : 
 - Initiale entreprise : XT (Xentech)
-- Code l'objet
-     - 
+- Code l'objet AD
+     - Serveur : SE
+     - PC Administration : AD
+     - Routeur : RO
+     - Switch : SW
+     - PC
+          - Fixe : FI
+          - Portable :PO
 ## 2.1 Nom des serveurs
 Nous avons choisi de nommer les serveurs de la facon suivante :  
 
@@ -236,7 +242,9 @@ Nous avons choisi de nommer les switchs de la facon suivante :
 # 3. Nomenclature des ordinateurs (VM/CT)
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
 [Entreprise]-[département]-[numérotation]  
-**[XT][FI/PO]-[service]-[001]** 
+**[XT][FI/PO]-[OD1-...-OD11]-[001]**
 
-Exemple pour un ordinateurs fixe se situant dans le département communication : XTFI-OD1-001
-Autres exemple avec un ordinatuers cette fois ci portable se situant dans le departement communication : XTPO-OD1-001
+Exemple pour un **ordinateur fixe** se situant dans le département **communication** : 
+`XTFI-OD1-001`
+Exemple avec un **ordinatuer portable** se situant dans le departement **communication** : 
+`XTPO-OD1-001`
