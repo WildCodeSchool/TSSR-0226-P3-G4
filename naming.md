@@ -1,7 +1,7 @@
 # 1. Active Directory
 ## 1.1 Nom de domaine
-Notre nom de domaine sera :
-### **Xtech.green**
+Notre nom de domaine sera : **Xtech.green**
+Le NetBIOS est : XTECH
 ## 1.2 Nom des Unités d'Organisation
 ### 1.2.1 Structure arborescence OU
 Pour les OU nous avons fais le choix d'une hiérarchie à 5 niveaux permettant de classer les objets par société, site, type et département et service.
@@ -26,6 +26,7 @@ Pour offusquer la société et avoir un bon niveau de sécurité nous avons déc
 **D9** -> Service Juridique  
 **D10** -> Ventes et Développement Commercial   
 **D11** -> Direction Générale
+
 ### 1.2.1 Les Services
 Pour les services nous avons reprenons les départements et y ajoutons un - suivi du du numéro de service  
 **D1**
