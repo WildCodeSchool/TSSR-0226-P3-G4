@@ -180,12 +180,17 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 
 | Roles | Nom |
 |----------|-------|
-| ADDS DHCP DNS | XTS-411|
-| Stockage | XTS-412 |
-| BackUp | XTS-413 |
-| Messagerie | XTS-414 |
-| Sauvergarde | XTS-415 |
-| Bastion | XTS-416 |
+| ADDS DHCP DNS | XTS-410 |
+| Stockage De Fichiers | XTS-411 |
+| Backup AD Core | XTS-412 |
+| Messagerie | XTS-413 |
+| Sauvergarde Windows Veeam | XTS-414 |
+| Sauvergarde Linux RSync | XTS-415 |
+| Zabbix | XTS-416 |
+| GLPI | XTS-417 |
+| Syslog | XTS-418 |
+| IRedMai | XTS-419 |
+
 
 ## 2.2 Nom des PC d'administration 
 | Roles | Nom |
