@@ -127,25 +127,11 @@ Pour pouvoir garantir un certain niveau de sécurité nous devons respecter le p
 **Tiering 0 : Gestion de L'ADDS DNS DHCP**  
 exemple :`XTA0-jmachado`
 
-**Tiering 1 : Gestion de base de donnée**  
+**Tiering 1 : Gestion de tous les serveurs d'applications**  
 exemple :`XTA1-jmachado`
 
-**Tiering 2 : Support Helpdesk**  
-exemple :`XTA4-jmachado`
-
-**Tiering 3 : Gestion du SRV-CORE**  
-exemple :`XTA1-jmachado`
-
-**Tiering 4 : Gestion du CT-Debian**  
-exemple :`XTA4-jmachado`
-
-**Tiering 5 : Gestion du SRV-Fichiers**  
-exemple :`XTA5-jmachado`
-
-## 1.4 Nom des groupes
-Pour la nommenclature nous avons choisi :  
-Convention :
-`G-TYPE-ETENDUE-CIBLE-ROLE`
+**Tiering 2 : Gestion des postes clients et imprimantes**  
+exemple :`XTA2-jmachado`
 
 | Élément | Description |
 |-------|------------|
