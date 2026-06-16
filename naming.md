@@ -214,7 +214,7 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | Zabbix | XTSE-416 |
 | GLPI | XTSE-417 |
 | Syslog | XTSE-418 |
-| IRedMai | XTSE-419 |
+| IRedMail | XTSE-419 |
 
 
 ## 2.2 Nom des PC d'administration 
