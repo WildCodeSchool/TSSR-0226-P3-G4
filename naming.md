@@ -177,14 +177,14 @@ Xtech.green
 # 2. Nomenclature des matériels
 Nous avons fait le choix du format suivant : 
 - Initiale entreprise : XT (Xentech)
-- Code l'objet AD
-     - Serveur : SE
-     - PC Administration : AD
-     - Routeur : RO
-     - Switch : SW
+- Code de l'objet AD
+     - Serveur : **SE**
+     - PC Administration : **AD**
+     - Routeur : **RO**
+     - Switch : **SW**
      - PC
-          - Fixe : FI
-          - Portable :PO
+          - Fixe : **FI**
+          - Portable : **PO**
 ## 2.1 Nom des serveurs
 Nous avons choisi de nommer les serveurs de la facon suivante :  
 
