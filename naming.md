@@ -194,13 +194,12 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | ADDS DHCP DNS | XTSE-410 |
 | Stockage De Fichiers | XTSE-411 |
 | Backup AD Core | XTSE-412 |
-| Messagerie | XTSE-413 |
+| IRedMail | XTSE-413 |
 | Sauvergarde Windows Veeam | XTSE-414 |
 | Sauvergarde Linux RSync | XTSE-415 |
 | Zabbix | XTSE-416 |
 | GLPI | XTSE-417 |
 | Syslog | XTSE-418 |
-| IRedMail | XTSE-419 |
 
 
 ## 2.2 Nom des PC d'administration 
