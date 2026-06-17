@@ -245,7 +245,7 @@ Nous avons choisi de nommer les ordinateurs de la facon suivante :
 [Entreprise]-[département]-[numérotation]  
 **[XT][FI/PO]-[OD1-...-OD11]-[001]**
 
-Exemple pour un **ordinateur fixe** se situant dans le département **communication** : 
-`XTFI-OD1-001`
-Exemple avec un **ordinatuer portable** se situant dans le departement **communication** : 
-`XTPO-OD1-001`
+Exemple pour un **ordinateur fixe** se situant dans le département **communication** :   
+`XTFI-OD1-001`  
+Exemple avec un **ordinatuer portable** se situant dans le departement **communication** :  
+`XTPO-OD1-001`  
