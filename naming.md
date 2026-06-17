@@ -10,7 +10,7 @@
    2.2  [**Nom des PC d'administration**](##2.2-Nom-des-PC-d'administration)  
    2.3  [**Nom des routeurs**](##2.3-Nom-des-routeurs)  
    2.4  [**Nom des switchs**](##2.4-Nom-des-switchs)  
-3.  [**Nomenclature des ordinateurs (VM/CT)**](#3-Nomenclature-des-ordinateurs-(VM/CT))  
+3.  [**Nomenclature des ordinateurs**](#3-Nomenclature-des-ordinateurs-(VM/CT))  
 
 # 1. Active Directory
 ## 1.1 Nom de domaine
