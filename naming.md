@@ -194,9 +194,8 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | ADDS DHCP DNS | XTSE-410 |
 | Stockage De Fichiers | XTSE-411 |
 | Backup AD Core | XTSE-412 |
-| PFsense | XTSE-4 |
+| PFsense | XTSE-413 |
 | Sauvergarde Windows Veeam | XTSE-414 |
-| Sauvergarde Linux RSync | XTSE-415 |
 | Zabbix | XTSE-450 |
 | GLPI | XTSE-451 |
 | Syslog | XTSE-452 |
