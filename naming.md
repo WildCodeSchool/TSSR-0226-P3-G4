@@ -194,12 +194,13 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | ADDS DHCP DNS | XTSE-410 |
 | Stockage De Fichiers | XTSE-411 |
 | Backup AD Core | XTSE-412 |
-| IRedMail | XTSE-413 |
+| PFsense | XTSE-4 |
 | Sauvergarde Windows Veeam | XTSE-414 |
 | Sauvergarde Linux RSync | XTSE-415 |
-| Zabbix | XTSE-416 |
-| GLPI | XTSE-417 |
-| Syslog | XTSE-418 |
+| Zabbix | XTSE-450 |
+| GLPI | XTSE-451 |
+| Syslog | XTSE-452 |
+| IRedMail | XTSE-453 |
 
 
 ## 2.2 Nom des PC d'administration 
@@ -222,8 +223,8 @@ Nous avons choisi de nommer les switchs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
 | Switch VLAN 10 | XTSW-430 |
-| Switch VLAN 40 | XTSW-431 |
-| Switch VLAN 40 | XTSW-434 |
+| Switch VLAN 20 | XTSW-431 |
+| Switch VLAN 30 | XTSW-434 |
 | Switch VLAN 40 | XTSW-434 |
 | Switch VLAN 50 | XTSX-434 |
 | Switch VLAN 60 | XTSW-435 |
@@ -232,9 +233,9 @@ Nous avons choisi de nommer les switchs de la facon suivante :
 | Switch VLAN 90 | XTSW-438 |
 | Switch VLAN 100 | XTSW-439 |
 | Switch VLAN 110 | XTSW-440 |
-| Switch VLAN 400 | XTSW-441 |
-| Switch VLAN 410 | XTSW-442 |
-| Switch VLAN 440 | XTSW-443 |
+| Switch VLAN 200 | XTSW-441 |
+| Switch VLAN 210 | XTSW-442 |
+| Switch VLAN 220 | XTSW-443 |
 | Switch L4 VLAN 10-40-40 | XTSL-444 |
 | Switch L4 VLAN 40-50-60 | XTSL-445 |
 | Switch L4 VLAN 70-...-110| XTSL-446 |
