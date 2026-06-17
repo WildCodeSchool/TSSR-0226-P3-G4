@@ -3,12 +3,12 @@
 1. [Rôle du service](#1-Rôle-du-service)
 2. [Position dans l'architecture](#2-Position-dans-l'architecture)
 3. [Prérequis](#3-Prérequis)
-4. Fonctionnalités
-5. Documentation liée
+4. [Fonctionnalités](#4-Fonctionnalités)
+5. 
 # 1. Rôle du service
 Active Directory est le cœur de l'authentification et de la gestion centralisée des identités et des ressources de notre entreprise XENTECH
 
-Il fournit :
+Le service fournit :
 
 Une authentification des utilisateurs et ordinateurs.
 La possibilté de gérer l'architecture de notre entrprise  (comptes, groupes, mots de passe...).
