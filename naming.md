@@ -239,7 +239,7 @@ Nous avons choisi de nommer les switchs de la facon suivante :
 | Switch L4 VLAN 40-50-60 | XTSL-445 |
 | Switch L4 VLAN 70-...-110| XTSL-446 |
 
-# 3. Nomenclature des ordinateurs (VM/CT)
+# 3. Nomenclature des ordinateurs
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
 [Entreprise]-[département]-[numérotation]  
 **[XT][FI/PO]-[OD1-...-OD11]-[001]**
