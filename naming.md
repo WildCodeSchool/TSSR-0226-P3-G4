@@ -206,8 +206,9 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 ## 2.2 Nom des PC d'administration 
 | Roles | Nom |
 |----------|-------|
-| Admin Windows | XTAD-401 |
-| Admin Linux | XTAD-402 |
+| T0 | XTAD-401 |
+| T1 | XTAD-402 |
+| T2 | XTAD-403 |
 
 ## 2.3 Nom des routeurs
 Nous avons choisi de nommer les routeurs de la facon suivante :
@@ -217,28 +218,6 @@ Nous avons choisi de nommer les routeurs de la facon suivante :
 | Routeur Messagerie/Sauvegarde | XTRO-421 |
 | Routeur Bastion | XTRO-423 |
 | Routeur PC-admin | XTRO-424 |
-
-## 2.4 Nom des switchs
-Nous avons choisi de nommer les switchs de la facon suivante :
-| Roles | Nom |
-|----------|-------|
-| Switch VLAN 10 | XTSW-430 |
-| Switch VLAN 20 | XTSW-431 |
-| Switch VLAN 30 | XTSW-434 |
-| Switch VLAN 40 | XTSW-434 |
-| Switch VLAN 50 | XTSX-434 |
-| Switch VLAN 60 | XTSW-435 |
-| Switch VLAN 70 | XTSW-436 |
-| Switch VLAN 80 | XTSW-437 |
-| Switch VLAN 90 | XTSW-438 |
-| Switch VLAN 100 | XTSW-439 |
-| Switch VLAN 110 | XTSW-440 |
-| Switch VLAN 200 | XTSW-441 |
-| Switch VLAN 210 | XTSW-442 |
-| Switch VLAN 220 | XTSW-443 |
-| Switch L4 VLAN 10-40-40 | XTSL-444 |
-| Switch L4 VLAN 40-50-60 | XTSL-445 |
-| Switch L4 VLAN 70-...-110| XTSL-446 |
 
 # 3. Nomenclature des ordinateurs
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
