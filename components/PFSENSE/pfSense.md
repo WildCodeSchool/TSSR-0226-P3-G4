@@ -38,7 +38,8 @@
 
 ------
 
-<img width="1822" height="975" alt="Aliases" src="https://github.com/user-attachments/assets/e7807855-2c63-436e-847b-f938ac10770c" />
+<img width="1434" height="602" alt="IP-MACHINES " src="https://github.com/user-attachments/assets/2bc69ac2-857c-432f-88de-d78b60533658" />
+
 
 
 
