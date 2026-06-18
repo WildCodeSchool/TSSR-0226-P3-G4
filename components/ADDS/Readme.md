@@ -10,16 +10,16 @@ Active Directory est le cœur de l'authentification et de la gestion centralisé
 
 Le service fournit :
 
-- Une authentification des utilisateurs et ordinateurs.
-- La possibilté de gérer l'architecture de notre entrprise  (comptes, groupes, mots de passe...).
-- Une politiques de sécurité (GPO – Group Policy Objects).
-- La résolution de noms interne (DNS intégré).
-- La base referenciel de la plupart des services (fichiers, messagerie, VPN...).
+- Une authentification des utilisateurs et ordinateurs.  
+- La possibilté de gérer l'architecture de notre entrprise  (comptes, groupes, mots de passe...).  
+- Une politiques de sécurité (GPO – Group Policy Objects).  
+- La résolution de noms interne (DNS intégré).  
+- La base referenciel de la plupart des services (fichiers, messagerie, VPN...).  
 
 # 2. Position dans l'architecture
-Serveurs : XTSE-410 (172.16.64.2)  et XTSE-412 (172.16.64.16) VLAN_X avec IP statique.
-Redondance : 2 contrôleurs de domaine. 1 principal Windows Server 2022 et 1 Core en backup
-Site AD : un site principal (Paris) pour le moement avec possibilité d'ajouter des sites distants dans le futur.
+Serveurs : XTSE-410 (172.16.64.2)  et XTSE-412 (172.16.64.16) VLAN_X avec IP statique.  
+Redondance : 2 contrôleurs de domaine. 1 principal Windows Server 2022 et 1 Core en backup.  
+Site AD : un site principal (Paris) pour le moement avec possibilité d'ajouter des sites distants dans le futur.  
 
 # 3. Prérequis
 **Windows Server 2022**
