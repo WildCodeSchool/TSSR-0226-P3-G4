@@ -183,9 +183,7 @@ Nous avons fait le choix du format suivant :
      - PC Administration : **AD**
      - Routeur : **RO**
      - Switch : **SW**
-     - PC
-          - Fixe : **FI**
-          - Portable : **PO**
+     - PC client : **ODx-sx**
 ## 2.1 Nom des serveurs
 Nous avons choisi de nommer les serveurs de la facon suivante :  
 
@@ -223,10 +221,10 @@ Nous avons choisi de nommer les routeurs de la facon suivante :
 
 # 3. Nomenclature des ordinateurs
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
-[Entreprise]-[département]-[numérotation]  
-**[XT][FI/PO]-[OD1-...-OD11]-[001]**
+[Entreprise]-[département]-[service]-[numérotation]  
+**[XT]-[OD1-...-OD11]-[s1-...-s7]-[001]**
 
 Exemple pour un ordinateur **fixe** se situant dans le département **communication** :   
-`XTFI-OD1-001`  
+`XT-OD1-s1-001`  
 Exemple avec un ordinatuer **portable** se situant dans le departement **communication** :  
-`XTPO-OD1-001`  
+`XT-OD1-s1-001`  
