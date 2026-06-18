@@ -18,9 +18,6 @@
 | 70      | JUMP             | `172.16.70.0/24` | `172.16.70.254`    | Jump server                          |
 | 100     | DMZ              | `172.16.71.0/24` | `172.16.71.254`    | WEB externe, iRedMail                |
 | 200     | VPN              | `172.16.72.0/24` | `172.16.72.254`    | Pool télétravail                     |
-| 300     | MGMT             | `172.16.64.0/24` | `172.16.64.254`    | LAN management T0                    |
-| 301     | MGMT             | `172.16.64.0/24` | `172.16.64.254`    | LAN management T1                    |
-| 302     |                  | `172.16.64.254`  | `172.16.64.254`    | LAN management T2                    |
 | 41      | RH               | `172.16.73.0/24` | `172.16.73.254`    | Isolé renforcé                       |
 | 42      | COMMUNICATION    | `172.16.74.0/24` | `172.16.74.254`    | DEPT Standard                        |
 | 43      | COMMERCIAL       | `172.16.75.0/24` | `172.16.75.254`    | DEPT Standard                        |
@@ -37,7 +34,7 @@
 | 300     | MGMT-T0          | `172.16.86.0/24` | `172.16.86.254`    | LAN management T0                    |
 | 301     | MGMT-T1          | `172.16.87.0/24` | `172.16.87.254`    | LAN management T1                    |
 | 302     | MGMT-T2          | `172.16.88.254`  | `172.16.88.254`    | LAN management T2                    |
-| 41      | RH               | `172.16.73.0/24` | `172.16.73.254`    | Isolé renforcé                       |
+
 
 
 **22 réseaux utilisés** sur les 32 disponibles dans le `/19` 
