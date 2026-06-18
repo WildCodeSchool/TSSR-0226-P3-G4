@@ -36,16 +36,16 @@
 
 ### Étape 1 — Reconfigurer le LAN de pfSense (em1)
 
-Dans la **console**, menu principal → option `2` (Set interface IP address) :
+Dans la **console**, menu principal → option `2` (Set interface IP address) :  
 
-Enter the number of the interface you wish to configure: 2 (LAN)
-Configure IPv4 via DHCP? n
-Enter the new LAN IPv4 address: 172.16.64.254
-Subnet bit count: 24
-Upstream gateway: [ENTRÉE, vide]
-IPv6 ? n
-Enable DHCP server on LAN? n
-Revert to HTTP? n
+Enter the number of the interface you wish to configure: 2 (LAN)  
+Configure IPv4 via DHCP? n  
+Enter the new LAN IPv4 address: 172.16.64.254  
+Subnet bit count: 24  
+Upstream gateway: ENTRÉE    
+IPv6 ? n  
+Enable DHCP server on LAN? n  
+Revert to HTTP? n  
 
 ### Étape 2 — Reconnecter ton PC admin
 
