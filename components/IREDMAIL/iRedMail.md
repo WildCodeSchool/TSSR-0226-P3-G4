@@ -27,7 +27,7 @@ Cette règle reste cohérente avec le modèle Bastion → Jump → cible : l'adm
 
 ### A1 — Pré-requis serveur
 
-- VM dédiée en DMZ, `172.16.71.x`
+- VM dédiée en DMZ, `172.16.71.30`
 - Hostname résolvable : `mail.xtech.green`
 - Enregistrements DNS publics nécessaires (gérés en externe ou via votre zone DNS publique) :
   - `A` : `mail.xtech.green` → IP publique NATée vers `172.16.71.x`
