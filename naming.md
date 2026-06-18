@@ -183,7 +183,7 @@ Nous avons fait le choix du format suivant :
      - PC Administration : **AD**
      - Routeur : **RO**
      - Switch : **SW**
-     - PC client : **ODx-sx**
+     - PC client : **ODx-sx** Suivi d'un numero d'identification unique : **00x**
 ## 2.1 Nom des serveurs
 Nous avons choisi de nommer les serveurs de la facon suivante :  
 
