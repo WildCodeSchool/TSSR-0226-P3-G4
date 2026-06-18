@@ -18,22 +18,22 @@ Centraliser **tous** les logs (Linux et Windows) sur un serveur syslog-ng unique
 
 ```
                      ┌─────────────────────────────┐
-                     │   Serveur syslog-ng central   │
+                     │   Serveur syslog-ng central    │
                      │   VLAN 20 - APPS - 172.16.66.x │
                      │   Port 514/UDP + 6514/TCP-TLS  │
                      └───────────────┬─────────────┘
                                      │
         ┌────────────────────────────┼────────────────────────────┐
         │                            │                            │
-┌───────▼────────┐         ┌─────────▼─────────┐        ┌─────────▼─────────┐
-│ WEB-INT (Deb13)  │         │ WEB-EXT (Deb13)     │        │ AD (Win Srv 2022)   │
+┌───────▼────────┐            ┌─────────▼─────────┐           ┌─────────▼─────────┐
+│ WEB-INT (Deb13)   │         │ WEB-EXT (Deb13)      │        │ AD (Win Srv 2022)    │
 │ VLAN 50 (.68.10)  │         │ VLAN 100 (.71.10)    │        │ VLAN 10 (.65.3)      │
-└───────────────────┘         └────────────────────┘        └─────────────────────┘
+└───────────────────┘         └────────────────────┘          └─────────────────────┘
         │                                                            │
-┌───────▼─────────────────┐                              ┌──────────▼───────────┐
-│ Fichiers XTS-417 (Win)    │                              │ Veeam (sauvegarde)     │
-│ VLAN 20 - APPS (.66.x)     │                              │ VLAN 30 - BACKUP (.67.x)│
-└────────────────────────────┘                              └────────────────────────┘
+┌───────▼────────────────   ─┐                              ┌──────────▼───────────    ┐
+│ Fichiers XTS-417 (Win)     │                              │ Veeam (sauvegarde)       │
+│ VLAN 20 - APPS (.66.x)     │                              │ VLAN 30 - BACKUP (.67.x) │
+└────────────────────────────┘                              └────────────────────────  ┘
 ```
 
 Le serveur syslog-ng central est placé sur **VLAN 20 — APPS** (`172.16.66.0/24`, passerelle `172.16.66.254`), conformément au plan d'adressage existant (GLPI, Zabbix, Syslog, CORE sont colocalisés sur ce VLAN).
