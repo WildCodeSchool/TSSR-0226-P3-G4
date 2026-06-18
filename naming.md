@@ -196,6 +196,8 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | Backup AD Core | XTSE-412 |
 | PFsense | XTSE-413 |
 | Sauvergarde Windows Veeam | XTSE-414 |
+| Serveur Interne | XTSE-415 |
+| Serveur Externe | XTSE-416 |
 | Zabbix | XTSE-450 |
 | GLPI | XTSE-451 |
 | Syslog | XTSE-452 |
