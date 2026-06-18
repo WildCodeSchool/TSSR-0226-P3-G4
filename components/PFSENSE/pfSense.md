@@ -28,7 +28,11 @@
 | 52      | DSI              | `172.16.83.0/24` | `172.16.83.254`    | Isolé renforcé                       |
 | 90      | WIFI-ENTREPRISE  | `172.16.84.0/24` | `172.16.84.254`    |                                      |
 | 99      | WIFI-GUEST       | `172.16.85.0/24` | `172.16.85.254`    |                                      |
+
+
 **22 réseaux utilisés** sur les 32 disponibles dans le `/19` 
+
+------
 
 ### Étape 1 — Reconfigurer le LAN de pfSense (em1)
 
