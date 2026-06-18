@@ -165,6 +165,10 @@ Pour CHAQUE interface créée (elles s'appelleront OPT2, OPT3... OPT20), configu
 | 52   | DSI             | `172.16.83.254/24`                                                                                 |
 | 90   | WIFI-ENTREPRISE | `172.16.84.254/24`                                                                                 |
 | 99   | WIFI-GUEST      | `172.16.85.254/24`                                                                                 |
+| 300  | MGMT-T0         | `172.16.86.0/24`                                                                                   |
+| 301  | MGMT-T1         | `172.16.87.0/24`                                                                                   |
+| 302  | MGMT-T2         | `172.16.88.254`                                                                                    |
+
 
 
 
