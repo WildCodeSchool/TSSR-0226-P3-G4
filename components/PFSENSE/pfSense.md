@@ -1,3 +1,7 @@
+#### Cette documentation détaille la configuration complète de l'infrastructure réseau, du plan d'adressage et de la politique de filtrage Zero Trust sur le pare-feu pfSense pour l'entreprise **XTech**.
+
+--------
+
 ## Réseau Xtech : `172.16.64.0/19`
 
 **Plage couverte : `172.16.64.0` → `172.16.95.255` (32 sous-réseaux en `/24` `.64` à `.95`)**
