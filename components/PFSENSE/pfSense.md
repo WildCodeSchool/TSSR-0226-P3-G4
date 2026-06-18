@@ -36,7 +36,7 @@
 
 ### Étape 1 — Reconfigurer le LAN de pfSense (em1)
 
-Dans la **console** de ta VM 449, menu principal → option `2` (Set interface IP address) :
+Dans la **console**, menu principal → option `2` (Set interface IP address) :
 
 Enter the number of the interface you wish to configure: 2 (LAN)
 Configure IPv4 via DHCP? n
