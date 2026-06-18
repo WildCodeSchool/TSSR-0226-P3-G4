@@ -38,6 +38,10 @@
 
 ------
 
+<img width="1822" height="975" alt="Aliases" src="https://github.com/user-attachments/assets/e7807855-2c63-436e-847b-f938ac10770c" />
+
+
+
 ### Étape 1 — Reconfigurer le LAN de pfSense (em1)
 
 Dans la **console**, menu principal → option `2` (Set interface IP address) :  
@@ -120,32 +124,7 @@ Clique sur la nouvelle ligne **OPT1** :
 
 ## PARTIE C — Créer les 19 VLANs
 
-Va dans **Interfaces → VLANs → Add**, répète pour chaque ligne ci-dessous (Parent interface = `em2 (TRUNK)` à chaque fois) :
-
-| VLAN Tag | Description      |
-| -------- | ---------------- |
-| 1        | MGMT             |
-| 10       | AD               |
-| 20       | APPS             |
-| 30       | BACKUP           |
-| 50       | WEB-INT          |
-| 60       | BASTION          |
-| 70       | JUMP             |
-| 100      | DMZ              |
-| 200      | VPN              |
-| 41       | RH               |
-| 42       | COMMUNICATION    |
-| 43       | COMMERCIAL       |
-| 44       | FINANCE          |
-| 45       | MARKETING        |
-| 46       | DEVELOPPEMENT    |
-| 47       | R&D              |
-| 48       | SERVICE GENERAUX |
-| 49       | JURIDIQUE        |
-| 51       | DIRECTION        |
-| 52       | DSI              |
-| 90       | WIFI-ENTREPRISE  |
-| 99       | WIFI-GUEST       |
+**Interfaces → VLANs → Add**, répète pour chaque ligne ci-dessous (Parent interface = `em2 (TRUNK)` à chaque fois) :
 
 
 ## PARTIE D — Assigner chaque VLAN comme interface + IP
@@ -161,7 +140,7 @@ Pour CHAQUE interface créée (elles s'appelleront OPT2, OPT3... OPT20), configu
 
 | VLAN | Description     | IPv4 Address                                                                                       |
 | ---- | --------------- | -------------------------------------------------------------------------------------------------- |
-| 1    | MGMT            | `172.16.64.254/24` /!\ déjà pris par LAN physique — **laisser cette interface VLAN1 désactivée !** |
+| 1    | MGMT            | `172.16.64.254/24`                                                                                 |
 | 10   | AD              | `172.16.65.254/24`                                                                                 |
 | 20   | APPS            | `172.16.66.254/24`                                                                                 |
 | 30   | BACKUP          | `172.16.67.254/24`                                                                                 |
