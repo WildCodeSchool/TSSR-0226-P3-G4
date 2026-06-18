@@ -47,6 +47,8 @@ IPv6 ? n
 Enable DHCP server on LAN? n  
 Revert to HTTP? n  
 
+<img width="998" height="426" alt="pfSense-LAN" src="https://github.com/user-attachments/assets/bcfa4a82-7967-4ca1-b303-a5c2f90c71ab" />
+
 ### Étape 2 — Reconnecter ton PC admin
 
 **Sur Proxmox**, VM 403 → Hardware → Network Device (net0) :
@@ -140,7 +142,7 @@ Va dans **Interfaces → VLANs → Add**, répète pour chaque ligne ci-dessous 
 | 52       | DSI              |
 | 90       | WIFI-ENTREPRISE  |
 | 99       | WIFI-GUEST       |
-22 clics "Add". Une fois fait, **Apply Changes**.
+
 
 ## PARTIE D — Assigner chaque VLAN comme interface + IP
 
@@ -177,6 +179,12 @@ Pour CHAQUE interface créée (elles s'appelleront OPT2, OPT3... OPT20), configu
 | 52   | DSI             | `172.16.83.254/24`                                                                                 |
 | 90   | WIFI-ENTREPRISE | `172.16.84.254/24`                                                                                 |
 | 99   | WIFI-GUEST      | `172.16.85.254/24`                                                                                 |
+
+
+
+<img width="1799" height="1120" alt="VLAN" src="https://github.com/user-attachments/assets/751c612b-2221-479d-8dac-8885e485cea1" />
+
+
 ## PARTIE E — DHCP par VLAN
 
 **Important** : Le VLAN **AD** ne doit **pas** avoir de DHCP pfSense — c'est le serveur AD (`172.16.65.3`) qui doit faire le DHCP. Pour tous les **autres** VLAN, pfSense peut distribuer du DHCP (IP fixes pour les serveurs, DHCP juste pour les VLAN département/postes clients).
@@ -230,6 +238,12 @@ Pour CHAQUE VLAN département (RH, COMMUNICATION, etc.), créer ces règles dans
 - Action: Pass / Source: ce VLAN net / Destination: `any` (WAN) / Port: `80,443,53`
 
 **Règle finale implicite** : tout le reste est bloqué (comportement par défaut pfSense entre interfaces).
+
+
+<img width="1195" height="1010" alt="COMMUNICATION" src="https://github.com/user-attachments/assets/ba846f1a-2ec5-40af-b90b-d5a99679e39a" />
+
+
+
 ### F3 — VLAN AD → Firewall Rules
 
 **Règle 1 — Autoriser réponses vers tous les VLANs clients** (DNS/LDAP/Kerberos retour)
@@ -242,12 +256,20 @@ Pour CHAQUE VLAN département (RH, COMMUNICATION, etc.), créer ces règles dans
 
 **Règle finale** : Deny all vers DMZ, BASTION (sauf retour bastion qu'on configure en F5)
 
+
+<img width="1803" height="988" alt="AD" src="https://github.com/user-attachments/assets/0999e8a1-702d-4437-89a0-eb3af6bbdc58" />
+
+
 ### F4 — VLAN APPS → Firewall Rules
 
 - Pass : Source `172.16.66.0/24` → Destination `172.16.65.3` (AD) port `389,636,53` (sync GLPI/Zabbix vers AD)
 - Pass : Source `172.16.66.0/24` → Destination `172.16.67.0/24` (BACKUP) port `22,3306` (rsync + mysqldump vers BKP)
 - Pass : Source `172.16.66.0/24` → Destination WAN port `80,443` (mises à jour)
 - Deny : tout le reste
+
+
+<img width="1831" height="1005" alt="APPS" src="https://github.com/user-attachments/assets/6d0a6d75-45b6-4f14-8b14-8753f1608fc1" />
+
 
 ### F5 — VLAN BASTION → Firewall Rules (le pivot central)
 
@@ -259,11 +281,18 @@ C'est LE VLAN qui a le droit de parler à tout le LAN pour l'administration :
 - Pass : Source `172.16.69.0/24` → Destination `172.16.70.0/24` (JUMP) port `3389,22`
 - Deny : tout le reste (notamment DMZ — le bastion n'a pas accès direct DMZ)
 
+
+<img width="1704" height="1001" alt="BASTION" src="https://github.com/user-attachments/assets/207668d3-92f8-43eb-8be2-f8fd87591d5e" />
+
+
 ### F6 — VLAN JUMP → Firewall Rules
 
 - Pass : Source `172.16.70.0/24` → Destination `any LAN` port `3389,22` (le jump rebondit vers les serveurs cibles selon le tier admin)
 - Pass : Source `172.16.69.0/24` (BASTION) → Destination `172.16.70.0/24` (JUMP) port `3389,22` (déjà fait en F5, redondant mais explicite ici aussi)
 - Deny : tout le reste
+
+<img width="1801" height="989" alt="JUMP" src="https://github.com/user-attachments/assets/c6ba4dce-c542-4320-b115-6d5909b4cb62" />
+
 
 ### F7 — VLAN DMZ → Firewall Rules (isolation stricte)
 
@@ -272,16 +301,28 @@ C'est LE VLAN qui a le droit de parler à tout le LAN pour l'administration :
 - **Deny explicite** : Source `172.16.71.0/24` → Destination `any LAN` (tout le reste du LAN, RIEN d'autre n'est autorisé)
 - **Deny explicite en haut des règles WAN/LAN** : Source `any WAN` → Destination `LAN nets` (0 accès WAN→LAN, sauf NAT entrant ciblé vers DMZ uniquement, voir F8)
 
+
+<img width="1856" height="967" alt="DMZ" src="https://github.com/user-attachments/assets/e9f3601c-de59-489f-96f1-4562122be081" />
+
+
 ### F8 — WAN → Firewall Rules (entrée depuis Internet)
 
 - Pass (NAT) : Destination `172.16.71.x` (IP publique du WEB externe en DMZ) port `80,443`
 - Pass (NAT) : Destination `172.16.71.x` (IP iRedMail DMZ) port `25,587,443`
 - **Deny All** : tout le reste depuis WAN (donc 0 accès WAN→LAN direct, conforme à ta demande)
 
+
+<img width="1797" height="958" alt="WAN" src="https://github.com/user-attachments/assets/32c71d76-8980-4eb0-b74c-d71a766b7335" />
+
+
 ### F9 — VPN → Firewall Rules (télétravail)
 
 - Pass : Source `172.16.72.0/24` (VPN) → Destination `172.16.70.0/24` (JUMP) port `3389,22` **uniquement**
 - Deny : tout le reste (le télétravailleur doit obligatoirement passer par le Jump, jamais direct vers un serveur)
+
+
+<img width="1826" height="729" alt="VPN" src="https://github.com/user-attachments/assets/b35e93ff-9085-421d-be3c-e9f66af2b946" />
+
 
 ---
 
@@ -329,6 +370,10 @@ Règle 1 à 6 comme un VLAN département classique, puisque ce sont les employé
   `172.16.79.0/24` (R&D), 
   `172.16.80.0/24` (SERVICE GENERAUX), 
   `172.16.74.0/24` (COMMUNICATION)
+
+
+  <img width="1633" height="992" alt="DEPT_STD" src="https://github.com/user-attachments/assets/4a3cdb36-fe97-49e3-b11c-398087efb40a" />
+
 
 Puis sur**chaque VLAN standard** (COMMUNICATION, COMMERCIAL, MARKETING, PRODUCTION, RD, LOGISTIQUE), une règle supplémentaire :
 
