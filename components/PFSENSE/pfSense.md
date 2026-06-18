@@ -36,9 +36,6 @@
 | 302     | MGMT-T2          | `172.16.88.254`  | `172.16.88.254`    | LAN management T2                    |
 
 
-
-**24 réseaux utilisés** sur les 32 disponibles dans le `/19` 
-
 ------
 
 <img width="1822" height="975" alt="Aliases" src="https://github.com/user-attachments/assets/e7807855-2c63-436e-847b-f938ac10770c" />
