@@ -16,15 +16,15 @@
    - Journalisation - gestions des logs
    - messagerie
 # 2. La finalité de ces objectifs à la fin du sprint
-## 
+## Tout les objectifs principales et secondaire ont été réaliser à 100%
 # 3. membre de l'equipe
 
 | Membre   | Rôle       |
 | -------- | ---------- |
-| Minjha  | PO         |
-| Jeremy   | SM         |
-| Mohamed   | tech       |
-| Gregory | tech   |
+| Mohamed  | PO         |
+| Gregory  | SM         |
+| Minjha  | tech       |
+| Jeremy | tech   |
 # 4. problèmes rencontrés
 - documentation
 # 5. décisions techniques
