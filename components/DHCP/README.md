@@ -1,10 +1,12 @@
-## Sommaire
+# Sommaire
 
 1.  [Role du service](#1-Role-du-service)
 2.  [Position dans l'architecture](#2-Position-dans-lrchitecture)
     - [2.1 Serveur Principal](#21-Serveur-Principal)
-    - 
-4.  [Information Technique](#3-Information-Technique)
+    - [2.2 Serveur Backup](#-22-Serveur-Backup)
+3.  [Information Technique](#3-Information-Technique)
+    -[3.1 Pour le Serveur](#-3.1-Pour-le-Serveur)
+    -[3.2 Pour le client](#-3.2-Pour-le-client)
 5.  [Documentation associé](4-Documentation-Associé)
 
 ---
@@ -25,7 +27,7 @@ Son role **principal** est d'assurer la configuration automatique des paramètre
 - Adresse IP : **172.16.64.3**
 - Gateway : **172.16.64.254**
 
-### 2.1 Serveur **Backup** :
+### 2.2 Serveur **Backup** :
 - Nom du serveur CORE (CLI) : **XTSE-412**
 - Adresse IP : **172.16.64.16**
 - Gateway : **172.16.64.254**
@@ -41,7 +43,7 @@ Son role **principal** est d'assurer la configuration automatique des paramètre
 - Options bien définies : passerelle par défaut, DNS, nom de domaine.
 - Pas de conflit : un seul serveur DHCP actif par plage, sinon collisions de baux.
 
-### 3.2 Pour le client
+### 3.2 Pour le client :
 - Carte réseau configurée en mode automatique (DHCP activé), pas en IP fixe sino pas d'ip dynamique.
 - Connectivité physique/logique : câble branché ou Wi-Fi associé, port switch actif.
 - Etre sur le même réseau/VLAN que le serveur, ou alors un relais DHCP présent si le serveur est ailleurs.
