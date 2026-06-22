@@ -1,8 +1,8 @@
 # Sommaire
-[]()
-[]()
-[]()
-[]()
+1. [Role du service](#-1-Role-du-service)
+2. [Prérequis](#-2-Prérequis)
+3. [Informations Techniques](#-3-Informations-Techniques)
+4. [Documentation Associée](#-4-Documentation-Associée)
 
 # 1. Role du service
 **pfSense** est un **pare-feu** (firewall) et un **routeur open source et gratuit**, basé sur le système FreeBSD. Son rôle est de filtrer ce qui entre et sort du réseau pour le protéger, mais il fait bien plus qu'un simple pare-feu : il gère aussi le routage entre réseaux, peut faire serveur DHCP et DNS, monter des VPN (pour se connecter à distance de façon sécurisée), faire du NAT, de la répartition de charge, et s'enrichir de modules (comme un anti-intrusion ou un proxy). Le tout se pilote via une interface web claire, ce qui en fait une solution très répandue pour remplacer un boîtier pare-feu commercial à moindre coût, aussi bien en PME qu'en lab.
