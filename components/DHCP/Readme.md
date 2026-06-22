@@ -18,12 +18,12 @@ Son role **principal** est d'assurer la configuration automatique des paramètre
 ---
 # 2. Position dans l'architecture
 
-Serveur **Principal**: 
+### 2.1 Serveur **Principal**: 
 - Nom du serveur Windows 2022 (GUI): **XTSE-410**
 - Adresse IP : **172.16.64.3**
 - Gateway : **172.16.64.254**
 
-Serveur **Backup** :
+### 2.1 Serveur **Backup** :
 - Nom du serveur CORE (CLI) : **XTSE-412**
 - Adresse IP : **172.16.64.16**
 - Gateway : **172.16.64.254**
