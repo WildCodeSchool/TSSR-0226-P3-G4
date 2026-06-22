@@ -30,7 +30,7 @@ Le role du **DNS** (Domain Name Service) est d'agire comme un **annuraire teleph
 ---
 # 3. Configuration détaillé
 
-Serveur **principal** (GUI): XTSE-410 -> aussi AD et DNS  
-Serveur **backup** (CORE): XTSE-412
+Serveur **principal** (GUI): **XTSE-410**  
+Serveur **backup** (CORE): **XTSE-412**  
 
 # 4. Documentation Associé
