@@ -30,7 +30,14 @@ Le role du **DNS** (Domain Name Service) est d'agire comme un **annuraire teleph
 ---
 # 3. Configuration détaillé
 
-Serveur **principal** (GUI): **XTSE-410**  
-Serveur **backup** (CORE): **XTSE-412**  
+Serveur **principal**: 
+- Nom du serveur Windows 2022 (GUI): **XTSE-410**
+- Adresse IP : **172.16.64.3**
+- Gateway : **172.16.64.254**
+
+Serveur **backup** :
+- Nom du serveur CORE (CLI) : **XTSE-412**
+- Adresse IP : **172.16.64.16**
+- Gateway : **172.16.64.254**
 
 # 4. Documentation Associé
