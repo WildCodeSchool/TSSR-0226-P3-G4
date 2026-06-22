@@ -144,6 +144,9 @@ Sur le CT GLPI, créer le script `/usr/local/bin/backup-glpi.sh` :
 ```bash
 #!/bin/bash
 
+# Duplique l'affichage : à l'écran ET dans le fichier de log
+exec > >(tee -a /var/log/backup_glpi.log) 2>&1
+
 # ==============================================================================
 # SCRIPT DE SAUVEGARDE AUTOMATIQUE GLPI (BASE DE DONNEES + FICHIERS WEB)
 # ==============================================================================
@@ -173,7 +176,8 @@ logger -t BACKUP_GLPI "Sauvegarde terminee avec succes !"
 # Nettoyage local : ne garder que les 7 derniers dumps en local
 find $BACKUP_DIR -name "glpidb_*.sql.gz" -mtime +7 -delete
 ```
-<img width="1880" height="766" alt="glpi-sauvegarde-bdd-vers-BKP" src="https://github.com/user-attachments/assets/c515741c-4f1c-42d1-ace8-adcd14a0a320" />
+<img width="1876" height="862" alt="glpi-script" src="https://github.com/user-attachments/assets/2aa2d20e-c46d-4ce7-84ba-777b6e324529" />
+
 
 
 ```bash
@@ -247,11 +251,16 @@ chmod 750 /mnt/BKP/GLPI
    /root/backup_glpi.sh
    tail -10 /var/log/backup_glpi.log
    ```
+
+   
    → doit afficher deux lignes `[INFO]` (dump réussi + transfert réussi).
 2. Sur le serveur BACKUP, vérifier la présence du fichier :
    ```bash
    ls -la /mnt/BKP/GLPI/
    ```
+
+   <img width="1918" height="203" alt="glpi-preuve-sauvegarde-BKP" src="https://github.com/user-attachments/assets/4c3d6f2a-2724-4cef-af4c-82701c1ed173" />
+
 3. Test de restauration (à faire au moins une fois pour valider que la sauvegarde est exploitable, pas juste présente) :
    ```bash
    gunzip -c /mnt/BKP/GLPI/glpidb_<date>.sql.gz | mysql -u root -p glpidb_test
