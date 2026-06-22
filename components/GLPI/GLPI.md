@@ -252,6 +252,8 @@ chmod 750 /mnt/BKP/GLPI
    tail -10 /var/log/backup_glpi.log
    ```
 
+<img width="1887" height="291" alt="glpi-tail-10" src="https://github.com/user-attachments/assets/57adacd6-ac23-459c-9920-fc2e8bf39893" />
+
    
    → doit afficher deux lignes `[INFO]` (dump réussi + transfert réussi).
 2. Sur le serveur BACKUP, vérifier la présence du fichier :
@@ -265,4 +267,51 @@ chmod 750 /mnt/BKP/GLPI
    ```bash
    gunzip -c /mnt/BKP/GLPI/glpidb_<date>.sql.gz | mysql -u root -p glpidb_test
    ```
+
+### Étape 1 : Se connecter à MySQL
+
+```bash
+mysql -u root -p
+
+```
+
+### Étape 2 : Créer la base de test et quitter
+
+Copie-colle ces lignes dans l'invite MySQL :
+
+```sql
+CREATE DATABASE glpi_test;
+EXIT;
+
+```
+
+### Étape 3 : Lancer le test de restauration
+
+Maintenant, tu peux importer ta sauvegarde dans cette nouvelle base sans toucher à la production :
+
+```bash
+mysql -u root -p glpi_test < /mnt/BKP/GLPI/glpi_backup.sql
+
+```
+
+### Étape 4 : Vérifier que ça a marché
+
+Pour t'assurer que le fichier était exploitable et contient bien tes tables, reconnecte-toi pour voir si les tables sont là :
+
+```bash
+mysql -u root -p -e "SHOW TABLES FROM glpi_test;"
+
+```
+
+Si tu vois la liste de toutes tes tables GLPI s'afficher, **ta sauvegarde est officiellement validée et fonctionnelle !**
+
+### Étape 5 : Nettoyage (Optionnel)
+
+Une fois le test réussi, tu peux supprimer cette base de test pour libérer de l'espace :
+
+```bash
+mysql -u root -p -e "DROP DATABASE glpi_test;"
+
+```
+   
 4. Pour une preuve continue et automatisée (plutôt qu'une vérification manuelle ponctuelle), ce fichier de log `backup_glpi.log` peut être repris par syslog-ng et surveillé depuis Zabbix/PRTG exactement selon la méthode décrite dans le document de journalisation (recherche de la chaîne `[ERROR]` sur les dernières 24h).
