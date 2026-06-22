@@ -13,9 +13,14 @@ Son rôle principal est de permettre :
 - Il permet egalement d'appliquer des règles communes à tout le parc grâce aux stratégies de groupe (GPO) : par exemple imposer un mot de passe complexe, connecter automatiquement un lecteur réseau ou bloquer certaines actions.
 
 # 2. Position dans l'architecture
-- Serveurs :
-     - XTSE-410
-             - (172.16.64.2)  et XTSE-412 (172.16.64.16) VLAN_X avec IP statique.  
+- Serveur Principal (GUI) :
+     - Nom : XTSE-410
+     - Adresse IP : 172.16.64.2/24
+     - Gateway : 172.16.64.254
+- Serveur Secondaire (CORE):
+     - Nom XTSE-412
+     - Adresse IP : 172.16.64.16/24
+     - Gateway : 172.16.64.254
 - Redondance : 2 contrôleurs de domaine. 1 principal Windows Server 2022 et 1 Core en backup.  
 - Site AD : un site principal (Paris) pour le moement avec possibilité d'ajouter des sites distants dans le futur.  
 
@@ -27,9 +32,5 @@ Son rôle principal est de permettre :
 - Le serveur pointant sur lui-même comme serveur DNS préféré.
 - Des ressources suffisantes et un nom de machine correct avant la promotion en contrôleur de domaine.
 - Côté postes clients : être sur le même réseau, avoir le bon serveur DNS renseigné (celui de l'AD) pour pouvoir rejoindre le domaine.
-
-**WindowsCore** Backup
-- Au moins 4 vCPU / 4 Go RAM
-- Stockage : 50 Go minimum
  
 # 4. Fonctionnalités
