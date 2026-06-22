@@ -244,7 +244,7 @@ chmod 750 /mnt/BKP/GLPI
 
 1. Exécuter le script manuellement pour valider son bon fonctionnement avant de compter sur le cron :
    ```bash
-   /usr/local/bin/backup_glpi.sh
+   /root/backup_glpi.sh
    tail -10 /var/log/backup_glpi.log
    ```
    → doit afficher deux lignes `[INFO]` (dump réussi + transfert réussi).
