@@ -1,4 +1,3 @@
-# DHCP
 ## Sommaire
 
 1. [Role du service](#1-Role-du-service)
