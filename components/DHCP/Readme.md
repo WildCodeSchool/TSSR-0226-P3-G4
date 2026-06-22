@@ -29,4 +29,4 @@ Serveur backup (Core): XTSE-412
 - Possibilité d'acceder aux scopes VLAN depuis les deux serveurs
 
 ---
-## 4. Documentation Associé
+## 4. Documentation
