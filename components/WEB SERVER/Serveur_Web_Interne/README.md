@@ -17,20 +17,20 @@ Un serveur web interne est un serveur qui héberge des sites ou applications web
 # 2. Position dans l'architecture
 
 ### 2.1 Serveur **Principal**: 
-- Nom du serveur : ****
-- Adresse IP : ****
-- Gateway : ****
+- Nom du serveur : **XTSE-X**
+- Adresse IP : **172.16.64.X**
+- Gateway : **172.16.64.254**
 
 ---
 # 3. Prérequis 
-Une machine (ou VM) sous Linux ou Windows Server pour héberger le service.
-Un logiciel serveur web installé : Apache, Nginx ou IIS selon l'environnement.
-Une adresse IP fixe pour que le serveur reste joignable de façon stable.
-Un nom dans le DNS interne (ex. intranet.xtech.green) pour que les utilisateurs accèdent au site par un nom plutôt que par une adresse IP.
-Les ports ouverts nécessaires : 80 (HTTP) et/ou 443 (HTTPS) sur le pare-feu local.
-Un certificat (idéalement) pour activer le HTTPS et chiffrer les échanges, même en interne.
-Des ressources adaptées à l'application hébergée (un simple site statique demande peu, une application métier davantage).
-Les contenus ou l'application web à publier, déposés dans le répertoire prévu par le serveur web.
+- Une machine (ou VM) sous Linux ou Windows Server pour héberger le service.
+- Un logiciel serveur web installé : Apache, Nginx ou IIS selon l'environnement.
+- Une adresse IP fixe pour que le serveur reste joignable de façon stable.
+- Un nom dans le DNS interne (ex. intranet.xtech.green) pour que les utilisateurs accèdent au site par un nom plutôt que par une adresse IP.
+- Les ports ouverts nécessaires : 80 (HTTP) et/ou 443 (HTTPS) sur le pare-feu local.
+- Un certificat (idéalement) pour activer le HTTPS et chiffrer les échanges, même en interne.
+- Des ressources adaptées à l'application hébergée (un simple site statique demande peu, une application métier davantage).
+- Les contenus ou l'application web à publier, déposés dans le répertoire prévu par le serveur web.
 
 ---
 # 4. Documentation
