@@ -13,8 +13,9 @@ Son rôle principal est de permettre :
 - Il permet egalement d'appliquer des règles communes à tout le parc grâce aux stratégies de groupe (GPO) : par exemple imposer un mot de passe complexe, connecter automatiquement un lecteur réseau ou bloquer certaines actions.
 
 # 2. Position dans l'architecture
-- Serveurs : - XTSE-410
-            - (172.16.64.2)  et XTSE-412 (172.16.64.16) VLAN_X avec IP statique.  
+- Serveurs :
+     - XTSE-410
+             - (172.16.64.2)  et XTSE-412 (172.16.64.16) VLAN_X avec IP statique.  
 - Redondance : 2 contrôleurs de domaine. 1 principal Windows Server 2022 et 1 Core en backup.  
 - Site AD : un site principal (Paris) pour le moement avec possibilité d'ajouter des sites distants dans le futur.  
 
