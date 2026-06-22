@@ -20,7 +20,7 @@ Son role **principal** est d'assurer la configuration automatique des paramètre
 - Gain de temps **importants** (automatisation et centralisation)
 
 ---
-# 2. Position dans l'architecture
+## 2. Position dans l'architecture
 
 ### 2.1 Serveur **Principal**: 
 - Nom du serveur Windows 2022 (GUI): **XTSE-410**
