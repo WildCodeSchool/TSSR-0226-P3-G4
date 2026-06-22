@@ -10,7 +10,7 @@
 4.  [Documentation associé](4-Documentation-Associé)
 
 ---
-## 1. Role du service
+# 1. Role du service
 
 Son role **principal** est d'assurer la configuration automatique des paramètres réseau sur les equipements connectés :
 - Attribution **automatique** et **dynamique** d'une adresse IP unique et du masque de sous-réseau.
@@ -20,7 +20,7 @@ Son role **principal** est d'assurer la configuration automatique des paramètre
 - Gain de temps **importants** (automatisation et centralisation)
 
 ---
-## 2. Position dans l'architecture
+# 2. Position dans l'architecture
 
 ### 2.1 Serveur **Principal**: 
 - Nom du serveur Windows 2022 (GUI): **XTSE-410**
@@ -33,7 +33,7 @@ Son role **principal** est d'assurer la configuration automatique des paramètre
 - Gateway : **172.16.64.254**
 
 ---
-## 3. Prérequis 
+# 3. Prérequis 
 
 ### 3.1 Pour le Serveur : 
 - Adresse IP fixe sur le serveur DHCP : il ne peut pas distribuer des IP s'il en reçoit une lui-même.
@@ -51,4 +51,4 @@ Son role **principal** est d'assurer la configuration automatique des paramètre
 - Aucune IP statique déjà en place qui empêcherait la demande.
 
 ---
-## 4. Documentation
+# 4. Documentation
