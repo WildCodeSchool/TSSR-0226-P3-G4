@@ -19,7 +19,7 @@ Son role **principal** est d'assurer la configuration automatique des paramètre
 ## 2. Architecture 
 
 Serveur **principal** (GUI): XTSE-410 -> aussi AD et DNS  
-Serveur **backup** (Core): XTSE-412
+Serveur **backup** (CORE): XTSE-412
 
 ---
 ## 3. Information Technique
