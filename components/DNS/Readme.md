@@ -4,7 +4,7 @@
 2.  [Position dans l'architecture](#2-Position-dans-lrchitecture)
     - [2.1 Serveur Principal](#21-Serveur-Principal)
     - [2.2 Serveur Backup](#-22-Serveur-Backup)
-3.  [Information Technique](#3-Information-Technique)
+3.  [3. Prérequis](#3-Prérequis)
     - [3.1 Pour le Serveur](#-31-Pour-le-Serveur)
     - [3.2 Pour le client](#-32-Pour-le-client)
     - [3.3 Intégration dans l'AD](#-33-Intégration-dans-lAD)
