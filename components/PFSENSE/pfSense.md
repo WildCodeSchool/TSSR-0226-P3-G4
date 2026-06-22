@@ -16,8 +16,8 @@
 - Un navigateur web depuis un poste du LAN pour accéder à l'interface d'administration une fois l'installation faite.
 
 # 3. Informations Techniques
-OS
-IP
-Gateway
+OS  
+IP  
+Gateway  
 
 # 4. Documentation Associée
