@@ -33,11 +33,17 @@ Son role **principal** est d'assurer la configuration automatique des paramètre
 - Broadcast autorisé : le client envoie un DHCPDISCOVER en broadcast, donc rien ne doit le bloquer (firewall, port-security mal réglé).
 - Aucune IP statique déjà en place qui empêcherait la demande.
 
-Serveur **principal** (GUI): XTSE-410 -> aussi AD et DNS  
-Serveur **backup** (CORE): XTSE-412
-
 ---
 ## 3. Information Technique
 
+Serveur **Principal**: 
+- Nom du serveur Windows 2022 (GUI): **XTSE-410**
+- Adresse IP : **172.16.64.3**
+- Gateway : **172.16.64.254**
+
+Serveur **Backup** :
+- Nom du serveur CORE (CLI) : **XTSE-412**
+- Adresse IP : **172.16.64.16**
+- Gateway : **172.16.64.254**
 ---
 ## 4. Documentation
