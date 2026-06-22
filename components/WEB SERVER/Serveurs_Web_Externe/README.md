@@ -12,7 +12,7 @@ Un serveur **web externe** est un serveur qui **héberge** des sites ou applicat
 ---
 # 2. Position dans l'architecture
 ### Serveur Web Externe
-- Nom du serveur : **XTSE-**
+- Nom du serveur : **XTSE-X**
 - Adresse IP : **172.16.64.X**
 - Gateway : **172.16.64.254**
 
