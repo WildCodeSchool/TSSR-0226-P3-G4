@@ -1,10 +1,10 @@
 ## Sommaire
 
-1. [Role du service](#1-Role-du-service)
-2. [Position dans l'architecture](#2-Position-dans-lrchitecture)
-  - [2.1 Serveur Principal](#21-Serveur-Principal)
-4. [Information Technique](#3-Information-Technique)
-5. [Documentation associé](4-Documentation-Associé)
+1.  [Role du service](#1-Role-du-service)
+2.  [Position dans l'architecture](#2-Position-dans-lrchitecture)
+    - [2.1 Serveur Principal](#21-Serveur-Principal)
+4.  [Information Technique](#3-Information-Technique)
+5.  [Documentation associé](4-Documentation-Associé)
 
 ---
 ## 1. Role du service
