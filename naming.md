@@ -197,6 +197,7 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | Sauvegarde Général | XTSE-415 |
 | Serveur Web Interne | XTSE-416 |
 | Serveur Web Externe | XTSE-417 |
+| Serveur VoIP | XTSE-418 |
 | Zabbix | XTSE-450 |
 | GLPI | XTSE-451 |
 | Syslog | XTSE-452 |
