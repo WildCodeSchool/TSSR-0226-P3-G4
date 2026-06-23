@@ -198,6 +198,7 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | Serveur Web Interne | XTSE-416 |
 | Serveur Web Externe | XTSE-417 |
 | Serveur VoIP | XTSE-418 |
+| Serveur WSUS | XTSE-419 |
 | Zabbix | XTSE-450 |
 | GLPI | XTSE-451 |
 | Syslog | XTSE-452 |
