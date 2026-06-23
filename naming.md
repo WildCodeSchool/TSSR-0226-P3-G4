@@ -217,8 +217,8 @@ Nous avons choisi de nommer les routeurs de la facon suivante :
 |----------|-------|
 | Routeur VLAN | XTRO-430 |
 | Routeur Messagerie/Sauvegarde | XTRO-431 |
-| Routeur Bastion | XTRO-433 |
-| Routeur PC-admin | XTRO-434 |
+| Routeur Bastion | XTRO-432 |
+| Routeur PC-admin | XTRO-433 |
 
 # 3. Nomenclature des ordinateurs
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
