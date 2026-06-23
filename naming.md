@@ -214,10 +214,10 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 Nous avons choisi de nommer les routeurs de la facon suivante :
 | Roles | Nom |
 |----------|-------|
-| Routeur VLAN | XTRO-420 |
-| Routeur Messagerie/Sauvegarde | XTRO-421 |
-| Routeur Bastion | XTRO-423 |
-| Routeur PC-admin | XTRO-424 |
+| Routeur VLAN | XTRO-430 |
+| Routeur Messagerie/Sauvegarde | XTRO-431 |
+| Routeur Bastion | XTRO-433 |
+| Routeur PC-admin | XTRO-434 |
 
 # 3. Nomenclature des ordinateurs
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
