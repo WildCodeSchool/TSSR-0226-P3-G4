@@ -17,11 +17,11 @@ Conformément aux principes appliqués sur notre pare-feu pfSense (`Deny all` pa
 
 | Zone Source | Zone Destination | Protocole / Port | Usage & Justification Fonctionnelle |
 | :--- | :--- | :--- | :--- |
-| **PC Admin (VLAN Admin)** | Bastion | `TCP / 8080` (ou 443) | Accès à l'interface Web Guacamole d'administration |
+| **PC Admin (VLAN Admin)** | Bastion | `TCP / 8080 et 443` | Accès à l'interface Web Guacamole d'administration |
 | **Bastion** | Contrôleurs de Domaine (AD) | `TCP-UDP / 389` | Requêtes d'authentification LDAP & requêtes de groupes |
 | **Bastion** | Serveurs Windows Cibles | `TCP / 3389` | Sessions distantes graphiques d'administration (RDP) |
 | **Bastion** | Serveurs Linux & VyOS | `TCP / 22` | Sessions distantes en ligne de commande durcies (SSH) |
-| **Réseau Pharmgreen (via VPN)** | Bastion | `TCP / 8080` (ou 443) | Accès contrôlé pour l'équipe IT de l'entreprise partenaire |
+| **Réseau Pharmgreen (via VPN)** | Bastion | `TCP / 8080 et 443` | Accès contrôlé pour l'équipe IT de l'entreprise partenaire |
 
 ## 4. Déploiement Rapide (Conteneur LXC Debian)
 L'installation est industrialisée au sein d'un conteneur LXC léger afin de rationaliser les ressources matérielles :
