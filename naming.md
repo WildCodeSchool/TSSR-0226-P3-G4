@@ -204,6 +204,7 @@ Nous avons choisi de nommer les serveurs de la facon suivante :
 | GLPI | XTSE-451 |
 | Syslog | XTSE-452 |
 | IRedMail | XTSE-453 |
+| Bastion | XTSE-454 |
 
 
 ## 2.2 Nom des PC d'administration 
