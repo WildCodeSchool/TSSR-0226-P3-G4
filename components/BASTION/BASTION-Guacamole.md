@@ -134,7 +134,8 @@ sudo chown -R tomcat:tomcat /etc/guacamole /usr/share/tomcat9/.guacamole
 
 -------
 
-<img width="1912" height="351" alt="Capture d&#39;écran 2026-06-29 142649" src="https://github.com/user-attachments/assets/cc1e70b6-edd9-43f9-bc1d-09859bcb4f7a" />
+<img width="1915" height="523" alt="image" src="https://github.com/user-attachments/assets/cdd2f593-7893-465a-ad29-99b74b5a4442" />
+
 
 ------
 
