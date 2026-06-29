@@ -38,3 +38,6 @@ ap-base-dn: DC=Xtech,DC=green
 ap-username-attribute: sAMAccountName
 ap-search-bind-dn: CN=Sync_Guacamole,OU=PRS,DC=Xtech,DC=green
 ap-search-bind--password: ******** (motdepasse-G4-xtech) 
+```
+
+<img width="1873" height="923" alt="Capture d&#39;écran 2026-06-29 171754" src="https://github.com/user-attachments/assets/9fb745a1-7611-4754-84b4-b0e2ff1d62d1" />
