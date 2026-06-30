@@ -15,23 +15,36 @@
  1. [Active Directory](#1-active-directory)
    - 1.1 [Nom de domaine](#11-nom-de-domaine)
    - 1.2 [Nom des Unités d'Organisation](#12-nom-des-unites-dorganisation)
+   - 1.2 [Nom des Unités d'Organisation](#uo)  
    - 1.3 [Les Départements](#13-les-departements)
+   - 1.3 [Les Départements](#depts)  
    - 1.4 [Les Services](#14-les-services)
    - 1.5 [Nom des utilisateurs](#15-nom-des-utilisateurs)
    - 1.6 [Nom des GPO](#16-nom-des-gpo)
 
 2. [Nomenclature des matériels](#2-nomenclature-des-materiels)
+2. [Nomenclature des matériels](#materiels)
    - 2.1 [Nom des serveurs](#21-nom-des-serveurs)
    - 2.2 [Nom des PC d'administration](#22-nom-des-pc-dadministration)
    - 2.3 [Nom des routeurs](#23-nom-des-routeurs)
 
 3. [Nomenclature des ordinateurs](#3-nomenclature-des-ordinateurs)
 
+
+
+## 1.2 Nom des Unités d'Organisation <a id="uo"></a>
+
+## 1.3 Les Départements <a id="depts"></a>
+
+# 2 Nomenclature des matériels <a id="materiels"></a>
+
 # 1. Active Directory
 ## 1.1 Nom de domaine
 Notre nom de domaine sera : **Xtech.green**
 Le NetBIOS est : XTECH
 ## 1.2 Nom des Unités d'Organisation
+
+## 1.2 Nom des Unités d'Organisation <a id="uo"></a>
 ### Structure arborescence OU
 Pour les OU nous avons fais le choix d'une hiérarchie à 5 niveaux permettant de classer les objets par société, site, type et département et service.
 
@@ -42,6 +55,8 @@ Pour les OU nous avons fais le choix d'une hiérarchie à 5 niveaux permettant d
 **Niveau 5** : Service dans les départements -> s1-...-s11  
 
 ## 1.3 Les Départements
+
+## 1.3 Les Départements <a id="depts"></a>
 Pour offusquer la société et avoir un bon niveau de sécurité nous avons décidé de donné des numeros d'identification pour chaque département.  
 
 **D1** -> Communication  
@@ -191,6 +206,8 @@ Xtech.green
 
 
 # 2 Nomenclature des matériels
+
+# 2 Nomenclature des matériels <a id="materiels"></a>
 Nous avons fait le choix du format suivant : 
 - Initiale entreprise : XT (Xentech)
 - Code de l'objet AD
