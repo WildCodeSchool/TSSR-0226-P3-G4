@@ -6,7 +6,7 @@
    1.5  [**Nom des utilisateurs**](##1-5-Nom-des-utilisateurs)  
    1.6  [**Nom des GPO**](##1-6-Nom-des-GPO)  
 2.  [**Nomenclature des matériels**](#2-Nomenclature-des-matériels)  
-   2.1  [**Nom des serveurs**](##2Nom-des-serveurs)  
+   2.1  [**Nom des serveurs**](##2-1-Nom-des-serveurs)  
    2.2  [**Nom des PC d'administration**](##2-2-Nom-des-PC-d'administration)  
    2.3  [**Nom des routeurs**](##2-3-Nom-des-routeurs)  
    2.4  [**Nom des switchs**](##2-4-Nom-des-switchs)  
@@ -184,7 +184,7 @@ Nous avons fait le choix du format suivant :
      - Routeur : **RO**
      - Switch : **SW**
      - PC client : **ODx-sx** Suivi d'un numero d'identification unique : **00x**
-## 2.1 Nom des serveurs
+## 2-1 Nom des serveurs
 Nous avons choisi de nommer les serveurs de la facon suivante :  
 
 | Roles | Nom |
