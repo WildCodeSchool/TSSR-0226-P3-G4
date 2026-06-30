@@ -41,7 +41,7 @@ Pour les OU nous avons fais le choix d'une hiérarchie à 5 niveaux permettant d
 **Niveau 4** : Département dans l'OU correspondante -> D1-...-D11 pour les utilisateurs et D1-...-D11 pour les ordinateurs  
 **Niveau 5** : Service dans les départements -> s1-...-s11  
 
-### 1.3 Les Départements
+## 1.3 Les Départements
 Pour offusquer la société et avoir un bon niveau de sécurité nous avons décidé de donné des numeros d'identification pour chaque département.  
 
 **D1** -> Communication  
@@ -190,7 +190,7 @@ Xtech.green
 
 
 
-# 2. Nomenclature des matériels
+# 2 Nomenclature des matériels
 Nous avons fait le choix du format suivant : 
 - Initiale entreprise : XT (Xentech)
 - Code de l'objet AD
