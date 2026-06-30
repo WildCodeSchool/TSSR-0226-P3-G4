@@ -24,7 +24,6 @@
    - 2.1 [Nom des serveurs](#21-nom-des-serveurs)
    - 2.2 [Nom des PC d'administration](#22-nom-des-pc-dadministration)
    - 2.3 [Nom des routeurs](#23-nom-des-routeurs)
-   - 2.4 [Nom des switchs](#24-nom-des-switchs)
 
 3. [Nomenclature des ordinateurs](#3-nomenclature-des-ordinateurs)
 
