@@ -198,7 +198,7 @@ Nous avons fait le choix du format suivant :
      - Routeur : **RO**
      - Switch : **SW**
      - PC client : **ODx-sx** Suivi d'un numero d'identification unique : **00x**
-# Nom des serveurs
+# 2.1 Nom des serveurs
 Nous avons choisi de nommer les serveurs de la facon suivante :  
 
 | Roles | Nom |
