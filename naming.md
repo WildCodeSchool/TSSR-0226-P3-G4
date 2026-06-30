@@ -12,20 +12,21 @@
    2.4  [**Nom des switchs**](##2-4-Nom-des-switchs)  
 3.  [**Nomenclature des ordinateurs**](#3-Nomenclature-des-ordinateurs-(VM/CT))  
 
- 1. [Active Directory](#1-active-directory)
-   - 1.1 [Nom de domaine](#11-nom-de-domaine)
-   - 1.2 [Nom des Unités d'Organisation](#uo)  
-   - 1.3 [Les Départements](#depts)  
-   - 1.4 [Les Services](#14-les-services)
-   - 1.5 [Nom des utilisateurs](#15-nom-des-utilisateurs)
-   - 1.6 [Nom des GPO](#16-nom-des-gpo)
+1. [**Active Directory**](#1-active-directory)   
+   1.1 [**Nom de domaine**](#11-nom-de-domaine)   
+   1.2 [**Nom des Unités d'Organisation**](#uo)   
+   1.3 [**Les Départements**](#depts)   
+   1.4 [**Les Services**](#14-les-services)   
+   1.5 [**Nom des utilisateurs**](#15-nom-des-utilisateurs)   
+   1.6 [**Nom des GPO**](#16-nom-des-gpo)   
 
-2. [Nomenclature des matériels](#materiels)
-   - 2.1 [Nom des serveurs](#21-nom-des-serveurs)
-   - 2.2 [Nom des PC d'administration](#22-nom-des-pc-dadministration)
-   - 2.3 [Nom des routeurs](#23-nom-des-routeurs)
+2. [**Nomenclature des matériels**](#materiels)   
+   2.1 [**Nom des serveurs**](#21-nom-des-serveurs)   
+   2.2 [**Nom des PC d'administration**](#22-nom-des-pc-dadministration)   
+   2.3 [**Nom des routeurs**](#23-nom-des-routeurs)   
+   2.4 [**Nom des switchs**](#24-nom-des-switchs)   
 
-3. [Nomenclature des ordinateurs](#3-nomenclature-des-ordinateurs)
+3. [**Nomenclature des ordinateurs**](#3-nomenclature-des-ordinateurs)   
 
 # 1. Active Directory
 ## 1.1 Nom de domaine
