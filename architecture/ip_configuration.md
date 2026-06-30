@@ -55,7 +55,7 @@ SRV-Sauvegarde (Windows)
 
 SRV-Web Externe
 - NOM : XTSE-417
-- IP : 172.16.71.X/24
+- IP : 172.16.64.51/24
 - DG : 172.16.71.254
 
 SRV-Web Interne
