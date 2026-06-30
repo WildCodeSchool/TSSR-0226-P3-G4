@@ -239,7 +239,7 @@ Nous avons choisi de nommer les routeurs de la facon suivante :
 | Routeur Bastion | XTRO-432 |
 | Routeur PC-admin | XTRO-433 |
 
-# 3. Nomenclature des ordinateurs
+# 3 Nomenclature des ordinateurs
 Nous avons choisi de nommer les ordinateurs de la facon suivante :  
 [Entreprise]-[département]-[service]-[numérotation]  
 **[XT]-[OD1-...-OD11]-[s1-...-s7]-[001]**
