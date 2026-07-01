@@ -1,4 +1,4 @@
-#### Cette documentation détaille la mise en place de **GLPI** pour l'entreprise **XTech**, hébergé sur un container Proxmox Debian 12 LAMP, et la sauvegarde automatisée quotidienne de sa base de données vers le serveur BACKUP via `mysqldump`.
+#### Cette documentation détaille la mise en place de **GLPI** pour l'entreprise **XenTech**, hébergé sur un container Proxmox Debian 12 LAMP, et la sauvegarde automatisée quotidienne de sa base de données vers le serveur BACKUP via `mysqldump`.
 
 --------
 
