@@ -4,7 +4,7 @@ Après la 1ère connexion à GLPI avec les identifiants par défaut  (`glpi` / `
 
 ---
 
-## Création du compte super-admin : `T1` afin de sécuriser l'accès à GLPI. 
+## Partie A - Création du compte super-admin : `T1` afin de sécuriser l'accès à GLPI. 
 
 > Après installation, supprimer ou protéger le dossier `install/` conformément aux recommandations officielles de GLPI (sécurité).
 
@@ -12,13 +12,47 @@ Après la 1ère connexion à GLPI avec les identifiants par défaut  (`glpi` / `
 
 ---
 
-Maintenant que le compte super -admin `T1` est créé, il faut se déconnecter de la base par défaut (`glpi/glpi`) et se connecter en tant que `T1`.
+Maintenant que le compte super-admin `T1` est créé, il faut se déconnecter de la base par défaut (`glpi/glpi`) et se connecter en tant que `T1`.
+
+
+<img width="1450" height="1067" alt="image" src="https://github.com/user-attachments/assets/41af751d-72e9-450e-9a95-7f1742418cbb" />
+
+---
+
+## Synchronisation GLPI - Active Directory
+
+Dans le menu de gauche, dans configuration, authentification, annuaire LDAP :   
+
+<img width="1880" height="999" alt="Capture d&#39;écran 2026-07-01 205805" src="https://github.com/user-attachments/assets/9295bf48-635d-4c36-ba7e-c593614d53e7" />
+
+---
+
+<img width="1907" height="518" alt="image" src="https://github.com/user-attachments/assets/ed2d53c0-6f84-4c3d-a1f1-802b5e1ed25a" />
+
+---
+
+<img width="1491" height="622" alt="image" src="https://github.com/user-attachments/assets/5026e1ab-a6d1-41b5-8515-42e08bcff33d" />
+
+---
+
+Le chemin doit correspondre à l'arborescence de l'AD : 
+
+
+<img width="1902" height="555" alt="image" src="https://github.com/user-attachments/assets/dbb7e2d1-10f6-406c-b5a3-7d90889c7a04" />
+
+---
 
 
 
 
 
-### A6 — Règle pare-feu nécessaire
+
+
+
+
+
+
+### Règle pare-feu nécessaire
 
 Le PC-admin `T1`  doit pouvoir atteindre GLPI sur le VLAN APPS  :
 
