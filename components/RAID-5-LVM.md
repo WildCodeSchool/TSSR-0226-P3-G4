@@ -148,7 +148,7 @@ vgdisplay
 
 
 
-Création du volume logique dédié à Veeam (cf. doc Veeam, partie D) :
+Création du volume logique dédié à la sauvegarde :
 
 ```bash
 lvcreate -n lv_bkp -L 45G mvg_BKP
