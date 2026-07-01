@@ -41,3 +41,54 @@ Vérification de la grappe RAID au niveau du noyau
 
 Le tableau doit afficher la mention [UUUU]. Chaque U valide la synchronisation parfaite de l'un des 4 disques.
 
+Audit approfondi du démon mdadm    
+
+`df -h /mnt/BKP`
+
+<img width="1897" height="123" alt="image" src="https://github.com/user-attachments/assets/3daae810-0226-405a-b4a9-b4c03a2e8b37" />
+
+---
+
+Vérifiez que l'utilisation du point de montage /mnt/BKP laisse suffisamment d'espace pour l'écriture quotidienne des archives par Rsync.   
+
+---
+
+## Plan de Contingence & Remplacement (Procédure de Rollback en cas de Panne)
+
+Cas n°1 : Perte d'un disque sur le RAID1 Windows   
+
+Si un disque IDE lâche sur Proxmox, le Gestionnaire de disques Windows affiche le volume en mode Dégradé.   
+
+Procédure de rétablissement :    
+
+Éteignez proprement la VM Windows concernée.
+
+<img width="1894" height="1141" alt="Capture d&#39;écran 2026-07-01 214840" src="https://github.com/user-attachments/assets/ebebb39d-5c3f-48dc-8f35-ce9c8c42410f" />
+
+---
+
+
+Dans Proxmox (Hardware), supprimez le disque virtuel défectueux et ajoutez un nouveau disque dur IDE de taille strictement identique.
+
+<img width="1304" height="526" alt="Capture d&#39;écran 2026-07-01 215006" src="https://github.com/user-attachments/assets/de601eca-ea80-4b34-83b1-1f72298c6a79" />
+
+---
+
+
+Démarrez la VM, puis ouvrez le Gestionnaire de disques.
+
+<img width="1909" height="1098" alt="image" src="https://github.com/user-attachments/assets/cb8e58f0-3e5f-4bd5-b5ef-4388929a4e2c" />
+
+---
+
+
+Faites un clic droit sur le nouveau disque → Initialiser le disque (GPT), puis convertissez-le en Disque dynamique.
+
+Faites un clic droit sur le volume en miroir existant qui est dégradé, sélectionnez Ajouter un miroir..., et choisissez le nouveau disque.
+
+Le système passe en statut Resynching : la réplication se fait en tâche de fond. Le volume reste pleinement disponible.
+
+
+
+
+
