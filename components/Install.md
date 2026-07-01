@@ -5,15 +5,34 @@
 
 
 ---
+## PARTIE A — Installation de GLPI (CT Debian 12 LAMP)
 
-Pré-requis  
-CT Debian 12 LAMP   
-CPU : 1 core   
-RAM : 2G   
-Stockage : 20G  
-Type de conteneur : Non-privilégié (Unprivileged: Yes)   
+### A1 — Pré-requis CT Proxmox
 
---------
+- Template : Debian 12 
+- CPU : 1 core   
+- RAM : 2G   
+- Stockage : 20G
+- Type de conteneur : Non-privilégié (Unprivileged: Yes)
+- Décocher Firewall
+- Domain DNS : xtech.green - IP 172.16.64.3 
+- Stack : Apache2 + MariaDB + PHP 8.2 (LAMP)
+- VLAN : 20 — APPS
+- IP statique : `172.16.66.31/24`
+- Passerelle : `172.16.66.254`
+- VLAN Tag sur l'interface réseau du CT (`net0`) : `20`
+- Type de conteneur : Non-privilégié (Unprivileged: Yes)   
+
+## Vue d'ensemble
+
+| Élément              | Détail                                                       |
+| ---------------------- | ------------------------------------------------------------ |
+| Serveur GLPI             | CT Proxmox Debian 12, stack LAMP                                |
+| VLAN                     | 20 — APPS, `172.16.66.0/24`                                       |
+| Sauvegarde BDD             | `mysqldump` quotidien à minuit (cron) vers le serveur BKP Linux    |
+| Destination sauvegarde      | VLAN 30 — BACKUP, `172.16.67.0/24`                                  |
+
+---
 
 ## Mise à jour du système
 
@@ -127,84 +146,14 @@ Contrôle du système de gestion de base de données
 
 
 
-## Vue d'ensemble
-
-| Élément              | Détail                                                       |
-| ---------------------- | ------------------------------------------------------------ |
-| Serveur GLPI             | CT Proxmox Debian 12, stack LAMP                                |
-| VLAN                     | 20 — APPS, `172.16.66.0/24`                                       |
-| Sauvegarde BDD             | `mysqldump` quotidien à minuit (cron) vers le serveur BKP Linux    |
-| Destination sauvegarde      | VLAN 30 — BACKUP, `172.16.67.0/24`                                  |
-
-GLPI est hébergé sur son propre CT Debian 12 (LAMP)
-
----
-
-## PARTIE A — Installation de GLPI (CT Debian 12 LAMP)
-
-### A1 — Pré-requis CT Proxmox
-
-- Template : Debian 12
-- Stack : Apache2 + MariaDB + PHP (LAMP)
-- VLAN : 20 — APPS
-- IP statique : `172.16.66.31/24`
-- Passerelle : `172.16.66.254`
-- VLAN Tag sur l'interface réseau du CT (`net0`) : `20`
-
-### A2 — Installation des dépendances
-
-```bash
-apt update && apt upgrade -y
-apt install apache2 mariadb-server php php-{cli,common,curl,gd,intl,mysql,xml,mbstring,zip,bz2,ldap,apcu} -y
-systemctl enable apache2 mariadb
-systemctl status apache2
-```
-<img width="1877" height="651" alt="glpi-apache-status" src="https://github.com/user-attachments/assets/450fbf7c-6007-47a7-b24d-669568d12e73" />
-
-```bash
-systemctl status mariadb
-```
-
-<img width="1888" height="787" alt="glpi-mariadb-status" src="https://github.com/user-attachments/assets/65f61d71-3b55-48cb-bfc3-2379c9541745" />
-
-
-### A3 — Base de données
-
-```bash
-mysql_secure_installation
-```
-
-<img width="1890" height="1669" alt="glpi-bdd" src="https://github.com/user-attachments/assets/f8b3d2d4-d70e-416e-a4ee-7e5970d7ffbe" />
-
-```bash
-mysql -u root -p
-```
-
-```sql
-CREATE DATABASE glpidb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE USER 'glpiuser'@'localhost' IDENTIFIED BY '<mot_de_passe>';
-GRANT ALL PRIVILEGES ON glpidb.* TO 'glpiuser'@'localhost';
-FLUSH PRIVILEGES;
-quit;
-```
-<img width="1882" height="655" alt="gkpi-bdd-1" src="https://github.com/user-attachments/assets/98fdaa0c-45f8-4fba-8f47-547559bb9f2c" />
 
 
 
 
-### A4 — Téléchargement et installation de GLPI
 
-```bash
-cd /var/www/
-wget https://github.com/glpi-project/glpi/releases/latest/download/glpi-11.07.tgz
-tar xzf glpi-11.0.7.tgz
-chown -R www-data:www-data /var/www/glpi
-```
-<img width="1873" height="57" alt="glpi-version-11 0 7" src="https://github.com/user-attachments/assets/39fa7249-84cb-4438-a523-761180499527" />
+Configuration du DNS GLPI pour accéder à l'interface web : http://support.xtech.green   
 
-
-
-Fichier `/etc/apache2/sites-available/support.xentech.green.conf` :
+Chemin du fichier de configuration : `/etc/apache2/sites-available/support.xentech.green.conf` :
 
 ```apache
 <VirtualHost *:80>
@@ -239,7 +188,9 @@ http://support.xtech.green/
 
 
 
-Suivre l'assistant : choix de la langue, vérification des prérequis PHP, connexion à la base (`glpidb` / `glpiuser`), création du compte super-admin GLPI : T1.
+Suivre l'assistant : choix de la langue, vérification des prérequis PHP.
+
+Pour la 1ère connexion à GLPI, utiliser les identifiants par défaut  (`glpi` / `glpi`), création du compte super-admin GLPI : T1.
 
 > Après installation, supprimer ou protéger le dossier `install/` conformément aux recommandations officielles de GLPI (sécurité).
 
