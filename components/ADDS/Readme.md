@@ -1,14 +1,15 @@
-# Serveur Active Directory — Gestion des Identités, de la Sécurité Globale et du Serveur de Fichiers
+# Serveur Active Directory —    
+Gestion des Identités et de la Sécurité Globale.
 
 ## 1. Description du Service
 Le système d'identité du domaine `Xtech.green` s'appuie sur une infrastructure distribuée de 4 Contrôleurs de Domaine (DC). Ce service centralise l'authentification des 218 collaborateurs, applique les stratégies de groupe (GPO) pour le durcissement du parc, assure la résolution DNS pour l'intégralité des serveurs de production, et distribue la configuration IP dynamique (DHCP) aux postes clients.
 
-L'architecture applique les principes de durcissement (Hardening) selon les recommandations de l'ANSSI, un cloisonnement des privilèges par niveaux (Tiering), ainsi qu'une interconnexion sécurisée par relation de confiance avec une entité partenaire externe.
+L'architecture applique les principes de durcissement selon les recommandations de l'ANSSI, un cloisonnement des privilèges par niveaux (Tiering), ainsi qu'une interconnexion sécurisée par relation de confiance avec une entité partenaire externe.
 
 ## 2. Caractéristiques Techniques et Topologie des Contrôleurs de Domaine
 
 ### 2.1. DC Principal : `xts-411.xtech.green` (Tier 0)
-* **Système d'Exploitation :** Windows Server 2022 Standard (Expérience de bureau)
+* **Système d'Exploitation :** Windows Server 2022 Standard 
 * **Adresse IP :** `172.16.64.3/24` (Passerelle : `172.16.64.254`)
 * **Positionnement Réseau :** Isolé dans un réseau local virtuel (VLAN) dédié à l'Active Directory.
 * **Services Hébergés :** AD DS, Serveur DNS, Serveur DHCP (Distribution Postes Clients).
