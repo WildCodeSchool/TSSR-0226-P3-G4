@@ -1,6 +1,6 @@
 # Composant BASTION — Apache Guacamole (XenTech)
 
-**[Installation de Guacamole](./Install.md)**
+**[Installation de Guacamole](./Install.md)**   
 **[Guide d'utilisation de Guacamole](./User_guide.md)**
 
 ## 1. Présentation & Rôle Stratégique
