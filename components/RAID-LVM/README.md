@@ -14,7 +14,7 @@ Cliquez sur les liens ci-dessous pour accéder directement aux guides associés 
 
 * **[Guide d'Installation & Configuration](./Install.md)** : Étapes pas-à-pas pour l'allocation des disques sur Proxmox, l'initialisation des volumes dynamiques sous Windows, l'assemblage de la matrice `mdadm` sous Debian 13 et la configuration des couches logiques LVM.
 * **[Guide Utilisateur & Maintenance](./User_guide.md)** : Procédures de surveillance courante de l'espace, commandes de diagnostic des disques avec PowerShell et la CLI Linux, ainsi que les plans d'urgence stricts pour remplacer un disque en panne sans perte de données.
-* **[FAQ](./FAQ.md)**
+* **[FAQ](./FAQ.md)** : Comment étendre le LV à chaud sans partitionner le nouveau disque et passer de 45 à 60G rapidement.
 
 ---
 
