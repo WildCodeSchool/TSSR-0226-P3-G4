@@ -6,7 +6,7 @@ Pas besoin de serveurs complexes ou de lignes de commande : ici, on utilise la s
 
 ---
 
-### 📁 Liens vers les Guides de notre Projet
+### Liens vers les Guides de notre Projet
 Pour voir le détail de ce qui a été réalisé, cliquez sur les liens ci-dessous :
 
 * **[Guide d'Installation](./Install.md)** : Comment télécharger et installer proprement l'application Bitwarden sur son poste en quelques clics.
