@@ -40,12 +40,12 @@
 
 # Infrastructure Réseau & Sécurité pfSense — XenTech
 
-## 📌 Présentation du Projet
+## Présentation du Projet
 Ce dépôt contient la configuration de référence du pare-feu central **pfSense-XTech**. L'infrastructure segmente les 11 départements et les services critiques de l'entreprise (218 collaborateurs) au sein d'un bloc unique de classe B segmenté via **19 VLANs distincts**.
 
 La politique de sécurité applique un modèle **Zero Trust (Deny All par défaut)** : aucun flux inter-VLAN n'est toléré sans une règle d'autorisation explicite et justifiée.
 
-## 🔀 Architecture & Plan d'Adressage Global
+## Architecture & Plan d'Adressage Global
 Le supernet attribué à XenTech est **`172.16.64.0/19`** (Plage : `172.16.64.0` ➔ `172.16.95.255`), découpé en sous-réseaux `/24`.
 
 * **Passerelle d'administration LAN initiale :** `172.16.64.254/24`
@@ -55,7 +55,7 @@ Le supernet attribué à XenTech est **`172.16.64.0/19`** (Plage : `172.16.64.0`
   * `VLAN 60` (BASTION) : `172.16.69.0/24` — Apache Guacamole (Unique point d'entrée d'administration)
   * `VLAN 100` (DMZ) : `172.16.71.0/24` — Serveur Web externe, iRedMail
 
-## 📂 Structure de la Documentation
+## Structure de la Documentation
 * `Install.md` : Guide d'installation pas-à-pas, configuration des interfaces et déploiement du Trunk.
 * `User_guide.md` : Manuel d'exploitation des règles de filtrage pour les administrateurs réseau.
 * `FAQ.md` : Réponses aux incidents fréquents et logique des zones "vides".
