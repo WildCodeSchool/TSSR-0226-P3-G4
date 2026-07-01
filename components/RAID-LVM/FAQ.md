@@ -13,26 +13,16 @@ Cause : Un des disques est absent et le fichier /etc/fstab bloque le démarrage 
 
 Solution : Entrez le mot de passe root dans la console de secours, éditez le fichier avec nano /etc/fstab, commentez la ligne du montage LVM en ajoutant un # au début, puis redémarrez (reboot). Une fois la machine lancée, réparez le RAID, puis réactivez la ligne dans /etc/fstab.
 
-Le point de montage /mnt/BKP est saturé par les sauvegardes GLPI ?
-
-Solution : Grâce à l'utilisation combinée de LVM par-dessus le RAID, vous pouvez étendre l'espace à chaud.    
-
-Ajoutez un disque sur Proxmox, intégrez-le au Volume Group via vgextend, puis agrandissez votre volume logique et son système de fichiers via les commandes :   
-
-`lvextend -l +100%FREE /dev/mvg_bkp/lv_bkp`   
-`resize2fs /dev/mvg_bkp/lv_bkp`  
-
-<img width="1654" height="252" alt="Capture d&#39;écran 2026-07-01 224012" src="https://github.com/user-attachments/assets/1b3a8a01-3a85-44c9-917f-ebf76c3dc019" />
 
 ---
 
 # FAQ 2
 
-Etendre le LV de 45 à 60G    
+**Etendre le LV de 45 à 60G**   
 
-## Etape 1 : Ajouter un disque de 15G et injecter le disque dans la matrice RAID 5   
+### Etape 1 : Ajouter un disque de 15G et injecter le disque dans la matrice RAID 5   
 
-## Etape 2 : Déclarer le disque /dev/sdf comme un membre disponible pour notre grappe /dev/md0 :   
+### Etape 2 : Déclarer le disque /dev/sdf comme un membre disponible pour notre grappe /dev/md0 :   
 
 `sudo mdadm --manage /dev/md0 --add /dev/sdf`   
 
@@ -40,7 +30,7 @@ Etendre le LV de 45 à 60G
 
 ---
 
-## Étape 3 : Demander au RAID 5 de grandir (Grow)
+### Étape 3 : Demander au RAID 5 de grandir (Grow)
 Actuellement, notre RAID 5 est configuré pour utiliser 4 disques actifs. On va lui ordonner de passer à 5 disques actifs pour intégrer /dev/sdf et ainsi recalculer la parité sur l'ensemble :
 
 
@@ -52,15 +42,11 @@ Le processeur va recalculer les blocs de parité pour étaler les données sur l
 
 ---
 
-<img width="1656" height="313" alt="image" src="https://github.com/user-attachments/assets/ce4ef38f-20c0-4937-9771-64f09f423eb9" />
-
----
-
 <img width="1655" height="273" alt="image" src="https://github.com/user-attachments/assets/374948fa-89bb-4cfb-80ce-0ab19e9585ef" />
 
 ---
 
-## Étape 4 : Mettre à jour la configuration de sauvegarde du RAID    
+### Étape 4 : Mettre à jour la configuration de sauvegarde du RAID    
 
 Puisque la structure du RAID a changé (passée de 4 à 5 disques), il faut écraser l'ancien fichier de config pour que Debian s'en rappelle au prochain redémarrage :    
 
@@ -71,7 +57,7 @@ Puisque la structure du RAID a changé (passée de 4 à 5 disques), il faut écr
 
 ---
 
-## Étape 5 : Agrandir le volume physique LVM (PV)   
+### Étape 5 : Agrandir le volume physique LVM (PV)   
 
 Le RAID 5 fait maintenant 60 Go utiles, mais LVM croit toujours que le "disque" sous-jacent fait 45 Go. On va lui demander de recalculer sa taille :   
 
@@ -83,7 +69,7 @@ Pour vérifier que le Volume Group voit désormais l'espace supplémentaire libr
 
 ---
 
-## Étape 6 : Étendre le Volume Logique et le système de fichiers (Tes commandes fétiches)   
+### Étape 6 : Étendre le Volume Logique et le système de fichiers (Tes commandes fétiches)   
 
 Maintenant que LVM a 15 Go de libre dans son groupe, on peut exécuter à nouveau les deux commandes pour attribuer tout l'espace restant au volume de backup et l'étendre en direct :
 
@@ -97,7 +83,7 @@ sudo resize2fs /dev/mvg_bkp/lv_bkp
 
 ---
 
-## Étape 7 : La vérification finale   
+### Étape 7 : La vérification finale   
 
 `df -h /mnt/BKP`
 
