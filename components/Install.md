@@ -1,6 +1,131 @@
-#### Cette documentation détaille la mise en place de **GLPI** pour l'entreprise **XenTech**, hébergé sur un container Proxmox Debian 12 LAMP, et la sauvegarde automatisée quotidienne de sa base de données vers le serveur BACKUP via `mysqldump`.
+## Installation de GLPI (Version 11.0.7)  
+
+
+<img width="1877" height="77" alt="image" src="https://github.com/user-attachments/assets/413c107b-a1f0-4d9c-97cd-f5d0b5b6f6b1" />
+
+
+---
+
+Pré-requis  
+CT Debian 12 LAMP   
+CPU : 1 core   
+RAM : 2G   
+Stockage : 20G  
+Type de conteneur : Non-privilégié (Unprivileged: Yes)   
 
 --------
+
+## Mise à jour du système
+
+`apt update && apt upgrade -y`
+
+<img width="1893" height="928" alt="image" src="https://github.com/user-attachments/assets/fef14849-1585-483d-8a2b-f0d704647ebf" />
+
+---
+
+Installation de l'architecture LAMP & Modules PHP obligatoires.   
+
+GLPI nécessite un serveur Web, un moteur de base de données et des extensions PHP spécifiques pour communiquer avec l'Active Directory (LDAPS) que nous allons synchroniser par la suite.   
+
+`apt install apache2 mariadb-server php php-mysql php-mbstring php-gd php-xml php-curl php-intl php-zip php-bz2 php-ldap -y`
+
+<img width="1867" height="1681" alt="image" src="https://github.com/user-attachments/assets/f0adeac9-c9ca-4d3b-8915-dd345a12a108" />
+
+---
+
+## Création et sécurisation de la base de données MariaDB
+
+`mysql_secure_installation` 
+
+Répondre oui à tout [Y]   
+Configurer un nouveau mot de passe root
+
+
+<img width="1878" height="1866" alt="image" src="https://github.com/user-attachments/assets/ffb726ce-3213-472a-a482-da968ca63a66" />
+
+
+---
+
+## Connexion à MariaDB pour instancier la base GLPI
+
+`mysql -u root -p`
+
+Entrer le mot de passe généré juste avant..
+
+```
+CREATE DATABASE db_glpi CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+GRANT ALL PRIVILEGES ON db_glpi.* TO 'user_glpi'@'localhost' IDENTIFIED BY 'VotreMotDePasseRoot';
+FLUSH PRIVILEGES;
+EXIT;
+```
+
+<img width="1876" height="584" alt="Capture d&#39;écran 2026-07-01 175839" src="https://github.com/user-attachments/assets/8806e170-71c7-4fcf-9653-1e4197456c95" />
+
+---
+
+## Téléchargement, extraction et déploiement de GLPI v11.0.7
+
+Déplacement dans le répertoire temporaire et téléchargement du paquet officiel   
+
+`cd /tmp`
+
+`wget https://github.com/glpi-project/glpi/releases/download/11.0.7/glpi-11.0.7.tgz`
+
+<img width="1881" height="816" alt="image" src="https://github.com/user-attachments/assets/96215641-972d-4b7e-8b30-fc930c4f02b0" />
+
+---
+
+Extraction dans le répertoire du serveur Web Apache   
+
+`tar -xvzf glpi-11.0.7.tgz -C /var/www/html/`
+
+<img width="1867" height="2049" alt="image" src="https://github.com/user-attachments/assets/427eeab3-512f-472a-92a2-0367c51e0698" />
+
+---
+
+Attribution des droits à l'utilisateur du serveur Web (www-data)
+
+```
+chown -R www-data:www-data /var/www/html/glpi
+chmod -R 755 /var/www/html/glpi
+```
+
+<img width="1876" height="92" alt="image" src="https://github.com/user-attachments/assets/98e4775f-1203-4512-a379-c692a53d2be6" />
+
+---
+
+## Guide de Vérification du Fonctionnement   
+
+Avant de basculer sur l'interface graphique, l'administrateur doit valider la bonne exécution des services applicatifs sous Debian.   
+
+Vérification des services système    
+
+Contrôle du serveur Web Apache    
+
+`systemctl status apache2`
+
+<img width="1874" height="517" alt="image" src="https://github.com/user-attachments/assets/e2597f2d-7a99-4148-bfa5-966a95dfa578" />
+
+---
+
+
+Contrôle du système de gestion de base de données   
+
+`systemctl status mariadb`
+
+<img width="1879" height="660" alt="image" src="https://github.com/user-attachments/assets/639a27b5-893c-4569-a72b-b643e02416e5" />
+
+---
+
+
+
+
+
+
+
+
+
+
 
 ## Vue d'ensemble
 
@@ -11,7 +136,7 @@
 | Sauvegarde BDD             | `mysqldump` quotidien à minuit (cron) vers le serveur BKP Linux    |
 | Destination sauvegarde      | VLAN 30 — BACKUP, `172.16.67.0/24`                                  |
 
-GLPI est hébergé sur son propre CT Debian 12 (LAMP), distinct des CT Zabbix et syslog-ng/iRedMail, tous sur le VLAN APPS.
+GLPI est hébergé sur son propre CT Debian 12 (LAMP)
 
 ---
 
