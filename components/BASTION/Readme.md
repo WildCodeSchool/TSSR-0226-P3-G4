@@ -2,7 +2,7 @@
 
 **[Installation de Guacamole](./Install.md)**   
 **[Guide d'utilisation de Guacamole](./User_guide.md)**    
-**[FAQ](./FAQ.md]**
+**[FAQ](./FAQ.md)**
 
 ## 1. Présentation & Rôle Stratégique
 Dans le cadre de l'évolution de l'infrastructure de la start-up **XenTech** (218 collaborateurs, 11 départements), la sécurisation des accès d'administration est un enjeu critique. Auparavant caractérisé par des PC en groupes de travail locaux sans cloisonnement, l'environnement est désormais structuré, virtualisé sur **Proxmox VE** et segmenté par VLANs à l'aide de **pfSense** et de routeurs **VyOS**.
