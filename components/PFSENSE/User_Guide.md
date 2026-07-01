@@ -1,6 +1,6 @@
 # Guide d'utilisation — Configuration pas-à-pas (pfSense)
 
-Ce guide rassemble les instructions opérationnelles pour l'administration, le durcissement initial et la mise en conformité de la politique de filtrage **Zero Trust** sur le pare-feu central **pfSense-XTech**.
+Ce guide rassemble les instructions opérationnelles pour l'administration, le durcissement initial et la mise en conformité de la politique de filtrage **Zero Trust** sur le pare-feu central **pfSense**.
 
 ---
 
