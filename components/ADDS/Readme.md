@@ -1,5 +1,5 @@
-# Serveur Active Directory —    
-Gestion des Identités et de la Sécurité Globale.
+# Serveur Active Directory 
+**Gestion des Identités et de la Sécurité Globale.**
 
 ## 1. Description du Service
 Le système d'identité du domaine `Xtech.green` s'appuie sur une infrastructure distribuée de 4 Contrôleurs de Domaine (DC). Ce service centralise l'authentification des 218 collaborateurs, applique les stratégies de groupe (GPO) pour le durcissement du parc, assure la résolution DNS pour l'intégralité des serveurs de production, et distribue la configuration IP dynamique (DHCP) aux postes clients.
