@@ -12,19 +12,19 @@ L'interface Web dépend directement du serveur applicatif Tomcat et du démon de
 
 **Étapes de diagnostic :**
 
-## 1 Vérifiez le statut des services essentiels dans le conteneur LXC :
+## 1 - Vérifiez le statut des services essentiels dans le conteneur LXC :
 
 ```
 sudo systemctl status tomcat9
 sudo systemctl status guacd
 ```
-## 2 Si un service est arrêté, redémarrez-le :    
+## 2 - Si un service est arrêté, redémarrez-le :    
 
 ```
 sudo systemctl restart tomcat9 guacd
 ```    
 
-## 3 Consultez les journaux d'erreurs de Tomcat pour identifier un problème de corruption de fichier .war ou de mémoire :   
+## 3 - Consultez les journaux d'erreurs de Tomcat pour identifier un problème de corruption de fichier .war ou de mémoire :   
 
 ```
 sudo tail -n 100 /var/log/tomcat9/catalina.out
