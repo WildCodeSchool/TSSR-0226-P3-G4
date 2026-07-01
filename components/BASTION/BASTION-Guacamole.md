@@ -1,5 +1,12 @@
 ## Installation d'un Bastion Apache Guacamole 1.6.0 (Tomcat 9 & MariaDB)
 
+Pré-requis : 
+
+- CT Debian 12 LAMP  
+- 2G de RAM  
+- Stockage 8G
+- CPU : 2 cores
+
 1. Mise à jour du système et installation des dépendances nécessaires
 
 `sudo apt update && sudo apt install -y build-essential libcairo2-dev libjpeg62-turbo-dev libpng-dev libtool-bin libossp-uuid-dev libvncserver-dev freerdp2-dev libssh2-1-dev libssl-dev libvorbis-dev libwebp-dev tomcat9 mariadb-server mariadb-client wget`
