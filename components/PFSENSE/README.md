@@ -19,6 +19,6 @@ Le supernet attribué à XenTech est **`172.16.64.0/19`** (Plage : `172.16.64.0`
 Pour naviguer dans la documentation technique de l'infrastructure, veuillez vous référer aux guides suivants :
 
 * **[Guide d'Installation](./Install.md)** : Guide pas-à-pas pour la configuration des interfaces, l'initialisation du LAN et le déploiement du Trunk VLAN.
-* **[Guide d'Utilisation du Filtrage](./User_guide.md)** : Manuel d'exploitation de la politique Zero Trust, règles par défaut et gestion des alias pour le cloisonnement des départements.
+* **[Guide d'Utilisation du Filtrage](./User_Guide.md)** : Manuel d'exploitation de la politique Zero Trust, règles par défaut et gestion des alias pour le cloisonnement des départements.
 * **[Procédure de Fusion P2P](./Fusion.md)** : Protocole de raccordement et d'interconnexion sécurisée par clé partagée (Shared Key) avec notre partenaire Pharmgreen via OpenVPN.
 * **[Foire Aux Questions](./FAQ.md)** : Réponses aux incidents fréquents, explications sur la logique des zones passives (BACKUP, WEB-INT) et l'absence de certains DHCP.
