@@ -121,6 +121,12 @@ Et voilà ! L'infra de backup est passée à 60 Go utiles, entièrement à chaud
 
 ---
 
+
+<img width="1649" height="875" alt="image" src="https://github.com/user-attachments/assets/bd9daab6-be63-4142-8dfc-482ffe5e931d" />
+
+
+---
+
 <img width="1644" height="62" alt="Capture d&#39;écran 2026-07-01 232947" src="https://github.com/user-attachments/assets/1529a898-313a-486a-9c87-bdcbb5c77718" />
 
 
