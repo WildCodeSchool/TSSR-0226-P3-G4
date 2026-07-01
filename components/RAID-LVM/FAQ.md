@@ -22,6 +22,8 @@ Solution : Entrez le mot de passe root dans la console de secours, éditez le fi
 
 ### Etape 1 : Ajouter un disque de 15G et injecter le disque dans la matrice RAID 5   
 
+---
+
 ### Etape 2 : Déclarer le disque /dev/sdf comme un membre disponible pour notre grappe /dev/md0 :   
 
 `sudo mdadm --manage /dev/md0 --add /dev/sdf`   
@@ -31,14 +33,21 @@ Solution : Entrez le mot de passe root dans la console de secours, éditez le fi
 ---
 
 ### Étape 3 : Demander au RAID 5 de grandir (Grow)
+
 Actuellement, notre RAID 5 est configuré pour utiliser 4 disques actifs. On va lui ordonner de passer à 5 disques actifs pour intégrer /dev/sdf et ainsi recalculer la parité sur l'ensemble :
 
+`sudo mdadm --grow /dev/md0 --raid-devices=5`
 
-<img width="1656" height="303" alt="image" src="https://github.com/user-attachments/assets/674dc653-fac2-431f-945c-0a6b0ca968ed" />
+<img width="1657" height="67" alt="image" src="https://github.com/user-attachments/assets/541277bf-b1a6-40f5-8f49-497eb79a519e" />
+
 
 ---
 Suivre la reconstruction !
 Le processeur va recalculer les blocs de parité pour étaler les données sur les 5 disques. Cette étape prend du temps. Il faut attendre qu'elle soit terminée à 100 % avant de passer à la suite. Surveille la progression avec :
+
+---
+
+<img width="1656" height="303" alt="Capture d&#39;écran 2026-07-01 225007" src="https://github.com/user-attachments/assets/1d3a3db0-55d1-49b8-bde1-85fc89d4eee2" />
 
 ---
 
@@ -57,6 +66,10 @@ Puisque la structure du RAID a changé (passée de 4 à 5 disques), il faut écr
 
 ---
 
+/!\ Surtout ne JAMAIS oublier l'étape 4 pour éviter de passer en md127 au redémarrage !!!
+
+---
+
 ### Étape 5 : Agrandir le volume physique LVM (PV)   
 
 Le RAID 5 fait maintenant 60 Go utiles, mais LVM croit toujours que le "disque" sous-jacent fait 45 Go. On va lui demander de recalculer sa taille :   
@@ -65,11 +78,12 @@ Le RAID 5 fait maintenant 60 Go utiles, mais LVM croit toujours que le "disque" 
 
 Pour vérifier que le Volume Group voit désormais l'espace supplémentaire libre, taper la cmd vgs.   
 
-<img width="1650" height="238" alt="image" src="https://github.com/user-attachments/assets/4e18e870-e562-4c05-a048-f4333922d2d2" />
+<img width="1650" height="238" alt="Capture d&#39;écran 2026-07-01 225709" src="https://github.com/user-attachments/assets/cbad83b5-3a19-4d91-bdb2-866db07031d7" />
+
 
 ---
 
-### Étape 6 : Étendre le Volume Logique et le système de fichiers (Tes commandes fétiches)   
+### Étape 6 : Étendre le Volume Logique et le système de fichiers 
 
 Maintenant que LVM a 15 Go de libre dans son groupe, on peut exécuter à nouveau les deux commandes pour attribuer tout l'espace restant au volume de backup et l'étendre en direct :
 
@@ -79,7 +93,8 @@ sudo lvextend -l +100%FREE /dev/mvg_bkp/lv_bkp
 sudo resize2fs /dev/mvg_bkp/lv_bkp
 ```
 
-<img width="1648" height="295" alt="image" src="https://github.com/user-attachments/assets/6dd2ce73-0583-4312-babc-629dd9723344" />
+<img width="1648" height="295" alt="Capture d&#39;écran 2026-07-01 230220" src="https://github.com/user-attachments/assets/4cc48220-3ce3-4cab-bfff-f08b141fc158" />
+
 
 ---
 
