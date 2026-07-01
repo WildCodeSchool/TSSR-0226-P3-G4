@@ -23,6 +23,4 @@ Comme expliqué dans le Guide Utilisateur, le générateur permet de créer inst
 
 ---
 
-<img width="1432" height="1014" alt="image" src="https://github.com/user-attachments/assets/25bb01fa-e50b-4c4b-918d-b6373db9b9ca" />
 
----
