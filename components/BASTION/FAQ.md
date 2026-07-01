@@ -20,11 +20,15 @@ sudo systemctl status guacd
 ```
 ## 2 Si un service est arrêté, redémarrez-le :    
 
-`sudo systemctl restart tomcat9 guacd`    
+```
+sudo systemctl restart tomcat9 guacd
+```    
 
 ## 3 Consultez les journaux d'erreurs de Tomcat pour identifier un problème de corruption de fichier .war ou de mémoire :   
 
-`sudo tail -n 100 /var/log/tomcat9/catalina.out`    
+```
+sudo tail -n 100 /var/log/tomcat9/catalina.out
+```    
 
 
 # FAQ 2
@@ -37,7 +41,9 @@ Point de vigilance Identifié : La matrice des flux indique le port 389 (LDAP st
 
 ## Vérification réseau : Testez la connectivité vers le DC principal (172.16.64.3) sur le port configuré :   
 
-`nc -zv 172.16.64.3 636`   
+```
+nc -zv 172.16.64.3 636
+```   
 
 Si le flux est bloqué, vérifiez les règles d'accès sur le pare-feu pfSense (VLAN Bastion vers VLAN DC).    
 
@@ -45,7 +51,9 @@ Si le flux est bloqué, vérifiez les règles d'accès sur le pare-feu pfSense (
 
 ## Analyse des logs de Guacamole :   
 
-`sudo journalctl -u guacd -n 50`   
+```
+sudo journalctl -u guacd -n 50
+```   
 
 # FAQ 3 
 
@@ -69,11 +77,15 @@ Si le problème concerne uniquement le fichier guacamole.properties :
 
 - Restaurer la sauvegarde locale générée avant modification :   
 
-`sudo cp /etc/guacamole/guacamole.properties.bak /etc/guacamole/guacamole.properties`    
+```
+sudo cp /etc/guacamole/guacamole.properties.bak /etc/guacamole/guacamole.properties
+```    
 
 - Redémarrer les services pour appliquer la configuration saine :
 
-`sudo systemctl restart tomcat9 guacd`   
+```
+sudo systemctl restart tomcat9 guacd
+```   
 
 
 
