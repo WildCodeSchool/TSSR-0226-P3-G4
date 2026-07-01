@@ -10,6 +10,13 @@ Après la 1ère connexion à GLPI avec les identifiants par défaut  (`glpi` / `
 
 <img width="1898" height="512" alt="glpi-creation-T1-super-admin" src="https://github.com/user-attachments/assets/a443586f-9fe1-4d77-b164-223c16fd31b4" />
 
+---
+
+Maintenant que le compte super -admin `T1` est créé, il faut se déconnecter de la base par défaut (`glpi/glpi`) et se connecter en tant que `T1`.
+
+
+
+
 
 ### A6 — Règle pare-feu nécessaire
 
@@ -31,7 +38,7 @@ Sur le CT GLPI, créer le script `/backup-glpi.sh` :
 ```bash
 #!/bin/bash
 
-# Duplique l'affichage :    l'  cran ET dans le fichier de log
+# Duplique l'affichage : à l'écran ET dans le fichier de log
 exec > >(tee -a /var/log/backup_glpi.log) 2>&1
 
 # ==============================================================================
@@ -147,6 +154,87 @@ chmod 750 /mnt/BKP/GLPI
    ```
 
    <img width="1918" height="203" alt="glpi-preuve-sauvegarde-BKP" src="https://github.com/user-attachments/assets/4c3d6f2a-2724-4cef-af4c-82701c1ed173" />
+
+   ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+## Plan de Restauration (Rollback Procedure)
+
+En cas de corruption de la base de données, d'une mauvaise manipulation sur les fichiers système ou d'une mise à jour logicielle défaillante, la procédure de retour arrière suivante doit être appliquée.
+
+### Étape 4.1 : Isolation du service
+
+```bash
+# Interrompre les requêtes HTTP arrivant sur le Helpdesk
+systemctl stop apache2
+
+```
+
+### Restauration des fichiers de l'application
+
+```bash
+# Purge du répertoire corrompu
+rm -rf /var/www/html/glpi/*
+
+# Rapatriement de la sauvegarde saine depuis le serveur de backup via Rsync
+rsync -avz t1@srv-bkp:/volume/backups/glpi/files/ /var/www/html/glpi/
+
+# Rétablissement strict des permissions pour Apache
+chown -R www-data:www-data /var/www/html/glpi
+
+```
+
+### Restauration de la base de données SQL
+
+```bash
+# Suppression et récréation d'une base propre
+mysql -u root -p -e "DROP DATABASE db_glpi; CREATE DATABASE db_glpi;"
+
+# Injection du dernier dump SQL valide (récupéré du serveur de backup)
+mysql -u user_glpi -p db_glpi < /tmp/glpi_db_backup.sql
+
+```
+
+### Redémarrage et validation
+
+```bash
+# Relance des démons
+systemctl start mariadb
+systemctl start apache2
+
+# Test d'accès local pour valider le statut opérationnel
+curl -I http://localhost/glpi/
+
+```
+---
+
+
+
+
+
+
+
+
+
+
 
 3. Test de restauration (à faire au moins une fois pour valider que la sauvegarde est exploitable, pas juste présente) :
    ```bash
