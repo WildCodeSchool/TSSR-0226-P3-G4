@@ -7,7 +7,7 @@ L'infrastructure intègre une logique de durcissement selon les recommandations 
 
 ## 2. Caractéristiques Techniques et Fiches d'Identité
 * **Nom d'hôte principal (Tier 0) :** `xts-411.xtech.green`
-* **Système d'Exploitation :** Windows Server 2022 Standard (Expérience de bureau)
+* **Système d'Exploitation :** Windows Server 2022 Standard 
 * **Adresse IP :** `172.16.64.3/24` (Passerelle : `172.16.64.254`)
 * **Positionnement Réseau :** Isolé dans un réseau local virtuel (VLAN) dédié à l'Active Directory.
 * **Services Hébérges :** AD DS, Serveur DNS, Serveur DHCP.
