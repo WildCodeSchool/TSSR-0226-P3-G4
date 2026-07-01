@@ -20,6 +20,17 @@ Solution : Entrez le mot de passe root dans la console de secours, éditez le fi
 
 **Etendre le LV de 45 à 60G**   
 
+`sudo mdadm --manage /dev/dev/md0 --add /dev/sdf`    
+`sudo mdadm --grow /dev/md0 --raid-devices=5`  
+`watch cat /proc/mdstat`
+`sudo mdadm --detail --scan | sudo tee /etc/mdadm/mdadm.conf`
+`sudo update-initramfs -u`   
+`sudo pvresize /dev/md0`   
+`df -h /mnt/BKP`   
+`mount -a`
+
+
+
 ### Etape 1 : Ajouter un disque de 15G et injecter le disque dans la matrice RAID 5   
 
 ---
@@ -107,6 +118,14 @@ sudo resize2fs /dev/mvg_bkp/lv_bkp
 ---
 
 Et voilà ! L'infra de backup est passée à 60 Go utiles, entièrement à chaud et sans aucune perte de données.
+
+---
+
+<img width="1644" height="62" alt="Capture d&#39;écran 2026-07-01 232947" src="https://github.com/user-attachments/assets/1529a898-313a-486a-9c87-bdcbb5c77718" />
+
+
+---
+
 
 
 
