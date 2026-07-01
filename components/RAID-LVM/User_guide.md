@@ -55,7 +55,7 @@ Vérifiez que l'utilisation du point de montage /mnt/BKP laisse suffisamment d'e
 
 ## Plan de Contingence & Remplacement (Procédure de Rollback en cas de Panne)
 
-Cas n°1 : Perte d'un disque sur le RAID1 Windows   
+### Cas n°1 : Perte d'un disque sur le RAID1 Windows   
 
 Si un disque IDE lâche sur Proxmox, le Gestionnaire de disques Windows affiche le volume en mode Dégradé.   
 
@@ -87,6 +87,63 @@ Faites un clic droit sur le nouveau disque → Initialiser le disque (GPT), puis
 Faites un clic droit sur le volume en miroir existant qui est dégradé, sélectionnez Ajouter un miroir..., et choisissez le nouveau disque.
 
 Le système passe en statut Resynching : la réplication se fait en tâche de fond. Le volume reste pleinement disponible.
+
+---
+
+### Cas n°2 : Perte d'un disque sur le RAID5 Linux (Statut [U_UU])
+
+Si un des disques (par exemple /dev/sdc) tombe en panne, le serveur de sauvegarde passe en mode dégradé mais ne coupe pas l'accès aux données.
+
+Procédure de reconstruction à chaud (Rollback matériel) :
+
+Étape 2.1 : Isolation du disque défectueux   
+Si le système n'a pas basculé automatiquement le disque en anomalie, marquez-le comme défaillant (fail) puis extrayez-le logiciellement de la grappe :   
+
+```
+mdadm --manage /dev/md0 --fail /dev/sdc
+mdadm --manage /dev/md0 --remove /dev/sdc
+```
+
+---
+
+Étape 2.2 : Remplacement physique/virtuel   
+Sur l'interface Proxmox, allez dans le menu Hardware de la VM de Backup.   
+
+Supprimez le disque correspondant et recréez un disque SCSI de 15 Go sur votre datastore.   
+
+<img width="1304" height="537" alt="Capture d&#39;écran 2026-07-01 220118" src="https://github.com/user-attachments/assets/1b2bc88d-a83e-4504-a52c-d70b8053cacb" />
+
+---
+
+
+Côté Linux, identifiez le nom du nouveau disque à l'aide de la commande lsblk (ex: /dev/sdf).   
+
+
+Étape 2.3 : Intégration et reconstruction automatique    
+Réinsérez le nouveau disque sain au sein de la matrice /dev/md0 :   
+
+
+`mdadm --manage /dev/md0 --add /dev/sdf`   
+
+Étape 2.4 : Surveillance du retour à l'état stable    
+Suivez en temps réel le pourcentage de reconstruction des données de parité calculé par le processeur :    
+
+`watch cat /proc/mdstat`   
+
+
+<img width="1914" height="286" alt="image" src="https://github.com/user-attachments/assets/85a2c2d6-6b6b-4a42-8207-878e43f481fe" />
+
+---
+
+Laissez l'opération se terminer jusqu'à ce que la matrice affiche à nouveau le statut [UUUU] et que l'état de mdadm --detail /dev/md0 redevienne totalement clean.    
+
+
+
+
+
+
+
+
 
 
 
