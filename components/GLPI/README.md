@@ -1,46 +1,3 @@
-# Sommaire
-
-1.  [1. Role du service](#1-Role-du-service)
-2.  [2. Position dans l'architecture](#2-Position-dans-lrchitecture)
-    - [2.1 Serveur Principal](#21-Serveur-Principal)
-    - [2.2 Serveur Backup](#22-Serveur-Backup)
-3.  [3. Prérequis](#3-Prérequis)
-    - [3.1 Pour le Serveur](#31-Pour-le-Serveur)
-    - [3.2 Pour le client](#32-Pour-le-client)
-4.  [4. Documentation associé](#4-Documentation-Associé)
-
----
-# 1. Role du service
-
-
----
-# 2. Position dans l'architecture
-
-### 2.1 Serveur **Principal**: 
-- Nom du serveur : ****
-- Adresse IP : ****
-- Gateway : ****
-
-### 2.2 Serveur **Backup** :
-- Nom du serveur : ****
-- Adresse IP : ****
-- Gateway : ****
-
----
-# 3. Prérequis 
-
-### 3.1 Pour le Serveur : 
-
-
-
-### 3.2 Pour le client :
-
-
-
----
-# 4. Documentation
-
-
 # Composant GLPI - Gestion de Parc & Helpdesk
 
 Ce dossier rassemble la documentation technique et opérationnelle liée au déploiement, à l'administration et à la politique de sauvegarde de la solution **GLPI (Version 11.0.7)** au sein de notre infrastructure.
@@ -95,4 +52,13 @@ grep -i "backup" /var/log/syslog
 
 # Tester la configuration des VirtualHosts Apache
 apache2ctl configtest
+```
+
+---
+
+<img width="1877" height="1287" alt="image" src="https://github.com/user-attachments/assets/9b77f05f-5589-4bcf-968c-7eeb3dfe9349" />
+
+---
+
+
 
