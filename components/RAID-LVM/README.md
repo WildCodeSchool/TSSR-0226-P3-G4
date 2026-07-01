@@ -1,10 +1,10 @@
-# Composant Stockage - Volumes Résilients RAID1 (Windows) & RAID5 + LVM (Linux)
+## Composant Stockage avancé - RAID1 (Windows) RAID5 + LVM (Linux)
 
 Ce dossier rassemble l'ensemble des ressources, scripts et documentations techniques liés à la mise en place de la politique de stockage avancée de l'infrastructure **XenTech**.
 
 L'architecture est scindée en deux topologies distinctes afin de sécuriser à la fois les serveurs de production Windows et le serveur centralisé de sauvegardes :
 1. **RAID1 (Miroir matériel/logiciel) :** Sécurisation des serveurs clés sous Windows Server 2022 (Active Directory, XTS-417, etc.) face à la perte d'un disque système ou de données.
-2. **RAID5 Logiciel + LVM :** Déploiement d'un grand espace résilient et extensible de 45 Go utiles sur le serveur de backup Linux (**Debian 13**) pour stocker les images Veeam, les archives d'infrastructure et les configurations.
+2. **RAID5 Logiciel + LVM :** Déploiement d'un grand espace résilient et extensible de 45 Go utiles sur le serveur de backup Linux (**Debian 13**) pour stocker les Base de données GLPI, les archives d'infrastructure et les configurations.
 
 ---
 
@@ -25,3 +25,9 @@ Cliquez sur les liens ci-dessous pour accéder directement aux guides associés 
 | **Serveur BKP Linux** (VLAN Backup) | **SCSI** (4 disques de 15 Go) | **RAID5** (Tolérance à 1 panne) | `mdadm` + LVM (`pvcreate`, `vgcreate`, `lvcreate`) | Volume Ext4 sur `/mnt/BKP` |
 
 ---
+
+<img width="1895" height="922" alt="image" src="https://github.com/user-attachments/assets/67a76b52-a306-44cf-851b-a6fe549a3451" />
+
+---
+
+
