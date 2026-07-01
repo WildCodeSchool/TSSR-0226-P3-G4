@@ -18,7 +18,7 @@ Ce guide rassemble les instructions opérationnelles pour l'administration, le d
 Pour révoquer les accès d'usine et appliquer la politique de sécurité XenTech :
 1. Aller dans le menu supérieur de pfSense : **System ➔ User Manager**.
 2. Sur la ligne de l'utilisateur `admin`, cliquer sur le bouton d'édition (icône de crayon à droite).
-3. Faire défiler la page jusqu'au champ **Password** et saisir le nouveau mot de passe fort requis : `Azerty1*`
+3. Faire défiler la page jusqu'au champ **Password** et saisir le nouveau mot de passe fort requis : `ex: G4-TSSR-2026`
 4. Confirmer dans le champ **Password CONFIRM**.
 5. Descendre tout en bas de la page et cliquer sur **Save**.
 
