@@ -1,4 +1,5 @@
-#### Cette documentation détaille la mise en place du stockage avancé de l'entreprise **XTech** : RAID1 sur les serveurs Windows, et RAID5 logiciel + LVM sur le serveur BACKUP Linux.
+#### Cette documentation détaille la mise en place du stockage avancé de l'entreprise **XTech** :    
+RAID1 sur les serveurs Windows, et RAID5 logiciel + LVM sur le serveur BACKUP Linux.
 
 --------
 
