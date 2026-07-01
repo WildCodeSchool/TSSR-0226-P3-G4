@@ -8,26 +8,26 @@ L'architecture applique les principes de durcissement selon les recommandations 
 
 ## 2. Caractéristiques Techniques et Topologie des Contrôleurs de Domaine
 
-### 2.1. DC Principal : `xts-411.xtech.green` (Tier 0)
+### 2.1. DC Principal : `XTSE-411` (Tier 0)
 * **Système d'Exploitation :** Windows Server 2022 Standard 
 * **Adresse IP :** `172.16.64.3/24` (Passerelle : `172.16.64.254`)
 * **Positionnement Réseau :** Isolé dans un réseau local virtuel (VLAN) dédié à l'Active Directory.
 * **Services Hébergés :** AD DS, Serveur DNS, Serveur DHCP (Distribution Postes Clients).
 * **Rôles FSMO Détenus (Niveau Forêt) :** Contrôleur de Schéma (Schema Master), Maître de Nomination de Domaines (Domain Naming Master).
 
-### 2.2. DC Secondaire : `server-core-1.xtech.green` (Tier 0)
+### 2.2. DC Secondaire : `XTSE-412` (Tier 0)
 * **Système d'Exploitation :** Windows Server 2022 Core (Interface textuelle uniquement)
 * **Adresse IP :** `172.16.64.23/24`
 * **Services Hébergés :** AD DS, DNS Réplication.
 * **Rôles FSMO Détenus (Niveau Domaine) :** Émulateur PDC (PDC Emulator).
 
-### 2.3. DC Troisième : `server-core-2.xtech.green` (Tier 0)
+### 2.3. DC Troisième : `XTSE-424` (Tier 0)
 * **Système d'Exploitation :** Windows Server 2022 Core (Interface textuelle uniquement)
 * **Adresse IP :** `172.16.64.24/24`
 * **Services Hébergés :** AD DS, DNS Réplication.
 * **Rôles FSMO Détenus (Niveau Domaine) :** Maître RID (RID Master).
 
-### 2.4. DC Quatrième / Serveur WDS : `xts-wds.xtech.green` (Tier 0)
+### 2.4. DC Quatrième / Serveur WDS : `XTSE-420` (Tier 0)
 * **Système d'Exploitation :** Windows Server 2022 Standard (Expérience de bureau)
 * **Adresse IP :** `172.16.64.25/24`
 * **Services Hébergés :** AD DS, Windows Deployment Services (WDS), DNS Réplication.
