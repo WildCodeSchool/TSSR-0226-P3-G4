@@ -6,8 +6,6 @@ Ce guide rassemble les instructions opérationnelles pour l'administration, le d
 
 ## 1. Connexion initiale & changement du mot de passe admin
 
-Après avoir configuré la console réseau et raccordé la machine d'administration (VM 403 rattachée au bridge Proxmox `vmbr400`, sans tag VLAN, configurée avec l'IP statique `172.16.64.10/24`), suivre cette procédure :
-
 ### 1.1. Première authentification
 1. Ouvrir le navigateur web et naviguer vers l'adresse d'administration par défaut : **`https://172.16.64.254`**.
 2. Passer l'alerte de sécurité liée au certificat SSL auto-signé. Cliquer sur **"Paramètres avancés"** (ou "Avancé"), puis sur **"Accepter le risque et poursuivre"**.
