@@ -1,4 +1,4 @@
-# Module : Services de Gestion des Identités, de la Sécurité Globale et du Serveur de Fichiers
+# Serveur Active Directory — Services de Gestion des Identités, de la Sécurité Globale et du Serveur de Fichiers
 
 ## 1. Présentation Technique Générale
 Ce module documente le socle de sécurité, d'identité et de gouvernance du système d'information de l'entreprise Xtech.green. L'infrastructure est conçue pour centraliser l'authentification des 218 collaborateurs, assurer la résolution de noms de l'ensemble des serveurs du domaine, distribuer dynamiquement les configurations IP aux postes clients, et assurer le cloisonnement strict des accès aux données du serveur de fichiers. 
@@ -19,3 +19,4 @@ Accéder aux différents volets de la documentation technique via les liens ci-d
 * **[Guide d'Installation et de Déploiement](./Install.md)**
 * **[Guide d'Exploitation et de Gouvernance](./User_guide.md)**
 * **[Guide de Résolution des Incidents](./FAQ.md)**
+
