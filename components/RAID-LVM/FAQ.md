@@ -22,12 +22,12 @@ Solution : Entrez le mot de passe root dans la console de secours, éditez le fi
 
 `sudo mdadm --manage /dev/dev/md0 --add /dev/sdf`    
 `sudo mdadm --grow /dev/md0 --raid-devices=5`  
-`watch cat /proc/mdstat`
-`sudo mdadm --detail --scan | sudo tee /etc/mdadm/mdadm.conf`
+`watch cat /proc/mdstat`   
+`sudo mdadm --detail --scan | sudo tee /etc/mdadm/mdadm.conf`   
 `sudo update-initramfs -u`   
 `sudo pvresize /dev/md0`   
 `df -h /mnt/BKP`   
-`mount -a`
+`mount -a`   
 
 
 
