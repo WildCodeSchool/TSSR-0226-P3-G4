@@ -50,6 +50,6 @@ L'infrastructure est hautement disponible et durcie gràce à la répartition de
 * **DC-4 (GUI — WDS) :** `172.16.65.6` | Détient le rôle **Maître d'Infrastructure**
 
 ## Structure de la Documentation
-* [Guide d'Installation (`Install.md`)](./Install.md) : Déploiement via scripts, promotion des serveurs Core et configuration des étendues DHCP.
-* [Guide d'Utilisation (`User_guide.md`)](./User_guide.md) : Gestion de la structure des OUs, application de la stratégie AGDLP, droits NTFS/ABE et GPO de mappage de lecteurs.
-* [Foire Aux Questions (`FAQ.md`)](./FAQ.md) : Résolution des problèmes de réplication, transfert de rôles FSMO, et résolution du bug de certificat LDAPS pour iRedMail.
+* **[Guide d'Installation](./Install.md)** : Déploiement via scripts, promotion des serveurs Core et configuration des étendues DHCP.
+* **[Guide d'Utilisation](./User_guide.md)** : Gestion de la structure des OUs, application de la stratégie AGDLP, droits NTFS/ABE et GPO de mappage de lecteurs.
+* **[Foire Aux Questions](./FAQ.md)** : Résolution des problèmes de réplication, transfert de rôles FSMO, et résolution du bug de certificat LDAPS pour iRedMail.
