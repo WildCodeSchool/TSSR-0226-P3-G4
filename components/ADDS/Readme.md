@@ -3,7 +3,7 @@
 ## 1. Description du Service
 Le serveur Active Directory (`xts-411`) constitue le point central d'authentification, de contrôle des accès et de gestion de l'infrastructure réseau du domaine `Xtech.green`. Il héberge l'annuaire d'entreprise regroupant 218 collaborateurs, applique les stratégies de groupe (GPO) pour le durcissement du parc, assure la résolution DNS pour l'intégralité des serveurs de production, et distribue la configuration IP dynamique (DHCP) aux postes clients.
 
-L'infrastructure intègre une logique de durcissement (Hardening) selon les recommandations de l'ANSSI, un cloisonnement des privilèges par niveaux (Tiering), ainsi qu'une interconnexion sécurisée par relation de confiance avec une entité partenaire externe.
+L'infrastructure intègre une logique de durcissement selon les recommandations de l'ANSSI, un cloisonnement des privilèges par niveaux (Tiering), ainsi qu'une interconnexion sécurisée par relation de confiance avec une entité partenaire externe.
 
 ## 2. Caractéristiques Techniques et Fiches d'Identité
 * **Nom d'hôte principal (Tier 0) :** `xts-411.xtech.green`
