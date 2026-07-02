@@ -358,35 +358,10 @@ Pour appliquer la politique d'isolation sélective sans multiplier les règles r
 
 **Ne rien modifer sur RH, FINANCE, JURIDIQUE, DIRECTION** —  isolement (règles 1-6, jamais de règle vers DEPT_STANDARD ni vers un autre VLAN sensible).
 
----
 
 
-## 2. Création et gestion des alias réseau (Aliases)
 
-Pour appliquer la politique d'isolation sélective sans multiplier les règles redondantes, centraliser les sous-réseaux des départements non-sensibles au sein d'un Alias global.
 
-1. Accéder au menu : **Firewall ➔ Aliases**.
-2. Rester sur l'onglet par défaut **IP** et cliquer sur le bouton vert **+ Add** en bas à droite.
-3. Renseigner les propriétés suivantes de l'alias :
-   * **Name :** `DEPT_STANDARD`
-   * **Description :** `Regroupement des sous-réseaux des départements non-sensibles`
-   * **Type :** Sélectionner **`Network(s)`** dans le menu déroulant.
-4. Ajouter un à un les réseaux cibles en cliquant sur le bouton **+ Add Network** pour chaque nouvelle ligne :
-
-| Réseau / IP Subnet | Masque | Description / Département associé |
-| :--- | :---: | :--- |
-| `172.16.74.0` | `24` | COMMUNICATION |
-| `172.16.75.0` | `24` | COMMERCIAL |
-| `172.16.77.0` | `24` | MARKETING |
-| `172.16.78.0` | `24` | DEVELOPPEMENT (PRODUCTION) |
-| `172.16.79.0` | `24` | R&D (RD) |
-| `172.16.80.0` | `24` | SERVICES GENERAUX (LOGISTIQUE) |
-
-5. Vérifier la conformité des masques de sous-réseau (sélectionner impérativement le suffixe **24** pour chaque ligne).
-6. Cliquer sur **Save** tout en bas de la page.
-7. **IMPORTANT :** Cliquer sur le bouton vert **Apply Changes** qui apparaît en haut de l'écran pour valider la configuration.
-
-<img width="1599" height="1005" alt="image" src="https://github.com/user-attachments/assets/a34f783d-3515-433f-90ed-dcd62954e8e6" />
 
 
 ---
