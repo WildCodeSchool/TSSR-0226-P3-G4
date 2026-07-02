@@ -209,168 +209,20 @@ Qu'ils soient sensibles ou standards. Ils gardent exactement les règles 1-6.
 
 ---
 
-### F2 — VLAN DEPT (tous les départements) → Interfaces → [VLAN] → Firewall Rules
-
-Pour CHAQUE VLAN département (RH, COMMUNICATION, etc.), créer ces règles dans l'ordre :
-
-**Règle 1 — Autoriser DNS vers AD**
-
-- Action: Pass / Protocol: TCP/UDP / Source: ce VLAN net / Destination: `172.16.65.3` / Port: `53`
-
-**Règle 2 — Autoriser DHCP** (si pfSense gère, sinon ignorer)
-
-- Déjà géré automatiquement par le service DHCP de pfSense
-
-**Règle 3 — Autoriser auth Kerberos/LDAP vers AD**
-
-- Action: Pass / Protocol: TCP/UDP / Source: ce VLAN net / Destination: `172.16.65.3` / Port: `88,389,445,464`
-
-**Règle 4 — Autoriser accès WEB-INT**
-
-- Action: Pass / Source: ce VLAN net / Destination: `172.16.68.0/24` / Port: `80,443`
-
-**Règle 5 — Autoriser accès APPS (GLPI, Zabbix)**
-
-- Action: Pass / Source: ce VLAN net / Destination: `172.16.66.0/24` / Port: `80,443`
-
-**Règle 6 — Autoriser Internet (sortant uniquement)**
-
-- Action: Pass / Source: ce VLAN net / Destination: `any` (WAN) / Port: `80,443,53`
-
-**Règle finale implicite** : tout le reste est bloqué (comportement par défaut pfSense entre interfaces).
-
-
-<img width="1195" height="1010" alt="COMMUNICATION" src="https://github.com/user-attachments/assets/ba846f1a-2ec5-40af-b90b-d5a99679e39a" />
-
-
-
-### F3 — VLAN AD → Firewall Rules
-
-**Règle 1 — Autoriser réponses vers tous les VLANs clients** (DNS/LDAP/Kerberos retour)
-
-- Source: `172.16.65.0/24` / Destination: `any` / déjà couvert par "established/related" de pfSense par défaut, pas besoin de règle supplémentaire pour le retour
-
-**Règle 2 — Autoriser AD → APPS** (sync GLPI/iRedMail)
-
-- Action: Pass / Source: `172.16.65.0/24` / Destination: `172.16.66.0/24` / Port: `389,636`
-
-**Règle finale** : Deny all vers DMZ, BASTION (sauf retour bastion qu'on configure en F5)
-
-
-<img width="1803" height="988" alt="AD" src="https://github.com/user-attachments/assets/0999e8a1-702d-4437-89a0-eb3af6bbdc58" />
-
-
-### F4 — VLAN APPS → Firewall Rules
-
-- Pass : Source `172.16.66.0/24` → Destination `172.16.65.3` (AD) port `389,636,53` (sync GLPI/Zabbix vers AD)
-- Pass : Source `172.16.66.0/24` → Destination `172.16.67.0/24` (BACKUP) port `22,3306` (rsync + mysqldump vers BKP)
-- Pass : Source `172.16.66.0/24` → Destination WAN port `80,443` (mises à jour)
-- Deny : tout le reste
-
-
-<img width="1831" height="1005" alt="APPS" src="https://github.com/user-attachments/assets/6d0a6d75-45b6-4f14-8b14-8753f1608fc1" />
-
-
-### F5 — VLAN BASTION → Firewall Rules (le pivot central)
-
-C'est LE VLAN qui a le droit de parler à tout le LAN pour l'administration :
-
-- Pass : Source `172.16.69.0/24` → Destination `172.16.65.0/24` (AD) port `3389,22`
-- Pass : Source `172.16.69.0/24` → Destination `172.16.66.0/24` (APPS) port `3389,22`
-- Pass : Source `172.16.69.0/24` → Destination `172.16.67.0/24` (BACKUP) port `22`
-- Pass : Source `172.16.69.0/24` → Destination `172.16.70.0/24` (JUMP) port `3389,22`
-- Deny : tout le reste (notamment DMZ — le bastion n'a pas accès direct DMZ)
-
-
-<img width="1704" height="1001" alt="BASTION" src="https://github.com/user-attachments/assets/207668d3-92f8-43eb-8be2-f8fd87591d5e" />
-
-
-### F6 — VLAN JUMP → Firewall Rules
-
-- Pass : Source `172.16.70.0/24` → Destination `any LAN` port `3389,22` (le jump rebondit vers les serveurs cibles selon le tier admin)
-- Pass : Source `172.16.69.0/24` (BASTION) → Destination `172.16.70.0/24` (JUMP) port `3389,22` (déjà fait en F5, redondant mais explicite ici aussi)
-- Deny : tout le reste
-
-<img width="1801" height="989" alt="JUMP" src="https://github.com/user-attachments/assets/c6ba4dce-c542-4320-b115-6d5909b4cb62" />
-
-
-### F7 — VLAN DMZ → Firewall Rules (isolation stricte)
-
-- Pass : Source `172.16.71.0/24` → Destination `172.16.65.3` (AD) port `636` **uniquement** (LDAPS, IP à IP précise, jamais 389 en clair) — c'est le flux iRedMail → AD pour l'auth
-- Pass : Source `172.16.71.0/24` → Destination WAN port `25,80,443,587` (mail + web sortant)
-- **Deny explicite** : Source `172.16.71.0/24` → Destination `any LAN` (tout le reste du LAN, RIEN d'autre n'est autorisé)
-- **Deny explicite en haut des règles WAN/LAN** : Source `any WAN` → Destination `LAN nets` (0 accès WAN→LAN, sauf NAT entrant ciblé vers DMZ uniquement, voir F8)
-
-
-<img width="1856" height="967" alt="DMZ" src="https://github.com/user-attachments/assets/e9f3601c-de59-489f-96f1-4562122be081" />
-
-
-### F8 — WAN → Firewall Rules (entrée depuis Internet)
-
-- Pass (NAT) : Destination `172.16.71.x` (IP publique du WEB externe en DMZ) port `80,443`
-- Pass (NAT) : Destination `172.16.71.x` (IP iRedMail DMZ) port `25,587,443`
-- **Deny All** : tout le reste depuis WAN (donc 0 accès WAN→LAN direct, conforme à ta demande)
-
-
-<img width="1797" height="958" alt="WAN" src="https://github.com/user-attachments/assets/32c71d76-8980-4eb0-b74c-d71a766b7335" />
-
-
-### F9 — VPN → Firewall Rules (télétravail)
-
-- Pass : Source `172.16.72.0/24` (VPN) → Destination `172.16.70.0/24` (JUMP) port `3389,22` **uniquement**
-- Deny : tout le reste (le télétravailleur doit obligatoirement passer par le Jump, jamais direct vers un serveur)
-
-
-<img width="1826" height="729" alt="VPN" src="https://github.com/user-attachments/assets/b35e93ff-9085-421d-be3c-e9f66af2b946" />
-
-
----
-
-## PARTIE G — Vérification finale
-
-**Diagnostics → Ping** depuis pfSense, teste :
-
-- `172.16.65.254` (AD) → doit répondre
-- Depuis un poste test RH (à connecter au VLAN RH), ping vers `172.16.74.254` (COMMUNICATION) → doit **échouer** (isolation confirmée)
-- Depuis BASTION, ping vers AD → doit réussir
-
-### Pour WIFIGUEST 
-
-Contrairement aux autres VLANs département, **WIFIGUEST ne doit PAS avoir accès à WEB-INT ni APPS** (règles 4 et 5) — un visiteur n'a pas au portail interne ou GLPI. 
-
-Donc WIFIGUEST = règle 6 uniquement (+ éventuellement DNS public), pas de règle 1/3/4/5 vers ton AD/APPS/WEB-INT.
-
-### Pour WIFIENTREPRISE
-
-Règle 1 à 6 comme un VLAN département classique, puisque ce sont les employés qui s'y connectent.
-
-### 1. VLAN BACKUP et WEB-INT vides 
-
-**BACKUP vide** : c'est **normal et volontaire**. BACKUP est une destination, jamais une source qui initie du trafic vers les autres VLANs. Toutes les connexions vers BACKUP partent d'APPS (rsync/mysqldump, déjà fait dans les règles APPS) ou de BASTION (admin). BACKUP n'a besoin d'aucune règle sortante propre — sauf s'il accède à Internet pour ses propres mises à jour système (`apt update`), dans ce cas ajoute juste une règle "BACKUP → WAN port 80,443".
-
-**WEBINT vide** : WEB-INT est un serveur Apache (le portail interne) — **c'est lui aussi qui ne reçoit que du trafic entrant** (les départements s'y connectent en HTTP/HTTPS, déjà autorisé via les règles département "Règle 4"). WEB-INT n'a pas besoin d'initier de connexion sortante vers un autre VLAN, sauf s'il doit aller chercher des données dynamiques sur GLPI/Zabbix (APPS) pour les afficher sur le portail — ajouter "WEBINT → APPS port 80,443". 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-## 3. Implémentation des règles de filtrage par VLAN (Firewall Rules)
+### F2 — Logique et ordonnancement
 
 > **Règle d'or de l'ordonnancement :** pfSense analyse les règles de pare-feu de haut en bas. Dès qu'une condition est remplie (première correspondance ou *First Match*), le traitement s'arrête et s'applique. Placer impérativement les autorisations spécifiques en haut et les restrictions globales en bas. En l'absence de règle, tout trafic inter-VLAN subit un blocage par défaut.
 
-### 3.1. Configuration pas-à-pas d'un VLAN Standard (Exemple : COMMUNICATION)
+Modèle d'isolation sélective des départements :
+VLANs Standards (COMMUNICATION, COMMERCIAL, MARKETING, DEVELOPPEMENT, R&D, SERVICES GENERAUX, WIFIENTREPRISE) : Ils disposent d'une règle spécifique les autorisant à inter-communiquer via l'alias DEPT_STANDARD.
+
+VLANs Sensibles (RH, FINANCE, JURIDIQUE, DIRECTION, DSI) : Ils ne possèdent aucune règle d'accès vers les autres départements. Ils sont totalement hermétiques et isolés du reste de l'entreprise.
+
+Cas particulier WIFIGUEST : Il ne doit avoir accès à aucune ressource interne (ni AD, ni APPS, ni WEB-INT). Il dispose uniquement d'un accès direct vers l'Internet (WAN).
+
+
+### F3 — Règles pour les VLANs Départements
+
 Naviguer dans **Firewall ➔ Rules**, puis cliquer sur l'onglet correspondant à l'interface du VLAN (ex: **COMMUNICATION**). Pour chaque règle, cliquer sur le bouton **Add (avec flèche vers le haut)** pour l'insérer en haut de la pile :
 
 #### Règle 1 — Autoriser les requêtes DNS vers l'Active Directory
@@ -381,63 +233,135 @@ Naviguer dans **Firewall ➔ Rules**, puis cliquer sur l'onglet correspondant à
 * **Destination Port Range :** From port `53` (DNS) to port `53` (DNS).
 * **Description :** `Flux DNS vers AD`
 
-#### Règle 2 — Autoriser l'authentification Kerberos / LDAP / SMB vers l'AD
+#### Règle 2 — Autoriser DHCP
+Déjà géré automatiquement de manière invisible en arrière-plan par le service DHCP natif de pfSense.
+
+#### Règle 3 — Autoriser l'authentification Kerberos / LDAP / SMB vers l'AD
 * **Action :** `Pass` | **Protocol :** `TCP/UDP` | **Source :** `COMMUNICATION net`
 * **Destination :** `Single host or alias` ➔ Valeur : `172.16.65.3`
 * **Destination Port Range :** Saisir `any` *(ou utiliser un alias de ports préalablement créé incluant 88, 389, 445, 464)*.
 * **Description :** `Flux Auth Services AD`
 
-#### Règle 3 — Autoriser l'accès au serveur Web Interne (WEB-INT)
+#### Règle 4 — Autoriser l'accès au serveur Web Interne (WEB-INT)
 * **Action :** `Pass` | **Protocol :** `TCP` | **Source :** `COMMUNICATION net`
 * **Destination :** `WEB_INT net` *(ou le sous-réseau `172.16.68.0/24`)*.
 * **Destination Port Range :** From `HTTP (80)` to `HTTPS (443)`.
 * **Description :** `Accès Portail Web Interne`
 
-#### Règle 4 — Autoriser l'accès aux Applications d'exploitation (APPS)
+#### Règle 5 — Autoriser l'accès aux Applications d'exploitation (APPS)
 * **Action :** `Pass` | **Protocol :** `TCP` | **Source :** `COMMUNICATION net`
 * **Destination :** `APPS net` *(ou le sous-réseau `172.16.66.0/24`)*.
 * **Destination Port Range :** From `HTTP (80)` to `HTTPS (443)`.
 * **Description :** `Accès GLPI / Zabbix`
 
-#### Règle 5 — Autoriser l'accès d'inter-communication standard (Inter-VLAN Standard)
+#### Règle 6 — Autoriser l'accès d'inter-communication standard (Inter-VLAN Standard)
 * **Action :** `Pass` | **Protocol :** `any` | **Source :** `COMMUNICATION net`
 * **Destination :** `Single host or alias` ➔ Saisir l'alias : **`DEPT_STANDARD`**.
 * **Destination Port Range :** `any`
 * **Description :** `Interconnexion inter-départements standards`
 
-#### Règle 6 — Autoriser l'accès Internet sortant uniquement (WAN)
+Note de cloisonnement critique : Ne jamais ajouter cette règle sur les interfaces sensibles (RH, FINANCE, JURIDIQUE, DIRECTION, DSI) ni sur WIFIGUEST.
+
+#### Règle 7 — Autoriser l'accès Internet sortant uniquement (WAN)
 * **Action :** `Pass` | **Protocol :** `TCP/UDP` | **Source :** `COMMUNICATION net`
 * **Destination :** `any`
 * **Destination Port Range :** `any` *(ou restreindre aux ports de navigation sécurisés 80, 443, 53)*.
 * **Description :** `Accès Internet Sortant restreint`
 
-> **Note de cloisonnement pour les zones sensibles (RH, FINANCE, JURIDIQUE, DIRECTION, DSI) :**
-> Pour ces interfaces critiques, appliquer **uniquement** les règles 1, 2, 3, 4 et 6. Ne **jamais** ajouter la règle 5 (Pas d'accès vers l'alias `DEPT_STANDARD`). L'omission de cette règle garantit leur étanchéité complète et leur isolation vis-à-vis du reste de l'entreprise.
+---
+
+
+### F4 — Règles pour les VLANs Techniques 
+
+#### A. VLAN 10 (AD)
+**Règle 1 — Autoriser AD → APPS** (sync GLPI/iRedMail)
+* **Action :** `Pass` | Protocol: `TCP/UDP` | Source: `AD net` | Destination: `APPS net` | Ports: `389, 636` (Synchronisation LDAP vers GLPI et iRedMail)
+
+Note sur le trafic de retour : Les réponses vers les VLANs clients (DNS/LDAP/Kerberos retour) sont gérées dynamiquement par l'état "established/related" de pfSense.   
+Aucune règle manuelle n'est requise.
+
+Règle finale : Deny all implicite vers la DMZ et le BASTION (sauf retours initiés légitimement).
+
+**Règle 2 — Autoriser réponses vers tous les VLANs clients** (DNS/LDAP/Kerberos retour)
+
+- Source: `172.16.65.0/24` / Destination: `any` / déjà couvert par "established/related" de pfSense par défaut, pas besoin de règle supplémentaire pour le retour
+
+
+<img width="1803" height="988" alt="AD" src="https://github.com/user-attachments/assets/0999e8a1-702d-4437-89a0-eb3af6bbdc58" />
 
 ---
 
-### 3.2. Configuration des règles pour les VLANs Techniques Communs
+#### B. VLAN 20 (APPS)
+ 
+* **Flux vers AD :** `Pass` | Protocol: `TCP/UDP` | Source: `APPS net` | Destination: `172.16.65.3` | Ports: `389, 636, 53` (Sync GLPI vers AD et requête DNS)
+* **Flux vers BACKUP :** `Pass` | Protocol: `TCP` | Source: `APPS net` | Destination: `BACKUP net` | Ports: `22, 3306` (Sauvegardes rsync + myslqdump vers BKP).
+* **Flux Internet :** `Pass` | Protocol: `TCP` | Source: `APPS net` | Destination: `any` | Ports: `80, 443` (WDS Téléchargement des mises à jour).
+* **Règle finale :** `Deny` vers tout le reste. 
 
-#### VLAN 10 (AD)
-* **Flux vers APPS :** `Pass` | Protocol: `TCP/UDP` | Source: `AD net` | Destination: `APPS net` | Ports: `389, 636` (Synchronisation LDAP vers GLPI et iRedMail).
 
-#### VLAN 20 (APPS)
-* **Flux vers AD :** `Pass` | Protocol: `TCP/UDP` | Source: `APPS net` | Destination: `172.16.65.3` | Ports: `389, 636, 53`
-* **Flux vers BACKUP :** `Pass` | Protocol: `TCP` | Source: `APPS net` | Destination: `BACKUP net` | Ports: `22, 3306` (Sauvegardes et réplication).
-* **Flux Internet :** `Pass` | Protocol: `TCP` | Source: `APPS net` | Destination: `any` | Ports: `80, 443` (Mises à jour).
+<img width="1831" height="1005" alt="APPS" src="https://github.com/user-attachments/assets/6d0a6d75-45b6-4f14-8b14-8753f1608fc1" />
 
-#### VLAN 60 (BASTION - Point d'entrée d'administration unique)
+---
+
+#### C. VLAN 60 (BASTION - Point d'entrée d'administration unique)
 * **Vers AD :** `Pass` | Protocol: `TCP` | Source: `BASTION net` | Destination: `AD net` | Ports: `3389, 22`
 * **Vers APPS :** `Pass` | Protocol: `TCP` | Source: `BASTION net` | Destination: `APPS net` | Ports: `3389, 22`
 * **Vers BACKUP / JUMP :** `Pass` | Protocol: `TCP` | Source: `BASTION net` | Destination: `BACKUP net` / `JUMP net` | Ports: `3389, 22`
+* **Règle finale :** `Deny` vers tout le reste (La DMZ est exclue, le Bastions n'y accède pas directement).
 
-#### VLAN 100 (DMZ)
-* **Vers AD :** `Pass` | Protocol: `TCP` | Source: `DMZ net` | Destination: `172.16.65.3` | Port: **`636` uniquement** (LDAPS chiffré obligatoire, interdiction du port 389 en clair).
-* **Vers WAN :** `Pass` | Protocol: `TCP` | Source: `DMZ net` | Destination: `any` | Ports: `25, 80, 443, 587` (Flux de messagerie externe iRedMail et serveurs Web).
+
+<img width="1704" height="1001" alt="BASTION" src="https://github.com/user-attachments/assets/207668d3-92f8-43eb-8be2-f8fd87591d5e" />
+
+
+### D. — VLAN JUMP → Firewall Rules
+
+- Pass : Source `172.16.70.0/24` → Destination `any LAN` port `3389,22` (le jump rebondit vers les serveurs cibles selon le tier admin)
+- Pass : Source `172.16.69.0/24` (BASTION) → Destination `172.16.70.0/24` (JUMP) port `3389,22` (déjà fait en F5, redondant mais explicite ici aussi)
+- Deny : tout le reste
+
+<img width="1801" height="989" alt="JUMP" src="https://github.com/user-attachments/assets/c6ba4dce-c542-4320-b115-6d5909b4cb62" />
 
 ---
 
-## 4. Placement de la Règle Explicite "Deny All" tout en bas
+#### E. VLAN 100 (DMZ)
+* **iRedMail Vers AD :** `Pass` | Protocol: `TCP` | Source: `DMZ net` | Destination: `172.16.65.3` | Port: **`636` uniquement** (LDAPS chiffré obligatoire, interdiction du port 389 en clair).
+* **Sortie Vers WAN :** `Pass` | Protocol: `TCP` | Source: `DMZ net` | Destination: `any` | Ports: `25, 80, 443, 587` (Flux de messagerie externe iRedMail et serveurs Web).
+* **Deny vers LAN:** `Block` | Source : `DMZ net` | Destination : `any, LAN` (Isolation DMZ absolue - Interdiction totale d'initier un flux vers le réseau interne)
+
+
+<img width="1856" height="967" alt="DMZ" src="https://github.com/user-attachments/assets/e9f3601c-de59-489f-96f1-4562122be081" />
+
+---
+
+### F. — WAN → Firewall (entrée depuis Internet via NAT)
+
+- Pass (NAT) : Destination `172.16.71.x` (IP publique du WEB externe en DMZ) port `80,443`
+- Pass (NAT) : Destination `172.16.71.x` (IP iRedMail DMZ) port `25,587,443`
+- **Deny All** : tout le reste depuis WAN (donc 0 accès WAN→LAN direct, conforme à ta demande)
+
+
+<img width="1797" height="958" alt="WAN" src="https://github.com/user-attachments/assets/32c71d76-8980-4eb0-b74c-d71a766b7335" />
+
+
+### G. — VPN → Firewall (télétravail)
+
+- Pass : Source `172.16.72.0/24` (VPN) → Destination `172.16.70.0/24` (JUMP) port `3389,22` **uniquement**
+- Deny : tout le reste (le télétravailleur doit obligatoirement passer par le Jump, jamais direct vers un serveur)
+
+
+<img width="1826" height="729" alt="VPN" src="https://github.com/user-attachments/assets/b35e93ff-9085-421d-be3c-e9f66af2b946" />
+
+
+---
+
+### PARTIE H — Cas particuliers des VLANs BACKUP et WEB-INT (Laissés vides par conception)
+
+**BACKUP vide** : c'est **normal et volontaire**. BACKUP est une destination, jamais une source qui initie du trafic vers les autres VLANs. Toutes les connexions vers BACKUP partent d'APPS (rsync/mysqldump, déjà fait dans les règles APPS) ou de BASTION (admin). BACKUP n'a besoin d'aucune règle sortante propre — sauf s'il accède à Internet pour ses propres mises à jour système (`apt update`), dans ce cas ajoute juste une règle "BACKUP → WAN port 80,443".
+
+**WEBINT vide** : WEB-INT est un serveur Apache (le portail interne) — **c'est lui aussi qui ne reçoit que du trafic entrant** (les départements s'y connectent en HTTP/HTTPS, déjà autorisé via les règles département "Règle 4"). WEB-INT n'a pas besoin d'initier de connexion sortante vers un autre VLAN, sauf s'il doit aller chercher des données dynamiques sur GLPI/Zabbix (APPS) pour les afficher sur le portail — ajouter "WEBINT → APPS port 80,443". 
+
+
+### I - Placement de la Règle Explicite "Deny All" tout en bas
 
 Les bonnes pratiques de sécurité et d'audit de l'infrastructure XenTech exigent la mise en place d'une règle de blocage finale visible, explicite et journalisée tout en bas de chaque interface réseau.
 
@@ -455,3 +379,45 @@ Les bonnes pratiques de sécurité et d'audit de l'infrastructure XenTech exigen
 5. Cliquer sur **Save**.
 6. **Vérification visuelle :** S'assurer que cette règle se positionne bien en dernière place (à la toute fin de la grille sous la règle WAN). Si nécessaire, utiliser les poignées de déplacement situées à gauche de la ligne pour la glisser vers le bas.
 7. Cliquer sur le bouton supérieur **Apply Changes** pour recharger la politique de sécurité et appliquer les modifications sur le pare-feu.
+
+
+
+
+### I - Pour WIFIGUEST 
+
+Contrairement aux autres VLANs département, **WIFIGUEST ne doit PAS avoir accès à WEB-INT ni APPS** (règles 4 et 5) — un visiteur n'a pas au portail interne ou GLPI. 
+
+Donc WIFIGUEST = règle 6 uniquement (+ éventuellement DNS public), pas de règle 1/3/4/5 vers ton AD/APPS/WEB-INT.
+
+### Pour WIFIENTREPRISE
+
+Règle 1 à 6 comme un VLAN département classique, puisque ce sont les employés qui s'y connectent.
+
+
+
+### Vérification finale (Validation de la Politique)
+
+**Diagnostics → Ping** depuis pfSense, teste :
+
+- `172.16.65.254` (AD) → doit répondre
+- Depuis un poste test RH (à connecter au VLAN RH), ping vers `172.16.74.254` (COMMUNICATION) → doit **échouer** (isolation confirmée)
+- Depuis BASTION, ping vers AD → doit réussir
+- Test d'administration : Depuis le VLAN BASTION, tenter un accès SSH/RDP vers le réseau AD ➔ Le trafic doit réussir conformément aux privilèges accordés.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
