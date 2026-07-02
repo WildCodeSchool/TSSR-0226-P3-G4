@@ -123,7 +123,7 @@ Clique sur la nouvelle ligne **OPT1** :
 
 ---
 
-## PARTIE C — Créer les 19 VLANs
+## PARTIE C — Créer les 24 VLANs
 
 **Interfaces → VLANs → Add**, répète pour chaque ligne ci-dessous (Parent interface = `em2 (TRUNK)` à chaque fois) :
 
