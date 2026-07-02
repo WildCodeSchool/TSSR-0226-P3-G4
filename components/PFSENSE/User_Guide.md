@@ -319,9 +319,9 @@ Pour appliquer la politique d'isolation sélective sans multiplier les règles r
 | `172.16.74.0` | `24` | COMMUNICATION |
 | `172.16.75.0` | `24` | COMMERCIAL |
 | `172.16.77.0` | `24` | MARKETING |
-| `172.16.78.0` | `24` | DEVELOPPEMENT (PRODUCTION) |
+| `172.16.78.0` | `24` | DEVELOPPEMENT |
 | `172.16.79.0` | `24` | R&D (RD) |
-| `172.16.80.0` | `24` | SERVICES GENERAUX (LOGISTIQUE) |
+| `172.16.80.0` | `24` | SERVICES GENERAUX |
 
 5. Vérifier la conformité des masques de sous-réseau (sélectionner impérativement le suffixe **24** pour chaque ligne).
 6. Cliquer sur **Save** tout en bas de la page.
@@ -332,31 +332,27 @@ Pour appliquer la politique d'isolation sélective sans multiplier les règles r
 
 ---
 
-
-
-
-
-
-
-
-
-
-
-
-
-### 2. Départements qui communiquent avec qui ?
+### 2.1 Départements qui communiquent avec qui ?
 
 #### Nouveau modèle proposé : "Isolation sélective"
 
-- **Tous les départements standards** (Communication, Commercial, Marketing, Production, RD, Logistique, Direction) → ajoutent une règle **"Pass : Source [CE VLAN] subnets → Destination DEPT_STANDARD_ALIAS port any"** où `DEPT_STANDARD_ALIAS` est un alias regroupant tous les réseaux département non-sensibles. Ça leur permet de se parler entre eux.
-- **VLANs sensibles** (RH, FINANCE, JURIDIQUE, DIRECTION, DSI) → **aucune règle d'accès vers les autres VLANs département**, qu'ils soient sensibles ou standards. Ils gardent exactement les règles 1-6.
+- **Tous les départements standards** :
+
+- Puis sur **chaque VLAN standard** `DEPT_STANDARD`, une règle :
+
+- **Pass : Source : [ce VLAN] subnets → Destination : `DEPT_STANDARD` Port : any (ou restreint à `445` SMB + `3389` RDP partagé + `5060` visio pour limiter)**  
+
+Ça leur permet de se parler entre eux.   
 
 
-- Puis sur **chaque VLAN standard** (COMMUNICATION, COMMERCIAL, MARKETING, PRODUCTION, RD, LOGISTIQUE), une règle supplémentaire :
+- **VLANs sensibles**   
 
-- Pass / Source : ce VLAN subnets / Destination : `DEPT_STANDARD` / Port : any (ou restreint à `445` SMB + `3389` RDP partagé + `5060` visio pour limiter)
+(RH, FINANCE, JURIDIQUE, DIRECTION, DSI) → **aucune règle d'accès vers les autres VLANs département**    
 
-**Ne rien modifer sur RH, FINANCE, JURIDIQUE, DIRECTION** —  isolement (règles 1-6, jamais de règle vers DEPT_STANDARD ni vers un autre VLAN sensible).
+Qu'ils soient sensibles ou standards. Ils gardent exactement les règles 1-6.
+
+
+**Ne rien modifer sur RH, FINANCE, JURIDIQUE, DIRECTION** —  isolement (règles 1-6, jamais de règle vers `DEPT_STANDARD` ni vers un autre VLAN sensible).
 
 
 
