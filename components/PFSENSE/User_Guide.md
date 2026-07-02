@@ -9,6 +9,11 @@ Ce guide rassemble les instructions opérationnelles pour l'administration, le d
 ### 1.1. Première authentification
 1. Ouvrir le navigateur web et naviguer vers l'adresse d'administration par défaut : **`https://172.16.64.254`**.
 
+<img width="1873" height="1059" alt="Capture d&#39;écran 2026-07-02 202001" src="https://github.com/user-attachments/assets/d86b0b08-4c37-4872-8bc8-63e94ba3f0e4" />
+
+
+---
+
 ## PARTIE A — Fixer le WAN (accès internet)
 
 **Interfaces → WAN**
