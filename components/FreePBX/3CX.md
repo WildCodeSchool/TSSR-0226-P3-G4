@@ -142,6 +142,21 @@ De la même manière, configure la ligne pour **Naomi Rahmani**.
 Sur le client 1, tape sur le clavier du SIP phone le numéro 80103 et clique sur la touche d'appel (la touche verte).
 
 
+<img width="379" height="668" alt="image" src="https://github.com/user-attachments/assets/85e920ab-d3fe-40c1-935f-d92dfcbc2b31" />
+
+---
+
+Sur le client 2 on voit l'appel arriver. On peut répondre en cliquant sur le bouton vert ou refuser l'appel en cliquant sur le bouton rouge.
+
+<img width="364" height="672" alt="image" src="https://github.com/user-attachments/assets/176bcd9f-c3be-4695-9713-1fca7b69fc52" />
+
+---
+
+```
+Tu a réussi à faire communiquer tes 2 utilisateurs !
+```
+
+
 
 
 
