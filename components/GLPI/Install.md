@@ -9,7 +9,7 @@
 
 ### A1 — Pré-requis CT Proxmox
 
-- Template : Debian 12 
+- Template : Debian 12    
 - CPU : 1 core   
 - RAM : 2G   
 - Stockage : 20G
