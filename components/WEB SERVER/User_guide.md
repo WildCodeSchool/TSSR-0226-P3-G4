@@ -25,7 +25,15 @@ Se connecter au site web interne de Xentech : `http://interne.xtech.green`
 
 ---
 
+Cliquer sur `Organigramme` pour y accéder deuis la page d'accueil
 
+<img width="1884" height="85" alt="image" src="https://github.com/user-attachments/assets/051ea4ef-c164-4952-a655-f95caa7ba93c" />
+
+---
+
+<img width="1881" height="1009" alt="image" src="https://github.com/user-attachments/assets/8839b1a7-e28f-4d74-bd5d-301c668ce3da" />
+
+---
 
 ## 1. Gestion du Service Web au Quotidien
 Pour maintenir et piloter le démon Apache2 sur Debian 13, utilisez les commandes système suivantes :
