@@ -18,18 +18,44 @@ Ce guide rassemble les instructions opérationnelles pour l'administration, le d
 
 **Interfaces → WAN**
 
+- **Enable** : `Enable interface`
 - **IPv4 Configuration Type** : `Static IPv4`
+
+<img width="1613" height="902" alt="image" src="https://github.com/user-attachments/assets/4e5f9298-c7c5-45c7-ad69-aca107258efc" />
+
+---
+
 - **IPv4 Address** : `10.0.0.4` / `28`
 - **IPv4 Upstream Gateway** : **Add a new gateway** → Name: `WANGW`, Gateway: `10.0.0.1` → Save
 - Décocher **"Block private networks"** (sinon pfSense bloque notre propre WAN privé)
 - Décocher **"Block bogon networks"**
 - **Save** → **Apply Changes**
 
+<img width="1536" height="745" alt="image" src="https://github.com/user-attachments/assets/48ad4ae3-7bed-4d47-b10f-f5d8d12b3746" />
+
+---
+
+<img width="1537" height="125" alt="image" src="https://github.com/user-attachments/assets/734182a3-a972-4a28-9dca-1e30c4464af3" />
+
+---
+
 **Status → Gateways** pour vérifier que `WANGW` est en vert (online).
+
+<img width="1625" height="465" alt="image" src="https://github.com/user-attachments/assets/8217faf2-82a1-4b92-85ec-04b04682ca65" />
+
+---
+
 
 **Status → Interfaces → WAN** : `10.0.0.4/28`.
 
+<img width="1646" height="569" alt="image" src="https://github.com/user-attachments/assets/890c0b15-e22d-4f83-8a40-ccefc7b1ac13" />
+
+---
+
 **Diagnostics → Ping** : ping `10.0.0.1` (la passerelle du formateur). Le WAN est fonctionnel.
+
+<img width="1663" height="911" alt="image" src="https://github.com/user-attachments/assets/90d9141f-8b08-47be-9498-accde138fea4" />
+
 
 ---
 
@@ -44,16 +70,22 @@ Clique sur la nouvelle ligne **OPT1** :
 - IPv4 Configuration Type : `None`
 - **Save** → **Apply Changes**
 
+<img width="1660" height="924" alt="image" src="https://github.com/user-attachments/assets/b8f8c0fd-c973-4285-a5c4-3137c6675dbe" />
+
+
 ---
 
 ## PARTIE C — Créer les 24 VLANs
 
 **Interfaces → VLANs → Add**, répète pour chaque ligne ci-dessous (Parent interface = `em2 (TRUNK)` à chaque fois) :
 
+<img width="1428" height="1026" alt="image" src="https://github.com/user-attachments/assets/3358a9c1-3a31-4b85-8708-a63b3a75a73d" />
+
+---
 
 ## PARTIE D — Assigner chaque VLAN comme interface + IP
 
- **Interfaces → Assignments** : 19 VLANs disponibles dans le menu déroulant en bas. **Add** chacun un par un (22 fois).
+ **Interfaces → Assignments** : 22 VLANs disponibles dans le menu déroulant en bas. **Add** chacun un par un (22 fois).
 
 Pour CHAQUE interface créée (elles s'appelleront OPT2, OPT3... OPT20), configuration :
 
