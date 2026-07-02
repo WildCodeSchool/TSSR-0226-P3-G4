@@ -298,6 +298,52 @@ Règle 1 à 6 comme un VLAN département classique, puisque ce sont les employé
 
 **WEBINT vide** : WEB-INT est un serveur Apache (le portail interne) — **c'est lui aussi qui ne reçoit que du trafic entrant** (les départements s'y connectent en HTTP/HTTPS, déjà autorisé via les règles département "Règle 4"). WEB-INT n'a pas besoin d'initier de connexion sortante vers un autre VLAN, sauf s'il doit aller chercher des données dynamiques sur GLPI/Zabbix (APPS) pour les afficher sur le portail — ajouter "WEBINT → APPS port 80,443". 
 
+
+
+---
+
+## 2. Création et gestion des alias réseau (Aliases)
+
+Pour appliquer la politique d'isolation sélective sans multiplier les règles redondantes, centraliser les sous-réseaux des départements non-sensibles au sein d'un Alias global.
+
+1. Accéder au menu : **Firewall ➔ Aliases**.
+2. Rester sur l'onglet par défaut **IP** et cliquer sur le bouton vert **+ Add** en bas à droite.
+3. Renseigner les propriétés suivantes de l'alias :
+   * **Name :** `DEPT_STANDARD`
+   * **Description :** `Regroupement des sous-réseaux des départements non-sensibles`
+   * **Type :** Sélectionner **`Network(s)`** dans le menu déroulant.
+4. Ajouter un à un les réseaux cibles en cliquant sur le bouton **+ Add Network** pour chaque nouvelle ligne :
+
+| Réseau / IP Subnet | Masque | Description / Département associé |
+| :--- | :---: | :--- |
+| `172.16.74.0` | `24` | COMMUNICATION |
+| `172.16.75.0` | `24` | COMMERCIAL |
+| `172.16.77.0` | `24` | MARKETING |
+| `172.16.78.0` | `24` | DEVELOPPEMENT (PRODUCTION) |
+| `172.16.79.0` | `24` | R&D (RD) |
+| `172.16.80.0` | `24` | SERVICES GENERAUX (LOGISTIQUE) |
+
+5. Vérifier la conformité des masques de sous-réseau (sélectionner impérativement le suffixe **24** pour chaque ligne).
+6. Cliquer sur **Save** tout en bas de la page.
+7. **IMPORTANT :** Cliquer sur le bouton vert **Apply Changes** qui apparaît en haut de l'écran pour valider la configuration.
+
+<img width="1599" height="1005" alt="image" src="https://github.com/user-attachments/assets/a34f783d-3515-433f-90ed-dcd62954e8e6" />
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### 2. Départements qui communiquent avec qui ?
 
 #### Nouveau modèle proposé : "Isolation sélective"
@@ -305,25 +351,8 @@ Règle 1 à 6 comme un VLAN département classique, puisque ce sont les employé
 - **Tous les départements standards** (Communication, Commercial, Marketing, Production, RD, Logistique, Direction) → ajoutent une règle **"Pass : Source [CE VLAN] subnets → Destination DEPT_STANDARD_ALIAS port any"** où `DEPT_STANDARD_ALIAS` est un alias regroupant tous les réseaux département non-sensibles. Ça leur permet de se parler entre eux.
 - **VLANs sensibles** (RH, FINANCE, JURIDIQUE, DIRECTION, DSI) → **aucune règle d'accès vers les autres VLANs département**, qu'ils soient sensibles ou standards. Ils gardent exactement les règles 1-6.
 
-#### Mise en œuvre :
 
- **Firewall → Aliases → Add** :
-
-- Name : `DEPT_STANDARD`   
-- Type : `Network(s)`    
-- Ajoute les réseaux :    
-  `172.16.75.0/24` (COMMERCIAL),    
-  `172.16.77.0/24` (MARKETING),    
-  `172.16.78.0/24` (DEVELOPPEMENT),    
-  `172.16.79.0/24` (R&D),    
-  `172.16.80.0/24` (SERVICE GENERAUX),   
-  `172.16.74.0/24` (COMMUNICATION)    
-
-
-  <img width="1633" height="992" alt="DEPT_STD" src="https://github.com/user-attachments/assets/4a3cdb36-fe97-49e3-b11c-398087efb40a" />
-
-
-Puis sur **chaque VLAN standard** (COMMUNICATION, COMMERCIAL, MARKETING, PRODUCTION, RD, LOGISTIQUE), une règle supplémentaire :
+- Puis sur **chaque VLAN standard** (COMMUNICATION, COMMERCIAL, MARKETING, PRODUCTION, RD, LOGISTIQUE), une règle supplémentaire :
 
 - Pass / Source : ce VLAN subnets / Destination : `DEPT_STANDARD` / Port : any (ou restreint à `445` SMB + `3389` RDP partagé + `5060` visio pour limiter)
 
