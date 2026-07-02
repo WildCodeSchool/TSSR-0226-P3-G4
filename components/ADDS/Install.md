@@ -3,10 +3,10 @@
 ## 1. Prérequis et Configuration Réseau du Bloc de Contrôle
 1. Déployer quatre instances Windows Server 2022 au sein du VLAN Active Directory dédié et isolé.
 2. Assigner les configurations IP statiques et masques de sous-réseau `/24` (`255.255.255.0`) :
-   * `xts-411` (Principal / Graphique) : `172.16.64.3` | Passerelle : `172.16.64.254`
-   * `server-core-1` (Secondaire / Core) : `172.16.64.23` | Passerelle : `172.16.64.254`
-   * `server-core-2` (Troisième / Core) : `172.16.64.24` | Passerelle : `172.16.64.254`
-   * `xts-wds` (Quatrième / Graphique / WDS) : `172.16.64.25` | Passerelle : `172.16.64.254`
+   - `xts-411` (Principal / Graphique) : `172.16.64.3` | Passerelle : `172.16.64.254`
+   - `server-core-1` (Secondaire / Core) : `172.16.64.23` | Passerelle : `172.16.64.254`
+   - `server-core-2` (Troisième / Core) : `172.16.64.24` | Passerelle : `172.16.64.254`
+   - `xts-wds` (Quatrième / Graphique / WDS) : `172.16.64.25` | Passerelle : `172.16.64.254`
 3. Définir le serveur DNS initial de chaque réplica sur l'adresse du serveur principal (`172.16.64.3`) avant leur promotion.
 
 ## 2. Déploiement Industrialisé et Installation des Rôles sur le DC Principal
