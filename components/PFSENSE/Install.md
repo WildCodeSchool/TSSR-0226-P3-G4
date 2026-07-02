@@ -348,15 +348,15 @@ Règle 1 à 6 comme un VLAN département classique, puisque ce sont les employé
 
  **Firewall → Aliases → Add** :
 
-- Name : `DEPT_STANDARD`
-- Type : `Network(s)`
-- Ajoute les réseaux : 
-  `172.16.75.0/24` (COMMERCIAL), 
-  `172.16.77.0/24` (MARKETING), 
-  `172.16.78.0/24` (DEVELOPPEMENT), 
-  `172.16.79.0/24` (R&D), 
-  `172.16.80.0/24` (SERVICE GENERAUX), 
-  `172.16.74.0/24` (COMMUNICATION)
+- Name : `DEPT_STANDARD`   
+- Type : `Network(s)`    
+- Ajoute les réseaux :    
+  `172.16.75.0/24` (COMMERCIAL),    
+  `172.16.77.0/24` (MARKETING),    
+  `172.16.78.0/24` (DEVELOPPEMENT),    
+  `172.16.79.0/24` (R&D),    
+  `172.16.80.0/24` (SERVICE GENERAUX),   
+  `172.16.74.0/24` (COMMUNICATION)    
 
 
   <img width="1633" height="992" alt="DEPT_STD" src="https://github.com/user-attachments/assets/4a3cdb36-fe97-49e3-b11c-398087efb40a" />
@@ -367,3 +367,7 @@ Puis sur**chaque VLAN standard** (COMMUNICATION, COMMERCIAL, MARKETING, PRODUCTI
 - Pass / Source : ce VLAN subnets / Destination : `DEPT_STANDARD` / Port : any (ou restreint à `445` SMB + `3389` RDP partagé + `5060` visio pour limiter)
 
 **Ne rien modifer sur RH, FINANCE, JURIDIQUE, DIRECTION** —  isolement (règles 1-6, jamais de règle vers DEPT_STANDARD ni vers un autre VLAN sensible).
+
+---
+
+
