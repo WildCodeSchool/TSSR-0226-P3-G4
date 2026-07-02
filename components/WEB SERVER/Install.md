@@ -103,3 +103,106 @@ nano /var/www/xtech-interne/index.html
 
 Voir le code de la page du serveur web interne : [ici](Serveur_Web_Interne/index-interne.html)
 
+---
+
+## 3. Configuration du VirtualHost Apache2
+
+Pour que le serveur web réponde correctement aux requêtes HTTP basées sur les noms de domaine, configurer le fichier hôte virtuel.
+
+### Étape 1 : Création du fichier de configuration du site
+
+Sur la VM Web Interne :
+
+```
+nano /etc/apache2/sites-available/xtech-interne.conf
+```
+
+Ajouter la configuration suivante :
+
+```
+<VirtualHost *:80>
+    ServerName interne.xtech.green
+    ServerAdmin admin@xtech.green
+    DocumentRoot /var/www/xtech-interne
+    
+    <Directory /var/www/xtech-interne>
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/xtech-interne_error.log
+    CustomLog ${APACHE_LOG_DIR}/xtech-interne_access.log combined
+</VirtualHost>
+```
+
+<img width="1861" height="505" alt="image" src="https://github.com/user-attachments/assets/1e2c6914-b518-4373-8cbf-af16e195ef5a" />
+
+---
+
+Sur la VM Web Externe :
+
+```
+nano /etc/apache2/sites-available/xtech-externe.conf
+```
+
+Ajouter la configuration suivante :
+
+```
+<VirtualHost *:80>
+    ServerName externe.xtech.green
+    ServerAdmin admin@xtech.green
+    DocumentRoot /var/www/xtech-externe
+    
+    <Directory /var/www/xtech-externe>
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/xtech-externe_error.log
+    CustomLog ${APACHE_LOG_DIR}/xtech-externe_access.log combined
+</VirtualHost>
+
+```
+
+### Étape 2 : Activation du site et désactivation de la page par défaut
+
+```
+# 1. Désactiver le site d'origine d'Apache
+a2dissite 000-default.conf
+
+# 2. Activer le nouveau site (Exemple interne)
+a2ensite xtech-interne.conf
+
+# 3. Tester la syntaxe de configuration
+apache2ctl configtest
+
+# 4. Recharger le service si le test affiche "Syntax OK"
+systemctl reload apache2
+```
+
+## 4. Procédure de Retour Arrière Global (Rollback)
+En cas d'anomalie critique sur l'un des serveurs ou si vous devez réinitialiser la configuration d'Apache à son état initial d'usine, exécutez les commandes suivantes pas à pas :
+
+```
+# 1. Désactiver le site personnalisé défectueux
+a2dissite xtech-interne.conf   # (ou xtech-externe.conf)
+
+# 2. Réactiver la page d'accueil d'usine d'Apache2
+a2ensite 000-default.conf
+
+# 3. Supprimer les répertoires et fichiers créés (Attention : efface le code source web local)
+rm -rf /var/www/xtech-interne/
+rm -rf /var/www/xtech-externe/
+rm -f /etc/apache2/sites-available/xtech-interne.conf
+rm -f /etc/apache2/sites-available/xtech-externe.conf
+
+# 4. Redémarrer proprement le service HTTP
+systemctl restart apache2
+```
+
+Le serveur web est désormais revenu à son état de post-installation standard.
+
+
+
