@@ -44,44 +44,60 @@
 
 
 ### Étape 1 — Reconfigurer le LAN de pfSense (em1)
-
-Dans la **console**, menu principal → option `2` (Set interface IP address) :  
-
-Enter the number of the interface you wish to configure: 2 (LAN)  
-
-<img width="1098" height="612" alt="image" src="https://github.com/user-attachments/assets/d61d6b2d-18db-4aca-9645-5306fc93c607" />
-
----
-
-Configure IPv4 via DHCP? n  
-Enter the new LAN IPv4 address: 172.16.64.254  
-Subnet bit count: 24  
-Upstream gateway: ENTRÉE    
-IPv6 ? n  
-
-<img width="1104" height="576" alt="image" src="https://github.com/user-attachments/assets/b39b18e6-506d-45ee-893b-b8991f0c4c0c" />
-
----
-
-Enable DHCP server on LAN? n  
-Revert to HTTP? n  
-
-<img width="1100" height="504" alt="image" src="https://github.com/user-attachments/assets/4e46c072-70de-4731-8079-f26ddc633b3d" />
-
----
+ 
 
 <img width="998" height="426" alt="pfSense-LAN" src="https://github.com/user-attachments/assets/bcfa4a82-7967-4ca1-b303-a5c2f90c71ab" />
 
 ---
 
+Dans la **console**, menu principal → option `2` (Set interface IP address) : 
+
+<img width="1102" height="285" alt="image" src="https://github.com/user-attachments/assets/50e5cfd6-fbc7-49f9-b988-046ab448a2ff" />
+
+
+---
+
+Enter the number of the interface you wish to configure: `2` (LAN)  
+
+<img width="1098" height="612" alt="image" src="https://github.com/user-attachments/assets/d61d6b2d-18db-4aca-9645-5306fc93c607" />
+
+---
+
+Configure IPv4 via DHCP? `n`  
+Enter the new LAN IPv4 address: `172.16.64.254`  
+Subnet bit count: `24`  
+Upstream gateway: `ENTRÉE`    
+IPv6 ? `n`  
+
+<img width="1104" height="576" alt="image" src="https://github.com/user-attachments/assets/b39b18e6-506d-45ee-893b-b8991f0c4c0c" />
+
+---
+
+Enable DHCP server on LAN? `n`  
+Revert to HTTP? `n`  
+
+<img width="1100" height="504" alt="image" src="https://github.com/user-attachments/assets/4e46c072-70de-4731-8079-f26ddc633b3d" />
+
+---
+
+
+
+
+
 ### Étape 2 — Reconnecter ton PC admin
 
-**Sur Proxmox**, VM 403 → Hardware → Network Device (net0) :
+**Sur Proxmox**, VM 449 → Hardware → Network Device (net0) :
 
 - Bridge :  `vmbr400`
 - VLAN Tag : **vide** 
 
-Puis sur le PC admin (Windows), IP statique : 172.16.64.10/24`, passerelle `172.16.64.254`
+**Puis sur le PC admin (T1) :**            
+IP statique : `172.16.64.10/24`        
+Passerelle `172.16.64.254`    
+
+<img width="529" height="121" alt="image" src="https://github.com/user-attachments/assets/5ee056dc-3efd-43de-86cf-d8414611e014" />
+
+---
 
 ### Étape 3 — Accéder à ton nouveau pfSense
 
