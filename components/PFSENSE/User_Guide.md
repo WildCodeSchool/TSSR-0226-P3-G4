@@ -323,7 +323,7 @@ Règle 1 à 6 comme un VLAN département classique, puisque ce sont les employé
   <img width="1633" height="992" alt="DEPT_STD" src="https://github.com/user-attachments/assets/4a3cdb36-fe97-49e3-b11c-398087efb40a" />
 
 
-Puis sur**chaque VLAN standard** (COMMUNICATION, COMMERCIAL, MARKETING, PRODUCTION, RD, LOGISTIQUE), une règle supplémentaire :
+Puis sur **chaque VLAN standard** (COMMUNICATION, COMMERCIAL, MARKETING, PRODUCTION, RD, LOGISTIQUE), une règle supplémentaire :
 
 - Pass / Source : ce VLAN subnets / Destination : `DEPT_STANDARD` / Port : any (ou restreint à `445` SMB + `3389` RDP partagé + `5060` visio pour limiter)
 
