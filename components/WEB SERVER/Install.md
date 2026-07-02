@@ -101,7 +101,7 @@ Exemple pour le site Interne
 nano /var/www/xtech-interne/index.html
 ```
 
-Voir le code de la page du serveur web interne : [ici](Serveur_Web_Interne/index-interne.html)
+Voir le code de la page du serveur web interne : [ici](Serveur_Web_Interne/index-interne.html)    
 Voir le code de la page du serveur web externe : [ici](Serveur_Web_Externe/index-externe.html)
 
 ---
