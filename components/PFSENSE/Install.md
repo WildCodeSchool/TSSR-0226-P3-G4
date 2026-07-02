@@ -127,9 +127,19 @@ https://172.16.64.254
 - **LAN Configuration** :
     - IP : `172.16.64.254`
     - Subnet : `24`
+
+<img width="1717" height="520" alt="image" src="https://github.com/user-attachments/assets/30dfb898-d887-42f9-9e89-548a12ed81c1" />
+
+---
+
+
     
-- **Set Admin Password** : `Azerty1*`
+- **Set Admin Password** : `******`
 - **Reload** → **Finish**
+
+<img width="1694" height="492" alt="image" src="https://github.com/user-attachments/assets/8ab81a97-3c72-440d-a1e8-9b4342a79424" />
+
+---
   
 ## PARTIE A — Fixer le WAN (accès internet)
 
