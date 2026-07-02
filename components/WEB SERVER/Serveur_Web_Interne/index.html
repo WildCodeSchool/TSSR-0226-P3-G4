@@ -1,450 +1,212 @@
-# Page du serveur web externe XTSE-417 
+Page du serveur web interne XTSE-418
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>XTech.Green — Solutions IT durables</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  --g900:#0d3318;--g800:#155228;--g700:#1e7a3c;
-  --g600:#27a04f;--g500:#2ecc63;--g100:#d6f5e3;--g50:#edfaf3;
-  --white:#fff;--gray:#f5f7f5;--text:#111;--muted:#555;--light:#666;
-}
-body{font-family:system-ui,-apple-system,sans-serif;background:#fff;color:#111;font-size:14px;}
-.nav{background:#fff;border-bottom:1px solid #dceedd;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
-.logo{font-size:18px;font-weight:700;color:var(--g800);cursor:pointer;}
-.logo .leaf{color:var(--g500);}
-.nav ul{display:flex;gap:1.5rem;list-style:none;}
-.nav ul a{font-size:13px;color:#555;text-decoration:none;cursor:pointer;padding:4px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
-.nav ul a:hover,.nav ul a.active{color:var(--g700);border-bottom-color:var(--g500);}
-.cta-nav{background:var(--g700);color:#fff;padding:7px 18px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;cursor:pointer;border:none;}
-.page{display:none;}
-.page.active{display:block;}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XTech.Green — Portail Interne</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --g900: #0d3318; --g800: #155228; --g700: #1e7a3c;
+      --g600: #27a04f; --g500: #2ecc63; --g100: #d6f5e3; --g50: #edfaf3;
+    }
+    body { font-family: system-ui, -apple-system, sans-serif; background: #f5f7f5; color: #111; }
 
-/* HERO */
-.hero{background:var(--g900);color:#fff;padding:3.5rem 2rem;text-align:center;}
-.chip{background:rgba(46,204,99,.18);color:var(--g100);font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:4px 14px;border-radius:20px;display:inline-block;margin-bottom:1rem;}
-.hero h1{font-size:28px;font-weight:700;margin-bottom:.75rem;line-height:1.3;}
-.hero h1 span{color:var(--g500);}
-.hero p{font-size:14px;color:#9dcfad;max-width:480px;margin:0 auto 1.5rem;line-height:1.6;}
-.btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;}
-.btn-primary{background:var(--g500);color:var(--g900);padding:10px 24px;border-radius:7px;font-size:13px;font-weight:700;text-decoration:none;cursor:pointer;border:none;}
-.btn-outline{border:1px solid rgba(46,204,99,.4);color:var(--g100);padding:10px 24px;border-radius:7px;font-size:13px;text-decoration:none;cursor:pointer;background:transparent;}
-.stats-bar{background:var(--g800);display:flex;justify-content:center;gap:3rem;padding:1.25rem 2rem;flex-wrap:wrap;}
-.stat{text-align:center;}
-.stat .num{font-size:22px;font-weight:700;color:var(--g500);}
-.stat .lbl{font-size:11px;color:#7ab88a;margin-top:2px;}
+    /* TOPBAR */
+    .topbar {
+      background: var(--g900); color: #fff;
+      padding: 0 2rem; height: 54px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-size: 17px; font-weight: 700; }
+    .logo .x { color: var(--g500); }
+    .badge-env {
+      background: var(--g700); color: var(--g100);
+      font-size: 11px; padding: 3px 10px; border-radius: 20px;
+      margin-left: 10px; font-weight: 600;
+    }
+    .topbar nav a {
+      color: #b0d8be; text-decoration: none;
+      font-size: 13px; margin-left: 1.25rem;
+    }
+    .topbar nav a:hover { color: #fff; }
 
-/* SHARED */
-.section{padding:2.5rem 2rem;}
-.section.alt{background:var(--gray);}
-.section-h{text-align:center;margin-bottom:2rem;}
-.section-h h2{font-size:20px;font-weight:700;color:var(--g800);}
-.section-h p{font-size:13px;color:#666;margin-top:.35rem;}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
-.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
-.card{background:#fff;border:1px solid #dceedd;border-radius:10px;padding:1.25rem;}
-.exp-icon{width:40px;height:40px;border-radius:9px;background:var(--g50);color:var(--g700);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:.75rem;}
-.card h3{font-size:13px;font-weight:600;color:var(--g900);margin-bottom:.4rem;}
-.card p{font-size:12px;color:#666;line-height:1.5;}
+    /* HERO */
+    .hero {
+      background: var(--g800); color: #fff;
+      padding: 2rem 2rem 1.75rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .hero h1 { font-size: 20px; font-weight: 600; margin-bottom: .4rem; }
+    .hero p { font-size: 13px; color: #a8d8b8; line-height: 1.6; max-width: 460px; }
+    .status-pill {
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(46,204,99,.15); border: 1px solid rgba(46,204,99,.35);
+      border-radius: 20px; padding: 6px 14px; font-size: 12px;
+      color: var(--g100); margin-top: 1rem; width: fit-content;
+    }
+    .dot-green { width: 8px; height: 8px; background: var(--g500); border-radius: 50%; }
 
-/* ABOUT */
-.about-hero{background:var(--g900);color:#fff;padding:3rem 2rem;text-align:center;}
-.about-hero h1{font-size:26px;font-weight:700;color:#fff;margin-bottom:.5rem;}
-.about-hero p{font-size:14px;color:#9dcfad;max-width:520px;margin:0 auto;}
-.about-lead{font-size:15px;line-height:1.8;color:#333;margin-bottom:1.5rem;}
-.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem;}
-.val-card{background:var(--g50);border:1px solid #c5e8cf;border-radius:10px;padding:1.25rem;text-align:center;}
-.val-card .vi{font-size:28px;color:var(--g600);margin-bottom:.5rem;}
-.val-card h4{font-size:13px;font-weight:600;color:var(--g800);margin-bottom:.3rem;}
-.val-card p{font-size:12px;color:#555;line-height:1.5;}
-.timeline{position:relative;padding-left:2rem;}
-.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:#c5e8cf;}
-.tl-item{position:relative;margin-bottom:1.25rem;}
-.tl-dot{position:absolute;left:-26px;top:3px;width:14px;height:14px;border-radius:50%;background:var(--g500);border:2px solid #fff;box-shadow:0 0 0 2px var(--g500);}
-.tl-year{font-size:11px;font-weight:700;color:var(--g600);text-transform:uppercase;margin-bottom:2px;}
-.tl-title{font-size:13px;font-weight:600;color:var(--g900);margin-bottom:2px;}
-.tl-desc{font-size:12px;color:#666;line-height:1.5;}
-.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
-.team-card{background:#fff;border:1px solid #dceedd;border-radius:10px;padding:1.1rem;text-align:center;}
-.avatar{width:52px;height:52px;border-radius:50%;background:var(--g700);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin:0 auto .6rem;}
-.team-card h4{font-size:13px;font-weight:600;color:var(--g900);}
-.team-card p{font-size:11px;color:var(--g600);}
+    /* APPS */
+    .apps-grid {
+      padding: 1.5rem 2rem;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: .85rem;
+    }
+    .app-card {
+      background: #fff; border: 1px solid #dceedd; border-radius: 10px;
+      padding: 1.1rem 1.25rem; display: flex; align-items: flex-start; gap: .85rem;
+      transition: border-color .15s;
+    }
+    .app-card:hover { border-color: var(--g600); }
+    .app-icon {
+      width: 38px; height: 38px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 19px; flex-shrink: 0;
+    }
+    .ic-green { background: var(--g50); color: var(--g700); }
+    .ic-teal  { background: #e0f7f4; color: #0d6e68; }
+    .ic-slate { background: #eef0f8; color: #3a4fa5; }
+    .ic-amber { background: #fef9ec; color: #8a6a00; }
+    .app-body h3 { font-size: 13px; font-weight: 600; color: var(--g900); margin-bottom: 3px; }
+    .app-body p  { font-size: 12px; color: #666; line-height: 1.4; margin-bottom: .6rem; }
+    .app-link {
+      font-size: 12px; color: var(--g700); text-decoration: none;
+      font-weight: 500; border: 1px solid var(--g600);
+      border-radius: 5px; padding: 3px 10px; display: inline-block;
+    }
+    .app-link:hover { background: var(--g50); }
 
-/* ORG */
-.org-hero{background:var(--g900);color:#fff;padding:3rem 2rem;text-align:center;}
-.org-hero h1{font-size:26px;font-weight:700;color:#fff;margin-bottom:.5rem;}
-.org-hero p{font-size:14px;color:#9dcfad;max-width:500px;margin:0 auto;}
-.org-wrap{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:2rem;}
-.org-row{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;}
-.org-box{background:var(--g50);border:1px solid #b8e0c5;border-radius:8px;padding:.65rem 1.1rem;min-width:140px;text-align:center;transition:transform .2s,box-shadow .2s;}
-.org-box:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(30,122,60,.12);}
-.org-box .n{font-size:12px;font-weight:600;color:var(--g800);}
-.org-box .r{font-size:11px;color:var(--g600);margin-top:1px;}
-.org-box.ceo{background:var(--g800);border-color:var(--g700);}
-.org-box.ceo .n{color:#fff;}
-.org-box.ceo .r{color:var(--g100);}
-.org-box.dir{background:var(--g50);border-color:var(--g600);}
-.org-line{width:1px;height:20px;background:#b8e0c5;}
-.org-dept{background:var(--g50);border:1px solid #dceedd;border-radius:12px;padding:1.5rem;margin:0 2rem 2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
-.dept-head{text-align:center;font-size:13px;font-weight:600;color:var(--g800);margin-bottom:.5rem;}
-.dept-members{display:flex;flex-direction:column;gap:.4rem;}
-.member-pill{background:#fff;border:1px solid #dceedd;border-radius:6px;padding:.4rem .75rem;font-size:11px;color:#555;text-align:center;}
-.dept-col{background:#fff;border:1px solid #dceedd;border-radius:8px;padding:1rem;}
-.dept-col h5{font-size:12px;font-weight:600;color:var(--g800);margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:1px solid #edfaf3;}
+    /* NEWS */
+    .news-section { padding: 0 2rem 1.5rem; }
+    .section-title {
+      font-size: 14px; font-weight: 600; color: var(--g800);
+      margin-bottom: .85rem; display: flex; align-items: center; gap: 7px;
+    }
+    .section-title::after { content: ''; flex: 1; height: 1px; background: #d5e8d5; }
+    .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .85rem; }
+    .news-card { background: #fff; border: 1px solid #dceedd; border-radius: 8px; padding: 1rem; }
+    .news-tag {
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      color: var(--g700); background: var(--g50);
+      padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: .4rem;
+    }
+    .news-card h4 { font-size: 13px; font-weight: 600; margin-bottom: .3rem; }
+    .news-card p  { font-size: 12px; color: #666; line-height: 1.4; }
+    .news-date { font-size: 11px; color: #999; margin-top: .4rem; }
 
-/* NEWS */
-.news-hero{background:var(--g900);color:#fff;padding:3rem 2rem;text-align:center;}
-.news-hero h1{font-size:26px;font-weight:700;color:#fff;margin-bottom:.5rem;}
-.news-hero p{font-size:14px;color:#9dcfad;max-width:500px;margin:0 auto;}
-.news-filters{display:flex;gap:.5rem;justify-content:center;padding:1.5rem 2rem 0;flex-wrap:wrap;}
-.filter-btn{padding:6px 16px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #dceedd;background:#fff;color:#555;transition:all .2s;}
-.filter-btn.active,.filter-btn:hover{background:var(--g700);color:#fff;border-color:var(--g700);}
-.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:1.5rem 2rem 2.5rem;}
-.ni{background:#fff;border:1px solid #dceedd;border-radius:9px;padding:1.25rem;display:flex;flex-direction:column;gap:.4rem;transition:transform .2s,box-shadow .2s;}
-.ni:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(30,122,60,.1);}
-.ni .tag{font-size:10px;text-transform:uppercase;font-weight:700;color:var(--g700);background:var(--g50);padding:2px 8px;border-radius:4px;display:inline-block;align-self:flex-start;}
-.ni h4{font-size:13px;font-weight:600;color:#111;}
-.ni p{font-size:12px;color:#666;line-height:1.5;flex:1;}
-.ni .date{font-size:11px;color:#aaa;}
-.ni .read-more{font-size:12px;color:var(--g600);text-decoration:none;font-weight:600;cursor:pointer;}
-.ni.featured{grid-column:span 3;display:grid;grid-template-columns:1fr 2fr;gap:1.5rem;padding:1.5rem;}
-.ni.featured .feat-img{background:linear-gradient(135deg,var(--g800),var(--g600));border-radius:8px;display:flex;align-items:center;justify-content:center;min-height:120px;}
-.ni.featured .feat-img i{font-size:48px;color:rgba(255,255,255,.3);}
-.ni.featured .feat-content{display:flex;flex-direction:column;gap:.5rem;}
-
-/* CONTACT */
-.contact-section{padding:2rem;background:var(--g800);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
-.contact-section .full{grid-column:1/-1;text-align:center;}
-.contact-section h2{font-size:17px;font-weight:600;margin-bottom:.25rem;}
-.contact-section .sub{font-size:13px;color:#9dcfad;margin-top:.25rem;}
-.contact-info p{font-size:13px;color:#c5e8cf;line-height:2.4;}
-.contact-info i{margin-right:8px;color:var(--g500);}
-.contact-form input,.contact-form textarea{display:block;width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:8px 12px;color:#fff;font-size:13px;margin-bottom:.5rem;outline:none;font-family:inherit;}
-.contact-form textarea{height:80px;resize:none;}
-.contact-form ::placeholder{color:rgba(255,255,255,.4);}
-.contact-form button{background:var(--g500);color:var(--g900);border:none;padding:9px 20px;border-radius:6px;font-size:13px;font-weight:700;cursor:pointer;width:100%;}
-.footer{background:var(--g900);color:#3d7a50;text-align:center;font-size:12px;padding:.7rem;}
-</style>
+    /* FOOTER */
+    .footer { background: var(--g900); color: #5a9a6a; text-align: center; font-size: 12px; padding: .7rem 1rem; }
+    .footer span { color: #3b7d4f; }
+  </style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="logo" onclick="goTo('home')">X<span class="leaf">T</span>ech.Green</div>
-  <ul>
-    <li><a onclick="goTo('home')" id="nav-home" class="active">Accueil</a></li>
-    <li><a onclick="goTo('about')" id="nav-about">À propos</a></li>
-    <li><a onclick="goTo('org')" id="nav-org">Organigramme</a></li>
-    <li><a onclick="goTo('news')" id="nav-news">News</a></li>
-  </ul>
-  <button class="cta-nav" onclick="goTo('home')">Nous contacter</button>
-</nav>
-
-<!-- PAGE ACCUEIL -->
-<div class="page active" id="page-home">
-  <div class="hero">
-    <div class="chip">Startup tech · Paris</div>
-    <h1>L'infrastructure IT,<br><span>durable et fiable.</span></h1>
-    <p>XTech.Green accompagne les entreprises dans leur transformation numérique avec des solutions open-source, sécurisées et éco-responsables.</p>
-    <div class="btns">
-      <button class="btn-primary" onclick="goTo('about')">Découvrir nos services</button>
-      <button class="btn-outline" onclick="scrollContact()">Nous contacter</button>
-    </div>
+<div class="topbar">
+  <div style="display:flex;align-items:center;">
+    <div class="logo"><span class="x">X</span>Tech.Green</div>
+    <span class="badge-env">Portail interne</span>
   </div>
-  <div class="stats-bar">
-    <div class="stat"><div class="num">99.9%</div><div class="lbl">Disponibilité SLA</div></div>
-    <div class="stat"><div class="num">50+</div><div class="lbl">Clients accompagnés</div></div>
-    <div class="stat"><div class="num">24/7</div><div class="lbl">Supervision réseau</div></div>
-    <div class="stat"><div class="num">0</div><div class="lbl">Émission carbone nette</div></div>
-  </div>
-  <div class="section alt">
-    <div class="section-h"><h2>Nos expertises</h2><p>Des solutions adaptées à chaque besoin, de la virtualisation à la sécurité.</p></div>
-    <div class="grid3">
-      <div class="card"><div class="exp-icon"><i class="ti ti-server"></i></div><h3>Infrastructure & virtualisation</h3><p>Proxmox, Active Directory, gestion des accès, GPO et politiques de groupe.</p></div>
-      <div class="card"><div class="exp-icon"><i class="ti ti-shield-lock"></i></div><h3>Sécurité réseau</h3><p>Pare-feu pfSense, VPN, segmentation VLAN et journalisation des événements.</p></div>
-      <div class="card"><div class="exp-icon"><i class="ti ti-database"></i></div><h3>Sauvegarde & PRA</h3><p>RAID, LVM, Veeam Backup et plan de reprise d'activité sur mesure.</p></div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="section-h"><h2>Actualités récentes</h2><p>Nos dernières nouvelles</p></div>
-    <div class="grid3">
-      <div class="ni"><span class="tag">Certification</span><h4>XTech.Green certifiée ISO 27001</h4><p>Notre infrastructure répond aux exigences de sécurité de la norme internationale.</p><div class="date">Juin 2026</div></div>
-      <div class="ni"><span class="tag">Expansion</span><h4>Nouveau datacenter à Paris</h4><p>Ouverture d'un second site pour renforcer notre résilience et capacité d'hébergement.</p><div class="date">Mai 2026</div></div>
-      <div class="ni"><span class="tag">Partenariat</span><h4>Partenaire Veeam Platinum</h4><p>XTech.Green devient partenaire Platinum Veeam pour les solutions de sauvegarde entreprise.</p><div class="date">Avril 2026</div></div>
-    </div>
-  </div>
-  <div class="contact-section" id="contact">
-    <div class="full"><h2>Nous contacter</h2><p class="sub">Une question ? Un projet ? Notre équipe vous répond sous 24h.</p></div>
-    <div class="contact-info">
-      <p><i class="ti ti-map-pin"></i>12 rue de l'Innovation, Paris 75001</p>
-      <p><i class="ti ti-phone"></i>+33 1 23 45 67 89</p>
-      <p><i class="ti ti-mail"></i>contact@xtech.green</p>
-      <p><i class="ti ti-clock"></i>Lun – Ven : 9h – 18h</p>
-      <p><i class="ti ti-brand-linkedin"></i>linkedin.com/company/xtech-green</p>
-    </div>
-    <div class="contact-form">
-      <input type="text" placeholder="Votre nom"/>
-      <input type="email" placeholder="Votre email"/>
-      <input type="text" placeholder="Votre entreprise"/>
-      <textarea placeholder="Votre message..."></textarea>
-      <button>Envoyer le message</button>
-    </div>
-  </div>
-  <div class="footer">© 2026 XTech.Green — <a href="#">Mentions légales</a> — contact@xtech.green</div>
+  <nav>
+    <a href="#">Accueil</a>
+    <a href="#">Applications</a>
+    <a href="#">Support</a>
+    <a href="#">Actualités</a>
+  </nav>
 </div>
 
-<!-- PAGE À PROPOS -->
-<div class="page" id="page-about">
-  <div class="about-hero">
-    <div class="chip">Notre histoire</div>
-    <h1>Qui sommes-nous ?</h1>
-    <p>Une startup parisienne qui réinvente l'infrastructure IT avec une approche éco-responsable et open-source.</p>
-  </div>
-  <div class="section">
-    <div class="grid2" style="align-items:start;">
-      <div>
-        <p class="about-lead">Fondée en 2020, XTech.Green est née d'une conviction simple : il est possible de construire une infrastructure IT performante, sécurisée <em>et</em> respectueuse de l'environnement.</p>
-        <p style="font-size:13px;color:#555;line-height:1.8;">Nous accompagnons des PME, des collectivités et des startups dans leur transformation numérique, en privilegiant les solutions open-source et les pratiques durables. Nos équipes d'ingénieurs certifiés interviennent sur l'ensemble du cycle de vie de votre infrastructure, de l'audit initial à la maintenance proactive.</p>
-      </div>
-      <div>
-        <div class="card" style="background:var(--g50);border-color:#c5e8cf;">
-          <div class="exp-icon"><i class="ti ti-leaf"></i></div>
-          <h3>Notre mission</h3>
-          <p>Rendre l'IT durable accessible à toutes les organisations, quelle que soit leur taille, grâce à des solutions open-source éprouvées et un accompagnement humain de qualité.</p>
-        </div>
-      </div>
+<div class="hero">
+  <div>
+    <h1>Bienvenue sur le portail collaborateurs</h1>
+    <p>Accédez à vos outils internes, ouvrez des tickets et restez informés des actualités de l'équipe XTech.Green.</p>
+    <div class="status-pill">
+      <div class="dot-green"></div>
+      Tous les services opérationnels
     </div>
   </div>
-  <div class="section alt">
-    <div class="section-h"><h2>Nos valeurs</h2><p>Ce qui guide chacune de nos décisions</p></div>
-    <div class="values-grid">
-      <div class="val-card"><div class="vi"><i class="ti ti-leaf"></i></div><h4>Éco-responsabilité</h4><p>Chaque solution est pensée pour minimiser l'impact environnemental, du choix du matériel à la consommation énergétique.</p></div>
-      <div class="val-card"><div class="vi"><i class="ti ti-shield-check"></i></div><h4>Sécurité d'abord</h4><p>La sécurité n'est pas une option. Nous intégrons les meilleures pratiques dès la conception de chaque projet.</p></div>
-      <div class="val-card"><div class="vi"><i class="ti ti-source-code"></i></div><h4>Open source</h4><p>Nous croyons à la transparence et à la liberté technologique. Nos solutions s'appuient sur des outils communautaires éprouvés.</p></div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="grid2" style="align-items:start;">
-      <div>
-        <div class="section-h" style="text-align:left;margin-bottom:1.25rem;"><h2>Notre parcours</h2></div>
-        <div class="timeline">
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2020</div><div class="tl-title">Fondation</div><div class="tl-desc">Création de XTech.Green par trois ingénieurs réseau avec une vision commune : l'IT responsable.</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2021</div><div class="tl-title">Premier datacenter</div><div class="tl-desc">Ouverture de notre premier site d'hébergement à Paris, alimenté à 100% par des énergies renouvelables.</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2022</div><div class="tl-title">Certification ISO 27001</div><div class="tl-desc">Obtention de la certification internationale de sécurité de l'information.</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2023</div><div class="tl-title">50 clients franchis</div><div class="tl-desc">Dépassement du cap des 50 clients accompagnés, de la TPE au grand compte.</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2026</div><div class="tl-title">Partenaire Veeam Platinum</div><div class="tl-desc">Reconnaissance de notre expertise en solutions de sauvegarde et PRA entreprise.</div></div>
-        </div>
-      </div>
-      <div>
-        <div class="section-h" style="text-align:left;margin-bottom:1.25rem;"><h2>L'équipe</h2></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
-          <div class="team-card"><div class="avatar">AL</div><h4>Alexandre Leroy</h4><p>CEO & Co-fondateur</p></div>
-          <div class="team-card"><div class="avatar" style="background:var(--g600);">SM</div><h4>Sophie Martin</h4><p>DSI</p></div>
-          <div class="team-card"><div class="avatar" style="background:var(--g500);color:var(--g900);">JD</div><h4>Julien Dupont</h4><p>Ingénieur réseau</p></div>
-          <div class="team-card"><div class="avatar" style="background:#155228;">CB</div><h4>Claire Besson</h4><p>RH & Opérations</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="contact-section">
-    <div class="full"><h2>Nous contacter</h2><p class="sub">Une question ? Un projet ? Notre équipe vous répond sous 24h.</p></div>
-    <div class="contact-info">
-      <p><i class="ti ti-map-pin"></i>12 rue de l'Innovation, Paris 75001</p>
-      <p><i class="ti ti-phone"></i>+33 1 23 45 67 89</p>
-      <p><i class="ti ti-mail"></i>contact@xtech.green</p>
-      <p><i class="ti ti-clock"></i>Lun – Ven : 9h – 18h</p>
-    </div>
-    <div class="contact-form">
-      <input type="text" placeholder="Votre nom"/>
-      <input type="email" placeholder="Votre email"/>
-      <input type="text" placeholder="Votre entreprise"/>
-      <textarea placeholder="Votre message..."></textarea>
-      <button>Envoyer le message</button>
-    </div>
-  </div>
-  <div class="footer">© 2026 XTech.Green — <a href="#">Mentions légales</a> — contact@xtech.green</div>
 </div>
 
-<!-- PAGE ORGANIGRAMME -->
-<div class="page" id="page-org">
-  <div class="org-hero">
-    <div class="chip">Structure</div>
-    <h1>Organigramme</h1>
-    <p>Organisation interne de XTech.Green — des équipes agiles au service de votre infrastructure.</p>
-  </div>
-  <div style="padding:2rem 2rem 0;text-align:center;">
-    <p style="font-size:13px;color:#666;margin-bottom:1.5rem;">15 collaborateurs · 3 pôles métiers · 1 vision commune</p>
-  </div>
-  <div class="org-wrap">
-    <div class="org-row">
-      <div class="org-box ceo"><div class="n">Direction générale</div><div class="r">Alexandre Leroy · CEO</div></div>
-    </div>
-    <div class="org-line"></div>
-    <div class="org-row">
-      <div class="org-box dir"><div class="n">DSI</div><div class="r">Sophie Martin</div></div>
-      <div class="org-box dir"><div class="n">RH & Opérations</div><div class="r">Claire Besson</div></div>
-      <div class="org-box dir"><div class="n">Commercial</div><div class="r">Marc Fontaine</div></div>
-    </div>
-    <div class="org-line"></div>
-  </div>
-  <div class="org-dept">
-    <div class="dept-col">
-      <h5><i class="ti ti-server" style="color:var(--g600);margin-right:6px;"></i>Infra & Systèmes</h5>
-      <div class="dept-members">
-        <div class="member-pill">Julien Dupont · Admin sys</div>
-        <div class="member-pill">Nadia Okafor · Admin sys</div>
-        <div class="member-pill">Pierre Vidal · Virtualisation</div>
-        <div class="member-pill">Emma Charpentier · Cloud</div>
-      </div>
-    </div>
-    <div class="dept-col">
-      <h5><i class="ti ti-shield-lock" style="color:var(--g600);margin-right:6px;"></i>Réseau & Sécurité</h5>
-      <div class="dept-members">
-        <div class="member-pill">Thomas Renaud · Ingénieur réseau</div>
-        <div class="member-pill">Yasmine Talbi · Firewall & VPN</div>
-        <div class="member-pill">Romain Gest · SOC analyst</div>
-      </div>
-    </div>
-    <div class="dept-col">
-      <h5><i class="ti ti-headset" style="color:var(--g600);margin-right:6px;"></i>Support N1 / N2</h5>
-      <div class="dept-members">
-        <div class="member-pill">Lucie Bernard · N2 technicienne</div>
-        <div class="member-pill">Karim Messai · N1 support</div>
-        <div class="member-pill">Anaïs Moreau · N1 support</div>
-      </div>
+<div class="apps-grid">
+  <div class="app-card">
+    <div class="app-icon ic-teal"><i class="ti ti-ticket"></i></div>
+    <div class="app-body">
+      <h3>Ticketing GLPI</h3>
+      <p>Ouvrez et suivez vos incidents et demandes IT.</p>
+      <a class="app-link" href="http://support.xtech.green">Accéder →</a>
     </div>
   </div>
-  <div class="section alt">
-    <div class="section-h"><h2>Répartition des effectifs</h2><p>Par pôle métier</p></div>
-    <div class="grid3">
-      <div class="card" style="text-align:center;">
-        <div class="exp-icon" style="margin:0 auto .75rem;"><i class="ti ti-server"></i></div>
-        <h3>Infra & Systèmes</h3>
-        <p style="font-size:22px;font-weight:700;color:var(--g500);margin:.5rem 0 .25rem;">4</p>
-        <p>Administrateurs systèmes et ingénieurs cloud, garants de la disponibilité 24/7.</p>
-      </div>
-      <div class="card" style="text-align:center;">
-        <div class="exp-icon" style="margin:0 auto .75rem;"><i class="ti ti-shield-lock"></i></div>
-        <h3>Réseau & Sécurité</h3>
-        <p style="font-size:22px;font-weight:700;color:var(--g500);margin:.5rem 0 .25rem;">3</p>
-        <p>Experts en firewall, VPN et supervision sécurité des infrastructures clientes.</p>
-      </div>
-      <div class="card" style="text-align:center;">
-        <div class="exp-icon" style="margin:0 auto .75rem;"><i class="ti ti-headset"></i></div>
-        <h3>Support N1/N2</h3>
-        <p style="font-size:22px;font-weight:700;color:var(--g500);margin:.5rem 0 .25rem;">3</p>
-        <p>Techniciens de proximité et support de niveau 2 pour les incidents complexes.</p>
-      </div>
+  <div class="app-card">
+    <div class="app-icon ic-green"><i class="ti ti-chart-bar"></i></div>
+    <div class="app-body">
+      <h3>Supervision PRTG</h3>
+      <p>État du réseau et des serveurs en temps réel.</p>
+      <a class="app-link" href="http://172.16.40.X">Tableau de bord →</a>
     </div>
   </div>
-  <div class="footer">© 2026 XTech.Green — <a href="#">Mentions légales</a> — contact@xtech.green</div>
+  <div class="app-card">
+    <div class="app-icon ic-slate"><i class="ti ti-folder-open"></i></div>
+    <div class="app-body">
+      <h3>Partages fichiers</h3>
+      <p>Accès SMB selon vos droits Active Directory.</p>
+      <a class="app-link" href="#">\\srv-fichiers</a>
+    </div>
+  </div>
+  <div class="app-card">
+    <div class="app-icon ic-amber"><i class="ti ti-mail"></i></div>
+    <div class="app-body">
+      <h3>Messagerie</h3>
+      <p>Accédez à votre boîte mail via le webmail interne.</p>
+      <a class="app-link" href="#">Webmail →</a>
+    </div>
+  </div>
+  <div class="app-card">
+    <div class="app-icon ic-green"><i class="ti ti-users"></i></div>
+    <div class="app-body">
+      <h3>Annuaire</h3>
+      <p>Contacts et profils des collaborateurs de l'entreprise.</p>
+      <a class="app-link" href="#">Consulter →</a>
+    </div>
+  </div>
+  <div class="app-card">
+    <div class="app-icon ic-teal"><i class="ti ti-book"></i></div>
+    <div class="app-body">
+      <h3>Documentation IT</h3>
+      <p>Procédures, guides et ressources techniques.</p>
+      <a class="app-link" href="#">Consulter →</a>
+    </div>
+  </div>
 </div>
 
-<!-- PAGE NEWS -->
-<div class="page" id="page-news">
-  <div class="news-hero">
-    <div class="chip">Actualités</div>
-    <h1>Les dernières nouvelles</h1>
-    <p>Certifications, partenariats, expansion — suivez l'évolution de XTech.Green.</p>
+<div class="news-section">
+  <div class="section-title">
+    <i class="ti ti-news"></i>Actualités internes
   </div>
-  <div class="news-filters">
-    <button class="filter-btn active" onclick="filterNews('all',this)">Toutes</button>
-    <button class="filter-btn" onclick="filterNews('certification',this)">Certification</button>
-    <button class="filter-btn" onclick="filterNews('expansion',this)">Expansion</button>
-    <button class="filter-btn" onclick="filterNews('partenariat',this)">Partenariat</button>
-    <button class="filter-btn" onclick="filterNews('securite',this)">Sécurité</button>
-  </div>
-  <div class="news-grid" id="news-grid">
-    <div class="ni featured" data-cat="certification">
-      <div class="feat-img"><i class="ti ti-certificate"></i></div>
-      <div class="feat-content">
-        <span class="tag">Certification</span>
-        <h4 style="font-size:16px;">XTech.Green certifiée ISO 27001</h4>
-        <p>Notre infrastructure et nos processus répondent désormais aux plus hautes exigences de la norme internationale de sécurité de l'information. Un audit complet de 6 mois, réalisé par un organisme accrédité, a validé l'ensemble de notre système de management de la sécurité.</p>
-        <div class="date">Juin 2026</div>
-        <a class="read-more">Lire l'article →</a>
-      </div>
+  <div class="news-grid">
+    <div class="news-card">
+      <span class="news-tag">Infrastructure</span>
+      <h4>Migration Zabbix 7.0</h4>
+      <p>La supervision réseau tourne désormais sur Ubuntu 24.04 — performances améliorées.</p>
+      <div class="news-date">15 juin 2026</div>
     </div>
-    <div class="ni" data-cat="expansion">
-      <span class="tag">Expansion</span>
-      <h4>Nouveau datacenter à Paris</h4>
-      <p>Ouverture d'un second site d'hébergement pour renforcer notre résilience et doubler notre capacité.</p>
-      <div class="date">Mai 2026</div>
-      <a class="read-more">Lire →</a>
+    <div class="news-card">
+      <span class="news-tag">Messagerie</span>
+      <h4>Nouveau serveur mail</h4>
+      <p>Le serveur de messagerie interne est en ligne. Webmail disponible pour tous les collaborateurs.</p>
+      <div class="news-date">10 juin 2026</div>
     </div>
-    <div class="ni" data-cat="partenariat">
-      <span class="tag">Partenariat</span>
-      <h4>Partenaire Veeam Platinum</h4>
-      <p>XTech.Green atteint le niveau Platinum dans le programme partenaire Veeam, reconnaissant notre expertise en sauvegarde entreprise.</p>
-      <div class="date">Avril 2026</div>
-      <a class="read-more">Lire →</a>
-    </div>
-    <div class="ni" data-cat="securite">
-      <span class="tag">Sécurité</span>
-      <h4>Déploiement de notre SOC interne</h4>
-      <p>Mise en place d'un centre opérationnel de sécurité pour la surveillance temps réel des incidents sur les infrastructures clientes.</p>
-      <div class="date">Mars 2026</div>
-      <a class="read-more">Lire →</a>
-    </div>
-    <div class="ni" data-cat="expansion">
-      <span class="tag">Expansion</span>
-      <h4>XTech.Green recrute 5 ingénieurs</h4>
-      <p>Face à la croissance de notre activité, nous ouvrons 5 postes d'ingénieurs systèmes et réseau à Paris.</p>
-      <div class="date">Février 2026</div>
-      <a class="read-more">Lire →</a>
-    </div>
-    <div class="ni" data-cat="partenariat">
-      <span class="tag">Partenariat</span>
-      <h4>Alliance stratégique avec Proxmox</h4>
-      <p>Nouveau partenariat avec Proxmox pour proposer des formations et déploiements certifiés à nos clients.</p>
-      <div class="date">Janvier 2026</div>
-      <a class="read-more">Lire →</a>
-    </div>
-    <div class="ni" data-cat="certification">
-      <span class="tag">Certification</span>
-      <h4>Renouvellement certification Veeam</h4>
-      <p>Nos ingénieurs ont renouvelé leurs certifications Veeam Certified Engineer pour l'année 2026.</p>
-      <div class="date">Décembre 2025</div>
-      <a class="read-more">Lire →</a>
-    </div>
-    <div class="ni" data-cat="securite">
-      <span class="tag">Sécurité</span>
-      <h4>Audit de sécurité pour la mairie de Lyon</h4>
-      <p>Réalisation d'un audit complet de l'infrastructure réseau pour la mairie de Lyon, avec remise d'un plan de remédiation.</p>
-      <div class="date">Novembre 2025</div>
-      <a class="read-more">Lire →</a>
+    <div class="news-card">
+      <span class="news-tag">Sauvegarde</span>
+      <h4>RAID 5 + LVM opérationnel</h4>
+      <p>Le serveur de backup Debian est opérationnel avec une rétention à 30 jours.</p>
+      <div class="news-date">05 juin 2026</div>
     </div>
   </div>
-  <div class="footer">© 2026 XTech.Green — <a href="#">Mentions légales</a> — contact@xtech.green</div>
 </div>
 
-<script>
-function goTo(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.nav ul a').forEach(a=>a.classList.remove('active'));
-  document.getElementById('page-'+id).classList.add('active');
-  document.getElementById('nav-'+id).classList.add('active');
-  window.scrollTo(0,0);
-}
-function scrollContact(){
-  document.getElementById('contact').scrollIntoView({behavior:'smooth'});
-}
-function filterNews(cat, btn){
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('#news-grid .ni').forEach(ni=>{
-    if(cat==='all'||ni.dataset.cat===cat){
-      ni.style.display='';
-    } else {
-      ni.style.display='none';
-    }
-  });
-}
-</script>
+<div class="footer">
+  © 2026 <span>XTech.Green</span> — Portail réservé aux collaborateurs — support@xtech.green
+</div>
+
 </body>
 </html>
-
-
