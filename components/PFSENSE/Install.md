@@ -105,7 +105,8 @@ Passerelle `172.16.64.254`
 https://172.16.64.254
 ```
 
- <img width="1910" height="1059" alt="image" src="https://github.com/user-attachments/assets/595c2568-c804-4a70-856a-5cae90ed381d" />
+ <img width="1873" height="1059" alt="Capture d&#39;écran 2026-07-02 202001" src="https://github.com/user-attachments/assets/a7123900-209d-43a7-ab6f-58c526dd6d45" />
+
 
  ---
 
