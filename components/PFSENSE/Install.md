@@ -69,21 +69,61 @@ Puis sur le PC admin (Windows), IP statique : 172.16.64.10/24`, passerelle `172.
 
 ### Étape 3 — Accéder à ton nouveau pfSense
 
-`https://172.16.64.254` 
+```
+https://172.16.64.254
+```
+
+ <img width="1910" height="1059" alt="image" src="https://github.com/user-attachments/assets/595c2568-c804-4a70-856a-5cae90ed381d" />
+
+ ---
+
 
 ### Setup Wizard pfSense
 
 - **Bienvenue** → Next
+
+<img width="1842" height="681" alt="Capture d&#39;écran 2026-07-02 202122" src="https://github.com/user-attachments/assets/cd5a2926-7a43-40c9-ac43-c2f098682e71" />
+
+---
+
 - **General Information** :
     - Hostname : `pfSense-XTech`
     - Domain : `xtech.green`
     - DNS Server 1 : vide pour l'instant (pas encore de WAN fonctionnel, à configur après que l'AD soit raccordé)
-    - Décocher **"Override DNS"** pour forcer les DNS, sinon à laisser coché 
+    - Décocher **"Override DNS"** pour forcer les DNS
+ 
+<img width="1676" height="1011" alt="image" src="https://github.com/user-attachments/assets/c2d75daf-c2a6-4a6e-9b91-19bb75e08002" />
+
+---
+    
 - **Time Server** : Timezone `Europe/Paris`
+
+
+<img width="1706" height="516" alt="image" src="https://github.com/user-attachments/assets/5023e164-9d7e-4ca5-a0c6-a24cea2bb36f" />
+
+---
+
+
+
 - **WAN Configuration** :
-    - Type : `DHCP` 
-    - Décocher "Block private networks" **temporairement** si jamais le WAN passe par une IP privée (`10.0.0.4/8`) — sinon pfSense bloquera notre propre WAN
-    - Décocher "Block bogon networks" 
+    - Type : `Static` (On utilise le DHCP du serveur AD sinon les pc seront en APIPA (169.254.x.x)
+    - IP Adress : 10.0.0.4 (WAN)
+    - Subnet Mask : 28
+ 
+<img width="1675" height="989" alt="image" src="https://github.com/user-attachments/assets/71e4f25c-d32a-4756-a0df-b50539b079ff" />
+
+---
+
+
+ - pptplocalsubnet : 32
+ - Décocher "Block private networks" **temporairement** si jamais le WAN passe par une IP privée (`10.0.0.4/8`) — sinon pfSense bloquera notre propre WAN
+ - Décocher "Block bogon networks" 
+
+    
+<img width="1660" height="803" alt="image" src="https://github.com/user-attachments/assets/867d00c9-54e5-4b62-a4b2-5d4452526030" />
+
+---
+
 - **LAN Configuration** :
     - IP : `172.16.64.254`
     - Subnet : `24`
