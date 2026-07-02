@@ -383,7 +383,7 @@ Les bonnes pratiques de sécurité et d'audit de l'infrastructure XenTech exigen
 
 
 
-### I - Pour WIFIGUEST 
+### J - Pour WIFIGUEST 
 
 Contrairement aux autres VLANs département, **WIFIGUEST ne doit PAS avoir accès à WEB-INT ni APPS** (règles 4 et 5) — un visiteur n'a pas au portail interne ou GLPI. 
 
@@ -395,7 +395,7 @@ Règle 1 à 6 comme un VLAN département classique, puisque ce sont les employé
 
 
 
-### Vérification finale (Validation de la Politique)
+### K - Vérification finale (Validation de la Politique)
 
 **Diagnostics → Ping** depuis pfSense, teste :
 
