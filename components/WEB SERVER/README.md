@@ -27,6 +27,6 @@ Cette architecture sépare strictement les flux de production publics et privés
 ## 3. Plan de la Documentation
 * **[Guide d'Installation et Déploiement](./Install.md)** : Initialisation d'Apache2, configuration réseau, création des arborescences de dossiers, écriture des fichiers de configuration VirtualHost et commandes de Rollback.
 * **[Guide d'Exploitation et Résolution des Incidents ](./User_guide.md)** : Gestion quotidienne des services, maintenance des pages `index.html`, et fiches de débug (pannes DNS, pertes de connectivité ou erreurs d'aiguillage).
-* **[Serveur Web interne](Serveur_Web_Interne.md)**
-* **[Serveur Web externe](Serveurs_Web_Externe.md)**
+* **[Serveur Web interne](Serveur_Web_Interne/index-interne.md)**
+* **[Serveur Web externe](Serveurs_Web_Externe/index-externe.md)**
 * **[FAQ](./FAQ.md)**
