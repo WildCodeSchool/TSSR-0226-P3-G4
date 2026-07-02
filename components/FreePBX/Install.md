@@ -146,47 +146,10 @@ Stack trace:
 
 Ensuite tu peux passer en root :
 
-[t1@freepbx ~]$ su -
-Mot de passe : 
-Dernière connexion : mercredi 2 juillet 2026 à 10:21:45 UTC sur tty1
-______                   ______ ______ __   __
-|  ___|                  | ___ \| ___ \\ \ / /
-| |_    _ __   ___   ___ | |_/ /| |_/ / \ V / 
-|  _|  | '__| / _ \ / _ \|  __/ | ___ \ /   \ 
-| |    | |   |  __/|  __/| |    | |_/ // /^\ \
-\_|    |_|    \___| \___|\_|    \____/ \/   \/
-                                              
-                                              
-NOTICE! You have 3 notifications! Please log into the UI to see them!
-Current Network Configuration
-+-----------+-------------------+---------------------------------------+
-| Interface | MAC Address       | IP Addresses                          |
-+-----------+-------------------+---------------------------------------+
-| eth0      | 08:00:27:7D:BF:B9 | 172.16.64.31                         |
-|           |                   | 2001:861:3140:3570:a00:27ff:fe7d:bfb9 |
-|           |                   | fe80::a00:27ff:fe7d:bfb9              |
-+-----------+-------------------+---------------------------------------+
+---
 
-Please note most tasks should be handled through the GUI.
-You can access the GUI by typing one of the above IPs in to your web browser.
-For support please visit: 
-    http://www.freepbx.org/support-and-professional-services
+<img width="1644" height="747" alt="image" src="https://github.com/user-attachments/assets/6d5b567e-5c26-40d3-98e8-5f17d12429b5" />
 
-+---------------------------------------------------------------------+
-| This machine is not activated.  Activating your system ensures that |
-| your machine is eligible for support and that it has the ability to |
-| install Commercial Modules.                                         |
-|                                                                     |
-| If you already have a Deployment ID for this machine, simply run:   |
-|                                                                     |
-|    fwconsole sysadmin activate deploymentid                         |
-|                                                                     |
-| to assign that Deployment ID to this system. If this system is new, |
-| please go to Activation (which is on the System Admin page in the   |
-| Web UI) and create a new Deployment there.                          |
-+---------------------------------------------------------------------+
-
-[root@freepbx ~]# 
 
 ---
 
