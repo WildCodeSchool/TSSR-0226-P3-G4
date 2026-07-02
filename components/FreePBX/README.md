@@ -29,3 +29,4 @@ Naviguez à travers les différents modules de l'infrastructure de téléphonie 
 * **[Guide d'Installation et de Déploiement](./Install.md)** : Initialisation graphique sur Proxmox VE, choix du mode standard, définition du mot de passe maître et initialisation du système.
 * **[Guide d'Exploitation et de Configuration](./User_guide.md)** : Paramétrage régional (clavier Azerty), gestion des accès d'administration SSH, cycle de sécurisation par clés asymétriques et accès à la mire d'administration Web GUI.
 * **[Guide de Résolution des Incidents](./FAQ.md)** : Traitement des alertes et exceptions PHP lors de l'accès utilisateur SSH, et gestion du comportement du clavier lors de la phase d'installation.
+* **[3CX](./3CX.md)** : Communiquer par le biais d'un client SIP
