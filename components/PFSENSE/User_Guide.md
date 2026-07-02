@@ -122,9 +122,7 @@ Pour CHAQUE interface créée (elles s'appelleront OPT2, OPT3... OPT20), configu
 | 302  | MGMT-T2         | `172.16.88.254`                                                                                    |
 
 
-
-
-<img width="1799" height="1120" alt="VLAN" src="https://github.com/user-attachments/assets/751c612b-2221-479d-8dac-8885e485cea1" />
+---
 
 
 ## PARTIE E — DHCP par VLAN
@@ -138,6 +136,14 @@ Pour CHAQUE interface créée (elles s'appelleront OPT2, OPT3... OPT20), configu
 - Range : `172.16.73.10` → `172.16.73.200` 
 - DNS servers : `172.16.65.3` (AD, VLAN10)
 - **Save**
+
+<img width="1522" height="1002" alt="image" src="https://github.com/user-attachments/assets/14695b23-3c0f-47b6-b4fc-7855754e4c90" />
+
+---
+
+<img width="1704" height="483" alt="image" src="https://github.com/user-attachments/assets/fb9df51b-0cfc-4c27-b9e1-05f4f8337c40" />
+
+---
 
 **PAS de DHCP sur** : AD, APPS, BACKUP, WEBINT, BASTION, JUMP, DMZ, VPN, WIFIGUEST (DHCP plage courte ex `172.16.84.50-100`).
 
