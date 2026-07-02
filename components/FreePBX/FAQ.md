@@ -1,4 +1,5 @@
-# Serveur FreePBX & Softphone 3CX — Guide de Résolution des Incidents (FAQ)
+# Serveur FreePBX & Softphone 3CX 
+**Guide de Résolution des Incidents (FAQ)**
 
 ### Q1 : Le statut du profil sur le Softphone 3CX reste bloqué sur "On Hook" (Non enregistré) ou affiche une erreur de connexion réseau.
 
