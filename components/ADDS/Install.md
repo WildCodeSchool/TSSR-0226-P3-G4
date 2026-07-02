@@ -9,13 +9,24 @@
    * `xts-wds` (Quatrième / Graphique / WDS) : `172.16.64.25` | Passerelle : `172.16.64.254`
 3. Définir le serveur DNS initial de chaque réplica sur l'adresse du serveur principal (`172.16.64.3`) avant leur promotion.
 
-## 2. Déploiement Industrialisé du DC Principal via `hello my dir`
-1. Exécuter le script PowerShell maître `hello-my-dir.ps1` sur la machine `xts-411` afin d'automatiser l'installation des rôles :
+## 2. Déploiement Industrialisé et Installation des Rôles sur le DC Principal
+Avant d'exécuter la promotion de la forêt, installer de manière obligatoire les services de base via le Gestionnaire de serveur (Server Manager) ou l'interface PowerShell sous-jacente.
+
+### 2.1. Ajout des rôles DNS, DHCP et AD DS
+1. Ouvrir le **Gestionnaire de serveur** (Server Manager) sur `xts-411`.
+2. Cliquer sur **Gérer** > **Ajouter des rôles et fonctionnalités**.
+3. Sélectionner **Installation basée sur un rôle ou une fonctionnalité**.
+4. Cocher les rôles suivants dans la liste :
+   * **Services de domaine Active Directory** (AD DS)
+   * **Serveur DNS**
+   * **Serveur DHCP**
+5. Valider l'ajout des outils de gestion requis et exécuter l'installation.
+
+*Alternative en ligne de commande équivalente (via le script de la suite `hello my dir`) :*
 ```powershell
 Install-WindowsFeature -Name AD-Domain-Services, DNS, DHCP -IncludeManagementTools
 ```
 
----
 
 Initialiser la nouvelle forêt Active Directory avec le nom de domaine racine Xtech.green.
 
