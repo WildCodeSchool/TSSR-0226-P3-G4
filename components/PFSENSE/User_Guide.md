@@ -149,13 +149,65 @@ Pour CHAQUE interface créée (elles s'appelleront OPT2, OPT3... OPT20), configu
 
 ---
 
-## PARTIE F — Règles de pare-feu 
+## PARTIE F — Politique de filtrage et règles de pare-feu (Zero-Trust)
 
 C'est ici que se joue toute la logique Zero Trust. Principe général appliqué partout : **Deny All implicite en bas**, on **autorise explicitement** seulement ce qui est nécessaire, rien d'autre.
 
-### F1 — Règle générale : bloquer tout l'inter-VLAN par défaut
+### F1 — Création des Alias
 
-pfSense bloque déjà par défaut tout trafic **entre interfaces différentes** s'il n'y a pas de règle explicite. Donc la base est déjà "Deny All" implicite. On ajoute des **autorisations ciblées**.
+## 2. Création et gestion des alias réseau (Aliases)
+
+Pour appliquer la politique d'isolation sélective sans multiplier les règles redondantes, centraliser les sous-réseaux des départements non-sensibles au sein d'un Alias global.
+
+1. Accéder au menu : **Firewall ➔ Aliases**.
+2. Rester sur l'onglet par défaut **IP** et cliquer sur le bouton vert **+ Add** en bas à droite.
+3. Renseigner les propriétés suivantes de l'alias :
+   * **Name :** `DEPT_STANDARD`
+   * **Description :** `Regroupement des sous-réseaux des départements non-sensibles`
+   * **Type :** Sélectionner **`Network(s)`** dans le menu déroulant.
+4. Ajouter un à un les réseaux cibles en cliquant sur le bouton **+ Add Network** pour chaque nouvelle ligne :
+
+| Réseau / IP Subnet | Masque | Description / Département associé |
+| :--- | :---: | :--- |
+| `172.16.74.0` | `24` | COMMUNICATION |
+| `172.16.75.0` | `24` | COMMERCIAL |
+| `172.16.77.0` | `24` | MARKETING |
+| `172.16.78.0` | `24` | DEVELOPPEMENT |
+| `172.16.79.0` | `24` | R&D (RD) |
+| `172.16.80.0` | `24` | SERVICES GENERAUX |
+
+5. Vérifier la conformité des masques de sous-réseau (sélectionner impérativement le suffixe **24** pour chaque ligne).
+6. Cliquer sur **Save** tout en bas de la page.
+7. **IMPORTANT :** Cliquer sur le bouton vert **Apply Changes** qui apparaît en haut de l'écran pour valider la configuration.
+
+<img width="1599" height="1005" alt="image" src="https://github.com/user-attachments/assets/a34f783d-3515-433f-90ed-dcd62954e8e6" />
+
+
+---
+
+### 2.1 Départements qui communiquent avec qui ?
+
+#### Nouveau modèle proposé : "Isolation sélective"
+
+- **Tous les départements standards** :
+
+- Puis sur **chaque VLAN standard** `DEPT_STANDARD`, une règle :
+
+- **Pass : Source : [ce VLAN] subnets → Destination : `DEPT_STANDARD` Port : any (ou restreint à `445` SMB + `3389` RDP partagé + `5060` visio pour limiter)**  
+
+Ça leur permet de se parler entre eux.   
+
+
+- **VLANs sensibles**   
+
+(RH, FINANCE, JURIDIQUE, DIRECTION, DSI) → **aucune règle d'accès vers les autres VLANs département**    
+
+Qu'ils soient sensibles ou standards. Ils gardent exactement les règles 1-6.
+
+
+**Ne rien modifer sur RH, FINANCE, JURIDIQUE, DIRECTION** —  isolement (règles 1-6, jamais de règle vers `DEPT_STANDARD` ni vers un autre VLAN sensible).
+
+---
 
 ### F2 — VLAN DEPT (tous les départements) → Interfaces → [VLAN] → Firewall Rules
 
@@ -300,59 +352,11 @@ Règle 1 à 6 comme un VLAN département classique, puisque ce sont les employé
 
 
 
----
-
-## 2. Création et gestion des alias réseau (Aliases)
-
-Pour appliquer la politique d'isolation sélective sans multiplier les règles redondantes, centraliser les sous-réseaux des départements non-sensibles au sein d'un Alias global.
-
-1. Accéder au menu : **Firewall ➔ Aliases**.
-2. Rester sur l'onglet par défaut **IP** et cliquer sur le bouton vert **+ Add** en bas à droite.
-3. Renseigner les propriétés suivantes de l'alias :
-   * **Name :** `DEPT_STANDARD`
-   * **Description :** `Regroupement des sous-réseaux des départements non-sensibles`
-   * **Type :** Sélectionner **`Network(s)`** dans le menu déroulant.
-4. Ajouter un à un les réseaux cibles en cliquant sur le bouton **+ Add Network** pour chaque nouvelle ligne :
-
-| Réseau / IP Subnet | Masque | Description / Département associé |
-| :--- | :---: | :--- |
-| `172.16.74.0` | `24` | COMMUNICATION |
-| `172.16.75.0` | `24` | COMMERCIAL |
-| `172.16.77.0` | `24` | MARKETING |
-| `172.16.78.0` | `24` | DEVELOPPEMENT |
-| `172.16.79.0` | `24` | R&D (RD) |
-| `172.16.80.0` | `24` | SERVICES GENERAUX |
-
-5. Vérifier la conformité des masques de sous-réseau (sélectionner impérativement le suffixe **24** pour chaque ligne).
-6. Cliquer sur **Save** tout en bas de la page.
-7. **IMPORTANT :** Cliquer sur le bouton vert **Apply Changes** qui apparaît en haut de l'écran pour valider la configuration.
-
-<img width="1599" height="1005" alt="image" src="https://github.com/user-attachments/assets/a34f783d-3515-433f-90ed-dcd62954e8e6" />
 
 
----
-
-### 2.1 Départements qui communiquent avec qui ?
-
-#### Nouveau modèle proposé : "Isolation sélective"
-
-- **Tous les départements standards** :
-
-- Puis sur **chaque VLAN standard** `DEPT_STANDARD`, une règle :
-
-- **Pass : Source : [ce VLAN] subnets → Destination : `DEPT_STANDARD` Port : any (ou restreint à `445` SMB + `3389` RDP partagé + `5060` visio pour limiter)**  
-
-Ça leur permet de se parler entre eux.   
 
 
-- **VLANs sensibles**   
 
-(RH, FINANCE, JURIDIQUE, DIRECTION, DSI) → **aucune règle d'accès vers les autres VLANs département**    
-
-Qu'ils soient sensibles ou standards. Ils gardent exactement les règles 1-6.
-
-
-**Ne rien modifer sur RH, FINANCE, JURIDIQUE, DIRECTION** —  isolement (règles 1-6, jamais de règle vers `DEPT_STANDARD` ni vers un autre VLAN sensible).
 
 
 
