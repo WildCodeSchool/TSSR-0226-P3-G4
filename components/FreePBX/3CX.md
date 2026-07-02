@@ -142,7 +142,8 @@ De la même manière, configure la ligne pour **Naomi Rahmani**.
 Sur le client 1, tape sur le clavier du SIP phone le numéro 80103 et clique sur la touche d'appel (la touche verte).
 
 
-<img width="379" height="668" alt="image" src="https://github.com/user-attachments/assets/85e920ab-d3fe-40c1-935f-d92dfcbc2b31" />
+<img width="369" height="669" alt="image" src="https://github.com/user-attachments/assets/5e294d7f-0f39-4cef-aed4-45e4b3fddf5b" />
+
 
 ---
 
