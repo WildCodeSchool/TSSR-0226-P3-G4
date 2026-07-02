@@ -48,15 +48,31 @@
 Dans la **console**, menu principal → option `2` (Set interface IP address) :  
 
 Enter the number of the interface you wish to configure: 2 (LAN)  
+
+<img width="1098" height="612" alt="image" src="https://github.com/user-attachments/assets/d61d6b2d-18db-4aca-9645-5306fc93c607" />
+
+---
+
 Configure IPv4 via DHCP? n  
 Enter the new LAN IPv4 address: 172.16.64.254  
 Subnet bit count: 24  
 Upstream gateway: ENTRÉE    
 IPv6 ? n  
+
+<img width="1104" height="576" alt="image" src="https://github.com/user-attachments/assets/b39b18e6-506d-45ee-893b-b8991f0c4c0c" />
+
+---
+
 Enable DHCP server on LAN? n  
 Revert to HTTP? n  
 
+<img width="1100" height="504" alt="image" src="https://github.com/user-attachments/assets/4e46c072-70de-4731-8079-f26ddc633b3d" />
+
+---
+
 <img width="998" height="426" alt="pfSense-LAN" src="https://github.com/user-attachments/assets/bcfa4a82-7967-4ca1-b303-a5c2f90c71ab" />
+
+---
 
 ### Étape 2 — Reconnecter ton PC admin
 
