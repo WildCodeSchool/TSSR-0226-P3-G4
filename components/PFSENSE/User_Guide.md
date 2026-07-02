@@ -357,6 +357,9 @@ Pour appliquer la politique d'isolation sélective sans multiplier les règles r
 6. Cliquer sur **Save** tout en bas de la page.
 7. **IMPORTANT :** Cliquer sur le bouton vert **Apply Changes** qui apparaît en haut de l'écran pour valider la configuration.
 
+<img width="1599" height="1005" alt="image" src="https://github.com/user-attachments/assets/a34f783d-3515-433f-90ed-dcd62954e8e6" />
+
+
 ---
 
 ## 3. Implémentation des règles de filtrage par VLAN (Firewall Rules)
