@@ -36,9 +36,9 @@
 | 302     | MGMT-T2          | `172.16.88.254`  | `172.16.88.254`    | LAN management T2                    |
 
 
-------
+---
 
-<img width="1434" height="602" alt="IP-MACHINES " src="https://github.com/user-attachments/assets/2bc69ac2-857c-432f-88de-d78b60533658" />
+
 
 
 
