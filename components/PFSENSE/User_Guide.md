@@ -330,21 +330,7 @@ Puis sur **chaque VLAN standard** (COMMUNICATION, COMMERCIAL, MARKETING, PRODUCT
 **Ne rien modifer sur RH, FINANCE, JURIDIQUE, DIRECTION** —  isolement (règles 1-6, jamais de règle vers DEPT_STANDARD ni vers un autre VLAN sensible).
 
 ---
-3. Passer l'alerte de sécurité liée au certificat SSL auto-signé. Cliquer sur **"Paramètres avancés"** (ou "Avancé"), puis sur **"Accepter le risque et poursuivre"**.
-4. Sur la page de mire d'authentification pfSense, entrer les identifiants d'usine par défaut :
-   * **Username :** `admin`
-   * **Password :** `pfsense`
-5. Compléter les étapes du **Setup Wizard** (renseigner le hostname `pfSense-XTech`, le domaine `xtech.green` et le WAN statique `10.0.0.4/28` avec la passerelle `10.0.0.1`).
 
-### 1.2. Durcissement immédiat de l'accès (Étape Critique)
-Pour révoquer les accès d'usine et appliquer la politique de sécurité XenTech :
-1. Aller dans le menu supérieur de pfSense : **System ➔ User Manager**.
-2. Sur la ligne de l'utilisateur `admin`, cliquer sur le bouton d'édition (icône de crayon à droite).
-3. Faire défiler la page jusqu'au champ **Password** et saisir le nouveau mot de passe fort requis : `ex: G4-TSSR-2026`
-4. Confirmer dans le champ **Password CONFIRM**.
-5. Descendre tout en bas de la page et cliquer sur **Save**.
-
----
 
 ## 2. Création et gestion des alias réseau (Aliases)
 
