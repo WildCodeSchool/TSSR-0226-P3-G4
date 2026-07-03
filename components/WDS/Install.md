@@ -92,30 +92,111 @@ Si la console WDS n'est pas lancé, lancez-là
 Cliquer sur le nœud Servers
 Sélectionner le serveur WDS et cliquer avec le bouton droit de la souris
 Sélectionner Configure Server, cette fenêtre apparait :
-Fenetre configuration WDS
+
+
+```
 Pour continuer, il faut :
 Que le serveur soit membre d'un domaine AD DS ou bien qu'il soit un DC de ce domaine.
 Ici ce n'est pas le cas, mais on voit également que le serveur peut être autonome.
 C'est le cas de cette installation.
+```
 
 Le reste des pré-requis est bon :
 
-Il y a un serveur DHCP, ici le service DHCP est sur le même serveur
+Il y a un serveur DHCP, ici le service DHCP est sur le serveur AD DS
 Il n'y a pas de rôle DNS, il n'y en a pas l'utilité ici
-Une partition NTFS a été réservée pour le stockage des images
+Une partition NTFS a été réservée pour le stockage des images   
+
+<img width="394" height="178" alt="image" src="https://github.com/user-attachments/assets/ec10ed6f-2d5f-4482-b676-8d47c6923f4e" />
+
+---
+
 Cliquer sur Next
-Sélectionner Standalone server et cliquer sur Next
+Sélectionner Integrated with Active Directory et cliquer sur Next
+
+<img width="885" height="704" alt="config-srv-02" src="https://github.com/user-attachments/assets/6f14aca0-7c97-422c-98b7-d25c3bf5d9c4" />
+
+ 
+```
 C'est dans cette fenêtre que se fera le choix d'un serveur autonome ou rattaché à un domaine.
+```
+
+---
+
+
 
 Choisir l'emplacement du deuxième disque dur et cliquer sur Next
+
+<img width="886" height="703" alt="config-srv-01" src="https://github.com/user-attachments/assets/8a593481-d048-4dbf-8ce1-eb624b6a7eb9" />
+
+---
+
+Tout décocher car le serveur WDS est tributaire du DHCP de l'AD
+
+<img width="889" height="698" alt="config-srv-03" src="https://github.com/user-attachments/assets/afc222ed-3423-4e12-964b-150c7fee7d07" />
+
+---
+
+
+
+```
 Si une erreur apparait indiquant une erreur de syntaxe, le problème vient de la configuration de l'interface réseau.
 Il faut aller dans la configuration de la carte réseau, au même endroit que la configuration IP, et cocher File and Printer Sharing for Microsoft Networks.
+```
 
 Dans la fenêtre Proxy DHCP Server, laisser tout par défaut et cliquer sur Next.
+
+
 Une configuration automatique sera ajouté.
 Dans la fenêtre PXE Server Initial Settings, on va sélectionner le comportement du serveur WDS lorsqu'il recevra les requêtes des ordinateurs clients. Il peut soit les ignorer et ne pas répondre, soit répondre seulement aux clients connus, soit aux clients connus et inconnus.
 Pour ce lab, on sélectionnera Respond to all client computers et on ne coche pas la case en dessous.
+
+<img width="882" height="703" alt="config-srv-04" src="https://github.com/user-attachments/assets/d1e3f6b5-1879-4d7b-9513-5c5c02a62892" />
+
+---
+
 Après avoir cliquer sur Next la configuration de WDS s'effectue
 Quand elle est terminée, cliquer sur Finish
 
+<img width="882" height="709" alt="config-srv-05" src="https://github.com/user-attachments/assets/d7e3008d-48ec-4170-96e1-907cc60ba67c" />
 
+---
+
+```
+A ce stade, le serveur a bien été configuré mais le service n’a pas encore démarré. On peut le voir grâce à la présence d’une icône noire sur le nom du serveur.
+```
+
+<img width="362" height="269" alt="Capture d&#39;écran 2026-07-03 204720" src="https://github.com/user-attachments/assets/eb1b04fc-06f3-454d-8e7a-64aebd72bd05" />
+
+---
+
+## 3 Lancement du service WDS
+
+**En PowerShell**
+
+Pour démarrer le service, exécuter la commande suivante dans une console PowerShell :
+
+```
+Start-Service -Name WDSServer
+```
+
+**En graphique**
+
+Pour le lancer, faire un clic droit sur le nom du serveur, cliquer sur All tasks puis Start.
+Un message Successfully started Windows Deployment Services apparaît à la fin du lancement du service.
+
+<img width="1385" height="690" alt="image" src="https://github.com/user-attachments/assets/b3c9f7ef-7bcc-4e17-a4d7-ba3f97013df1" />
+
+---
+
+<img width="530" height="224" alt="image" src="https://github.com/user-attachments/assets/a270e3c7-3dea-4eaf-8552-3bcc3cc19055" />
+
+---
+
+```
+On peut voir une icone verte sur le nom du serveur, indiquant que le service est lancé.
+```
+
+<img width="358" height="295" alt="Capture d&#39;écran 2026-07-03 205030" src="https://github.com/user-attachments/assets/6443d084-0586-470b-b7c1-383dd650a9c3" />
+
+---
