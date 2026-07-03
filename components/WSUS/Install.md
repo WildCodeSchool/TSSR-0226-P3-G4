@@ -2,10 +2,10 @@
 
 Pré-requis
 
-Un hyperviseur comme Virtualbox/Proxmox  pour pouvoir créer des VM
-1 VM XTSE-419 avec Windows Server 2022 installé et mise à jour, avec :
-Un espace libre et non-configuré (sur une partition ou un disque) d'au moins 20 Go
-Une carte réseau en Réseau interne avec l'adresse IP 172.16.10.10/24
+Un hyperviseur comme Virtualbox/Proxmox  pour pouvoir créer des VM  
+1 VM XTSE-419 avec Windows Server 2022 installé et mise à jour, avec :   
+Un espace libre et non-configuré (sur une partition ou un disque) d'au moins 20 Go  
+Une carte réseau en Réseau interne avec l'adresse IP 172.16.10.10/24   
 
 ---
 
