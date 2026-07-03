@@ -41,7 +41,7 @@ Configurer l'adresse IP statique et le DNS principal :
 
 ```
 # Exemple pour server-core-1
-New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress 172.16.64.23 -PrefixLength 24 -DefaultGateway 172.16.64.254
+New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress 172.16.64.3 -PrefixLength 24 -DefaultGateway 172.16.64.254
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 172.16.64.3
 ```
 ---
