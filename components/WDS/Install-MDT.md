@@ -290,8 +290,157 @@ C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Pre
 
 ---
 
+## Configuration pour le choix des applications dans WinPE
+
+Pour permettre à l'utilisateur de choisir les applications à installer pendant le déploiement, tu dois modifier le fichier CustomSettings.ini :
+
+1. Dans la console MDT, développe ton partage de déploiement.   
+2. Fais un clic droit sur ton partage de déploiement et sélectionne Properties.   
+3. Dans l’onglet General, décoche la case x86.    
+4. Clique sur l'onglet Rules.    
+5. Dans le champ de texte, modifie le contenu pour qu’il ressemble à ceci : cela permettra de sauter certaines étapes pendant le déploiement.   
 
 
+```
+[Settings]
+Priority=Default
+Properties=MyCustomProperty
+
+[Default]
+_SMSTSORGNAME=Mon Organisation
+OSInstall=Y
+SkipCapture=YES
+SkipAdminPassword=YES
+SkipProductKey=YES
+SkipComputerBackup=YES
+SkipBitLocker=YES
+SkipTimeZone=YES
+SkipLocaleSelection=YES
+KeyboardLocale=fr-FR
+UserLocale=fr-FR
+UILanguage=fr-FR
+TimeZoneName=Romance Standard Time
+SkipDomainMembership=YES
+JoinWorkgroup=WORKGROUP
+SkipSummary=YES
+SkipFinalSummary=YES
+FinishAction=REBOOT
+SkipApplications=NO
+```
+
+Pour précocher certaines applications par défaut (mais laisser le choix à l'utilisateur), tu peux ajouter ces lignes (remplace les GUID par ceux de tes applications) :
+
+```
+Applications001={ff2ebeb4-9612-4dbd-bd11-1d7a935317b5}
+Applications002={5ec2df21-3d49-44c8-8518-e00f07f14e7f}
+```
+
+Pour rendre certaines applications obligatoires (cochées et grisées), tu peux utiliser :
+
+```
+MandatoryApplications001={ff2ebeb4-9612-4dbd-bd11-1d7a935317b5}
+```
+
+5. Clique sur OK pour sauvegarder les modifications.
+
+---
+
+## Génération de l'image boot et import dans WDS
 
 
+1. Dans la console MDT, fais un clic droit sur ton partage de déploiement et sélectionne Update Deployment Share.    
+2. Sélectionne Completely regenerate the boot images pour créer de nouvelles images de démarrage.   
+3. Clique sur Suivant, puis sur Terminer pour lancer la génération.   
+4. Cette opération peut prendre plusieurs minutes. Une fois terminée, tu trouveras les fichiers d'image de démarrage (.wim et .iso) dans le dossier \Boot de ton partage de déploiement.
 
+
+<img width="780" height="529" alt="image" src="https://github.com/user-attachments/assets/d36829c8-6f68-443e-b5ac-ff5484f8c37b" />
+
+---
+
+## Ajout des images à WDS
+
+### Ajout de l'image de démarrage
+
+1. Ouvre la Console de gestion des services de déploiement Windows.    
+2. Développe ton serveur, puis fais un clic droit sur Images de démarrage et sélectionne Ajouter une image de démarrage.    
+3. Parcours l'emplacement de l'image de démarrage générée par MDT (par exemple, C:\DeploymentShare\Boot\LiteTouchPE_x64.wim).     
+4. Entre un nom et une description pour l'image de démarrage.    
+5. Clique sur Suivant, puis sur Terminer pour ajouter l'image de démarrage.
+
+## Configuration des options PXE
+
+1. Dans la console WDS, fais un clic droit sur ton serveur et sélectionne Propriétés.
+
+2. Accède à l'onglet Démarrer.
+
+3. Choisis Toujours continuer le démarrage PXE sur les deux sections.
+
+<img width="655" height="866" alt="boot-win11" src="https://github.com/user-attachments/assets/e3395173-1760-4007-8a3c-08a51b189683" />
+
+
+---
+
+4. Accède à l'onglet DHCP et coche les deux cases.
+
+Décoche les 2 cases car le DHCP est celui de l'AD
+
+<img width="656" height="865" alt="DHCP" src="https://github.com/user-attachments/assets/97f1d84c-0573-4f15-966f-adb50340039d" />
+
+---
+
+5. Clique sur OK pour enregistrer les modifications
+
+---
+
+## Déploiement de Windows 11
+
+### Préparation de la machine cliente
+
+1. Crée une nouvelle machine virtuelle dans VirtualBox pour le client (CLIENT-W11).
+2. Assure-toi que le réseau est configuré sur le même réseau interne que ton serveur WDS.
+3. Configure l'ordre de démarrage pour démarrer en premier à partir du réseau (PXE).
+4. Démarre la machine virtuelle.
+
+### Processus de déploiement
+
+1. La machine cliente démarre via PXE et se connecte au serveur WDS.
+
+<img width="1075" height="659" alt="Capture d&#39;écran 2026-06-26 150439" src="https://github.com/user-attachments/assets/01ef8fbf-5f3a-4d04-8750-fc692b3f5d26" />
+
+---
+
+2. L'assistant de déploiement MDT s'affiche, choisis le français.
+
+<img width="1014" height="760" alt="image" src="https://github.com/user-attachments/assets/55c58936-0dd5-4d8c-93fb-87bdc7f1c065" />
+
+---
+
+3.Renseigne le compte administrateur du serveur SRV-WDS et son mot de passe.    
+Nom d'utilisateur : SRV-WDS\Administrateur ou simplement .\Administrateur (pour un compte local sur le serveur SRV-WDS).    
+Mot de passe : Le mot de passe de l'administrateur de SRV-WDS.    
+Domaine : Laisse ce champ vide ou saisis . ou WORKGROUP si le champ est obligatoire (puisque WDS est en standalone).    
+
+<img width="1019" height="762" alt="image" src="https://github.com/user-attachments/assets/ecd05185-0839-44f8-950e-9fb24d7dc95b" />
+
+---
+
+3. Sélectionne la séquence de tâches pour déployer Windows 11.
+
+<img width="1015" height="760" alt="image" src="https://github.com/user-attachments/assets/65f98112-ade2-4987-b0f8-3be3d8db2e98" />
+
+---
+
+4. Le déploiement commence automatiquement selon les paramètres que tu as configurés.
+
+<img width="1020" height="761" alt="image" src="https://github.com/user-attachments/assets/1d599f21-35ac-4bc4-adee-ab7b298543a6" />
+
+---
+
+5. Une fois le déploiement terminé, la machine redémarre sur Windows 11.
+
+```
+Félicitations ! Tu as réussi à mettre en place un serveur de déploiement WDS avec MDT et à déployer Windows 11 via PXE.
+```
+
+---
