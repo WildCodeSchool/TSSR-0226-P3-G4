@@ -177,4 +177,121 @@ L’importation peut prendre plusieurs minutes. Une fois terminée, tu peux supp
 **3. Télécharger Firefox dans sa version .msi, rends-toi sur la page officielle dédiée aux entreprises :**   **[Télécharger Firefox](https://www.mozilla.org/fr/firefox/enterprise/#download)**    
 **4. Clique ensuite sur « Téléchargements pour les Entreprises » et choisis l’installer MSI.**    
 
+<img width="906" height="812" alt="image" src="https://github.com/user-attachments/assets/f1c70c15-e8b0-493b-8223-5a670807848e" />
+
+
+---
+
+**5. 5.Copie le fichier d'installation dans le dossier C:\MDT_Applications\Firefox**
+
+---
+
+```
+Les fichiers d'installation doivent impérativement être au format .msi (Microsoft Software Installer) et non .exe. La plupart des logiciels utilisés en environnement professionnel proposent une version .msi adaptée au déploiement automatisé.
+```
+
+---
+
+## Ajout de Firefox dans MDT
+
+
+**1. Dans la console MDT, développe ton partage de déploiement.**
+**2. Fais un clic droit sur Applications et sélectionne New Folder.**
+**3. Nomme le dossier Navigateurs et clique sur Suivant puis Terminer.**
+**4. Fais un clic droit sur le dossier Navigateurs et sélectionne New Application.**
+**5. Sélectionne Application with source files et clique sur Suivant.**
+**6. Remplis les informations suivantes :**
+**Éditeur : Mozilla**
+**Nom de l'application : Mozilla Firefox**
+**Version : (version actuelle, par exemple 138.0.4)**
+**Langue : Français**
+**7. Clique sur Suivant.**
+**8. Spécifie le chemin source : C:\MDT_Applications\Firefox.**
+**9. Pour le répertoire de destination, conserve la valeur par défaut.**
+**10. Si tu renommes le fichier MSI en quelque chose de plus générique comme Firefox.msi, tu peux simplement saisir Firefox.msi /quiet.
+
+---
+
+```
+Assure-toi que le nom du fichier MSI dans la ligne de commande correspond exactement au nom du fichier présent dans le dossier source, sinon l’installation échouera.
+```
+
+---
+
+**11. Clique sur Suivant puis sur Terminer.**
+
+Pour chaque application, note son GUID qui apparaît dans ses propriétés (clic droit > Propriétés). Tu en auras besoin plus tard pour la configuration.
+
+
+<img width="1021" height="727" alt="image" src="https://github.com/user-attachments/assets/717e0b5b-2750-443f-b436-dfd742875f93" />
+
+---
+
+## Alerte
+
+```
+Avant de commencer cette étape, crée deux dossiers dans le répertoire de MDT afin d’éviter une erreur sur la page des propriétés :
+
+**1. Accède au chemin suivant :
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\**
+**2. Dans le dossier Windows Preinstallation Environment, crée un nouveau dossier nommé x86.**
+**3. À l’intérieur du dossier x86, crée un dossier supplémentaire nommé WinPE_OCs.**
+**4. Vérifie que tu obtiens bien l’arborescence suivante :
+C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\x86\WinPE_OCs**
+```
+
+---
+
+## Création d'une séquence de tâches
+
+
+**1. Dans la console MDT, développe ton partage de déploiement.**
+**2. Fais un clic droit sur Task Sequences et sélectionne New Folder.**
+
+<img width="428" height="470" alt="image" src="https://github.com/user-attachments/assets/f0f3e1c7-351f-4560-a213-5572f3eca319" />
+
+---
+
+**3. Nomme le dossier Windows 11 et clique sur Suivant puis Terminer.**
+
+<img width="1087" height="907" alt="image" src="https://github.com/user-attachments/assets/9001139e-0b55-42d6-9a55-7434a188df14" />
+
+---
+
+**4. Fais un clic droit sur le dossier Windows 11 et sélectionne New Task Sequence.**
+
+<img width="1113" height="394" alt="image" src="https://github.com/user-attachments/assets/e5b13d73-40cc-4672-821d-053c62bcc042" />
+
+---
+
+**5. Remplis les informations suivantes :**
+**Task sequence ID : W11-STANDARD**
+**Task sequence name : Windows 11 Pro Déploiement Standard**
+**Commentaires : Déploiement standard de Windows 11 Pro**
+**6. Clique sur Suivant.**
+
+<img width="1086" height="905" alt="image" src="https://github.com/user-attachments/assets/5993dbae-0b8e-4915-8f60-673d43f8ea7a" />
+
+---
+
+**7. Sélectionne le modèle Standard Client Task Sequence.**
+**8. Clique sur Suivant.**
+**9. Sélectionne l'image Windows 11 que tu as importée.**
+**10. Clique sur Suivant.**
+**11. Saisis les informations suivantes :**
+**Full Name : Wilder**
+**Organization : WCS**
+**Internet Explorer home page : laisse vide**
+**12. Clique sur Suivant.**
+**13. Saisis le clé de produit Windows ou coche Do not specify a product key at this time.**
+**14. Clique sur Suivant.**
+**15. Saisis un mot de passe administrateur local (pour la machine Windows 11 déployée)**
+**16. Clique sur Suivant puis sur Terminer.**
+
+---
+
+
+
+
+
 
