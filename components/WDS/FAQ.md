@@ -7,12 +7,21 @@ Ce document recense les anomalies courantes rencontrées lors de l'installation,
 ## 1. Réseau & Connectivité PXE
 
 ### Problème : Mon serveur WDS bascule avec une adresse IP en 169.254.x.x (APIPA) et l'interface affiche "(Duplicate)"
+
+<img width="968" height="657" alt="image" src="https://github.com/user-attachments/assets/023765f9-4026-408c-918f-5084217bc7ce" />
+
+---
+
 * **Cause :** Un conflit d'adresse IP s'est produit. Une autre machine sur le réseau (serveur, imprimante, etc.) utilise déjà l'adresse `172.16.64.54`. Par sécurité, Windows désactive votre IP fixe pour éviter de perturber le réseau et s'attribue une adresse de secours APIPA.
-* **Résolution :** 1. Libérez l'adresse IP sur l'appareil intrus ou attribuez une nouvelle adresse IP fixe libre à votre serveur `XTSE-420` (ex: `172.16.64.55`).
+* **Résolution :** 1. Libérez l'adresse IP sur l'appareil intrus ou attribuez une nouvelle adresse IP fixe libre à votre serveur `XTSE-420` (ex: `172.16.64.20`).
     2. Modifiez la configuration réseau dans Windows Server et redémarrez le service WDS via PowerShell :
        ```powershell
        Restart-Service -Name WDSServer
        ```
+
+  <img width="946" height="329" alt="image" src="https://github.com/user-attachments/assets/8e781b35-b0c1-4a5d-8946-45a7a6d53ff8" />
+
+  ---
 
 ### Problème : Une erreur de syntaxe ou d'initialisation apparaît lors de la configuration du serveur WDS en mode autonome
 * **Cause :** L'interface réseau du serveur n'a pas les liaisons de partage Microsoft activées.
