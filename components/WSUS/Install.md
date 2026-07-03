@@ -177,17 +177,33 @@ Dans l'arborescence des ordinateurs, sous All Computers, créer 3 groupes avec A
 
 ---
 
-## 3.2 GPO pour les clients de la Comptabilité
+## 3.2 GPO pour les clients de la Communication
 
 Sur ton AD, créer une GPO **COMPUTER-WSUS-Clients-Communication**   
 Va dans Computer Configuration--> Policies--> Administrative Templates--> Windows Components--> Windows update    
 Le paramétrage ci-dessous est commun à toutes les GPO :    
 Va dans `Specify intranet Microsoft update service location`, qui indiquera où est le serveur de mise à jour.   
 Coche `Enabled`   
+
+<img width="1885" height="985" alt="GPO-1" src="https://github.com/user-attachments/assets/e8346835-7fcc-49d0-bb9a-9897faf76660" />
+
+---
+
 Dans les options, pour les 2 premiers champs, mettre l'URL avec le nom du serveur sous sa forme **FQDN**, ajouter le numéro du port 8530    
 Valide la configuration    
+
+<img width="1027" height="949" alt="GPO-PATH-corrige" src="https://github.com/user-attachments/assets/1fdaefe3-3c2e-4334-87f9-2489a9685a46" />
+
+---
+
 Va dans `Do not connect to any Windows Update Internet locations` qui bloque la connexion aux serveurs de Microsoft    
 Coche `Enabled` et valide la configuration    
+
+
+<img width="1025" height="954" alt="GPO-2" src="https://github.com/user-attachments/assets/c6fffbdb-c0dd-4e35-8874-ed6733729a39" />
+
+---
+
 Le paramétrage ci-dessous est spécifique à cette GPO :    
 Va dans `Configure Automatic Updates`    
 Coche `Enabled`     
@@ -196,19 +212,26 @@ Dans `Configure automatic updating` sélectionne `4- Auto Download and schedule 
 Dans `Scheduled install day` mets `0 - Every day`     
 Dans `Scheduled install time` mets `09:00`              
 Cocher `Every week`           
-Cocher `Install updates for other Microsoft Products`           
+Cocher `Install updates for other Microsoft Products`   
+
+<img width="1909" height="1136" alt="GPO-3" src="https://github.com/user-attachments/assets/f67b39b4-0f04-471b-8615-16bfa8bce3d5" />
+
+---
+
 Aller dans `Enable client-side targeting` qui fait la liaison avec les groupes crées dans WSUS      
 Coche `Enabled`          
 Dans les options, mettre le nom du groupe WSUS pour les ordinateurs cible, donc **COMMUNICATION**     
 Valide la configuration     
+
 Aller dans `Turn off auto-restart for updates during active hours` qui permet d'empêcher les machines de redémarrer après l'installation d'une mise à jour pendant leurs      heures d'utilisations      
 Coche `Enabled`     
 Dans les options, mettre (par exemple) `8 AM - 6 PM`       
 
+<img width="1022" height="951" alt="GPO-5" src="https://github.com/user-attachments/assets/d36d9da0-777c-42c5-8d69-34f85a7a6cb0" />
 
-## 3.3 GPO pour les clients du service informatique    
+---
 
-
+   
 ## 3.4 GPO pour les serveurs (non-DC)    
 
 
