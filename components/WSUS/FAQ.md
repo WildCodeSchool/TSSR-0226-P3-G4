@@ -136,13 +136,37 @@ Laissez l'assistant travailler (il va supprimer les fichiers temporaires des mis
 
 ---
 
-### Étape 3 : Approuver UNE SEULE mise à jour légère pour tester
-Pour vérifier que vos dossiers se créent bien sans saturer votre serveur :
+### Étape 3 :Afficher et Refuser les mises à jour approuvées
 
-Retournez dans All Updates, changez les filtres sur Approval: Unapproved et Status: Any puis actualisez.
+Dans votre console, cliquez sur All Updates (Toutes les mises à jour).
 
-Cherchez une mise à jour très légère (par exemple une mise à jour d'outils ou de définition Windows Defender / Microsoft Endpoint).
+Modifiez le premier filtre tout en haut à gauche : remplacez Unapproved par Approved.
 
-Faites un clic droit ➔ Approve ➔ Approuvez-la pour votre groupe.
+Laissez le deuxième filtre sur Any.
 
-Retournez sur la page d'accueil de votre serveur : le volume à télécharger ne devrait être que de quelques mégaoctets (Mo) au lieu de 523 Go ! Le téléchargement va démarrer et vos dossiers vont enfin se remplir.
+Cliquez sur le bouton Refresh à droite.
+
+La liste va maintenant se remplir avec les 1 488 mises à jour qui tentent de se télécharger.
+
+Cliquez sur n'importe quelle ligne de la liste, puis faites CTRL + A sur votre clavier pour toutes les sélectionner d'un coup.
+
+Faites un clic droit sur la sélection bleue, puis cliquez sur Decline (Refuser).
+
+Validez le message de confirmation.
+
+
+<img width="1527" height="941" alt="image" src="https://github.com/user-attachments/assets/dfe60905-be07-4807-b890-cb1d3b82aa7e" />
+
+---
+
+<img width="1203" height="691" alt="image" src="https://github.com/user-attachments/assets/71c3188b-7da1-4ef9-aa12-15f2aa7d3de4" />
+
+---
+
+Bravo, Le compteur est retombé à 0 MB !
+
+<img width="1185" height="743" alt="image" src="https://github.com/user-attachments/assets/d9860848-f7ba-41a7-ad80-866df11760b6" />
+
+---
+
+
