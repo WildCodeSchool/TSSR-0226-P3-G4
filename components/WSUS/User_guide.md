@@ -193,7 +193,10 @@ Dans les options, mettre (par exemple) `8 AM - 6 PM`
 
 ---
 
-   
+<img width="1574" height="360" alt="Capture d&#39;écran 2026-07-03 190944" src="https://github.com/user-attachments/assets/fc695b75-a9e1-49f9-933e-047e6fae2ddd" />
+
+---
+
 ## 3.4 GPO pour les serveurs (non-DC)    
 
 
