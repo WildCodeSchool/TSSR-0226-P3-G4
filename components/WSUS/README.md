@@ -31,4 +31,5 @@ L'ensemble des procédures est découpé pour faciliter le déploiement et la ma
 
 ## Démarrage Rapide
 Pour démarrer l'installation de l'infrastructure, veuillez vous référer directement au document    
-**[Guide d'installation et d'utilisation (User_guide.md)](./User_guide.md)**.
+**[Guide d'installation et d'utilisation (User_guide.md)](./User_guide.md)**.   
+**[Résolutions de problèmes/bug (FAQ.md)](./FAQ.md)**.
