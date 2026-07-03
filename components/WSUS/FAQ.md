@@ -116,7 +116,7 @@ Le compteur "Approved updates" sur votre page d'accueil va retomber à 0, et la 
 
 ---
 
-### Étape 2 : Lancer le nettoyeur pour vider la file d'attente BITS
+### Étape 2 : Lancer le nettoyeur pour vider la file d'attente BITS 
 
 Maintenant qu'elles sont refusées, il faut purger la base de données.
 
@@ -127,3 +127,22 @@ Cliquez sur Server Cleanup Wizard (Assistant de nettoyage du serveur).
 Laissez toutes les cases cochées et cliquez sur Next (Suivant).
 
 Laissez l'assistant travailler (il va supprimer les fichiers temporaires des mises à jour que vous venez de refuser).
+
+<img width="1105" height="818" alt="Capture d&#39;écran 2026-07-03 151400" src="https://github.com/user-attachments/assets/76f9461d-5110-4f33-903f-625d21b34c0d" />
+
+---
+
+<img width="1197" height="691" alt="image" src="https://github.com/user-attachments/assets/3a101d59-67d8-4aab-b7f7-a0362dbfa086" />
+
+---
+
+### Étape 3 : Approuver UNE SEULE mise à jour légère pour tester
+Pour vérifier que vos dossiers se créent bien sans saturer votre serveur :
+
+Retournez dans All Updates, changez les filtres sur Approval: Unapproved et Status: Any puis actualisez.
+
+Cherchez une mise à jour très légère (par exemple une mise à jour d'outils ou de définition Windows Defender / Microsoft Endpoint).
+
+Faites un clic droit ➔ Approve ➔ Approuvez-la pour votre groupe.
+
+Retournez sur la page d'accueil de votre serveur : le volume à télécharger ne devrait être que de quelques mégaoctets (Mo) au lieu de 523 Go ! Le téléchargement va démarrer et vos dossiers vont enfin se remplir.
