@@ -26,6 +26,10 @@ Avant d'exécuter la promotion de la forêt, installer de manière obligatoire l
    * **Serveur DHCP**
 5. Valider l'ajout des outils de gestion requis et exécuter l'installation.
 
+<img width="158" height="177" alt="image" src="https://github.com/user-attachments/assets/82d5c26b-4820-465e-b820-9d41d7e10e53" />
+
+---
+
 *Alternative en ligne de commande équivalente (via le script de la suite `hello my dir`) :*
 ```powershell
 Install-WindowsFeature -Name AD-Domain-Services, DNS, DHCP -IncludeManagementTools
