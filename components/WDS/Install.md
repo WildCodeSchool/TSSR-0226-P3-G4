@@ -1,4 +1,4 @@
-# Installation WDS et MDT
+# Installation WDS 
 
 **Pré requis**
 
