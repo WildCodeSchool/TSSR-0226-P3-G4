@@ -8,7 +8,8 @@ Ce document recense les anomalies courantes rencontrées lors de l'installation,
 
 ### Problème : Mon serveur WDS bascule avec une adresse IP en 169.254.x.x (APIPA) et l'interface affiche "(Duplicate)"
 
-<img width="968" height="657" alt="image" src="https://github.com/user-attachments/assets/023765f9-4026-408c-918f-5084217bc7ce" />
+<img width="484" height="329" alt="457e7a5b-bc28-4519-9418-f7d1dafd5f03" src="https://github.com/user-attachments/assets/2a6f14a3-999a-4d29-b955-964b7f7d84b7" />
+
 
 ---
 
@@ -19,7 +20,8 @@ Ce document recense les anomalies courantes rencontrées lors de l'installation,
        Restart-Service -Name WDSServer
        ```
 
-  <img width="946" height="329" alt="image" src="https://github.com/user-attachments/assets/8e781b35-b0c1-4a5d-8946-45a7a6d53ff8" />
+ <img width="1891" height="659" alt="Capture d&#39;écran 2026-07-04 001949" src="https://github.com/user-attachments/assets/e901a352-3ddb-4f7d-96aa-db3c06360504" />
+
 
   ---
 
