@@ -22,7 +22,7 @@ Un conflit d'adresse IP s'est produit. Une autre machine sur le réseau (serveur
 
 2. Modifiez la configuration réseau dans Windows Server et redémarrez le service WDS via PowerShell :
 
-       ```powershell
+       ```
        Restart-Service -Name WDSServer
        ```
 
