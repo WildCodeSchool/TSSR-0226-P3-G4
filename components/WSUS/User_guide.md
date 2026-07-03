@@ -1,16 +1,17 @@
 # 1 Guide d'utilisation WSUS
-<img width="1830" height="432" alt="Capture d&#39;écran 2026-07-03 150248" src="https://github.com/user-attachments/assets/f763f2cc-b032-4b4f-8d3c-6cb4ae0bf151" />
+
+Ce guide est destiné aux administrateurs réseau pour l'exploitation, la maintenance et la gestion des mises à jour via la console Windows Server Update Services (WSUS).
+
 
 ---
 
 # 2 Configuration du service WSUS
 
-Une fois le serveur redémarré, lance la tâche `Post Deployment Configuration for WSUS` dans le Server Manager.
-Ensuite, dans la fenêtre de gauche, vas dans WSUS.
-Avec le bouton droit sélectionne `Windows Server Update Services` cela va lancer automatiquement l'assistant de configuration.
+Une fois le serveur redémarré, lance la tâche `Windows Server Update Services` dans le Server Manager.   
+Cela va lancer automatiquement l'assistant de configuration.    
 
 
-<img width="1850" height="466" alt="Post-deployment" src="https://github.com/user-attachments/assets/99f7a5b5-b1bd-4298-a6fa-a8bae29d8d95" />
+
 
 ---
 
