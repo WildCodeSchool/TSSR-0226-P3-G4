@@ -135,10 +135,46 @@ Cela va créer un nouveau disque avec l'ISO montée prête à être déployer. L
 ---
 
 **4. Nomme le dossier Windows 11 et clique sur Suivant puis Terminer.**   
-**5. Fais un clic droit sur le dossier Windows 11 et sélectionne Import Operating System.**   
+
+<img width="1085" height="902" alt="image" src="https://github.com/user-attachments/assets/3ef4c11a-ebeb-4a0a-8955-c6d702aceeaf" />
+
+---
+
+**5. Fais un clic droit sur le dossier Windows 11 et sélectionne Import Operating System.** 
+
+<img width="926" height="395" alt="Capture d&#39;écran 2026-07-03 232814" src="https://github.com/user-attachments/assets/4796ca76-976a-40a4-bc7b-1f064e6261f1" />
+
+---
+
 **6. Sélectionne Full set of source files et clique sur Suivant.**   
+
+<img width="1086" height="901" alt="image" src="https://github.com/user-attachments/assets/e57a3bc0-d762-4774-a500-8a1ff96b1264" />
+
+---
+
 **7. Spécifie le chemin vers les fichiers source de Windows 11 (le lecteur où tu as monté l'ISO E:\ par exemple).**   
+
+<img width="471" height="479" alt="image" src="https://github.com/user-attachments/assets/e251bebb-1137-4df4-8f8b-90e74bf32b65" />
+
+---
+
 **8. Pour le nom du répertoire de destination, saisis Windows 11 Pro.**   
 **9. Clique sur Suivant puis sur Terminer.**
 
 L’importation peut prendre plusieurs minutes. Une fois terminée, tu peux supprimer toutes les éditions de Windows 11 sauf la version Pro : il te suffit de sélectionner une ou plusieurs images non désirées dans la console, puis de cliquer sur Supprimer.   
+
+<img width="1026" height="766" alt="image" src="https://github.com/user-attachments/assets/51a731e1-03a1-41c8-b25f-499f2a6a715c" />
+
+---
+
+## Ajout d'applications dans MDT
+
+### Organisation des sources d'applications
+
+
+**1. Crée un dossier C:\MDT_Applications sur ton serveur.**    
+**2. Dans ce dossier, crée un sous-dossier pour chaque application :     C:\MDT_Applications\Firefox**   
+**3. Télécharger Firefox dans sa version .msi, rends-toi sur la page officielle dédiée aux entreprises :**   **[Télécharger Firefox](https://www.mozilla.org/fr/firefox/enterprise/#download)**    
+**4. Clique ensuite sur « Téléchargements pour les Entreprises » et choisis l’installer MSI.**    
+
+
