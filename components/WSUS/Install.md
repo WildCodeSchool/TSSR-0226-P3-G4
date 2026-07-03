@@ -16,6 +16,14 @@ Une carte réseau en Réseau interne avec l'adresse IP 172.16.10.10/24
 Créer une partition formaté avec un espace de 20 Go qui se nomme `WSUS`.   
 Sur cette partition, créer un dossier `WSUS`   
 
+<img width="677" height="462" alt="creation-partition-shrink-volume-C" src="https://github.com/user-attachments/assets/818dbc68-b891-4627-82e3-8ca5ba395268" />
+
+---
+
+<img width="746" height="587" alt="20G" src="https://github.com/user-attachments/assets/08affbe5-64ae-4bf2-8d85-7129abe7644a" />
+
+---
+
 <img width="406" height="194" alt="WSUS-20G" src="https://github.com/user-attachments/assets/92185b89-bb98-4c72-a811-7afe4f2462e3" />
 
 
@@ -193,6 +201,10 @@ Dans les options, pour les 2 premiers champs, mettre l'URL avec le nom du serveu
 Valide la configuration    
 
 <img width="1027" height="949" alt="GPO-PATH-corrige" src="https://github.com/user-attachments/assets/1fdaefe3-3c2e-4334-87f9-2489a9685a46" />
+
+---
+
+<img width="1891" height="416" alt="resultat-final" src="https://github.com/user-attachments/assets/96a57cb4-0d3d-48ff-9e34-11aa47b5cf25" />
 
 ---
 
