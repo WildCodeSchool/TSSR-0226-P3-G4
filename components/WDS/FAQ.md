@@ -13,7 +13,7 @@ Ce document recense les anomalies courantes rencontrées lors de l'installation,
 
 ---
 
-* **Cause :** Un conflit d'adresse IP s'est produit. Une autre machine sur le réseau (serveur, imprimante, etc.) utilise déjà l'adresse `172.16.64.54`. Par sécurité, Windows désactive votre IP fixe pour éviter de perturber le réseau et s'attribue une adresse de secours APIPA.
+* **Cause :** Un conflit d'adresse IP s'est produit. Une autre machine sur le réseau (serveur) utilise déjà l'adresse `172.16.64.54`. Par sécurité, Windows désactive votre IP fixe pour éviter de perturber le réseau et s'attribue une adresse de secours APIPA.
 * **Résolution :** 1. Libérez l'adresse IP sur l'appareil intrus ou attribuez une nouvelle adresse IP fixe libre à votre serveur `XTSE-420` (ex: `172.16.64.20`).
     2. Modifiez la configuration réseau dans Windows Server et redémarrez le service WDS via PowerShell :
        ```powershell
