@@ -17,16 +17,20 @@
 Avant d'exécuter la promotion de la forêt, installer de manière obligatoire les services de base via le Gestionnaire de serveur (Server Manager) ou l'interface PowerShell sous-jacente.
 
 ### 2.1. Ajout des rôles DNS, DHCP et AD DS
-1. Ouvrir le **Gestionnaire de serveur** (Server Manager) sur `xts-411`.
+1. Ouvrir le **Gestionnaire de serveur** (Server Manager) sur `XTSE-411`.
 2. Cliquer sur **Gérer** > **Ajouter des rôles et fonctionnalités**.
 3. Sélectionner **Installation basée sur un rôle ou une fonctionnalité**.
 4. Cocher les rôles suivants dans la liste :
    * **Services de domaine Active Directory** (AD DS)
    * **Serveur DNS**
    * **Serveur DHCP**
-5. Valider l'ajout des outils de gestion requis et exécuter l'installation.
 
 <img width="158" height="177" alt="image" src="https://github.com/user-attachments/assets/82d5c26b-4820-465e-b820-9d41d7e10e53" />
+
+
+5. Valider l'ajout des outils de gestion requis et exécuter l'installation.
+
+
 
 ---
 
@@ -61,7 +65,7 @@ Add-Computer -DomainName "Xtech.green" -Restart
 ```
 --- 
 
-3.2. Configuration du serveur WDS graphique (xts-wds)
+3.2. Configuration du serveur WDS graphique (XTSE-420)
 Installer le rôle Windows Deployment Services (WDS) et les outils d'administration AD DS par PowerShell :
 
 ```
