@@ -169,4 +169,161 @@ Bravo, Le compteur est retombé à 0 MB !
 
 ---
 
+### Étape 4 : 
+
+Maintenant, pour que le compteur principal se mette à jour sur votre page d'accueil et que WSUS comprenne qu'il ne doit plus rien télécharger, il faut forcer une actualisation en ligne de commande.
+
+Ouvrez PowerShell en tant qu'administrateur et exécutez ces deux lignes :
+
+```
+# 1. Purger définitivement la file d'attente réseau (BITS)
+Get-BitsTransfer -AllUsers | Remove-BitsTransfer
+
+# 2. Forcer WSUS à recalculer son espace de stockage immédiatement
+cd "C:\Program Files\Update Services\Tools"
+.\wsusutil.exe reset
+```
+
+---
+
+### Étape 5 : Approuver UNE SEULE mise à jour légère
+Dans la console WSUS, retournez dans Updates > All Updates.
+
+Configurez les filtres tout en haut ainsi :
+
+Approval : Declined (Refusé)
+
+Status : Any (Tout)
+
+Cliquez sur Refresh.
+
+Cherchez une mise à jour très légère (évitez les grosses mises à jour cumulatives de Windows Server pour le moment). L'idéal est de prendre une mise à jour de définition (comme Microsoft Defender Antivirus ou des outils malveillants).
+
+Faites un clic droit sur cette mise à jour ➔ Approve...
+
+Approuvez-la pour votre groupe (cliquez sur la flèche à côté du groupe ➔ Approved for Install), puis validez par OK.
+
+
+
+
+---
+
+
+
+### Étape 6 : Lancer le téléchargement et observer les dossiers
+Retournez sur la page d'accueil de votre console WSUS (cliquez sur le nom du serveur tout en haut à gauche).
+
+Cliquez sur le bouton Refresh à droite.
+
+Le compteur de téléchargement va monter (par exemple : Downloaded 0.00 MB of 404.39 MB).
+
+Si ça reste bloqué à 0.00 MB, c'est que le service de téléchargement en arrière-plan (BITS) n'arrive pas à joindre les serveurs de Microsoft. WSUS a besoin d'une connexion Internet directe ou via un Proxy pour cette VM.
+
+<img width="1199" height="766" alt="Capture d&#39;écran 2026-07-03 155036" src="https://github.com/user-attachments/assets/fe5280fe-b00f-4c24-8f7b-fdfc82d9769c" />
+
+---
+
+Voici comment débloquer le réseau et vérifier ce qui coince :
+
+1. Le test réseau obligatoire
+Puisque votre VM est sur un réseau interne ou isolé, faites ce test directement depuis un invité de commande (CMD) ou PowerShell sur ce serveur WSUS :
+
+```
+ping 8.8.8.8
+```
+Si le ping échoue : Votre VM n'a pas Internet.
+
+2. Relancer le moteur de téléchargement (BITS)
+Parfois, après avoir nettoyé une file d'attente de 500 Go, le service Windows (BITS) a besoin d'un coup de pied pour redémarrer sur la nouvelle tâche de 404 Mo.
+
+Ouvrez PowerShell en tant qu'administrateur et exécutez ces commandes :
+
+```
+# Arrêter les services
+Stop-Service -Name WsusService
+Stop-Service -Name Bits
+
+# Redémarrer les services proprement
+Start-Service -Name Bits
+Start-Service -Name WsusService
+
+# Forcer WSUS à relancer la vérification de téléchargement
+cd "C:\Program Files\Update Services\Tools"
+.\wsusutil.exe reset
+```
+<img width="1896" height="137" alt="Capture d&#39;écran 2026-07-03 160112" src="https://github.com/user-attachments/assets/31b199e3-79f1-42c1-a3d8-fcae95429e9d" />
+
+---
+<img width="1168" height="104" alt="image" src="https://github.com/user-attachments/assets/59d2b18e-a1d2-4599-8f9a-46e8b34d68eb" />
+
+---
+
+ Laisser 2 à 3 minute, puis retourner sur la page d'accueil de WSUS et cliquer sur Refresh. 
+
+---
+
+Si le réseau est fonctionnel mais que le compteur reste bloqué à 0.00 MB et que le dossier WsusContent refuse de générer ses sous-dossiers, c'est qu'il y a un problème de droits d'accès au dossier ou que l'arborescence est corrompue suite à la tentative d'exécution de la commande movecontent. On a vu que la commande avait renvoyé une erreur fatale car le dossier n'existait pas.
+
+Voici comment réparer les dossiers et forcer WSUS à les recréer de zéro :
+
+### Étape 1 : Recréer proprement le dossier manuellement
+
+
+Ouvrir PowerShell (en tant qu'administrateur) et lancer ces commandes pour créer le dossier et donner les pleins droits au service WSUS :
+
+```
+icacls "C:\WSUS" /grant "NT AUTHORITY\NETWORK SERVICE:(OI)(CI)(F)" /T
+```
+
+<img width="1899" height="182" alt="Capture d&#39;écran 2026-07-03 161518" src="https://github.com/user-attachments/assets/35ff0a03-27c2-4df3-b670-5286f7cabbde" />
+
+---
+
+Si l'arborescence ne s'est toujours pas créée d'elle-même malgré cela. 
+
+Exécutez cette commande dans votre PowerShell
+
+```
+Get-Service -Name Bits
+```
+
+<img width="1892" height="198" alt="image" src="https://github.com/user-attachments/assets/3ac47d07-5e8b-45b7-a1d0-49a37a8e9af8" />
+
+---
+
+S'il est sur Stopped, forcez son démarrage : Start-Service -Name Bits.
+
+S'il est sur Running, jetez un œil aux tâches actives pour voir l'erreur exacte :
+
+```
+Get-BitsTransfer -AllUsers | Select-Object JobId, DisplayName, JobState
+```
+
+<img width="1892" height="515" alt="Capture d&#39;écran 2026-07-03 162803" src="https://github.com/user-attachments/assets/2cc01a32-9c92-4f1b-adf9-1dfcac68bf60" />
+
+---
+
+<img width="953" height="236" alt="Capture d&#39;écran 2026-07-03 162904" src="https://github.com/user-attachments/assets/db3de0fe-8faa-4f18-8264-781f6331eb53" />
+
+---
+
+
+<img width="958" height="259" alt="Capture d&#39;écran 2026-07-03 162911" src="https://github.com/user-attachments/assets/ee25cdfb-b3fc-436e-8f7c-5bd6253391a5" />
+
+---
+
+C'est bon le fichier de la maj de 404MB apparait enfin dans le dossier WSUS, la maj a bien été téléchargée !
+
+<img width="1193" height="746" alt="Capture d&#39;écran 2026-07-03 163021" src="https://github.com/user-attachments/assets/988e9431-eb70-4103-b91d-6f5fc3c0bbe6" />
+
+---
+
+
+
+
+ 
+
+
+
+
 
