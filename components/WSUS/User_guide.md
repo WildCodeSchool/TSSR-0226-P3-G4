@@ -11,7 +11,16 @@ Pour éviter la saturation du disque système `C:\`, les mises à jour doivent �
 1. Ouvrez la **Gestion des disques** (`diskmgmt.msc`).
 2. Initialisez et formatez l'espace non alloué de **20 Go**.
 3. Nommez le nouveau volume **`WSUS`**.
-4. À la racine de ce nouveau lecteur, créez un dossier nommé **`WSUS`**.
+
+<img width="1333" height="1005" alt="image" src="https://github.com/user-attachments/assets/9127c5ad-cc74-46b6-8847-1d2a902efba6" />
+
+---
+
+5. À la racine de ce nouveau lecteur, créez un dossier nommé **`WSUS`**.
+
+<img width="977" height="342" alt="image" src="https://github.com/user-attachments/assets/423ff9d7-8c8a-4c7f-bad9-c69a40191d15" />
+
+---
 
 ### 1.2 Installation du rôle WSUS
 1. Ouvrez le **Gestionnaire de serveur** (Server Manager) et cliquez sur **Ajouter des rôles et fonctionnalités**.
@@ -42,7 +51,7 @@ Après le redémarrage, ouvrez le Gestionnaire de serveur pour effectuer les tâ
    * **Planification :** Configurez **4 synchronisations par jour**, débutant à **02:00**.
    * **Initialisation :** Cochez `Begin initial synchronization` puis cliquez sur **Finish**.
 
-> 💡 **Suivi :** Vous pouvez suivre la progression de la première synchronisation sur la page d'accueil de la console WSUS à l'aide du widget **Synchronization Status**.
+> **Suivi :** Vous pouvez suivre la progression de la première synchronisation sur la page d'accueil de la console WSUS à l'aide du widget **Synchronization Status**.
 
 ### 2.2 Approbations Automatiques (Règles de base)
 1. Dans la console WSUS, allez dans **Options** > **Automatic Approvals**.
