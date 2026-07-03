@@ -179,7 +179,7 @@ Dans l'arborescence des ordinateurs, sous All Computers, créer 3 groupes avec A
 
 ## 3.2 GPO pour les clients de la Comptabilité
 
-Sur ton AD, créer une GPO COMPUTER-WSUS-Clients-Communication   
+Sur ton AD, créer une GPO **COMPUTER-WSUS-Clients-Communication**   
 Va dans Computer Configuration--> Policies--> Administrative Templates--> Windows Components--> Windows update    
 Le paramétrage ci-dessous est commun à toutes les GPO :    
 Va dans `Specify intranet Microsoft update service location`, qui indiquera où est le serveur de mise à jour.   
@@ -204,4 +204,52 @@ Valide la configuration
 Aller dans `Turn off auto-restart for updates during active hours` qui permet d'empêcher les machines de redémarrer après l'installation d'une mise à jour pendant leurs      heures d'utilisations      
 Coche `Enabled`     
 Dans les options, mettre (par exemple) `8 AM - 6 PM`       
+
+
+## 3.3 GPO pour les clients du service informatique    
+
+
+## 3.4 GPO pour les serveurs (non-DC)    
+
+
+Fais cette GPO si tu as une VM serveur.    
+
+Copie la GPO client et renomme là en **COMPUTER-WSUS-Serveurs**    
+Ne touche pas à la partie commune et modifie uniquement la partie spécifique à cette GPO :    
+Va dans `Configure Automatic Updates`       
+Dans les options mets :    
+Dans `Configure automatic updating` sélectionne `7- Auto Download, Notify to restart`          
+Dans `Scheduled install day` mets `0 - Every day`            
+Dans `Scheduled install time` mets `09:00`         
+Cocher `Every week`     
+Ne pas cocher `Install updates for other Microsoft Products`         
+Aller dans `Enable client-side targeting` qui fait la liaison avec les groupes crées dans WSUS     
+Coche `Enabled`    
+Dans les options, mettre le nom du groupe WSUS pour les ordinateurs cible, dont ici les serveurs    
+Valide la configuration    
+
+
+## 3.5 GPO pour les DC
+
+Fais cette GPO si tu as une VM DC.
+
+Copie la GPO serveur et renomme là en **COMPUTER-WSUS-DC**
+Ne touche pas à la partie commune et modifie uniquement la partie spécifique à cette GPO :
+Aller dans `Enable client-side targeting` qui fait la liaison avec les groupes crées dans WSUS
+Coche `Enabled`
+Dans les options, mettre le nom du groupe WSUS pour les ordinateurs cible, dont ici les contrôleurs de domaine
+Valide la configuration
+Une fois les GPO crées et configurées, lie les aux OU dans lesquelles sont tes machines clientes
+
+Sur chaque client, exécuter la commande avec le compte administrateur local `gpupdate /force`.
+On peut vérifier si les GPO sont appliquée avec la commande `gpresult /R` ou avec la commande PowerShell    
+`Get-ItemProperty -Path 'HKLM:\Software\Policies\Microsoft\Windows\WindowsUpdate' -Name WUServer, WUStatusServer`
+
+# 4 Gestion des mises à jour
+
+Sur le serveur WSUS, va dans la partie **Updates** et sélectionne **Security Updates**.     
+Sélectionne des mises à jour et ouvre le menu d'approbation avec le bouton droit de la souris.     
+Tu vas retrouver les groupes que tu as créer sous l'arborescence **All Computers**.    
+Tu peux pour chacun des groupes appliquer les différentes mises à jour ou bien les bloquer.    
+
 
