@@ -9,6 +9,10 @@
    - `XTSE-420` (Quatrième / Graphique / WDS) : `172.16.64.25` | Passerelle : `172.16.64.254`
 3. Définir le serveur DNS initial de chaque réplica sur l'adresse du serveur principal (`172.16.64.3`) avant leur promotion.
 
+<img width="1492" height="377" alt="Capture d&#39;écran 2026-07-04 003641" src="https://github.com/user-attachments/assets/c5bf8bdf-a8ec-4f4b-92a4-9f9e140151bb" />
+
+---
+
 ## 2. Déploiement Industrialisé et Installation des Rôles sur le DC Principal
 Avant d'exécuter la promotion de la forêt, installer de manière obligatoire les services de base via le Gestionnaire de serveur (Server Manager) ou l'interface PowerShell sous-jacente.
 
