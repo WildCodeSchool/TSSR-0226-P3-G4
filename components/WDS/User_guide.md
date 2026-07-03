@@ -1,6 +1,17 @@
 # Guide d'utilisation
 
-## Processus de déploiement
+## Déploiement de Windows 11
+
+### Préparation de la machine cliente
+
+1. Crée une nouvelle machine virtuelle dans VirtualBox pour le client (CLIENT-W11).
+2. Assure-toi que le réseau est configuré sur le même réseau interne que ton serveur WDS.
+3. Configure l'ordre de démarrage pour démarrer en premier à partir du réseau (PXE).
+4. Démarre la machine virtuelle.
+
+---
+
+### Processus de déploiement
 
 1. La machine cliente démarre via PXE et se connecte au serveur WDS.
 
