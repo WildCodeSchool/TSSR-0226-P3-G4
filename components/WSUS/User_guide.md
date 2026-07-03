@@ -131,9 +131,9 @@ Dans l'arborescence des ordinateurs, sous All Computers, créer 3 groupes avec A
 ---
 
 
-<img width="349" height="165" alt="image" src="https://github.com/user-attachments/assets/2f97ade4-7dc9-45dc-9fae-512b4728b954" />
 
----
+
+
 
 ## 3.2 GPO pour les clients de la Communication
 
