@@ -68,12 +68,15 @@ Le guide d'installation stipule la création d'une partition de 20 Go dédiée �
 
 Si WSUS détecte qu'il n'a pas assez d'espace disque pour stocker ce qu'on lui demande, il refuse catégoriquement de démarrer le téléchargement (ce qui explique le blocage à 0.00 MB).
 
-La solution :
-Il faut réduire drastiquement le volume de données demandées en refusant les mises à jour inutiles :
+### Étape 1 : Refuser (Decline) les mises à jour approuvées par erreur
 
-Dans la console WSUS, allez dans Options > Products and Classifications.
+Il faut dire à WSUS de ne plus essayer de télécharger ces 1 488 fichiers.   
 
-Dans l'onglet Products, décochez absolument tout ce dont vous n'avez pas besoin immédiatement (par exemple, décochez les anciennes versions de Windows, conservez uniquement Windows 11 ou la version exacte de votre serveur).
+Il faut réduire drastiquement le volume de données demandées en refusant les mises à jour inutiles :    
+
+Dans la console WSUS, allez dans Options > Products and Classifications.     
+
+Dans l'onglet Products, décochez absolument tout ce dont vous n'avez pas besoin immédiatement (par exemple, décochez les anciennes versions de Windows, conservez uniquement Windows 11 ou la version exacte de votre serveur).   
 
 <img width="689" height="769" alt="Capture d&#39;écran 2026-07-03 151957" src="https://github.com/user-attachments/assets/0dfd65d2-c2d2-434d-8e6e-b26d62a60630" />
 
@@ -104,5 +107,23 @@ Confirmez par "Oui".
 
 Le compteur "Approved updates" sur votre page d'accueil va retomber à 0, et la file d'attente des 523 Go va complètement s'effacer.     
 
+<img width="1567" height="883" alt="image" src="https://github.com/user-attachments/assets/20c0d749-b8e9-4fc9-9b27-392c41945b2a" />
 
 
+---
+
+<img width="612" height="293" alt="image" src="https://github.com/user-attachments/assets/1b443299-7f7b-4060-83fe-1a96add41b48" />
+
+---
+
+### Étape 2 : Lancer le nettoyeur pour vider la file d'attente BITS
+
+Maintenant qu'elles sont refusées, il faut purger la base de données.
+
+Allez dans Options tout en bas à gauche de la console WSUS.
+
+Cliquez sur Server Cleanup Wizard (Assistant de nettoyage du serveur).
+
+Laissez toutes les cases cochées et cliquez sur Next (Suivant).
+
+Laissez l'assistant travailler (il va supprimer les fichiers temporaires des mises à jour que vous venez de refuser).
