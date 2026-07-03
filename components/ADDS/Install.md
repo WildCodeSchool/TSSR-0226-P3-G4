@@ -118,7 +118,7 @@ Exécuter la commande d'audit suivante pour confirmer la bonne répartition des 
 netdom query fsmo
 ```
 
----
+
 
 <img width="1893" height="242" alt="image" src="https://github.com/user-attachments/assets/db489f62-553a-4930-bf05-12152443f75c" />
 
