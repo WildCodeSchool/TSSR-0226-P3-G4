@@ -1,4 +1,7 @@
 # 1 Guide d'utilisation WSUS
+<img width="1830" height="432" alt="Capture d&#39;écran 2026-07-03 150248" src="https://github.com/user-attachments/assets/f763f2cc-b032-4b4f-8d3c-6cb4ae0bf151" />
+
+---
 
 # 2 Configuration du service WSUS
 
