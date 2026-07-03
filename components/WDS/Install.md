@@ -200,3 +200,28 @@ On peut voir une icone verte sur le nom du serveur, indiquant que le service est
 <img width="358" height="295" alt="Capture d&#39;écran 2026-07-03 205030" src="https://github.com/user-attachments/assets/6443d084-0586-470b-b7c1-383dd650a9c3" />
 
 ---
+
+Dans la console WDS, sous le nom du serveur, on peut voir les dossiers suivants :   
+
+**Install images** : contient les images des systèmes d’exploitation à déployer    
+**Boot images** : contient les images WinPE permettant d’amorcer le système depuis le réseau 
+
+<img width="1912" height="358" alt="Capture d&#39;écran 2026-07-03 213310" src="https://github.com/user-attachments/assets/a4d3103c-caac-42a0-8567-19eb5de9b5fe" />
+
+---
+
+**Pending devices** : liste des clients en attente de validation (si on a coché la case de validation des clients à l'étape PXE Server Initial Settings)    
+**Prestage Devices** : liste des clients connus qui peuvent être sélectionné    
+**Multicast transmissions** : permet de créer des sessions multicast afin de déployer un grand nombre de clients simultanément   
+**Drivers** : permet d’ajouter des pilotes afin de les incorporer dans les images à déployer    
+De même, à l'emplacement choisi pour les données de déploiement, donc ici le second disque dur, tu trouveras une nouvelle arborescence de dossiers.    
+C'est dans ces dossier que tu mettras les images de déploiement, les images de démarrage, les pilotes logiciels, ...     
+
+<img width="1148" height="435" alt="image" src="https://github.com/user-attachments/assets/fe3aa272-635d-4f8f-bc86-1b7625a243d5" />
+
+
+---
+
+A ce stade, tu as un serveur WDS fonctionnel avec le service lancé.    
+
+---
