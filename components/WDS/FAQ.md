@@ -20,7 +20,8 @@ Ce document recense les anomalies courantes rencontrées lors de l'installation,
        Restart-Service -Name WDSServer
        ```
 
- <img width="1891" height="659" alt="Capture d&#39;écran 2026-07-04 001949" src="https://github.com/user-attachments/assets/e901a352-3ddb-4f7d-96aa-db3c06360504" />
+ <img width="1044" height="659" alt="Capture d&#39;écran 2026-07-04 001949" src="https://github.com/user-attachments/assets/70e970b9-7afe-4dca-be8c-683321adcf04" />
+
 
 
   ---
