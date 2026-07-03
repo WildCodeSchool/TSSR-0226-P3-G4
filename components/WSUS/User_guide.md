@@ -9,7 +9,7 @@ Ce guide détaille la mise en œuvre de WSUS sur le serveur `XTSE-419` ainsi que
 ### 1.1 Création de la partition de stockage
 Pour éviter la saturation du disque système `C:\`, les mises à jour doivent être stockées sur un volume dédié.
 1. Ouvrez la **Gestion des disques** (`diskmgmt.msc`).
-2. Initialisez et formatez l'espace non alloué de **20 Go**.
+2. Initialisez et formatez l'espace non alloué de **90 Go**.
 3. Nommez le nouveau volume **`WSUS`**.
 
 <img width="1333" height="1005" alt="image" src="https://github.com/user-attachments/assets/9127c5ad-cc74-46b6-8847-1d2a902efba6" />
