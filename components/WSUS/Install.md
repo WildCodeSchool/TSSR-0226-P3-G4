@@ -235,6 +235,10 @@ Coche `Enabled`
 Dans les options, mettre le nom du groupe WSUS pour les ordinateurs cible, donc **COMMUNICATION**     
 Valide la configuration     
 
+<img width="1026" height="948" alt="image" src="https://github.com/user-attachments/assets/4204d1cb-d3ad-4c6d-9b50-b832b2085cef" />
+
+---
+
 Aller dans `Turn off auto-restart for updates during active hours` qui permet d'empêcher les machines de redémarrer après l'installation d'une mise à jour pendant leurs      heures d'utilisations      
 Coche `Enabled`     
 Dans les options, mettre (par exemple) `8 AM - 6 PM`       
