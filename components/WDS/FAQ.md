@@ -27,12 +27,27 @@ Ce document recense les anomalies courantes rencontrées lors de l'installation,
 * **Résolution :** Vous devez créer manuellement les dossiers vides requis par l'assistant à l'emplacement suivant :
     1. Allez vers : `C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment\`
     2. Créez un dossier nommé `x86`.
-    3. Entrez dans ce dossier et créez un sous-dossier nommé `WinPE_OCs`.
+ 
+  <img width="1421" height="401" alt="image" src="https://github.com/user-attachments/assets/153cce21-89f7-4c1a-b6ad-26c7b4923e2d" />
+
+  ---
+
+    4. Entrez dans ce dossier et créez un sous-dossier nommé `WinPE_OCs`.
+
+  <img width="1416" height="309" alt="image" src="https://github.com/user-attachments/assets/ef0f7291-5667-4fd0-8884-46fe229e60db" />
+
+  ---
+  
     *Structure attendue :* `...\Windows Preinstallation Environment\x86\WinPE_OCs`
 
 ### Problème : L'installation de mon application (ex: Firefox) échoue systématiquement pendant la séquence de tâches WinPE
 * **Causes possibles :**
     * Vous avez utilisé un fichier exécutable `.exe` au lieu d'un installeur Windows Installer `.msi`.
+ 
+  <img width="600" height="809" alt="Capture d&#39;écran 2026-07-04 001539" src="https://github.com/user-attachments/assets/d25a2a06-aca1-47c5-a43e-7127b699ba74" />
+
+  ---
+  
     * Le nom du fichier spécifié dans la ligne de commande MDT ne correspond pas exactement au fichier présent dans le dossier source.
 * **Résolution :** Téléchargez impérativement la version **MSI Entreprise** du logiciel. Dans les propriétés de l'application sur MDT, assurez-vous que la commande silencieuse est exacte (ex: `Firefox.msi /quiet`).
 
