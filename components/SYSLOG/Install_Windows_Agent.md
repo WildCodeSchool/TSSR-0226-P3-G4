@@ -174,3 +174,5 @@ Le nouveau dossier portant l'adresse IP du serveur Windows configuré (ex: SRV-W
 <img width="1893" height="1300" alt="Capture d&#39;écran 2026-07-04 231605" src="https://github.com/user-attachments/assets/cdd75525-d210-4fb2-8a27-c88875e7f8a1" />
 
 ---
+
+**Le nouveau dossier portant l'adresse IP du serveur Windows WDS configuré (172.16.64.20) apparaît instantanément dans la liste du SRV-SYSLOG-NG !**
