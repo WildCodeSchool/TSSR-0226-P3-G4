@@ -58,8 +58,12 @@ apt update && apt install -y rsyslog
 # Activation au démarrage et lancement du service
 systemctl enable rsyslog
 systemctl start rsyslog
+systemctl status rsyslog
 ```
 
+<img width="1893" height="573" alt="Capture d&#39;écran 2026-07-04 163316" src="https://github.com/user-attachments/assets/9f8923fd-3e04-44db-b081-0898148b6902" />
+
+---
 
 ---
 
