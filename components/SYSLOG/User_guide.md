@@ -2,7 +2,22 @@
 
 Ce guide recense toutes les commandes applicables dans un conteneur Debian 12 standard pour interroger, filtrer et gérer les flux de journaux.
 
-## 1. Interrogation native via Journalctl (Remplacement moderne de Syslog)
+## 1. Comment envoyer les logs de tous les serveurs de l'infra vers le serveur de log `Rsyslog` ?
+
+**1. Installer rsyslog sur chaque serveur**
+**2. Ajouter la règle de redirection à la toute fin du fichier `/etc/rsyslog.conf` :**
+
+```
+# Envoi de TOUS les logs vers le serveur Syslog 172.16.64.28 via UDP sur le port 514
+*.* @172.16.64.28:514
+
+# Envoi via TCP (double arobase) pour garantir la délivrabilité
+*.* @@172.16.64.28:514
+```
+
+
+
+## 2. Interrogation native via Journalctl (Remplacement moderne de Syslog)
 
 ### Lecture de base
 
@@ -97,7 +112,7 @@ journalctl -p warning
 
 ---
 
-## 2. Commandes d'Administration et Maintenance
+## 3. Commandes d'Administration et Maintenance
 
 Connaître l'espace disque total occupé par les fichiers de logs binaires :
 
