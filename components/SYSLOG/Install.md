@@ -24,6 +24,16 @@ Ce document décrit les étapes pour installer le service `Syslog`
 
 Debian 12 n'incluant plus rsyslog par défaut, son installation remplit le prérequis logiciel de notre architecture.
 
+Pour que la commande `apt` fonctionne, commenter le dépôt non-free :    
+
+```
+nano /etc/apt/sources.list.d/sources.list
+```
+
+<img width="1876" height="162" alt="image" src="https://github.com/user-attachments/assets/d54303f4-cb68-4769-a03a-8c75b2e30dd5" />
+
+---
+
 ```
 # Mise à jour des dépôts et installation
 apt update && apt install -y rsyslog
