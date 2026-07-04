@@ -1,15 +1,15 @@
-# Documentation du Service Syslog - Conteneur Debian 12 (Proxmox VE)
+# Documentation du Service Syslog 
 
 ## Sommaire
 
-1. [Rôle du service](#1-rôle-du-service)
-2. [Position dans l'architecture](#2-position-dans-larchitecture)
-    2.1 [Serveur Principal](#21-serveur-principal)
-    2.2 [Serveur Backup](#22-serveur-backup)
-3. [Prérequis](#3-prérequis)
-    3.1 [Pour le Serveur](#31-pour-le-serveur)
-    3.2 [Pour le client](#32-pour-le-client)
-4. [Documentation associée](#4-documentation-associée)
+1. **[Rôle du service](#1-rôle-du-service)**    
+2. **[Position dans l'architecture](#2-position-dans-larchitecture)**    
+    2.1 **[Serveur Principal](#21-serveur-principal)**   
+    2.2 **[Serveur Backup](#22-serveur-backup)**    
+3.**[Prérequis](#3-prérequis)**    
+    3.1 **[Pour le Serveur](#31-pour-le-serveur)**    
+    3.2 **[Pour le client](#32-pour-le-client)**    
+4. **[Documentation associée](#4-documentation-associée)**    
 
 ---
 
