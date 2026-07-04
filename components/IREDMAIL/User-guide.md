@@ -79,27 +79,43 @@ Pour connecter un client lourd Thunderbird, suivre la procédure de configuratio
 
 ---
 
-
+4. Sélectionner **Nouveau carnet d'adresse LDAP**
 <img width="1200" height="898" alt="Capture d&#39;écran 2026-07-05 002228" src="https://github.com/user-attachments/assets/c7273932-962e-4122-b824-739c2497d993" />
 
 ---
 
-<img width="1198" height="895" alt="Capture d&#39;écran 2026-07-05 002959" src="https://github.com/user-attachments/assets/a48442c9-618a-4c65-9603-ad6504d23111" />
+5. Entrer les informations du serveur **Active Directory** 
+
+<img width="1192" height="897" alt="Capture d&#39;écran 2026-06-16 034516" src="https://github.com/user-attachments/assets/4322eb63-fb53-4fa9-b3dc-a02e2e8875e6" />
+
 
 ---
+
+6. **Bravo, iRedMail est maintenant synchronisé avec l'AD !**
 
 <img width="1898" height="1030" alt="image" src="https://github.com/user-attachments/assets/bef36c1a-65e9-45c1-93dc-d8d3c8f578b9" />
 
 ---
 
+7. Cliquer sur **Confirmer l'exception de sécurité**
+
+(Ce message apparaît après la 1ère tentative d'un envoi de mail..)
+
 <img width="625" height="474" alt="Capture d&#39;écran 2026-07-05 003401" src="https://github.com/user-attachments/assets/5e33ce18-a1e5-4c58-9c68-7aca8399ee77" />
 
 ---
+
+8. Cliquer sur **Confirmer l'exception de sécurité**
+
+(Ce message apparaît après la 1ère tentative d'un envoi de mail..)
 
 <img width="626" height="472" alt="Capture d&#39;écran 2026-07-05 003520" src="https://github.com/user-attachments/assets/209ac326-7a06-4517-9ac1-75b807de48d6" />
 
 
 ---
+
+9. Après confirmation des 2 exeptions, l'envoie des mails est fonctionnel !
+**Xentech dispose dorénavant d'un serveur de messagerie sécurisé par LDAPS sur le port 636**
 
 <img width="1915" height="1072" alt="image" src="https://github.com/user-attachments/assets/ce05bb51-9702-46cd-9a4d-70ab6c227401" />
 
