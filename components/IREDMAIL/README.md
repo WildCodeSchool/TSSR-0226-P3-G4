@@ -57,4 +57,6 @@ Pour garantir la haute disponibilité de notre service de messagerie, nous avons
 
 ## 4. Documentation associée
 
-Pour le déploiement et l'exploitation quotidienne de la
+Pour le déploiement et l'exploitation quotidienne de la plateforme, se référer aux guides techniques suivants :
+* **[`INSTALL.md`](./INSTALL.md)** : Procédure pas à pas pour préparer le système, configurer la zone DNS Active Directory et installer la suite logicielle iRedMail.
+* **[`USER_GUIDE.md`](./USER_GUIDE.md)** : Guide de gestion des boîtes aux lettres via iRedAdmin, utilisation du Webmail Roundcube et configuration pas à pas du client lourd Thunderbird.
