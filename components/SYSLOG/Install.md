@@ -65,7 +65,7 @@ systemctl status rsyslog
 
 ---
 
----
+Si la commande `systemctl status rsyslog` affiche un message d'erreur, j'explique comme résoudre ce problème dans la `FAQ Q1` : [FAQ](./FAQ.md) 
 
 ## 2. Activation de la persistance de systemd-journald
 Par défaut sur certains templates LXC Debian minimaux, les logs sont volatiles. Il faut les fixer sur le disque.
