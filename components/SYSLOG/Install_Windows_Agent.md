@@ -12,7 +12,19 @@ Ce guide détaille la centralisation des journaux d'événements Windows (Active
 3. Suivre l'assistant d'installation en conservant le répertoire par défaut : 
    `C:\Program Files\nxlog`
 
+<img width="1886" height="975" alt="image" src="https://github.com/user-attachments/assets/373e681c-e195-475d-8b91-7a9595922c3c" />
+
+
 ---
+<img width="1895" height="1008" alt="image" src="https://github.com/user-attachments/assets/ecbab384-b86b-438f-ac07-35cce336150e" />
+
+---
+
+<img width="936" height="705" alt="image" src="https://github.com/user-attachments/assets/11d11214-d351-4d85-83f8-c96ee5cfa1d9" />
+
+---
+
+
 
 ## 2. Configuration de l'Agent (`nxlog.conf`)
 
