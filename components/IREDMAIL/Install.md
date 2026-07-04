@@ -123,7 +123,7 @@ Mot de passe racine LDAP : Saisir un mot de passe fort pour l'administrateur de 
 
 Premier domaine de messagerie : Saisir exactement Xtech.green.
 
-Mot de passe du compte administrateur du domaine : Définir un mot de passe hautement sécurisé pour le compte maître postmaster@xtech.green.
+Mot de passe du compte administrateur du domaine : Définir un mot de passe hautement sécurisé pour le compte maître **postmaster@xtech.green.**
 
 Composants optionnels : Cocher l'ensemble des options proposées (Roundcube, iRedAdmin, Fail2ban, etc.) afin de garantir la sécurité et l'accessibilité du serveur.
 
