@@ -23,15 +23,15 @@ Un serveur Syslog est un serveur de centralisation des journaux (logs). Le rôle
 
 ### 2.1 Serveur Principal
 *Ce conteneur héberge le service de collecte principal au sein du cluster Proxmox VE.*
-- **Nom du serveur :** `[À compléter - ex: ct-syslog-01]`
-- **Adresse IP :** `[À compléter - ex: 192.168.1.250]`
-- **Gateway :** `[À compléter - ex: 192.168.1.1]`
+- **Nom du serveur :** `[XTSE-452]`
+- **Adresse IP :** `[172.16.64.28]`
+- **Gateway :** `[172.16.64.254]`
 
 ### 2.2 Serveur Backup
 *Serveur secondaire configuré pour prendre le relais ou recevoir une copie des flux critiques.*
-- **Nom du serveur :** `[À compléter - ex: ct-syslog-02]`
-- **Adresse IP :** `[À compléter - ex: 192.168.1.251]`
-- **Gateway :** `[À compléter - ex: 192.168.1.1]`
+- **Nom du serveur :** `[XTSE-415]`
+- **Adresse IP :** `[172.16.64.18]`
+- **Gateway :** `[172.16.64.254]`
 
 ## 3. Prérequis
 
