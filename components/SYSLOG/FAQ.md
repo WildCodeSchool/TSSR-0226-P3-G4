@@ -73,4 +73,12 @@ On recommande d'envoyer les logs en TCP "@@" et non en UDP "@", inutile d'utilis
 
 <img width="1866" height="898" alt="Capture d&#39;écran 2026-07-04 174130" src="https://github.com/user-attachments/assets/905add64-affe-4747-bbd0-61e5616e3205" />
 
+---
 
+Enregistrer la configuration :
+
+```
+systemctl restart rsyslog
+```
+
+---
