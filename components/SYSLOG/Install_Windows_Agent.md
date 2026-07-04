@@ -6,8 +6,9 @@ Ce guide détaille la centralisation des journaux d'événements Windows (Active
 
 ## 1. Téléchargement et Installation de l'Agent
 
-1. Télécharger le package d'installation officiel de **NXLog Community Edition** pour Windows (fichier `.msi`).
-2. Lancer l'installateur sur le serveur Windows cible (ex: le contrôleur de domaine `172.16.64.3`).
+1. Télécharger le package d'installation officiel de **NXLog Community Edition v3.2** pour Windows (architecture 64 bits) via le lien direct suivant :
+   > 🔗 [Télécharger NXLog Community Edition (.msi)](https://nxlog.co/system/files/products/files/348/nxlog-ce-3.2.2329.msi)
+2. Lancer l'installateur `.msi` sur le serveur Windows cible (ex: le contrôleur de domaine `172.16.64.3`).
 3. Suivre l'assistant d'installation en conservant le répertoire par défaut : 
    `C:\Program Files\nxlog`
 
