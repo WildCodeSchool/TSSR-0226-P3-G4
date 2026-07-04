@@ -23,7 +23,7 @@ La configuration d'origine doit être remplacée afin de capturer les canaux str
    `C:\Program Files\nxlog\conf\nxlog.conf`
 3. Effacer l'intégralité du contenu existant et le remplacer par le bloc de configuration suivant, adapté à notre infrastructure :
 
-```text
+```
 ## Configuration NXLog - Infrastructure 172.16.64.0/24
 
 define ROOT C:\Program Files\nxlog
@@ -87,3 +87,47 @@ LogLevel INFO
 # <Route route_backup>
 #     Path        in_windows_logs => out_syslog_backup
 # </Route>
+```
+
+Sauvegarder les modifications (Ctrl + S) et fermer le fichier.
+
+---
+
+# 3. Activation et Démarrage du Service
+
+L'agent doit être configuré pour s'exécuter en arrière-plan et démarrer automatiquement avec le système Windows.
+
+Option A : Via l'interface graphique des Services
+Ouvrir le gestionnaire des services Windows (services.msc).
+
+Rechercher le service nommé nxlog.
+
+Ouvrir ses propriétés, positionner le Type de démarrage sur Automatique.
+
+Cliquer sur Démarrer, puis valider.
+
+**Option B : Via PowerShell (En tant qu'Administrateur)**
+Exécuter les commandes suivantes pour automatiser la tâche :
+
+```
+Set-Service -Name nxlog -StartupType Automatic
+Restart-Service -Name nxlog
+```
+
+# 4. Contrôle et Validation
+
+Vérification locale sur la machine Windows :
+En cas d'erreur de syntaxe ou de problème de démarrage, consulter les lignes de statut dans le fichier journal local de l'agent :
+C:\Program Files\nxlog\data\nxlog.log
+Un fonctionnement normal est confirmé par la mention : nxlog-ce started.
+
+Validation sur notre serveur Syslog-ng principal (172.16.64.28) :
+Dès le lancement du service NXLog, un paquet d'initialisation est transmis au serveur de logs. Exécuter la commande suivante sur notre serveur centralisé pour valider la création automatique du répertoire :
+
+```
+ls -la /var/log/syslog-ng/
+```
+
+Le nouveau dossier portant l'adresse IP du serveur Windows configuré (ex: 172.16.64.3) doit apparaître instantanément dans la liste.
+
+---
