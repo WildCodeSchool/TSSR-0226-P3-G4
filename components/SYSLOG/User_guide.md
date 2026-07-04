@@ -72,8 +72,10 @@ rm -rf /var/log/syslog-ng/172.16.40.27
 # 2. Vérifie que ton arborescence est désormais propre et ne contient que du .64 :
 ls -la /var/log/syslog-ng/
 ```
+Tous les logs de tous les serveurs Linux de l'infra sont enregistrés et centralisés sur le serveur SYSLOG-NG !
 
-<img width="1865" height="447" alt="image" src="https://github.com/user-attachments/assets/f8f1b0be-a19b-4c2e-93c0-39e65531c1c0" />
+<img width="1884" height="424" alt="image" src="https://github.com/user-attachments/assets/1b2365a9-505d-468b-bfb9-a2e14f1ea614" />
+
 
 ---
 
