@@ -16,11 +16,22 @@ Ce guide détaille la centralisation des journaux d'événements Windows (Active
 
 
 ---
-<img width="1895" height="1008" alt="image" src="https://github.com/user-attachments/assets/ecbab384-b86b-438f-ac07-35cce336150e" />
+
+<img width="1869" height="589" alt="Capture d&#39;écran 2026-07-04 230008" src="https://github.com/user-attachments/assets/0e6c839b-789e-4f66-84f3-a57a11fd2b95" />
 
 ---
 
-<img width="936" height="705" alt="image" src="https://github.com/user-attachments/assets/11d11214-d351-4d85-83f8-c96ee5cfa1d9" />
+<img width="1661" height="97" alt="image" src="https://github.com/user-attachments/assets/dbe490ef-9539-46f3-ab82-d473f4ed6065" />
+
+
+---
+
+<img width="742" height="578" alt="image" src="https://github.com/user-attachments/assets/4e74e2dd-2152-44f3-be9e-79faf403cd3e" />
+
+
+---
+
+<img width="741" height="580" alt="image" src="https://github.com/user-attachments/assets/3af14dd8-8bc1-4a0d-8a70-4d101fb79ede" />
 
 ---
 
@@ -33,7 +44,12 @@ La configuration d'origine doit être remplacée afin de capturer les canaux str
 1. Ouvrir l'éditeur de texte **Notepad (Bloc-notes)** explicitement **en tant qu'Administrateur**.
 2. Ouvrir le fichier de configuration situé dans : 
    `C:\Program Files\nxlog\conf\nxlog.conf`
-3. Effacer l'intégralité du contenu existant et le remplacer par le bloc de configuration suivant, adapté à notre infrastructure :
+
+<img width="1690" height="188" alt="image" src="https://github.com/user-attachments/assets/22e95575-73ff-4917-9e0e-88f8f378e0e9" />
+
+---
+
+4. Effacer l'intégralité du contenu existant et le remplacer par le bloc de configuration suivant, adapté à notre infrastructure :
 
 ```
 ## Configuration NXLog - Infrastructure 172.16.64.0/24
