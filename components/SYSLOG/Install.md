@@ -1,6 +1,6 @@
 # Guide d'Installation Syslog et Configuration 
 
-Ce document décrit les étapes pour installer le service conformément aux prérequis suivant :
+Ce document décrit les étapes pour installer le service `Syslog`
 
 ## 3. Prérequis
 
