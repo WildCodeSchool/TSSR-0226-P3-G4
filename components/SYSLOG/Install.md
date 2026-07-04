@@ -1,6 +1,8 @@
 # Guide d'Installation Syslog et Configuration 
 
-Ce document décrit les étapes pour installer le service conformément aux prérequis du serveur décrits dans le `README.md` :
+Ce document décrit les étapes pour installer le service conformément aux prérequis suivant :
+
+
 
 
 
