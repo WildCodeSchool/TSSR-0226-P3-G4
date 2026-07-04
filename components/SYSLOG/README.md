@@ -38,8 +38,8 @@ Syslog-ng apporte une grande flexibilité par rapport au syslog traditionnel : i
 - **Stockage :** Un espace disque supervisé (avec LVM / RAID 5 pour le Backup) pour encaisser la volumétrie des logs d'infrastructure.
 
 ### 3.2 Pour le client
-- **Clients Linux :** Configurés pour transférer le flux `*.*` via TCP ou UDP vers les deux IP de collecte.
-- **Clients Windows (AD / Files) :** Installation obligatoire d'un agent tiers (ex: *NXLog* ou *Winlogbeat*) pour convertir les journaux d'événements Windows (`.evtx`) et les envoyer au format Syslog vers le serveur de collecte.
+- **Clients Linux :** Configurés pour transférer le flux `*.*` via TCP vers l'IP du serveur `SYSLOG`.
+- **Clients Windows (AD / Files) :** Installation obligatoire d'un agent tiers (ex: *NXLog* / *Winlogbeat*) pour convertir les journaux d'événements Windows (`.evtx`) et les envoyer au format Syslog vers le serveur de collecte.
 - **Horloge synchrone (NTP) :** Une horloge synchronisée sur toute l'infra est indispensable pour la cohérence des horodatages lors de l'analyse des incidents.
 
 ## 4. Documentation associée
