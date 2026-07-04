@@ -29,10 +29,6 @@ Pour garantir la haute disponibilité de notre service de messagerie, nous avons
 * **Adresse IP :** `172.16.64.30/24`
 * **Gateway :** `172.16.64.1`
 
-### 2.2 Serveur Backup
-* **Nom du serveur :** `SRV-iRedMail-Backup` (Conteneur LXC Debian 13)
-* **Adresse IP :** `172.16.64.18/24`
-* **Gateway :** `172.16.64.1`
 
 ---
 
