@@ -20,7 +20,7 @@ Ce guide détaille le déploiement du serveur **Syslog-ng** pour l'environnement
 
 ---
 
-# Étape 1 : Installation et activation de Rsyslog (Collecteur)
+# Étape 1 : Installation et activation de Syslog-ng 
 
 
 Debian 12 n'incluant plus rsyslog par défaut, son installation remplit le prérequis logiciel de notre architecture.
@@ -46,29 +46,31 @@ nano /etc/resolv.conf
 ---
 
 ```
-# Mise à jour des dépôts et installation
-apt update && apt install -y rsyslog
+# Mise à jour des dépôts et installation de Syslog-ng
+apt update && apt install -y syslog-ng
 ```
 
-<img width="1882" height="509" alt="image" src="https://github.com/user-attachments/assets/cbe74378-a620-46e3-ae9e-009f622ef3e9" />
+<img width="1883" height="500" alt="image" src="https://github.com/user-attachments/assets/32c535d2-328b-45c4-81ff-40b010a99dfc" />
+
 
 ---
 
 
 ```
 # Activation au démarrage et lancement du service
-systemctl enable rsyslog
-systemctl start rsyslog
-systemctl status rsyslog
+systemctl enable syslog-ng
+systemctl start syslog-ng
+systemctl status syslog-ng
 ```
 
-<img width="1893" height="573" alt="Capture d&#39;écran 2026-07-04 163316" src="https://github.com/user-attachments/assets/9f8923fd-3e04-44db-b081-0898148b6902" />
+<img width="1866" height="530" alt="image" src="https://github.com/user-attachments/assets/9592c709-1114-4aab-bb3c-4df71c8fa9bb" />
+
 
 ---
 
-Si la commande `systemctl status rsyslog` affiche un message d'erreur, j'explique comme résoudre ce problème dans la `FAQ Q1` : **[FAQ](./FAQ.md)**
 
----
+
+
 
 ## 1. Activation de la persistance de systemd-journald
 Par défaut sur certains templates LXC Debian minimaux, les logs sont volatiles. Il faut les fixer sur le disque.
@@ -93,48 +95,47 @@ systemctl restart systemd-journald
 
 ---
 
-## 2. Validez la bonne création des fichiers cibles :
+## 2. Configuration du mode Serveur Centralisé
+
+Si ce serveur Syslog-ng doit récupérer tous les logs de tous les serveurs de l'infrastructure Proxmox, il doit écouter sur le réseau et trier dynamiquement les machines entrantes.
+
+Ouvrez le fichier de configuration principal :
 
 ```
-ls -lh /var/log/syslog
+nano /etc/syslog-ng/syslog-ng.conf
 ```
 
-<img width="1871" height="112" alt="image" src="https://github.com/user-attachments/assets/29e703c5-5b0c-469e-8783-dacce95a1b6f" />
+<img width="1278" height="1180" alt="Capture d&#39;écran 2026-07-04 205312" src="https://github.com/user-attachments/assets/a8563b55-7f48-465e-897c-91146b941352" />
+
+
+---
+Créer le répertoire racine dédié au stockage, puis redémarrez le démon pour appliquer l'écoute réseau :
+
+```
+mkdir -p /var/log/syslog-ng
+systemctl restart syslog-ng
+```
+
+<img width="1863" height="113" alt="image" src="https://github.com/user-attachments/assets/c2f60fd3-754f-4ecc-983c-38455267a30c" />
 
 ---
 
-# Étape 2 : Configuration du mode Serveur Centralisé 
+## 3. Validation de la bonne configuration et de l'écoute des ports
 
-Si ce serveur `Syslog` doit récupérer tous les logs de tous les serveurs de l'infrastructure Proxmox :
-
-Ouvrir le fichier de configuration principal :
+Pour valider que Syslog-ng est désormais prêt à recevoir les logs de toute l'infrastructure en UDP et en TCP, exécutez les vérifications de sockets suivantes :
 
 ```
-nano /etc/rsyslog.conf
+# Vérifier que le service écoute bien en UDP sur le port 514
+ss -ulnp | grep 514
+
+# Vérifier que le service écoute bien en TCP (LISTEN) sur le port 514
+ss -tlnp | grep 514
 ```
 
-Décommentez les lignes suivantes pour activer l'écoute UDP et/ou TCP sur le port standard 514 :
-
-```
-# Pour la réception UDP
-module(load="imudp")
-input(type="imudp" port="514")
-
-# Pour la réception TCP
-module(load="imtcp")
-input(type="imtcp" port="514")
-```
-
-<img width="1877" height="587" alt="Capture d&#39;écran 2026-07-04 165250" src="https://github.com/user-attachments/assets/a19b30ac-4086-4e48-bb62-247d9ea855be" />
+<img width="1866" height="204" alt="image" src="https://github.com/user-attachments/assets/61d52598-0fc6-4f53-97f2-f1634daa8f41" />
 
 ---
 
-Redémarrez le démon :
 
-```
-systemctl restart rsyslog
-```
-
----
 
 
