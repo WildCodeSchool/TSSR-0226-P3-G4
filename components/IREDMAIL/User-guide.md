@@ -88,6 +88,10 @@ Pour connecter un client lourd Thunderbird, suivre la procédure de configuratio
 
 ---
 
+<img width="1898" height="1030" alt="image" src="https://github.com/user-attachments/assets/bef36c1a-65e9-45c1-93dc-d8d3c8f578b9" />
+
+---
+
 <img width="625" height="474" alt="Capture d&#39;écran 2026-07-05 003401" src="https://github.com/user-attachments/assets/5e33ce18-a1e5-4c58-9c68-7aca8399ee77" />
 
 ---
