@@ -39,7 +39,7 @@ Pour garantir la haute disponibilité de notre service de messagerie, nous avons
 * **Accès privilèges :** Disposer d'un accès administrateur (`root` ou privilèges `sudo`) pour exécuter l'assistant d'installation.
 * **Ressources matérielles :** Allouer au minimum **4 Go de RAM** et **20 Go d'espace disque**, l'antivirus de messagerie intégré étant particulièrement gourmand en ressources.
 * **Réseau :** Configurer une adresse IP fixe dédiée au sein de notre sous-réseau.
-* **Nom d'hôte :** Définir un nom de domaine complet (FQDN) pour le serveur (ex. `mail.tssr.lab`).
+* **Nom d'hôte :** Définir un nom de domaine complet (FQDN) pour le serveur (ex. `mail.Xtech.green`).
 * **Configuration DNS :** Créer les enregistrements indispensables sur notre serveur DNS Windows (`172.16.64.3`) :
     * Un enregistrement de type **A** pointant le FQDN vers l'IP du serveur.
     * Un enregistrement de type **MX** pour aiguiller le routage du courrier vers le serveur.
@@ -50,7 +50,7 @@ Pour garantir la haute disponibilité de notre service de messagerie, nous avons
 
 ### 3.2 Pour le client
 * **Poste client de test :** Utiliser notre machine Windows 11 `T1` (`172.16.64.10`) connectée au réseau.
-* **Résolution de noms :** S'assurer que le client pointe vers notre serveur DNS pour résoudre correctement l'adresse `mail.tssr.lab`.
+* **Résolution de noms :** S'assurer que le client pointe vers notre serveur DNS pour résoudre correctement l'adresse `mail.Xtech.green`.
 * **Logiciels clients :** Utiliser un navigateur web moderne pour l'accès au Webmail ou disposer du client de messagerie lourd **Thunderbird** préinstallé.
 
 ---
