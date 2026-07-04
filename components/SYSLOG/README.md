@@ -27,16 +27,11 @@ Syslog-ng apporte une grande flexibilité par rapport au syslog traditionnel : i
 - **Adresse IP :** `172.16.64.28`
 - **Gateway :** `[172.16.64.254]`
 
-### 2.2 Serveur Backup
-*Serveur secondaire de secours configuré de manière identique avec stockage RAID 5.*
-- **Nom du serveur :** `[XTSE-418]`
-- **Adresse IP :** `172.16.64.18`
-- **Gateway :** `[172.16.64.254]`
 
 ## 3. Prérequis
 
 ### 3.1 Pour le Serveur
-- **Environnement :** Un conteneur LXC Debian 12 (Principal) et Debian 13 (Backup) sur Proxmox VE.
+- **Environnement :** Un conteneur LXC Debian 12 (Principal) sur Proxmox VE.
 - **Solution de collecte :** Le paquet `syslog-ng` installé et configuré pour l'écoute réseau.
 - **Réseau :** Adresses IP fixes dédiées (réseau `172.16.64.0/24`).
 - **Sécurité/Firewall :** Ouverture du port **514 (en TCP et UDP)** au niveau du pare-feu Proxmox VE pour autoriser le nouveau plan d'adressage.
