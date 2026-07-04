@@ -136,6 +136,10 @@ Rechercher le service nommé nxlog.
 
 Ouvrir ses propriétés, positionner le Type de démarrage sur Automatique.
 
+<img width="600" height="699" alt="Capture d&#39;écran 2026-07-04 231146" src="https://github.com/user-attachments/assets/e13c855c-a0da-400c-9bff-80130756ba53" />
+
+---
+
 Cliquer sur Démarrer, puis valider.
 
 **Option B : Via PowerShell (En tant qu'Administrateur)**
@@ -145,6 +149,9 @@ Exécuter les commandes suivantes pour automatiser la tâche :
 Set-Service -Name nxlog -StartupType Automatic
 Restart-Service -Name nxlog
 ```
+<img width="1890" height="136" alt="image" src="https://github.com/user-attachments/assets/62e9f26a-e1e1-42f3-8c0a-45c2002c7688" />
+
+---
 
 # 4. Contrôle et Validation
 
@@ -160,6 +167,10 @@ Dès le lancement du service NXLog, un paquet d'initialisation est transmis au s
 ls -la /var/log/syslog-ng/
 ```
 
-Le nouveau dossier portant l'adresse IP du serveur Windows configuré (ex: 172.16.64.3) doit apparaître instantanément dans la liste.
+Le nouveau dossier portant l'adresse IP du serveur Windows configuré (ex: SRV-WDS 172.16.64.20) doit apparaître instantanément dans la liste.
+
+---
+
+<img width="1893" height="1300" alt="Capture d&#39;écran 2026-07-04 231605" src="https://github.com/user-attachments/assets/cdd75525-d210-4fb2-8a27-c88875e7f8a1" />
 
 ---
