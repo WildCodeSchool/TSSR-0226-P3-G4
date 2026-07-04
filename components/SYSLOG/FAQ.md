@@ -1,5 +1,8 @@
 # FAQ
 
+### Q1. Pourquoi les commandes de logs du noyau (`journalctl -k` ou `dmesg`) renvoient une erreur ?
+**Réponse :** Votre serveur est hébergé dans un conteneur LXC sur Proxmox VE. Le conteneur partage le noyau de l'hôte Proxmox. L'accès aux logs du noyau est bloqué à l'intérieur du conteneur pour des raisons de sécurité. Seuls les logs applicatifs et de services y sont visibles.
+
 <img width="1879" height="711" alt="Capture d&#39;écran 2026-07-04 162542" src="https://github.com/user-attachments/assets/1eb234c4-4932-442f-8c2d-712baf2ce69f" />
 
 ---
