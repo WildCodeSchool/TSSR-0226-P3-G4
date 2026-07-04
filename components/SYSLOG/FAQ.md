@@ -66,6 +66,10 @@ Le message en rouge aura disparu et ton service sera parfaitement propre et adap
 ```
 
 On recommande d'envoyer les logs en TCP "@@" et non en UDP "@", inutile d'utiliser les 2 UDP et TCP en même temps.
+Pour de la redondance, on envoie les logs au serveur de log `Syslog` et au serveur de sauvegarde `BKP`.
 
 ---
+
+<img width="1866" height="898" alt="Capture d&#39;écran 2026-07-04 174130" src="https://github.com/user-attachments/assets/905add64-affe-4747-bbd0-61e5616e3205" />
+
 
