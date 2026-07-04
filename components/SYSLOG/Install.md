@@ -14,7 +14,7 @@ Ce guide détaille le déploiement du serveur **Syslog-ng** pour l'environnement
 - **CPU** : 2 Cores
 
 ### 3.2 Pour le client
-- **Compatibilité :** Équipements à superviser (autres VM/CT Proxmox, hyperviseurs, commutateurs) configurés pour pointer vers l'adresse IP du serveur Syslog.
+- **Compatibilité :** Équipements à superviser (autres VM/CT Proxmox, hyperviseurs, commutateurs, serveurs Windows via agent type NXLog) configurés pour pointer vers l'adresse IP du serveur Syslog-ng.
 - **Horloge synchrone (NTP) :** Une horloge synchronisée via NTP sur tous les serveurs et équipements clients est **indispensable** pour que les horodatages (timestamps) des logs soient cohérents entre eux lors des analyses de corrélations.
 
 
