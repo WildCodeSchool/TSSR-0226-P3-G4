@@ -1,6 +1,6 @@
 # Guide d'Installation Syslog et Configuration 
 
-Ce document décrit les étapes pour installer le service `Syslog`
+Ce guide détaille le déploiement du serveur **Syslog-ng** pour l'environnement Debian 12.
 
 ## 3. Prérequis
 
