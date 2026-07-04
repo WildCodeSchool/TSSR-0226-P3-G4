@@ -18,10 +18,25 @@ Ce document décrit les étapes pour installer le service `Syslog`
 - **Horloge synchrone (NTP) :** Une horloge synchronisée via NTP sur tous les serveurs et équipements clients est **indispensable** pour que les horodatages (timestamps) des logs soient cohérents entre eux lors des analyses de corrélations.
 
 
+---
+
+## 1. Installation et activation de Rsyslog (Collecteur)
+
+Debian 12 n'incluant plus rsyslog par défaut, son installation remplit le prérequis logiciel de notre architecture.
+
+```
+# Mise à jour des dépôts et installation
+apt update && apt install -y rsyslog
+
+# Activation au démarrage et lancement du service
+systemctl enable rsyslog
+systemctl start rsyslog
+```
 
 
+---
 
-## 1. Activation de la persistance de systemd-journald
+## 2. Activation de la persistance de systemd-journald
 Par défaut sur certains templates LXC Debian minimaux, les logs sont volatiles. Il faut les fixer sur le disque.
 
 ```bash
