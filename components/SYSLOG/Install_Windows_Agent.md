@@ -121,6 +121,10 @@ Sauvegarder les modifications (Ctrl + S) et fermer le fichier.
 
 ---
 
+<img width="1893" height="1070" alt="image" src="https://github.com/user-attachments/assets/1e836753-ef70-43ba-84e1-69f301ae65c8" />
+
+---
+
 # 3. Activation et Démarrage du Service
 
 L'agent doit être configuré pour s'exécuter en arrière-plan et démarrer automatiquement avec le système Windows.
