@@ -51,6 +51,6 @@ Un serveur Syslog est un serveur de centralisation des journaux (logs). Le rôle
 ## 4. Documentation associée
 
 Pour exploiter et administrer pleinement ce service, veuillez vous référer aux guides suivants :
-- **[Install.md](./Install.md)** : Procédure pas-à-pas pour installer `rsyslog`, activer la persistance et configurer l'écoute réseau.
+- **[`Install.md`](./Install.md)** : Procédure pas-à-pas pour installer `rsyslog`, activer la persistance et configurer l'écoute réseau.
 - **[`User_guide.md`](./User_guide.md)** : Liste complète de toutes les commandes de consultation et de filtrage (`journalctl`, `grep`, `tail`).
 - **[`FAQ.md`](./FAQ.md)** : Résolution des problèmes fréquents (disque plein, logs noyau LXC, redirection réseau).
