@@ -34,10 +34,27 @@ nano /etc/apt/sources.list.d/sources.list
 
 ---
 
+Vérifier que le DNS pointe bien vers son serveur DNS, ici notre serveur AD `172.16.64.3`
+
+```
+nano /etc/resolv.conf
+```
+
+<img width="1869" height="142" alt="image" src="https://github.com/user-attachments/assets/0f3d31d6-1d4f-4637-bff6-2ed252faf75e" />
+
+---
+
 ```
 # Mise à jour des dépôts et installation
 apt update && apt install -y rsyslog
+```
 
+<img width="1882" height="509" alt="image" src="https://github.com/user-attachments/assets/cbe74378-a620-46e3-ae9e-009f622ef3e9" />
+
+---
+
+
+```
 # Activation au démarrage et lancement du service
 systemctl enable rsyslog
 systemctl start rsyslog
