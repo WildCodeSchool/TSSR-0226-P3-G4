@@ -20,7 +20,8 @@ Ce document décrit les étapes pour installer le service `Syslog`
 
 ---
 
-## 1. Installation et activation de Rsyslog (Collecteur)
+# Étape 1 : Installation et activation de Rsyslog (Collecteur)
+
 
 Debian 12 n'incluant plus rsyslog par défaut, son installation remplit le prérequis logiciel de notre architecture.
 
@@ -65,18 +66,75 @@ systemctl status rsyslog
 
 ---
 
-Si la commande `systemctl status rsyslog` affiche un message d'erreur, j'explique comme résoudre ce problème dans la `FAQ Q1` : [FAQ](./FAQ.md) 
+Si la commande `systemctl status rsyslog` affiche un message d'erreur, j'explique comme résoudre ce problème dans la `FAQ Q1` : **[FAQ](./FAQ.md)**
 
-## 2. Activation de la persistance de systemd-journald
+---
+
+## 1. Activation de la persistance de systemd-journald
 Par défaut sur certains templates LXC Debian minimaux, les logs sont volatiles. Il faut les fixer sur le disque.
 
-```bash
+```
 # 1. Ouvrir le fichier de configuration de journald
 nano /etc/systemd/journald.conf
 
 # 2. Modifier ou décommenter la ligne suivante sous la section [Journal] :
 Storage=persistent
 SystemMaxUse=500M
+```
 
+<img width="1865" height="1240" alt="Capture d&#39;écran 2026-07-04 164023" src="https://github.com/user-attachments/assets/9cce4b14-f142-4aca-bd09-4011d7f6cae1" />
+
+---
+
+```
 # 3. Redémarrer le service journald
 systemctl restart systemd-journald
+```
+
+---
+
+## 2. Validez la bonne création des fichiers cibles :
+
+```
+ls -lh /var/log/syslog
+```
+
+<img width="1871" height="112" alt="image" src="https://github.com/user-attachments/assets/29e703c5-5b0c-469e-8783-dacce95a1b6f" />
+
+---
+
+# Étape 2 : Configuration du mode Serveur Centralisé 
+
+Si ce serveur `Syslog` doit récupérer tous les logs de tous les serveurs de l'infrastructure Proxmox :
+
+Ouvrir le fichier de configuration principal :
+
+```
+nano /etc/rsyslog.conf
+```
+
+Décommentez les lignes suivantes pour activer l'écoute UDP et/ou TCP sur le port standard 514 :
+
+```
+# Pour la réception UDP
+module(load="imudp")
+input(type="imudp" port="514")
+
+# Pour la réception TCP
+module(load="imtcp")
+input(type="imtcp" port="514")
+```
+
+<img width="1877" height="587" alt="Capture d&#39;écran 2026-07-04 165250" src="https://github.com/user-attachments/assets/a19b30ac-4086-4e48-bb62-247d9ea855be" />
+
+---
+
+Redémarrez le démon :
+
+```
+systemctl restart rsyslog
+```
+
+---
+
+
