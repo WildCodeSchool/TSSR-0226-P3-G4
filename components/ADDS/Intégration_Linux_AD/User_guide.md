@@ -75,3 +75,10 @@ Déplacer l'objet ordinateur XT-OD3-s1-001-L en dehors du conteneur Computers ve
 
 Restreindre les droits d'accès SSH et console locale à un groupe restreint pour interdire la connexion de comptes à haute immunité (Tier 0 / Domain Admins) sur cette ressource :
 
+```
+sudo realm deny --all
+sudo realm permit -g "Admins_Linux_T1@xtech.green"
+```
+---
+
+
