@@ -31,6 +31,10 @@ Maintenir une topologie Active Directory saine en affectant correctement les rô
 
 ---
 
+<img width="1395" height="776" alt="Capture d&#39;écran 2026-07-05 213140" src="https://github.com/user-attachments/assets/593a0b82-d67e-4f72-9219-2aeaaefda078" />
+
+---
+
 ## 2. Rôle et responsabilités du service PDC Emulator
 
 Piloter le rôle d'Émulateur PDC (Primary Domain Controller) avec une attention particulière, ce service occupant une position centrale :
