@@ -37,6 +37,10 @@ sudo apt update
 sudo apt install -y realmd sssd sssd-tools libnss-sss libpam-sss adcli samba-common-bin krb5-user adsys
 ```
 
+<img width="1224" height="531" alt="Capture d&#39;écran 2026-07-05 171655" src="https://github.com/user-attachments/assets/623d3fb8-7a84-442a-ba3b-4dcea71a0f17" />
+
+---
+
 <img width="1203" height="792" alt="Capture d&#39;écran 2026-07-05 171540" src="https://github.com/user-attachments/assets/8dc755d4-2827-4a4e-a8db-a8a1808775ae" />
 
 ---
@@ -60,4 +64,63 @@ Exécuter la jointure de la machine en utilisant un compte doté des privilèges
 ```
 sudo realm join --user=Administrator xtech.green
 ```
+
+<img width="1201" height="110" alt="Capture d&#39;écran 2026-07-05 172000" src="https://github.com/user-attachments/assets/f2bf7ade-35ca-499c-b6e2-6cfef1e00c8a" />
+
+---
+
+Activer la création automatique des répertoires utilisateurs à la première connexion :
+
+```
+sudo pam-auth-update --enable mkhomedir sss
+```
+
+## 4. Configuration Avancée du Service SSSD
+
+Ouvrir le fichier de configuration de SSSD pour stabiliser les correspondances d'identifiants :
+
+```
+[domain/xtech.green]
+default_shell = /bin/bash
+krb5_store_password_if_offline = True
+cache_credentials = True
+krb5_realm = XTECH.GREEN
+realmd_tags = manages-system joined-with-adcli
+id_provider = ad
+fallback_homedir = /home/%u@%d
+ad_domain = xtech.green
+use_fully_qualified_names = True
+ldap_id_mapping = True
+access_provider = ad
+ldap_sasl_authid = XTECH$
+ad_gpo_access_control = permissive
+```
+
+<img width="1198" height="694" alt="image" src="https://github.com/user-attachments/assets/8a96f554-cecb-4add-9782-6344e7bcbc2b" />
+
+---
+
+Appliquer les permissions strictes sur le fichier et purger le cache persistant :
+
+```
+sudo chmod 600 /etc/sssd/sssd.conf
+sudo systemctl stop sssd
+sudo rm -rf /var/lib/sss/db/*
+sudo rm -rf /var/lib/sss/mc/*
+sudo systemctl start sssd
+```
+
+<img width="1743" height="1062" alt="image" src="https://github.com/user-attachments/assets/3b0b998d-36d2-471f-a1a0-79febd6fa076" />
+
+---
+
+##5. Déploiement des Modèles de GPO Ubuntu (Adsys)
+
+Exporter les fichiers de définitions GPO d'Ubuntu présents sur la VM pour les importer sur le serveur Windows Server 2022 :
+
+Copier les fichiers .admx depuis /usr/share/adsys/admx/ vers le dossier C:\Windows\PolicyDefinitions\ du contrôleur de domaine.
+
+Copier les fichiers .adml depuis /usr/share/adsys/admx/en-US/ vers C:\Windows\PolicyDefinitions\en-US\ du contrôleur de domaine.
+
+---
 
