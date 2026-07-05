@@ -114,7 +114,7 @@ sudo systemctl start sssd
 
 ---
 
-##5. Déploiement des Modèles de GPO Ubuntu (Adsys)
+## 5. Déploiement des Modèles de GPO Ubuntu (Adsys)
 
 Exporter les fichiers de définitions GPO d'Ubuntu présents sur la VM pour les importer sur le serveur Windows Server 2022 :
 
