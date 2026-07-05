@@ -71,7 +71,17 @@ w32tm /resync /force
 w32tm /query /status
 ```
 
-<img width="1900" height="609" alt="image" src="https://github.com/user-attachments/assets/7ce2951a-cb64-4500-ba35-3330a112c517" />
+Il est bien 19h07 à Paris : 
+
+<img width="1891" height="609" alt="Capture d&#39;écran 2026-07-05 212235" src="https://github.com/user-attachments/assets/11030d99-be12-41a7-899a-e679aabb993f" />
+
 
 ---
 
+Le PDC fonctionne correctement il synchronise bien l'horloge du serveur WDS : 19h15. Le temps que de faire les screens pour la doc..
+
+
+<img width="1849" height="404" alt="Capture d&#39;écran 2026-07-05 191556" src="https://github.com/user-attachments/assets/7af2f4e5-0044-4263-aa64-bffa2f83c25c" />
+
+
+---
