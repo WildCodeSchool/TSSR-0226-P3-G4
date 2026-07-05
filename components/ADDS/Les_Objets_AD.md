@@ -4,7 +4,7 @@
 1. [Les OU](#1-Les-ou)
    - [1.2 Création des OU](#12-création-des-ou)
    - [1.3 Création des sous-OU](#13-création-des-sous-ou)
-      - [1.3.2 Sous-OU Utilisateurs](#132-sous-ou-de-billuusers)
+      - [1.3.1 Sous-OU Utilisateurs](#132-sous-ou-de-billuusers)
 
 2. [Création des utilisateurs](#2-création-des-utilisateurs)
    - [2.1 Préparation du fichier CSV](#21-préparation-du-fichier-csv)
