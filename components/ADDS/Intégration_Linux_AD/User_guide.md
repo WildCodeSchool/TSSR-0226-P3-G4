@@ -63,5 +63,15 @@ Déclencher manuellement la mise à jour des stratégies de groupe configurées 
 adsysctl update -v
 ```
 
+<img width="1797" height="344" alt="image" src="https://github.com/user-attachments/assets/c9a7771d-c800-4f04-ba1c-62c29ea8b2f5" />
 
+---
+
+## 4. Alignement sur le Tiering Model (Sécurité)
+
+Garantir l'isolation des privilèges selon l'architecture en couches de Xentech :
+
+Déplacer l'objet ordinateur XT-OD3-s1-001-L en dehors du conteneur Computers vers l'Unité Organisationnelle (OU) cible dédiée au niveau de privilège de la machine : PRS-OCL.
+
+Restreindre les droits d'accès SSH et console locale à un groupe restreint pour interdire la connexion de comptes à haute immunité (Tier 0 / Domain Admins) sur cette ressource :
 
