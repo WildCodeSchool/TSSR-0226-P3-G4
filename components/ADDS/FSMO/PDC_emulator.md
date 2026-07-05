@@ -1,6 +1,9 @@
 # PDC emulator - Service de Temps (NTP)
 
-Ce document centralise les directives techniques pour la gouvernance des rôles FSMO et la synchronisation horaire de l'infrastructure de domaine.
+Ce document centralise les directives techniques pour la gouvernance des 5 rôles FSMO et la synchronisation horaire de l'infrastructure de domaine.
+
+<img width="1420" height="202" alt="Capture d&#39;écran 2026-07-05 185715" src="https://github.com/user-attachments/assets/3fdff113-a521-4a7e-89be-0375525f2195" />
+
 
 ---
 
@@ -54,8 +57,21 @@ Appliquer les procédures ci-dessous pour aligner la configuration du service de
 
 Exécuter ces commandes sur le contrôleur de domaine principal détenant le rôle FSMO PDC Emulator pour le synchroniser sur les serveurs de temps français (Europe/Paris) :
 
-```powershell
+```
 w32tm /config /manualpeerlist:"0.fr.pool.ntp.org,0x1 1.fr.pool.ntp.org,0x1" /syncfromflags:manual /reliable:YES /update
+```
+<img width="1896" height="227" alt="image" src="https://github.com/user-attachments/assets/2f1923ba-afbc-499c-aa3c-81b33ea9758c" />
+
+---
+
+```
 net stop w32time
 net start w32time
 w32tm /resync /force
+w32tm /query /status
+```
+
+<img width="1900" height="609" alt="image" src="https://github.com/user-attachments/assets/7ce2951a-cb64-4500-ba35-3330a112c517" />
+
+---
+
