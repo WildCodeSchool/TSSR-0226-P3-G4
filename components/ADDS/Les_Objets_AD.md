@@ -268,7 +268,7 @@ GSE-GL-PRS-UD11-s4
 
 **Portée :**
 ```
-Liaison : `Xtech.green > PRS-U > Tous les départements`  
+Liaison : Xtech.green > PRS-U > Tous les départements  
 Filtrage : Tous les groupes de départements  
 Cible : Users  
 Statut : Computer configuration settings disabled  
@@ -287,7 +287,7 @@ Clic droit > **New** > **Mapped Drive**
 
 **Portée :**
 ```
-Liaison : `Xtech.green > PRS-U > Tous les départements`  
+Liaison : Xtech.green > PRS-U > Tous les départements  
 Filtrage : Tous les groupes de départements  
 Cible : Users  
 Statut : Computer configuration settings disabled  
