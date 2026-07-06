@@ -256,13 +256,202 @@ GSE-GL-PRS-UD11-s4
 
 ## 7. Les GPO
 ### 7.1 GPO standard
+#### GPO fond d'écran
+
+**Nom :** `XTG-STD-FondEcran`
+
+**Chemin de configuration :**
+> User Configuration > Policies > Administrative Templates > Desktop > Desktop
+
+**Paramètres :**
+
+
+**Portée :**
+
+| Propriété | Valeur |
+|-----------|--------|
+| Liaison | `Xtech.green > PRS-U > Tous les départements` |
+| Filtrage | Tous les groupes de départements |
+| Cible | Users |
+| Statut | Computer configuration settings disabled |
+
+#### GPO Mappage de lecteurs
+
+**Nom :** `XTG-STD-MappageLecteurs`
+
+**Chemin de configuration :**
+> User Configuration > Preferences > Windows Settings > Drive Maps
+
+Clic droit > **New** > **Mapped Drive**
+
+**Paramètres :**
+
+
+**Portée :**
+
+Liaison : `Xtech.green > PRS-U > Tous les départements`
+Filtrage : Tous les groupes de départements
+Cible : Users
+Statut : Computer configuration settings disabled
+
+#### GPO Configuration du Navigateur
+
 ### 7.2 GPO de sécurité
+
 ### 7.3 Création de GPO
 
 ## 8. Tâches planifiée
 
 ## 9. Partage des rôles FSMO
 ### 9.1 Prérequis et ajout de serveur
+#### Configurer le clavier en AZERTY
+
+Par défaut, Windows Server Core démarre avec un clavier en QWERTY. Avant toute autre opération, passer le clavier en AZERTY de façon permanente dans une console PowerShell :
+
+```powershell
+# Passer le clavier en AZERTY (français)
+Set-WinUserLanguageList -LanguageList fr-FR -Force
+
+# Appliquer le changement au niveau système
+Set-WinSystemLocale fr-FR
+```
+
+Redémarrer le serveur pour que la configuration soit définitive :
+
+```powershell
+Restart-Computer
+```
+
+> Une fois redémarré, ouvrir une nouvelle session PowerShell : le clavier est désormais en AZERTY.
+
+---
+
+#### Configuration IP du serveur Core
+
+Dans une console PowerShell, entrer les commandes suivantes :
+
+- Vérifier l'index de l'adaptateur :
+```powershell
+Get-NetAdapter
+```
+
+> Adapter la valeur de `InterfaceIndex` selon le résultat obtenu.
+
+- Supprimer l'ancienne IP et route :
+```powershell
+Remove-NetIPAddress -InterfaceIndex 1 -Confirm:$false
+Remove-NetRoute -InterfaceIndex 1 -Confirm:$false
+```
+
+- Appliquer la nouvelle configuration :
+```powershell
+New-NetIPAddress -InterfaceIndex 1 -IPAddress "172.16.12.6" -PrefixLength 28 -DefaultGateway "172.16.12.14"
+```
+
+-  Configuration du DNS :
+```powershell
+Set-DnsClientServerAddress -InterfaceIndex 1 -ServerAddresses "172.16.12.1"
+```
+
+#### Jonction du serveur Core au domaine
+
+- Choisir l'option **1** dans sconfig
+
+![img](Ressources/08_configuration_fsmo_img/01_fsmo_configuration.png)
+
+- Ajouter le serveur dans le domaine :
+    - Entrer `D` pour sélectionner Domain
+    - Entrer `billu.lan`
+    - Entrer le nom d'un utilisateur autorisé : `Administrator`
+    - Entrer son mot de passe
+    - Changer le nom de la machine par : `DOM-AD-PDC-01`
+    - Entrer le mot de passe du serveur Core
+    - Redémarrer en appuyant sur `Y`
+
+![img](Ressources/08_configuration_fsmo_img/02_fsmo_configuration.png)
+
+#### Ajout du serveur dans le Server Manager
+
+Depuis le serveur graphique :
+
+- Cliquer sur `Manage` puis `Add Servers`
+
+![img](Ressources/08_configuration_fsmo_img/03_fsmo_configuration.png)
+
+- Cliquer sur `Find Now`
+- Sélectionner le serveur à ajouter
+- Vérifier qu'il apparaît dans la liste **Selected**
+
+![img](Ressources/08_configuration_fsmo_img/04_fsmo_configuration.png)
+
+Le serveur doit apparaître dans la liste `All Servers`.
+
+![img](Ressources/08_configuration_fsmo_img/05_fsmo_configuration.png)
+
+
+### 9.2 Installation d'Active Directory sur le serveur Core
+
+- Faire `clic droit` sur le serveur **PDC** dans la liste `All Servers`
+
+![img](Ressources/08_configuration_fsmo_img/06_fsmo_configuration.png)
+
+- Cliquer sur `Next` jusqu'à la sélection des serveurs
+- Sélectionner le serveur PDC
+
+![img](Ressources/08_configuration_fsmo_img/07_fsmo_configuration.png)
+
+- Cocher **Active Directory Domain Services**
+
+![img](Ressources/08_configuration_fsmo_img/08_fsmo_configuration.png)
+
+- Cliquer sur `Add Features`
+
+![img](Ressources/08_configuration_fsmo_img/09_fsmo_configuration.png)
+
+- Faire `Next` jusqu'à l'étape `Confirmation`
+- Vérifier les informations et cliquer sur `Install`
+
+![img](Ressources/08_configuration_fsmo_img/10_fsmo_configuration.png)
+
+- Attendre la confirmation de l'installation
+
+![img](Ressources/08_configuration_fsmo_img/11_fsmo_configuration.png)
+
+---
+
+### 9.3 Promotion en contrôleur de domaine
+
+- Cliquer sur le drapeau
+- Cliquer sur `Promote this server to a domain controller`
+
+![img](Ressources/08_configuration_fsmo_img/12_fsmo_configuration.png)
+
+- Sélectionner `Add a domain controller to an existing domain`
+- Cliquer sur `Change` et entrer les credentials Administrator
+
+![img](Ressources/08_configuration_fsmo_img/13_fsmo_configuration.png)
+
+- Cocher `Domain Name System (DNS) server` et `Global Catalog (GC)`
+- Définir un mot de passe DSRM
+
+![img](Ressources/08_configuration_fsmo_img/14_fsmo_configuration.png)
+
+- Cliquer sur `Next` jusqu'à `Prerequisites Check` puis sur `Install`
+
+![img](Ressources/08_configuration_fsmo_img/17_fsmo_configuration.png)
+
+- Attendre la confirmation de la configuration
+
+![img](Ressources/08_configuration_fsmo_img/18_fsmo_configuration.png)
+
+- **Redémarrer le serveur Core**
+
+
+### 9.4 Attribution des rôles FSMO
+
+
+
+
 ### 9.2 Active Directory sur un serveur Core
 ### 9.3 Promouvoir un serveur en DC
 ### 9.4 Attribution des rôles FSMO
