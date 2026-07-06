@@ -38,10 +38,10 @@
 9. [Jonction au domaine](#7-jonction-au-domaine)
 
 10. [Partage des rôles FSMO (PDC et RID)](#8-transfert-des-rôles-fsmo-pdc-et-rid)
-   - [10.1 Prérequis et ajout du serveur](#81-prérequis-et-ajout-du-serveur)
-   - [10.2 Installation d'Active Directory sur le serveur Core](#82-installation-dactive-directory-sur-le-serveur-core)
-   - [10.3 Promotion en contrôleur de domaine](#83-promotion-en-contrôleur-de-domaine)
-   - [10.4 Attribution des rôles FSMO](#84-attribution-des-rôles-fsmo)
+    - [10.1 Prérequis et ajout du serveur](#81-prérequis-et-ajout-du-serveur)
+    - [10.2 Installation d'Active Directory sur le serveur Core](#82-installation-dactive-directory-sur-le-serveur-core)
+    - [10.3 Promotion en contrôleur de domaine](#83-promotion-en-contrôleur-de-domaine)
+    - [10.4 Attribution des rôles FSMO](#84-attribution-des-rôles-fsmo)
 
 
 ## 1. Les OU
