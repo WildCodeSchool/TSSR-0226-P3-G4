@@ -137,24 +137,7 @@ sudo chown -R tomcat:tomcat /etc/guacamole /usr/share/tomcat9/.guacamole
 
 -------
 
-<img width="1177" height="1052" alt="Capture d&#39;écran 2026-06-29 142454" src="https://github.com/user-attachments/assets/1c9321c3-0408-472e-abe6-a9994938de7a" />
 
--------
-
-<img width="1917" height="832" alt="image" src="https://github.com/user-attachments/assets/015edc53-d4fe-420e-8c73-4849295a565b" />
-
-
-
-------
-
-
-<img width="1899" height="896" alt="Capture d&#39;écran 2026-06-29 225126" src="https://github.com/user-attachments/assets/8ec4419c-de5a-4644-acd6-56bde7af0430" />
-
-
------
-
-
-<img width="1899" height="998" alt="Capture d&#39;écran 2026-06-29 225146" src="https://github.com/user-attachments/assets/67dee564-bda0-451c-b511-f687131e867b" />
 
 
 
