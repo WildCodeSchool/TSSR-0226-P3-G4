@@ -11,12 +11,12 @@
 | VLAN ID | Nom              | Réseau /24       | Passerelle pfSense | Rôle                                 |
 | ------- | ---------------- | ---------------- | ------------------ | ------------------------------------ |
 | 10      | AD               | `172.16.65.0/24` | `172.16.65.254`    | DC, DNS, DHCP                        |
-| 20      | APPS             | `172.16.66.0/24` | `172.16.66.254`    | GLPI, Zabbix, Syslog, CORE, Fichiers |
-| 30      | BACKUP           | `172.16.67.0/24` | `172.16.67.254`    | BKP Linux RAID5, BKP Veeam           |
+| 20      | APPS             | `172.16.66.0/24` | `172.16.66.254`    | GLPI, PRTG, Syslog, CORE, Fichiers, WDS, WSUS, FreePBX, OpenProject   |
+| 30      | BACKUP           | `172.16.67.0/24` | `172.16.67.254`    | BKP Linux RAID5,                     |
 | 50      | WEB-INT          | `172.16.68.0/24` | `172.16.68.254`    | Site web interne                     |
-| 60      | BASTION          | `172.16.69.0/24` | `172.16.69.254`    | Bastion admin                        |
+| 60      | BASTION          | `172.16.69.0/24` | `172.16.69.254`    | Bastion Guacamole                    |
 | 70      | JUMP             | `172.16.70.0/24` | `172.16.70.254`    | Jump server                          |
-| 100     | DMZ              | `172.16.71.0/24` | `172.16.71.254`    | WEB externe, iRedMail                |
+| 100     | DMZ              | `172.16.71.0/24` | `172.16.71.254`    | WEB externe, Messagerie : iRedMail   |
 | 200     | VPN              | `172.16.72.0/24` | `172.16.72.254`    | Pool télétravail                     |
 | 41      | RH               | `172.16.73.0/24` | `172.16.73.254`    | Isolé renforcé                       |
 | 42      | COMMUNICATION    | `172.16.74.0/24` | `172.16.74.254`    | DEPT Standard                        |
