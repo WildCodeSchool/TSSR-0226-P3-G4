@@ -389,7 +389,7 @@ Le serveur doit apparaître dans la liste `All Servers`.
 ![]()
 
 
-### 9.2 Installation d'Active Directory sur le serveur Core
+### 9.2 Active Directory sur un serveur Core
 
 - Faire `clic droit` sur le serveur **PDC** dans la liste `All Servers`
 
@@ -419,7 +419,7 @@ Le serveur doit apparaître dans la liste `All Servers`.
 
 ---
 
-### 9.3 Promotion en contrôleur de domaine
+### 9.3 Promouvoir un serveur en DC
 
 - Cliquer sur le drapeau
 - Cliquer sur `Promote this server to a domain controller`
@@ -447,11 +447,4 @@ Le serveur doit apparaître dans la liste `All Servers`.
 - **Redémarrer le serveur Core**
 
 
-### 9.4 Attribution des rôles FSMO
-
-
-
-
-### 9.2 Active Directory sur un serveur Core
-### 9.3 Promouvoir un serveur en DC
 ### 9.4 Attribution des rôles FSMO
