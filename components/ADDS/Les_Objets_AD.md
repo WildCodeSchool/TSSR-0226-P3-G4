@@ -267,14 +267,12 @@ GSE-GL-PRS-UD11-s4
 
 
 **Portée :**
-
-| Propriété | Valeur |
-|-----------|--------|
-| Liaison | `Xtech.green > PRS-U > Tous les départements` |
-| Filtrage | Tous les groupes de départements |
-| Cible | Users |
-| Statut | Computer configuration settings disabled |
-
+```
+Liaison : `Xtech.green > PRS-U > Tous les départements`  
+Filtrage : Tous les groupes de départements  
+Cible : Users  
+Statut : Computer configuration settings disabled  
+```
 #### GPO Mappage de lecteurs
 
 **Nom :** `XTG-STD-MappageLecteurs`
@@ -288,12 +286,12 @@ Clic droit > **New** > **Mapped Drive**
 
 
 **Portée :**
-
-Liaison : `Xtech.green > PRS-U > Tous les départements`
-Filtrage : Tous les groupes de départements
-Cible : Users
-Statut : Computer configuration settings disabled
-
+```
+Liaison : `Xtech.green > PRS-U > Tous les départements`  
+Filtrage : Tous les groupes de départements  
+Cible : Users  
+Statut : Computer configuration settings disabled  
+```
 #### GPO Configuration du Navigateur
 
 ### 7.2 GPO de sécurité
