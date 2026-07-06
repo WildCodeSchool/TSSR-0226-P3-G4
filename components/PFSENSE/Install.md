@@ -11,7 +11,7 @@
 | VLAN ID | Nom              | Réseau /24       | Passerelle pfSense | Rôle                                 |
 | ------- | ---------------- | ---------------- | ------------------ | ------------------------------------ |
 | 10      | AD               | `172.16.65.0/24` | `172.16.65.254`    | DC, DNS, DHCP, CORE                  |
-| 20      | APPS             | `172.16.66.0/24` | `172.16.66.254`    | GLPI, PRTG, Syslog, Fichiers, WDS, WSUS, FreePBX, OpenProject   |
+| 20      | APPS             | `172.16.66.0/24` | `172.16.66.254`    | GLPI, PRTG, Syslog, FILES, WDS, WSUS, FreePBX, OpenProject   |
 | 30      | BACKUP           | `172.16.67.0/24` | `172.16.67.254`    | BKP Linux RAID5,                     |
 | 50      | WEB-INT          | `172.16.68.0/24` | `172.16.68.254`    | Site web interne                     |
 | 60      | BASTION          | `172.16.69.0/24` | `172.16.69.254`    | Bastion Guacamole                    |
