@@ -357,7 +357,7 @@ Set-DnsClientServerAddress -InterfaceIndex 1 -ServerAddresses "172.16.12.1"
 
 - Choisir l'option **1** dans sconfig
 
-![img](Ressources/08_configuration_fsmo_img/01_fsmo_configuration.png)
+![]()
 
 - Ajouter le serveur dans le domaine :
     - Entrer `D` pour sélectionner Domain
@@ -368,7 +368,7 @@ Set-DnsClientServerAddress -InterfaceIndex 1 -ServerAddresses "172.16.12.1"
     - Entrer le mot de passe du serveur Core
     - Redémarrer en appuyant sur `Y`
 
-![img](Ressources/08_configuration_fsmo_img/02_fsmo_configuration.png)
+![]()
 
 #### Ajout du serveur dans le Server Manager
 
@@ -376,46 +376,46 @@ Depuis le serveur graphique :
 
 - Cliquer sur `Manage` puis `Add Servers`
 
-![img](Ressources/08_configuration_fsmo_img/03_fsmo_configuration.png)
+![]()
 
 - Cliquer sur `Find Now`
 - Sélectionner le serveur à ajouter
 - Vérifier qu'il apparaît dans la liste **Selected**
 
-![img](Ressources/08_configuration_fsmo_img/04_fsmo_configuration.png)
+![]()
 
 Le serveur doit apparaître dans la liste `All Servers`.
 
-![img](Ressources/08_configuration_fsmo_img/05_fsmo_configuration.png)
+![]()
 
 
 ### 9.2 Installation d'Active Directory sur le serveur Core
 
 - Faire `clic droit` sur le serveur **PDC** dans la liste `All Servers`
 
-![img](Ressources/08_configuration_fsmo_img/06_fsmo_configuration.png)
+![]()
 
 - Cliquer sur `Next` jusqu'à la sélection des serveurs
 - Sélectionner le serveur PDC
 
-![img](Ressources/08_configuration_fsmo_img/07_fsmo_configuration.png)
+![]()
 
 - Cocher **Active Directory Domain Services**
 
-![img](Ressources/08_configuration_fsmo_img/08_fsmo_configuration.png)
+![]()
 
 - Cliquer sur `Add Features`
 
-![img](Ressources/08_configuration_fsmo_img/09_fsmo_configuration.png)
+![]()
 
 - Faire `Next` jusqu'à l'étape `Confirmation`
 - Vérifier les informations et cliquer sur `Install`
 
-![img](Ressources/08_configuration_fsmo_img/10_fsmo_configuration.png)
+![]()
 
 - Attendre la confirmation de l'installation
 
-![img](Ressources/08_configuration_fsmo_img/11_fsmo_configuration.png)
+![]()
 
 ---
 
@@ -424,25 +424,25 @@ Le serveur doit apparaître dans la liste `All Servers`.
 - Cliquer sur le drapeau
 - Cliquer sur `Promote this server to a domain controller`
 
-![img](Ressources/08_configuration_fsmo_img/12_fsmo_configuration.png)
+![]()
 
 - Sélectionner `Add a domain controller to an existing domain`
 - Cliquer sur `Change` et entrer les credentials Administrator
 
-![img](Ressources/08_configuration_fsmo_img/13_fsmo_configuration.png)
+![]()
 
 - Cocher `Domain Name System (DNS) server` et `Global Catalog (GC)`
 - Définir un mot de passe DSRM
 
-![img](Ressources/08_configuration_fsmo_img/14_fsmo_configuration.png)
+![]()
 
 - Cliquer sur `Next` jusqu'à `Prerequisites Check` puis sur `Install`
 
-![img](Ressources/08_configuration_fsmo_img/17_fsmo_configuration.png)
+![]()
 
 - Attendre la confirmation de la configuration
 
-![img](Ressources/08_configuration_fsmo_img/18_fsmo_configuration.png)
+![]()
 
 - **Redémarrer le serveur Core**
 
