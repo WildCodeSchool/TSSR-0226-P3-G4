@@ -177,7 +177,7 @@ Pour creer un groupe, une fois dans l'Active Directory Users and Computers :
 - Clic droit sur l'OU "PRS-UDG"
 - Selectionner "New" puis "Group"
 Remplir les informations suivantes (Exemple) :
-|-------|--|
+| ------- | ------ |
 | Group name | Selon la nomenclature choisi |
 | Group scope | Selon les besoins (Global) |
 | Group type | Selon les beoisns (Sécurity)
