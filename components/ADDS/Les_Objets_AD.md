@@ -46,15 +46,118 @@
 
 ## 1. Les OU
 ### 1.2 Création des OU principales
-### 1.3 Création des sou-OU
+**Dans le server manager**
+Cliquer sur "Tools" puis "Active Directory Users and Computers" pour ouvrir le gestionnaire d'OU
+[]()
+Dans le volet de gauche faites un clic droit pour ouvrir le menu
+- cliquer sur "New" puis "Organized unit" pour creer une OU manuellement
+[]()
+Une fenetre s'ouvre
+- Dans la case "Name" entrer le nom souhaité "PRS"
+- Cocher la case "Protect container from accidental deletion" pour protéger l'OU contre la suppression accidentel
+- Pour terminer la création cliquer sur "OK"
+[]()
+L'OU "PRS" a été crée.
+[]()
+Pour les trois OU suivantes même procédure sauf que la création d'OU ce fait depuis l'OU "PRS"
+- clic droit sur l'OU "PRS" puis "New" puis "Organized Unit"
+[]()
+- Entrer "PRS-A" pour les comptes Administrateurs, "PRS-O" pour les ordinateurs et "PRS-U" pour les utilisateurs
+- toujours cocher "Protect container from accidental deletion"
+- finir par "OK"
+[]()
+### 1.3 Création des sous-OU
 #### 1.3.1 Sous-OU Utilisateurs
+Pour les sous-OU Utilisateurs nous avons fait le choix d'utiliser un script pour une question pratique il est renseigner dans le dossier ressources scripts
+Anonymisation des OU département :
+```
+D1 -> Communication
+D2 -> Développement
+D3 -> Direction Financière
+D4 -> Direction Marketing
+D5 -> DSI
+D6 -> R&D
+D7 -> RH
+D8 -> Service Généraux
+D9 -> Service Juridique
+D10 -> Ventes et Développement Commercial
+D11 -> Direction Générale
+```
+puis les services (exemple) :
+```
+D01-s01 -> Communication externe
+D01-s02 -> Communication interne
+D01-s03 -> Evenementiel
+```
+Ensuite mettre tout ca dans un fichier .txt, voici un exemple 
+```
+D01-s01;D1;PRS-U;PRS
+D01-s02;D1;PRS-U;PRS
+```
+Et voila vous OU utilisaterus son creer
+[]()
 #### 1.3.2 Sous-OU Administrateurs
-
+Pour la création de la sous-OU "PRS-A" 
+Même procédure que pour les OU principale
+[]()
+[]()
 
 ## 2. Création des Utilisateurs
+Pour la création des utilisateurs nous avons choisi de passer la aussi par un script via un fichier CSV toujours pour le coter praticiter.
 ### 2.1 Préparation du fichier CSV
+Pour une création d'utilisateurs via script le fichier CSV doit respecter un format strict pour eviter une erreur :
+- Le delimiter qui est pour cet exemple un ";"
+- Et un encodage en "UTF-8"
+Voici un exemple :
+[]()
 ### 2.2 Configuration et execution du script
-
+Pou la configuration tout d'abors choisir le bon fichier a traiter.
+```
+$File = "$FilePath\Creation_Users2.txt"
+```
+Ensuite ajouter une variable de suppession de caractère speciaux et espace pour eviter tout probleme avec des prenoms ou noms composés
+```
+function Remove-Accents {
+    param([string]$Texte)
+    $d = $Texte.Normalize([Text.NormalizationForm]::FormD)
+    (-join ($d.ToCharArray() | Where-Object {
+        [Globalization.CharUnicodeInfo]::GetUnicodeCategory($_) -ne 'NonSpacingMark'
+    })).Normalize([Text.NormalizationForm]::FormC) -replace '\s', ''
+}
+```
+Ensuite modifier les variables de votre boucle pour prendre le maximum d'informations et appeler la fonction "Remove-Accents" ou cela est nécéssaire :
+```
+$Prenom            = ((Remove-Accents $User.Prénom) -replace '\s', '')
+    $Nom               = ((Remove-Accents $User.Nom) -replace '\s', '')
+    $Name              = "$Prenom.$Nom"
+    $DisplayName       = "$Prenom.$Nom"
+# Rappel de la fonction (Remove-Accents) + -replace pour supprimer les espaces
+    $SamAccountName    = ((Remove-Accents "$($User.Prénom.substring(0,1))$($User.Nom)") -replace '\s', '').ToLower()
+    $SamAccountName    = $SamAccountName.Substring(0, [Math]::Min(20, $SamAccountName.length))
+    $UserPrincipalName = (($User.Prénom.substring(0,1).tolower() + $User.Nom.ToLower()) + "@" + (Get-ADDomain).Forest)
+    $GivenName         = $User.Prénom
+    $Surname           = $User.Nom
+    $Office            = $User.Société
+    $Description       = $User.fonction
+    $OfficePhone       = if ($User.'Téléphone fixe'.Trim() -eq '-') {$User.'Téléphone portable'} else {$User.'Téléphone fixe'}
+    $EmailAddress      = $UserPrincipalName -replace '\s', ''
+    #$Path             = "OU=$($User.Service),OU=$($User.Département),OU=Utilisateurs,OU=Paris,dc=Xtech,dc=green"
+    $Path              = "OU=$($User.Département),OU=Utilisateurs,OU=Paris,dc=Xtech,dc=green"
+    $Company           = "Ma Societe"
+    $Departement       = "$($User.Département)"
+    $Service           = "$($User.Service)"
+    #$Service          = "$($User.Service)" -eq '-') {$User.Département} else {$User.Service}
+```
+Et pour finir ajouter vos nouvelles fonctions dans le "New ADUser"
+```
+New-ADUser -Name $Name -DisplayName $DisplayName -SamAccountName $SamAccountName -UserPrincipalName $UserPrincipalName `
+        -GivenName $GivenName -Surname $Surname -Office $Office -Description $Description -OfficePhone $OfficePhone -EmailAddress $EmailAddress `
+        -Path $Path -AccountPassword (ConvertTo-SecureString -AsPlainText "P@ssw0rd2026!" -Force) -Enabled $True `
+        -OtherAttributes @{Company = $Company} -ChangePasswordAtLogon $True
+        Write-Host "Création du USER $SamAccountName" -ForegroundColor Green
+```
+Et voila vos utilisateurs sont désormais dans vos OU
+[]()
 
 ## 3. Désactivation et archivage des anciens utilisateurs
 ### 3.1 Configuration et execution du script
@@ -63,13 +166,94 @@
 ### 4.1 Configuration et execution du script
 
 ## 5. Déplacement automatique des ordinateurs
+
 ### 5.1 Configuration du script
 ### 5.2 Automatisation via AT
 
 ## 6. Création des groupes
 ### 6.1 Arborescence des groupes
+Tout les groupes sont regroupé dans une OU dédié a cela l'OU "PRS-UDG" situé dans l'OU "PRS-U".
 ### 6.2 Création de groupe
+Je vous laisse vous référer a fichier naming.md disponible au début de notre arborescence github.
+Pour creer un groupe, une fois dans l'Active Directory Users and Computers :
+- Clic droit sur l'OU "PRS-UDG"
+- Selectionner "New" puis "Group"
+Remplir les informations suivantes (Exemple) :
+|-------|--|
+| Group name | Selon la nomenclature choisi |
+| Group scope | Selon les besoins (Global) |
+| Group type | Selon les beoisns (Sécurity)
 ### 6.3 Listing des groupes
+Pour les groupes par départements
+```
+GSE-GL-PRS-UD1
+GSE-GL-PRS-UD2
+GSE-GL-PRS-UD3
+GSE-GL-PRS-UD4
+GSE-GL-PRS-UD5
+GSE-GL-PRS-UD6
+GSE-GL-PRS-UD7
+GSE-GL-PRS-UD8
+GSE-GL-PRS-UD9
+GSE-GL-PRS-UD10
+GSE-GL-PRS-UD11
+```
+Pour les groupes de services :
+```
+GSE-GL-PRS-UD1-s1
+GSE-GL-PRS-UD1-s2
+GSE-GL-PRS-UD1-s3
+GSE-GL-PRS-UD1-s4
+GSE-GL-PRS-UD1-s5
+GSE-GL-PRS-UD1-s6
+
+GSE-GL-PRS-UD2-s1
+GSE-GL-PRS-UD2-s2
+GSE-GL-PRS-UD2-s3
+GSE-GL-PRS-UD2-s4
+GSE-GL-PRS-UD2-s5
+GSE-GL-PRS-UD2-s6
+
+GSE-GL-PRS-UD3-s1
+GSE-GL-PRS-UD3-s2
+GSE-GL-PRS-UD3-s3
+
+GSE-GL-PRS-UD4-s1
+GSE-GL-PRS-UD4-s2
+GSE-GL-PRS-UD4-s3
+GSE-GL-PRS-UD4-s4
+
+GSE-GL-PRS-UD5-s1
+GSE-GL-PRS-UD5-s2
+GSE-GL-PRS-UD5-s3
+
+GSE-GL-PRS-UD6-s1
+GSE-GL-PRS-UD6-s2
+
+GSE-GL-PRS-UD7-s1
+GSE-GL-PRS-UD7-s2
+GSE-GL-PRS-UD7-s3
+GSE-GL-PRS-UD7-s4
+
+GSE-GL-PRS-UD8-s1
+GSE-GL-PRS-UD8-s2
+
+GSE-GL-PRS-UD9-s1
+GSE-GL-PRS-UD9-s2
+
+GSE-GL-PRS-UD10-s1
+GSE-GL-PRS-UD10-s2
+GSE-GL-PRS-UD10-s3
+GSE-GL-PRS-UD10-s4
+GSE-GL-PRS-UD10-s5
+GSE-GL-PRS-UD10-s6
+GSE-GL-PRS-UD10-s7
+
+GSE-GL-PRS-UD11-s1
+GSE-GL-PRS-UD11-s2
+GSE-GL-PRS-UD11-s3
+GSE-GL-PRS-UD11-s4
+```
 
 ## 7. Les GPO
 ### 7.1 GPO standard
