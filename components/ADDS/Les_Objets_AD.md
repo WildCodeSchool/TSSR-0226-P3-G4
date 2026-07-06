@@ -35,8 +35,6 @@
 
 8. [Tâche planifiée](#6-tâche-planifiée)
 
-9. [Jonction au domaine](#7-jonction-au-domaine)
-
 10. [Partage des rôles FSMO (PDC et RID)](#8-transfert-des-rôles-fsmo-pdc-et-rid)
     - [10.1 Prérequis et ajout du serveur](#81-prérequis-et-ajout-du-serveur)
     - [10.2 Installation d'Active Directory sur le serveur Core](#82-installation-dactive-directory-sur-le-serveur-core)
