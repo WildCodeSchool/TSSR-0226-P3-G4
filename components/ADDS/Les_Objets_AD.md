@@ -59,11 +59,13 @@ L'OU "PRS" a été crée.
 ![img]()
 Pour les trois OU suivantes même procédure sauf que la création d'OU ce fait depuis l'OU "PRS"
 - clic droit sur l'OU "PRS" puis "New" puis "Organized Unit"
+
 ![img](Ressources/Screenshot/Création_OU_Secondaire.png)
 - Entrer "PRS-A" pour les comptes Administrateurs, "PRS-O" pour les ordinateurs et "PRS-U" pour les utilisateurs
 - toujours cocher "Protect container from accidental deletion"
 - finir par "OK"
 ![img](Ressources/Screenshot/Config_OU_PRS.png)
+
 Et voila vos Sous-OU "PRS-A" "PRS-O" et "PRS-U" sont crée
 ![img](Ressources/Screenshot/Validation_Création_OU.png)
 ### 1.3 Création des sous-OU
