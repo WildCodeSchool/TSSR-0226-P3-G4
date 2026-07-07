@@ -378,10 +378,10 @@ Set-DnsClientServerAddress -InterfaceIndex 1 -ServerAddresses "172.16.12.1"
 
 - Ajouter le serveur dans le domaine :
     - Entrer `D` pour sélectionner Domain
-    - Entrer `billu.lan`
+    - Entrer `Xtech.green`
     - Entrer le nom d'un utilisateur autorisé : `Administrator`
     - Entrer son mot de passe
-    - Changer le nom de la machine par : `DOM-AD-PDC-01`
+    - Changer le nom de la machine par : `XTSE-412`
     - Entrer le mot de passe du serveur Core
     - Redémarrer en appuyant sur `Y`
 
