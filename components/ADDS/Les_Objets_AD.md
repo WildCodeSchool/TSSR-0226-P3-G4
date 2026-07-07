@@ -45,11 +45,11 @@
 ## 1. Les OU
 ### 1.2 Création des OU principales
 **Dans le server manager**  
-Cliquer sur "Tools" puis "Active Directory Users and Computers" pour ouvrir le gestionnaire d'OU  
+- Cliquer sur "Tools" puis "Active Directory Users and Computers" pour ouvrir le gestionnaire d'OU  
 ![img](Ressources/Screenshot/Tools_ADUC.png)
 
 **Dans le volet de gauche faites un clic droit pour ouvrir le menu**
-- cliquer sur "New" puis "Organized unit" pour creer une OU manuellement  
+- Cliquer sur "New" puis "Organized unit" pour creer une OU manuellement  
 ![img](Ressources/Screenshot/New_OU_PRS.png)
 
 **Une fenetre s'ouvre**
@@ -62,12 +62,12 @@ Cliquer sur "Tools" puis "Active Directory Users and Computers" pour ouvrir le g
 ![img](Ressources/Screenshot/PRS_Créer.png)
 
 **Pour les trois OU suivantes même procédure sauf que la création d'OU ce fait depuis l'OU "PRS"**
-- clic droit sur l'OU "PRS" puis "New" puis "Organized Unit"  
+- Clic droit sur l'OU "PRS" puis "New" puis "Organized Unit"  
 ![img](Ressources/Screenshot/Création_OU_Secondaire.png)
 
 - Entrer "PRS-A" pour les comptes Administrateurs, "PRS-O" pour les ordinateurs et "PRS-U" pour les utilisateurs
-- toujours cocher "Protect container from accidental deletion"
-- finir par "OK"  
+- Toujours cocher "Protect container from accidental deletion"
+- Finir par "OK"  
 ![img](Ressources/Screenshot/Config_OU_PRS.png)
 
 **Et voila vos Sous-OU "PRS-A" "PRS-O" et "PRS-U" sont crées**  
