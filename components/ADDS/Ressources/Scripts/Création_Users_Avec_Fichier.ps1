@@ -41,12 +41,12 @@ function Remove-Accents {
 Foreach ($User in $Users)
 {
     Write-Progress -Activity "Création des utilisateurs dans l'OU" -Status "%effectué" -PercentComplete ($Count/$Users.Length*100)
-    # $ variable qui rappelle la fonction (Remove-Accents)
+    # $ variable qui rappelle la fonction (Remove-Accents) pour les prenoms et noms
     $Prenom            = ((Remove-Accents $User.Prénom) -replace '\s', '')
     $Nom               = ((Remove-Accents $User.Nom) -replace '\s', '')
     $Name              = "$Prenom.$Nom"
     $DisplayName       = "$Prenom.$Nom"
-# Rappel de la fonction (Remove-Accents) + -replace pour supprimer les espaces
+    # Rappel de la fonction (Remove-Accents) + -replace pour supprimer les accents
     $SamAccountName    = ((Remove-Accents "$($User.Prénom.substring(0,1))$($User.Nom)") -replace '\s', '').ToLower()
     $SamAccountName    = $SamAccountName.Substring(0, [Math]::Min(20, $SamAccountName.length))
     $UserPrincipalName = (($User.Prénom.substring(0,1).tolower() + $User.Nom.ToLower()) + "@" + (Get-ADDomain).Forest)
