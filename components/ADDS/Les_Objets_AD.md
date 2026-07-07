@@ -106,7 +106,7 @@ Et voila vos OU utilisateurs sont crée
 
 #### 1.3.2 Sous-OU Administrateurs
 Pour la création de la sous-OU "PRS-A" 
-Même procédure que pour les OU principale
+Même procédure que pour les OU principale remplacer par le nom souhaité au lieu de PRS
 ![img]()
 ![img]()
 
