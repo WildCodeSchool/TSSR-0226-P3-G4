@@ -96,13 +96,14 @@ D01-s01 -> Communication externe
 D01-s02 -> Communication interne
 D01-s03 -> Evenementiel
 ```
-Ensuite mettre tout ca dans un fichier .txt, voici un exemple 
+Ensuite mettre tout ca dans un fichier .txt, voici un exemple  
 ```
 D01-s01;D1;PRS-U;PRS
 D01-s02;D1;PRS-U;PRS
 ```
-Et voila vos OU utilisateurs sont crée
+Et voila vos OU utilisateurs sont crée  
 ![img](Ressources/Screenshot/OU_Utilisateurs_Créer.png)
+
 #### 1.3.2 Sous-OU Administrateurs
 Pour la création de la sous-OU "PRS-A" 
 Même procédure que pour les OU principale
