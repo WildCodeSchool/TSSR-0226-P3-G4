@@ -53,7 +53,7 @@ Dans le volet de gauche faites un clic droit pour ouvrir le menu
 Une fenetre s'ouvre
 - Dans la case "Name" entrer le nom souhaité "PRS"
 - Cocher la case "Protect container from accidental deletion" pour protéger l'OU contre la suppression accidentel
-- Pour terminer la création cliquer sur "OK"
+- Pour terminer la création cliquer sur "OK"  
 ![img](Ressources/Screenshot/Config_OU_PRS.png)
 
 L'OU "PRS" a été crée.
