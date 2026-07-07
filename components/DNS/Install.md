@@ -20,10 +20,10 @@ Une fois dans le DNS manage clic droit sur New Zone et suivre l'assistant pour c
 ![DNS](Ressources/New_Zone_DNS.png)
 
 Créer une première zone et un premier enregistrement A. Servant de base a l'AD  
-![DNS]()
+![DNS](Ressources/Verif_A_créer.png)
 
-Parametrer une zone reverse et des CNAME pour le reseau  
-![DNS]()
+Parametrer une zone reverse et des CNAME pour le reseau avec le meme process que précedemment
+![DNS](components/DNS/Ressources/Reverse.png)
 
 
 
