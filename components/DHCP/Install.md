@@ -9,7 +9,7 @@ Dans **manage** selectionner **add Roles and features**
 ![DHCP](Ressources/Manage.png)
 
 Puis cliquer trois sur **next** jusqu'a arriver a la selection de roles **cocher DHCP Server**  
-![DHCP]()
+![DHCP](Ressources/Coche_DHCP.png)
 
 Puis cliquer deux fois sur **next** jusqu'a arriver a **confirmation** et cliquer sur **install** pour lancer l'installation du role DHCP
 ![DHCP](Ressources/Fin_Install_DHCP.png)
