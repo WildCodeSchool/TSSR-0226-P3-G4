@@ -48,7 +48,7 @@
 Cliquer sur "Tools" puis "Active Directory Users and Computers" pour ouvrir le gestionnaire d'OU
 ![img](Ressources/Screenshot/Tools_ADUC.png)
 
-Dans le volet de gauche faites un clic droit pour ouvrir le menu
+**Dans le volet de gauche faites un clic droit pour ouvrir le menu**
 - cliquer sur "New" puis "Organized unit" pour creer une OU manuellement
 ![img](Ressources/Screenshot/New_OU_PRS.png)
 
@@ -58,10 +58,10 @@ Dans le volet de gauche faites un clic droit pour ouvrir le menu
 - Pour terminer la création cliquer sur "OK"  
 ![img](Ressources/Screenshot/Config_OU_PRS.png)
 
-L'OU "PRS" a été crée.
+**L'OU "PRS" a été crée.**
 ![img](components/ADDS/Ressources/Screenshot/PRS_Créer.png)
 
-Pour les trois OU suivantes même procédure sauf que la création d'OU ce fait depuis l'OU "PRS"
+**Pour les trois OU suivantes même procédure sauf que la création d'OU ce fait depuis l'OU "PRS"**
 - clic droit sur l'OU "PRS" puis "New" puis "Organized Unit"
 ![img](Ressources/Screenshot/Création_OU_Secondaire.png)
 
@@ -70,7 +70,7 @@ Pour les trois OU suivantes même procédure sauf que la création d'OU ce fait 
 - finir par "OK"
 ![img](Ressources/Screenshot/Config_OU_PRS.png)
 
-Et voila vos Sous-OU "PRS-A" "PRS-O" et "PRS-U" sont crée
+**Et voila vos Sous-OU "PRS-A" "PRS-O" et "PRS-U" sont crées**
 ![img](Ressources/Screenshot/Validation_Création_OU.png)
 
 ### 1.3 Création des sous-OU
