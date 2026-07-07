@@ -49,7 +49,7 @@ Cliquer sur "Tools" puis "Active Directory Users and Computers" pour ouvrir le g
 ![img](Ressources/Screenshot/Tools_ADUC.png)
 Dans le volet de gauche faites un clic droit pour ouvrir le menu
 - cliquer sur "New" puis "Organized unit" pour creer une OU manuellement
-![img](Ressources/Screenshot/New_OU_PRS.png)
+![img](Ressources/Screenshot/New_OU_PRS.png)  
 Une fenetre s'ouvre
 - Dans la case "Name" entrer le nom souhaité "PRS"
 - Cocher la case "Protect container from accidental deletion" pour protéger l'OU contre la suppression accidentel
