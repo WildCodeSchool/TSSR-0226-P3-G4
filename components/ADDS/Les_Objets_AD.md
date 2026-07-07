@@ -57,7 +57,7 @@ Une fenetre s'ouvre
 ![img](Ressources/Screenshot/Config_OU_PRS.png)
 
 L'OU "PRS" a été crée.
-![img]()
+![img](components/ADDS/Ressources/Screenshot/PRS_Créer.png)
 Pour les trois OU suivantes même procédure sauf que la création d'OU ce fait depuis l'OU "PRS"
 - clic droit sur l'OU "PRS" puis "New" puis "Organized Unit"
 ![img](Ressources/Screenshot/Création_OU_Secondaire.png)
