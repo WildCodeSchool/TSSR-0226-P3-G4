@@ -52,19 +52,18 @@ Va dans le menu `Applications` puis `Extensions`, tu arrives sur cette fenêtre 
 
 Va sur sur l'onglet `SIP [chan_pjsip] Extensions` et clique sur le bouton `+Add New SIP [chan_pjsip] Extension`.
 
-<img width="1888" height="1003" alt="image" src="https://github.com/user-attachments/assets/ef60875e-4a3f-4101-91c2-26b9f1a8174e" />
-
----
 
 Pour créer la 1ère ligne, celle de Ismail Saidi, renseigne les informations suivante :
 
-User Extension : 80100
-Display Name : Ismail Saidi
-Secret : 1234
-Password For New User : 1234
-Tu dois avoir les informations comme ceci :
+User Extension : 80100   
+Display Name : Ismail Saidi    
+Secret : 1234    
+Password For New User : 1234    
+Tu dois avoir les informations comme ceci :    
 
-<img width="1748" height="689" alt="image" src="https://github.com/user-attachments/assets/f327e8e5-5ad9-43e6-af95-ac0d040c2477" />
+<img width="1810" height="937" alt="image" src="https://github.com/user-attachments/assets/ed7f4aa0-a543-4ed7-83b0-4fc3bae9009e" />
+
+
 
 ---
 
