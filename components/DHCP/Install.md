@@ -9,31 +9,31 @@ Pour commencer on va ajouter le role DHCP sur le serveur Windows 2022 :
 ![DHCP](Ressources/Manage.png)
 
 - Puis cliquer trois sur **next** jusqu'a arriver a la selection de roles **cocher DHCP Server**  
-![DHCP](Ressources/Coche_DHCP.png)
+![DHCP](Ressources/Coche_DHCP.png) 
 
-- Puis cliquer deux fois sur **next** jusqu'a arriver a **confirmation** et cliquer sur **install** pour lancer l'installation du role DHCP
-![DHCP](Ressources/Fin_Install_DHCP.png)
+- Puis cliquer deux fois sur **next** jusqu'a arriver a **confirmation** et cliquer sur **install** pour lancer l'installation du role DHCP  
+![DHCP](Ressources/Fin_Install_DHCP.png)  
 
 ## 2. Configuration des scopes DHCP
 Nous avons fait le choix de ne donner des adresses dynamiques uniquement a nos clients, pour ce qui est des autres materiels servant a la mise en place de l'infrastructure réseau (serveurs,routeurs,...) nous avons mis en place des ip fixes.
 
 Pour la configuration du DHCP simple avec un scope unique
-- Clic droit puis **New Scope...**
-![scope](Ressources/Creation_Scope_IPv4.png)
+- Clic droit puis **New Scope...**  
+![scope](Ressources/Creation_Scope_IPv4.png)  
 
-Et voila le **scope** est configurer
-![scope](Ressources/scope_creer.png)
+Et voila le **scope** est configurer  
+![scope](Ressources/scope_creer.png)  
 
 Puis suivre le guide d'installation.
 
 Pour réserver des adresses en cas d'adresse fixe reservée par exemple un pc admin:
-- Clic droit sur **Reservations** puis **New Reservation...**
+- Clic droit sur **Reservations** puis **New Reservation...**  
 ![reservation](Ressources/Reservations.png)
 
-- Rentrer les **informations necessaires** puis cliquer sur **Add**
+- Rentrer les **informations necessaires** puis cliquer sur **Add**  
 ![reservation](Ressources/Config_Reservations.png)
 
-Et voila la **réservation** est **active**
+Et voila la **réservation** est **active**  
 ![reservation](Ressources/Validation_Reservations.png)
 
 En cas d'evolution de notre société nous pourrons faire de nouvelles reservations et scopes.
