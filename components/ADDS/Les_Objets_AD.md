@@ -98,12 +98,12 @@ D01-s01;D1;PRS-U;PRS
 D01-s02;D1;PRS-U;PRS
 ```
 Et voila vos OU utilisateurs sont crée
-![]()
+![img]()
 #### 1.3.2 Sous-OU Administrateurs
 Pour la création de la sous-OU "PRS-A" 
 Même procédure que pour les OU principale
-![]()
-![]()
+![img]()
+![img]()
 
 ## 2. Création des Utilisateurs
 Pour la création des utilisateurs nous avons choisi de passer la aussi par un script via un fichier CSV toujours pour le coter praticiter.
@@ -112,7 +112,7 @@ Pour une création d'utilisateurs via script le fichier CSV doit respecter un fo
 - Le delimiter qui est pour cet exemple un ";"
 - Et un encodage en "UTF-8"
 Voici un exemple :
-[]()
+[img]()
 ### 2.2 Configuration et execution du script
 Pou la configuration tout d'abors choisir le bon fichier a traiter.
 ```
@@ -160,7 +160,7 @@ New-ADUser -Name $Name -DisplayName $DisplayName -SamAccountName $SamAccountName
         Write-Host "Création du USER $SamAccountName" -ForegroundColor Green
 ```
 Et voila vos utilisateurs sont désormais dans vos OU
-[]()
+[img]()
 
 ## 3. Désactivation et archivage des anciens utilisateurs
 ### 3.1 Configuration et execution du script
@@ -370,7 +370,7 @@ Set-DnsClientServerAddress -InterfaceIndex 1 -ServerAddresses "172.16.12.1"
 
 - Choisir l'option **1** dans sconfig
 
-![]()
+![img]()
 
 - Ajouter le serveur dans le domaine :
     - Entrer `D` pour sélectionner Domain
@@ -381,7 +381,7 @@ Set-DnsClientServerAddress -InterfaceIndex 1 -ServerAddresses "172.16.12.1"
     - Entrer le mot de passe du serveur Core
     - Redémarrer en appuyant sur `Y`
 
-![]()
+![img]()
 
 #### Ajout du serveur dans le Server Manager
 
@@ -389,46 +389,46 @@ Depuis le serveur graphique :
 
 - Cliquer sur `Manage` puis `Add Servers`
 
-![]()
+![img]()
 
 - Cliquer sur `Find Now`
 - Sélectionner le serveur à ajouter
 - Vérifier qu'il apparaît dans la liste **Selected**
 
-![]()
+![img]()
 
 Le serveur doit apparaître dans la liste `All Servers`.
 
-![]()
+![img]()
 
 
 ### 9.2 Active Directory sur un serveur Core
 
 - Faire `clic droit` sur le serveur **PDC** dans la liste `All Servers`
 
-![]()
+![img]()
 
 - Cliquer sur `Next` jusqu'à la sélection des serveurs
 - Sélectionner le serveur PDC
 
-![]()
+![img]()
 
 - Cocher **Active Directory Domain Services**
 
-![]()
+![img]()
 
 - Cliquer sur `Add Features`
 
-![]()
+![img]()
 
 - Faire `Next` jusqu'à l'étape `Confirmation`
 - Vérifier les informations et cliquer sur `Install`
 
-![]()
+![img]()
 
 - Attendre la confirmation de l'installation
 
-![]()
+![img]()
 
 ---
 
@@ -437,25 +437,25 @@ Le serveur doit apparaître dans la liste `All Servers`.
 - Cliquer sur le drapeau
 - Cliquer sur `Promote this server to a domain controller`
 
-![]()
+![img]()
 
 - Sélectionner `Add a domain controller to an existing domain`
 - Cliquer sur `Change` et entrer les credentials Administrator
 
-![]()
+![img]()
 
 - Cocher `Domain Name System (DNS) server` et `Global Catalog (GC)`
 - Définir un mot de passe DSRM
 
-![]()
+![img]()
 
 - Cliquer sur `Next` jusqu'à `Prerequisites Check` puis sur `Install`
 
-![]()
+![img]()
 
 - Attendre la confirmation de la configuration
 
-![]()
+![img]()
 
 - **Redémarrer le serveur Core**
 
