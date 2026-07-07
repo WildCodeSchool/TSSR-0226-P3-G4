@@ -44,7 +44,7 @@
 
 ## 1. Les OU
 ### 1.2 Création des OU principales
-**Dans le server manager**
+**Dans le server manager**  
 Cliquer sur "Tools" puis "Active Directory Users and Computers" pour ouvrir le gestionnaire d'OU  
 ![img](Ressources/Screenshot/Tools_ADUC.png)
 
