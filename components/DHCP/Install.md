@@ -21,7 +21,7 @@ Pour la configuration du DHCP simple avec un scope unique
 - Clic droit puis **New Scope...**  
 ![scope](Ressources/Creation_Scope_IPv4.png)  
 
-Et voila le **scope** est configurer  
+Et voila le **scope** est configuré  
 ![scope](Ressources/scope_creer.png)  
 
 Puis suivre le guide d'installation.
