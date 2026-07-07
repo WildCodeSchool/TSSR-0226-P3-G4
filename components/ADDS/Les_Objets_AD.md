@@ -117,7 +117,7 @@ Pour une création d'utilisateurs via script le fichier CSV doit respecter un fo
 - Le delimiter qui est pour cet exemple un ";"
 - Et un encodage en "UTF-8"
 Voici un exemple :
-[img](Ressources/Screenshot/Formatage_CSV.png)
+![img](Ressources/Screenshot/Formatage_CSV.png)
 ### 2.2 Configuration et execution du script
 Pou la configuration tout d'abors choisir le bon fichier a traiter.
 ```
@@ -165,7 +165,7 @@ New-ADUser -Name $Name -DisplayName $DisplayName -SamAccountName $SamAccountName
         Write-Host "Création du USER $SamAccountName" -ForegroundColor Green
 ```
 Et voila vos utilisateurs sont désormais dans leurs OU
-[img](Ressources/Screenshot/Vérification_Création_Utilisateurs.png)
+![img](Ressources/Screenshot/Vérification_Création_Utilisateurs.png)
 
 ## 3. Désactivation et archivage des anciens utilisateurs
 ### 3.1 Configuration et execution du script
