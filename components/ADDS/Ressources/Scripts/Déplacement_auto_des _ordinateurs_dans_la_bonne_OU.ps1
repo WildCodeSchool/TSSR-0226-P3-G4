@@ -8,10 +8,10 @@ Import-Module ActiveDirectory -ErrorAction Stop
 
 # --- Mapping : motif du nom -> OU cible (à adapter à ta structure) ---
 $Mapping = @(
-    @{ Pattern = "XT-OD01-"; OU = "OU=D1,OU=Ordinateurs,OU=Paris,DC=Xtech,DC=green" }
-    @{ Pattern = "XT-OD02-*"; OU = "OU=D2,OU=Ordinateurs,OU=Paris,DC=Xtech,DC=green" }
-    @{ Pattern = "XT-OD03-*"; OU = "OU=D3,OU=Ordinateurs,OU=Paris,DC=Xtech,DC=green" }
-    # ... compléter jusqu'à OD11
+    @{ Pattern = "XTAD-*"; OU = "OU=PRS-OAD,OU=PRS-O,OU=Paris,DC=Xtech,DC=green" }
+    @{ Pattern = "XT-OD*"; OU = "OU=PRS-OCL,OU=PRS-O,OU=Paris,DC=Xtech,DC=green" }
+    @{ Pattern = "XTSE-*"; OU = "OU=PRS-OSE,OU=PRS-O,OU=Paris,DC=Xtech,DC=green" }
+    @{ Pattern = "XTRO-*"; OU = "OU=PRS-OSE,OU=PRS-O,OU=Paris,DC=Xtech,DC=green" }
 )
 # --------------------------------------------------------------------
 
