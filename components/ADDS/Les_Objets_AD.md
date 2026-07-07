@@ -59,7 +59,7 @@ Cliquer sur "Tools" puis "Active Directory Users and Computers" pour ouvrir le g
 ![img](Ressources/Screenshot/Config_OU_PRS.png)
 
 **L'OU "PRS" a été crée.**  
-![img](components/ADDS/Ressources/Screenshot/PRS_Créer.png)
+![img](Ressources/Screenshot/PRS_Créer.png)
 
 **Pour les trois OU suivantes même procédure sauf que la création d'OU ce fait depuis l'OU "PRS"**
 - clic droit sur l'OU "PRS" puis "New" puis "Organized Unit"  
