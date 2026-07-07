@@ -4,20 +4,20 @@
 
 Pour commencer on va ajouter le role DNS sur le serveur Windows 2022 :
 - Dans **manage** selectionner **add Roles and features**  
-![DNS](components/DNS/Ressources/Manage.png)
+![DNS](Ressources/Manage.png)
 
 - Puis cliquer trois sur **next** jusqu'a arriver a la selection de roles **cocher DNS Server**  
-![DNS](components/DNS/Ressources/Coche_DNS.png)
+![DNS](Ressources/Coche_DNS.png)
 
 - Puis cliquer deux fois sur **next** jusqu'a arriver a **confirmation** et cliquer sur **install** pour lancer l'installation du role DNS  
-![DNS](components/DNS/Ressources/Coche_DNS.png)
+![DNS](Ressources/Coche_DNS.png)
 
 Une fois le rôle ajouté, aller dans Tools puis cliquer sur DNS Manager  
-![Tools](components/DNS/Ressources/Tools.png)
+![Tools](Ressources/Tools.png)
 
 Puis on choisi DNS.
 Une fois dans le DNS manage clic droit sur New Zone et suivre l'assistant pour configurer la nouvelle zone  
-![DNS](components/DNS/Ressources/New_Zone_DNS.png)
+![DNS](Ressources/New_Zone_DNS.png)
 
 Créer une première zone et un premier enregistrement A. Servant de base a l'AD  
 ![DNS]()
