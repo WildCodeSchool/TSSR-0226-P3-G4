@@ -46,7 +46,7 @@
 ### 1.2 Création des OU principales
 **Dans le server manager**
 Cliquer sur "Tools" puis "Active Directory Users and Computers" pour ouvrir le gestionnaire d'OU
-![Screen snap](components/ADDS/Ressources/Screenshot/Tools_ADUC.png)
+![img](components/ADDS/Ressources/Screenshot/Tools_ADUC.png)
 Dans le volet de gauche faites un clic droit pour ouvrir le menu
 - cliquer sur "New" puis "Organized unit" pour creer une OU manuellement
 ![img](components/ADDS/Ressources/Screenshot/New_OU_PRS.png)
