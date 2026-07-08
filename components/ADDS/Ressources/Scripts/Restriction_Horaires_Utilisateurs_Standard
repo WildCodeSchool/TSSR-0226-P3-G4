@@ -92,3 +92,12 @@ $adsiUser.Put("logonHours", $mask)
 $adsiUser.SetInfo()
 
 Write-Host "Terminé" -ForegroundColor Green
+
+
+
+$dc = (Get-ADDomainController -Discover).HostName[0]
+Write-Host "DC utilisé : $dc" -ForegroundColor Cyan
+
+Set-ADUser -Identity $testUser.DistinguishedName -Clear logonHours -Server $dc -Verbose
+Start-Sleep -Seconds 2
+Set-ADUser -Identity $testUser.DistinguishedName -Replace @{logonHours = $mask} -Server $dc -Verbose
