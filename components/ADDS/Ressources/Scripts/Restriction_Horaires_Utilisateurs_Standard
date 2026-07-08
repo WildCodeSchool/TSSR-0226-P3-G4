@@ -2,24 +2,45 @@ Import-Module ActiveDirectory
 Import-Module "C:\Scripts\XTechLogging.psm1"
 
 # Fonction pour construire le masque logonHours (7 jours x 24h)
+# Note : dans l'attribut AD logonHours, l'ordre des jours commence au Dimanche (index 0)
 function Build-LogonHoursMask {
     param(
-        [int[]]$AllowedHours = @(8,9,10,11,12,13,14,15,16,17,18) # 8h-19h
+        [hashtable]$Schedule
+        # Format attendu : @{ 0 = @(); 1 = @(7..19); 2 = @(7..19); ... }
+        # 0 = Dimanche, 1 = Lundi, 2 = Mardi, 3 = Mercredi, 4 = Jeudi, 5 = Vendredi, 6 = Samedi
     )
 
     $hours = New-Object byte[] 21
-    for ($day = 0; $day -lt 7; $day++) {
-        foreach ($h in $AllowedHours) {
-            $bitIndex = ($day * 24) + $h
-            $byteIndex = [math]::Floor($bitIndex / 8)
-            $bitInByte = $bitIndex % 8
+
+    foreach ($day in $Schedule.Keys) {
+        foreach ($h in $Schedule[$day]) {
+            $bitIndex   = ($day * 24) + $h
+            $byteIndex  = [math]::Floor($bitIndex / 8)
+            $bitInByte  = $bitIndex % 8
             $hours[$byteIndex] = $hours[$byteIndex] -bor (1 -shl $bitInByte)
         }
     }
     return $hours
 }
 
-$mask = Build-LogonHoursMask -AllowedHours @(8..18) # 8h-19h, tous les jours
+# Définition du planning demandé :
+# Lundi à Vendredi : 7h - 20h (donc heures pleines 7 à 19 incluses)
+# Samedi : 8h - 13h (donc heures pleines 8 à 12 incluses)
+# Dimanche : aucune connexion autorisée
+$weekdayHours = 7..19   # couvre 07:00 → 20:00
+$saturdayHours = 8..12  # couvre 08:00 → 13:00
+
+$schedule = @{
+    0 = @()               # Dimanche : rien
+    1 = $weekdayHours      # Lundi
+    2 = $weekdayHours      # Mardi
+    3 = $weekdayHours      # Mercredi
+    4 = $weekdayHours      # Jeudi
+    5 = $weekdayHours      # Vendredi
+    6 = $saturdayHours     # Samedi
+}
+
+$mask = Build-LogonHoursMask -Schedule $schedule
 
 # Application aux utilisateurs standards de l'OU=Paris (hors comptes privilégiés)
 $targetOU = "OU=Paris,DC=Xtech,DC=green"
@@ -30,7 +51,7 @@ $users = Get-ADUser -SearchBase $targetOU -Filter * -Properties SamAccountName |
 foreach ($user in $users) {
     try {
         Set-ADUser -Identity $user.DistinguishedName -Replace @{logonHours = $mask}
-        Write-XTechLog -Level Info -Message "Plage horaire appliquée : $($user.SamAccountName)"
+        Write-XTechLog -Level Info -Message "Plage horaire appliquée (Lun-Ven 7h-20h, Sam 8h-13h) : $($user.SamAccountName)"
     }
     catch {
         Write-XTechLog -Level Error -Message "Échec sur $($user.SamAccountName) : $_"
