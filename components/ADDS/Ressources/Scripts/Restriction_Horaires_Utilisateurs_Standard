@@ -57,3 +57,38 @@ foreach ($user in $users) {
         Write-XTechLog -Level Error -Message "Échec sur $($user.SamAccountName) : $_"
     }
 }
+
+
+
+
+
+Import-Module ActiveDirectory
+
+$testUser = Get-ADUser -Identity "lmarques"
+
+function Build-LogonHoursMask {
+    param([hashtable]$Schedule)
+    $hours = New-Object byte[] 21
+    foreach ($day in $Schedule.Keys) {
+        foreach ($h in $Schedule[$day]) {
+            $bitIndex   = ($day * 24) + $h
+            $byteIndex  = [math]::Floor($bitIndex / 8)
+            $bitInByte  = $bitIndex % 8
+            $hours[$byteIndex] = $hours[$byteIndex] -bor (1 -shl $bitInByte)
+        }
+    }
+    return $hours
+}
+
+$weekdayHours = 7..19
+$saturdayHours = 8..12
+$schedule = @{ 0=@(); 1=$weekdayHours; 2=$weekdayHours; 3=$weekdayHours; 4=$weekdayHours; 5=$weekdayHours; 6=$saturdayHours }
+$mask = Build-LogonHoursMask -Schedule $schedule
+
+Write-Host "Taille du masque : $($mask.Length)" -ForegroundColor Cyan
+
+$adsiUser = [ADSI]"LDAP://$($testUser.DistinguishedName)"
+$adsiUser.Put("logonHours", $mask)
+$adsiUser.SetInfo()
+
+Write-Host "Terminé" -ForegroundColor Green
