@@ -94,10 +94,10 @@ $adsiUser.SetInfo()
 Write-Host "Terminé" -ForegroundColor Green
 
 
+$de = New-Object System.DirectoryServices.DirectoryEntry("LDAP://$($testUser.DistinguishedName)")
 
-$dc = (Get-ADDomainController -Discover).HostName[0]
-Write-Host "DC utilisé : $dc" -ForegroundColor Cyan
+$de.Properties["logonHours"].Clear()
+$de.Properties["logonHours"].Add($mask) | Out-Null
+$de.CommitChanges()
 
-Set-ADUser -Identity $testUser.DistinguishedName -Clear logonHours -Server $dc -Verbose
-Start-Sleep -Seconds 2
-Set-ADUser -Identity $testUser.DistinguishedName -Replace @{logonHours = $mask} -Server $dc -Verbose
+Write-Host "Terminé (DirectoryEntry)" -ForegroundColor Green
