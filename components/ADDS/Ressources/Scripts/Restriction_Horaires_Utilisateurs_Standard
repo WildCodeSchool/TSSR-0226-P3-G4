@@ -1,0 +1,38 @@
+Import-Module ActiveDirectory
+Import-Module "C:\Scripts\XTechLogging.psm1"
+
+# Fonction pour construire le masque logonHours (7 jours x 24h)
+function Build-LogonHoursMask {
+    param(
+        [int[]]$AllowedHours = @(8,9,10,11,12,13,14,15,16,17,18) # 8h-19h
+    )
+
+    $hours = New-Object byte[] 21
+    for ($day = 0; $day -lt 7; $day++) {
+        foreach ($h in $AllowedHours) {
+            $bitIndex = ($day * 24) + $h
+            $byteIndex = [math]::Floor($bitIndex / 8)
+            $bitInByte = $bitIndex % 8
+            $hours[$byteIndex] = $hours[$byteIndex] -bor (1 -shl $bitInByte)
+        }
+    }
+    return $hours
+}
+
+$mask = Build-LogonHoursMask -AllowedHours @(8..18) # 8h-19h, tous les jours
+
+# Application aux utilisateurs standards de l'OU=Paris (hors comptes privilégiés)
+$targetOU = "OU=Paris,DC=Xtech,DC=green"
+
+$users = Get-ADUser -SearchBase $targetOU -Filter * -Properties SamAccountName |
+    Where-Object { $_.SamAccountName -notmatch '^(adm-|t0-|svc-)' }
+
+foreach ($user in $users) {
+    try {
+        Set-ADUser -Identity $user.DistinguishedName -Replace @{logonHours = $mask}
+        Write-XTechLog -Level Info -Message "Plage horaire appliquée : $($user.SamAccountName)"
+    }
+    catch {
+        Write-XTechLog -Level Error -Message "Échec sur $($user.SamAccountName) : $_"
+    }
+}
