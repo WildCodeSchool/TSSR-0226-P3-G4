@@ -15,6 +15,8 @@ sudo nano /etc/netplan/00-installer-config.yaml
 ---
 
 ```
+sudo chmod 600 /etc/netplan/*.yaml
+sudo netplan try
 sudo netplan apply
 ```
 
