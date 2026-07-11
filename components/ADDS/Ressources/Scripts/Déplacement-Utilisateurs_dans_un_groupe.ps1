@@ -1,4 +1,8 @@
 Import-Module ActiveDirectory
+Import-Module "C:\Scripts\Modules\XTechLogging.psm1" -ErrorAction Stop
+$ScriptName = "DeplacementUtilisateursGroupe"
+
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Démarrage du script $ScriptName ==="
 
 # --- Paramètres ---
 $targetOU  = "OU=PRS-U,OU=PRS,DC=Xtech,DC=green"   # Vérifie ce DN exact via Get-ADOrganizationalUnit
@@ -6,10 +10,10 @@ $groupName = "GSE-GL-PRS-U"
 
 # --- Récupération du groupe ---
 try {
-    $group = Get-ADGroup -Identity $groupName
+    $group = Get-ADGroup -Identity $groupName -ErrorAction Stop
 }
 catch {
-    Write-Host "Groupe '$groupName' introuvable. Vérifie le nom exact." -ForegroundColor Red
+    Write-XTechLog -ScriptName $ScriptName -Level "ERROR" -Message "Groupe '$groupName' introuvable : $($_.Exception.Message)"
     return
 }
 
@@ -17,7 +21,7 @@ catch {
 $users = Get-ADUser -SearchBase $targetOU -Filter * -Properties SamAccountName |
     Where-Object { $_.SamAccountName -notmatch '^(adm-|t0-|svc-)' }
 
-Write-Host "$($users.Count) utilisateur(s) standard(s) trouvé(s) sous $targetOU`n" -ForegroundColor Cyan
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "$($users.Count) utilisateur(s) standard(s) trouvé(s) sous $targetOU"
 
 # --- Ajout au groupe ---
 $successCount = 0
@@ -26,19 +30,19 @@ $failCount = 0
 foreach ($user in $users) {
     try {
         Add-ADGroupMember -Identity $group -Members $user.DistinguishedName -ErrorAction Stop
-        Write-Host "OK    - $($user.SamAccountName) ajouté à $groupName" -ForegroundColor Green
+        Write-XTechLog -ScriptName $ScriptName -Level "SUCCESS" -Message "$($user.SamAccountName) ajouté à $groupName"
         $successCount++
     }
     catch {
-        Write-Host "ECHEC - $($user.SamAccountName) : $($_.Exception.Message)" -ForegroundColor Red
+        Write-XTechLog -ScriptName $ScriptName -Level "ERROR" -Message "Échec ajout $($user.SamAccountName) : $($_.Exception.Message)"
         $failCount++
     }
 }
 
-Write-Host "`n===== Résumé =====" -ForegroundColor Cyan
-Write-Host "Ajoutés : $successCount" -ForegroundColor Green
-Write-Host "Échecs  : $failCount" -ForegroundColor Red
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Résumé : $successCount ajouté(s), $failCount échec(s) ==="
 
 # --- Vérification finale ---
 Write-Host "`nMembres actuels de $groupName :" -ForegroundColor Cyan
 Get-ADGroupMember -Identity $group | Select-Object Name, SamAccountName | Format-Table -AutoSize
+
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Fin du script $ScriptName ==="
