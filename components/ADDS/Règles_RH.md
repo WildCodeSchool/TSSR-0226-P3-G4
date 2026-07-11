@@ -76,7 +76,7 @@ Pour le fichier CSV qui servira a la féminisation je me suis basé sur le fichi
 Il comprends les informations tel que le nom et prenom mais aussi la civilité des utilisateurs pour differencier les hommes des femmes.
 
 #### Le script
-Vous retrouverez le script ![ici]()
+Vous retrouverez le script ![ici](components/ADDS/Ressources/Scripts/Féminisation_De_Poste.ps1)
 
 Ce que fait le scrit
 - Filtre les profils féminins (Mme) à partir de la colonne civilité, pour ne traiter que les comptes concernés.
