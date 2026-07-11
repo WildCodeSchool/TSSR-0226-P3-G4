@@ -37,7 +37,7 @@ ijovanovic
 Pas besoin d'autres colonnes le script s'occupe du reste.
 
 #### Le script
-Vous retrouverez le script ![ici]()
+Vous retrouverez le script [ici](Ressources/Scripts/Désactivation_et_archivage-des-utilisateurs-sortants.ps1)
 
 Le script est concu de telle facon que seule le SamAccountName a besoin d'etre renseigner et voivi ce qu'il fait pour chaque utilisateur sortant de la société
 - Désactive le compte AD
