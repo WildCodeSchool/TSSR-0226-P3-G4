@@ -2,18 +2,13 @@
 #                Correction de la civilité                  #
 #############################################################
 Import-Module ActiveDirectory -ErrorAction Stop
+Import-Module "C:\Scripts\Modules\XTechLogging.psm1" -ErrorAction Stop
+$ScriptName = "CorrectionCivilite"
 
 $FilePath = "C:\Data"    # <-- adapte au dossier réel où se trouve le fichier
 $File     = "$FilePath\Creation_Users2.txt"
-$LogFile  = "C:\Logs\CorrectionPersonalTitle.log"
 
-$null = New-Item -ItemType Directory -Path (Split-Path $LogFile) -Force -ErrorAction SilentlyContinue
-function Write-Log {
-    param([string]$Message)
-    Add-Content -Path $LogFile -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - $Message"
-}
-
-Write-Log "=== Début de l'exécution ==="
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Début de l'exécution ==="
 
 $Collaborateurs = Import-Csv -Path $File -Delimiter ";" -Encoding Default
 
@@ -28,7 +23,7 @@ foreach ($personne in $Collaborateurs) {
     $civilite  = $personne.'civilité'
 
     if (-not $prenom -or -not $nom -or -not $civilite) {
-        Write-Log "IGNORÉ (ligne incomplète) : Prénom='$prenom' Nom='$nom' Civilité='$civilite'"
+        Write-XTechLog -ScriptName $ScriptName -Level "WARNING" -Message "IGNORÉ (ligne incomplète) : Prénom='$prenom' Nom='$nom' Civilité='$civilite'"
         $compteurSkip++
         continue
     }
@@ -37,33 +32,33 @@ foreach ($personne in $Collaborateurs) {
                     -Properties personalTitle -ErrorAction SilentlyContinue
 
     if (-not $utilisateur) {
-        Write-Log "NON TROUVÉ dans AD : $prenom $nom"
+        Write-XTechLog -ScriptName $ScriptName -Level "ERROR" -Message "NON TROUVÉ dans AD : $prenom $nom"
         $compteurErr++
         continue
     }
 
     if ($utilisateur.Count -gt 1) {
-        Write-Log "AMBIGU (plusieurs comptes trouvés) : $prenom $nom -> vérifier manuellement"
+        Write-XTechLog -ScriptName $ScriptName -Level "WARNING" -Message "AMBIGU (plusieurs comptes trouvés) : $prenom $nom -> vérifier manuellement"
         $compteurErr++
         continue
     }
 
     if ($utilisateur.personalTitle -eq $civilite) {
-        Write-Log "Déjà à jour, ignoré : $($utilisateur.SamAccountName)"
+        Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "Déjà à jour, ignoré : $($utilisateur.SamAccountName)"
         $compteurSkip++
         continue
     }
 
     try {
         Set-ADUser -Identity $utilisateur.DistinguishedName -Replace @{personalTitle = $civilite} -ErrorAction Stop
-        Write-Log "Mis à jour : $($utilisateur.SamAccountName) -> personalTitle = '$civilite'"
+        Write-XTechLog -ScriptName $ScriptName -Level "SUCCESS" -Message "Mis à jour : $($utilisateur.SamAccountName) -> personalTitle = '$civilite'"
         $compteurOK++
     }
     catch {
-        Write-Log "ÉCHEC : $($utilisateur.SamAccountName) -> $($_.Exception.Message)"
+        Write-XTechLog -ScriptName $ScriptName -Level "ERROR" -Message "ÉCHEC : $($utilisateur.SamAccountName) -> $($_.Exception.Message)"
         $compteurErr++
     }
 }
 
-Write-Log "=== Fin de l'exécution : $compteurOK mis à jour / $compteurSkip ignorés / $compteurErr en erreur ==="
-Write-Host "Terminé. $compteurOK comptes mis à jour, $compteurSkip ignorés, $compteurErr en erreur. Voir $LogFile" -ForegroundColor Green
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Fin de l'exécution : $compteurOK mis à jour / $compteurSkip ignorés / $compteurErr en erreur ==="
+Write-Host "Terminé. $compteurOK comptes mis à jour, $compteurSkip ignorés, $compteurErr en erreur. Voir C:\Logs\PS\$ScriptName.log" -ForegroundColor Green
