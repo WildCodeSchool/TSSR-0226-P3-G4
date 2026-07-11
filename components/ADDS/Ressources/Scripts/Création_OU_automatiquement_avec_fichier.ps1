@@ -31,5 +31,25 @@ function CreateOU {
 
     If ((Get-ADOrganizationalUnit -Filter {Name -eq $OU} -SearchBase $Path -SearchScope OneLevel -ErrorAction SilentlyContinue) -eq $Null)
     {
-        New-ADOrganizationalUnit -Name $OU -Path $Path
-        $OUObj =
+        try {
+            New-ADOrganizationalUnit -Name $OU -Path $Path -ProtectedFromAccidentalDeletion $false -ErrorAction Stop
+            Write-XTechLog -ScriptName $ScriptName -Level "SUCCESS" -Message "OU créée : OU=$OU,$Path (protection contre suppression désactivée)"
+        }
+        catch {
+            Write-XTechLog -ScriptName $ScriptName -Level "ERROR" -Message "Échec création OU $OU sous $Path : $($_.Exception.Message)"
+        }
+    }
+    Else
+    {
+        Write-XTechLog -ScriptName $ScriptName -Level "WARNING" -Message "OU $OU existe déjà sous $Path, ignorée"
+    }
+}
+
+# Le fichier attendu contient une ligne par OU, au format : NomOU;CheminParent
+$OUList = Import-Csv -Path $File -Delimiter ";" -Header "OU","Path"
+
+foreach ($ligne in $OUList) {
+    CreateOU -OU $ligne.OU -Path $ligne.Path
+}
+
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Fin du script CreationOU ==="
