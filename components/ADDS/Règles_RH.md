@@ -46,12 +46,12 @@ Le script est concu de telle facon que seule le SamAccountName a besoin d'etre r
 - Déplace le compte de/des utilisateur(s) vers l'OU d'archivage dédiée (PRS-UAR)
 Deux modes d'utilisation sont possible en fonction des besoins
 
-Le mode CSV pour désactiver des utilisateurs en masse
+- Le mode CSV pour désactiver des utilisateurs en masse
 ```
 .\Désactivation_Archivage_Utilisateurs.ps1
 ```
 
-Le mode Manuel au cas ou il n'y a que très peu d'utilisateurs
+- Le mode Manuel au cas ou il n'y a que très peu d'utilisateurs
 ```
 .\Désactivation_Archivage_Utilisateurs.ps1 -SamAccountName "jdupont"
 ```
