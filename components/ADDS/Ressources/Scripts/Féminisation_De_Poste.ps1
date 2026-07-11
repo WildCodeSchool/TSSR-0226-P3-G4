@@ -4,6 +4,9 @@
 Import-Module ActiveDirectory -ErrorAction Stop
 Import-Module "C:\Scripts\Modules\XTechLogging.psm1" -ErrorAction Stop
 $ScriptName = "FeminisationPoste"
+
+# --- Fichier source (même fichier que Correction_Civilité.ps1) ---
+$FilePath = "C:\Data"    # <-- adapte au dossier réel où se trouve le fichier
 $File     = "$FilePath\Creation_Users2.txt"
 
 # --- Mapping : intitulé masculin -> intitulé féminin ---
@@ -71,9 +74,10 @@ foreach ($personne in $Collaborateurs) {
     }
 
     # --- Ne traiter que les civilités féminines ---
-    # Adapte cette condition aux valeurs réelles de la colonne 'civilité' dans ton CSV
-    # (ex. 'F', 'Mme', 'Madame'...)
-    if ($civilite -notmatch '^(F|Mme|Madame)$') {
+    # Valeurs réelles observées dans le CSV : "Mme" (féminin) / "M." (masculin)
+    $civiliteNettoyee = $civilite.Trim()
+    if ($civiliteNettoyee -ne "Mme") {
+        Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "Ignoré (civilité = '$civiliteNettoyee') : $prenom $nom"
         $compteurSkip++
         continue
     }
