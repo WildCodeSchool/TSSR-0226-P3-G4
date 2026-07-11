@@ -4,6 +4,10 @@ Clear-Host
 # Création GROUPE automatiquement  #
 #                                  #
 ####################################
+
+Import-Module "C:\Scripts\Modules\XTechLogging.psm1" -ErrorAction Stop
+$ScriptName = "CreationGroupe"
+
 ### Parametre(s) à modifier
 $Groupes = "Groupe"
 $Groups = "GSE-GLD1-s1","GSE-GLD1-s2","GSE-GLD1-s3","GSE-GLD1-s4","GSE-GLD1-s5","GSE-GLD1-s6",`
@@ -19,18 +23,23 @@ $Groups = "GSE-GLD1-s1","GSE-GLD1-s2","GSE-GLD1-s3","GSE-GLD1-s4","GSE-GLD1-s5",
           "GSE-GLD11-s1", "GSE-GLD11-s2", "GSE-GLD11-s3", "GSE-GLD11-s4",`
           `
 
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Démarrage du script $ScriptName ($($Groups.Count) groupe(s) à traiter) ==="
+
 ### Initialisation
 $DomainDN = (Get-ADDomain).DistinguishedName
+
 ### Main program
 Foreach ($Group in $Groups)
 {
     Try
     {
-        New-ADGroup -Name $Group -Path "ou=$OuGroupes,ou=Utilisateurs,ou=Paris,$DomainDN" -GroupScope Global -GroupCategory Security
-        Write-Host "Création du GROUPE $Group dans l'OU ou=$OuGroupes,$DomainDN" -ForegroundColor Green
+        New-ADGroup -Name $Group -Path "ou=$OuGroupes,ou=Utilisateurs,ou=Paris,$DomainDN" -GroupScope Global -GroupCategory Security -ErrorAction Stop
+        Write-XTechLog -ScriptName $ScriptName -Level "SUCCESS" -Message "Création du GROUPE $Group dans l'OU ou=$OuGroupes,$DomainDN"
     }
     Catch
     {
-        Write-Host "Le GROUPE $Group existe déjà" -ForegroundColor Yellow -BackgroundColor Black
+        Write-XTechLog -ScriptName $ScriptName -Level "WARNING" -Message "Le GROUPE $Group existe déjà ou erreur : $($_.Exception.Message)"
     }
 }
+
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Fin du script $ScriptName ==="
