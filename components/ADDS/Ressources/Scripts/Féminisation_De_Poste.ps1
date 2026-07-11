@@ -4,8 +4,9 @@
 Import-Module ActiveDirectory -ErrorAction Stop
 Import-Module "C:\Scripts\Modules\XTechLogging.psm1" -ErrorAction Stop
 $ScriptName = "FeminisationPoste"
+$File     = "$FilePath\Creation_Users2.txt"
 
-# Mapping : intitulé masculin -> intitulé féminin
+# --- Mapping : intitulé masculin -> intitulé féminin ---
 $MappingTitres = @{
     "Acheteur"                          = "Acheteuse"
     "Agent Client"                      = "Agente Client"
@@ -44,38 +45,84 @@ $MappingTitres = @{
     "Designer graphique"                = "Designeuse graphique"
 }
 
-Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "Début de l'exécution"
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Début de l'exécution ==="
 
-# Récupère uniquement les comptes marqués "féminin" (adapter le filtre à ton attribut réel)
-$Utilisatrices = Get-ADUser -Filter "extensionAttribute1 -eq 'F'" -Properties Title, extensionAttribute1
+if (-not (Test-Path $File)) {
+    Write-XTechLog -ScriptName $ScriptName -Level "ERROR" -Message "Fichier introuvable : $File"
+    exit 1
+}
 
-foreach ($user in $Utilisatrices) {
-    if (-not $user.Title) { continue }
+$Collaborateurs = Import-Csv -Path $File -Delimiter ";" -Encoding UTF8
 
-    # Savoir si le poste est deja feminisé ou pas
-    if ($MappingTitres.ContainsValue($user.Title)) {
-        Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "Déjà féminisé, ignoré : $($user.SamAccountName)"
+$compteurOK   = 0
+$compteurSkip = 0
+$compteurErr  = 0
+
+foreach ($personne in $Collaborateurs) {
+
+    $prenom   = $personne.'Prénom'
+    $nom      = $personne.'Nom'
+    $civilite = $personne.'civilité'
+
+    if (-not $prenom -or -not $nom) {
+        Write-XTechLog -ScriptName $ScriptName -Level "WARNING" -Message "IGNORÉ (ligne incomplète) : Prénom='$prenom' Nom='$nom'"
+        $compteurSkip++
         continue
     }
 
-    if ($MappingTitres.ContainsKey($user.Title)) {
-        $nouveauTitre = $MappingTitres[$user.Title]
+    # --- Ne traiter que les civilités féminines ---
+    # Adapte cette condition aux valeurs réelles de la colonne 'civilité' dans ton CSV
+    # (ex. 'F', 'Mme', 'Madame'...)
+    if ($civilite -notmatch '^(F|Mme|Madame)$') {
+        $compteurSkip++
+        continue
+    }
+
+    $utilisateur = Get-ADUser -Filter "GivenName -eq '$prenom' -and Surname -eq '$nom'" `
+                    -Properties Title -ErrorAction SilentlyContinue
+
+    if (-not $utilisateur) {
+        Write-XTechLog -ScriptName $ScriptName -Level "ERROR" -Message "NON TROUVÉ dans AD : $prenom $nom"
+        $compteurErr++
+        continue
+    }
+
+    if ($utilisateur.Count -gt 1) {
+        Write-XTechLog -ScriptName $ScriptName -Level "WARNING" -Message "AMBIGU (plusieurs comptes trouvés) : $prenom $nom -> vérifier manuellement"
+        $compteurErr++
+        continue
+    }
+
+    if (-not $utilisateur.Title) {
+        Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "Pas de titre renseigné, ignoré : $($utilisateur.SamAccountName)"
+        $compteurSkip++
+        continue
+    }
+
+    # Savoir si le poste est déjà féminisé ou non
+    if ($MappingTitres.ContainsValue($utilisateur.Title)) {
+        Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "Déjà féminisé, ignoré : $($utilisateur.SamAccountName)"
+        $compteurSkip++
+        continue
+    }
+
+    if ($MappingTitres.ContainsKey($utilisateur.Title)) {
+        $nouveauTitre = $MappingTitres[$utilisateur.Title]
         try {
-            Set-ADUser -Identity $user.DistinguishedName -Replace @{Title = $nouveauTitre} -ErrorAction Stop
-            Write-XTechLog -ScriptName $ScriptName -Level "SUCCESS" -Message "Modifié : $($user.SamAccountName) : '$($user.Title)' -> '$nouveauTitre'"
+            Set-ADUser -Identity $utilisateur.DistinguishedName -Replace @{Title = $nouveauTitre} -ErrorAction Stop
+            Write-XTechLog -ScriptName $ScriptName -Level "SUCCESS" -Message "Modifié : $($utilisateur.SamAccountName) : '$($utilisateur.Title)' -> '$nouveauTitre'"
+            $compteurOK++
         }
         catch {
-            Write-XTechLog -ScriptName $ScriptName -Level "ERROR" -Message "Échec : $($user.SamAccountName) -> $($_.Exception.Message)"
+            Write-XTechLog -ScriptName $ScriptName -Level "ERROR" -Message "Échec : $($utilisateur.SamAccountName) -> $($_.Exception.Message)"
+            $compteurErr++
         }
     }
     else {
-        Write-XTechLog -ScriptName $ScriptName -Level "WARNING" -Message "Pas de correspondance trouvée pour le titre : '$($user.Title)' ($($user.SamAccountName))"
+        Write-XTechLog -ScriptName $ScriptName -Level "WARNING" -Message "Pas de correspondance trouvée pour le titre : '$($utilisateur.Title)' ($($utilisateur.SamAccountName))"
+        $compteurSkip++
     }
 }
 
-Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "Fin de l'exécution"
-
-# Test attribut
-Get-ADUser -Filter * -Properties personalTitle | 
-    Where-Object { $_.personalTitle } | 
-    Select-Object SamAccountName, personalTitle -First 10
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Fin de l'exécution : $compteurOK modifié(s) / $compteurSkip ignoré(s) / $compteurErr en erreur ==="
+Write-Host "Terminé. $compteurOK titres modifiés, $compteurSkip ignorés, $compteurErr en erreur. Voir C:\Logs\PS\$ScriptName.log" -ForegroundColor Green
