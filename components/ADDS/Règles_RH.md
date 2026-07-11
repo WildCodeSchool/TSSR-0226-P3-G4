@@ -20,7 +20,7 @@ L'archivage qui suit permet quant à lui de :
 - tout en libérant les ressources actives (licences, boîtes mail, espaces  de stockage) associées aux comptes désactivés,
 ce processus est automatisé et documenté pour garantir une gestion rigoureuse et cohérente des départs, limitant les oublis humains et renforçant la posture de sécurité globale du système d'information.
 
-#### Le fichier CSV
+### Le fichier CSV
 
 Le fichier CSV est placé dans le meme dossier que le scripts son chemin est
 ```
@@ -36,7 +36,7 @@ ijovanovic
 ```
 Pas besoin d'autres colonnes le script s'occupe du reste.
 
-#### Le script
+### Le script
 Vous retrouverez le script juste [ici](Ressources/Scripts/Désactivation_et_archivage-des-utilisateurs-sortants.ps1)
 
 Le script est concu de telle facon que seule le SamAccountName doive etre renseigné et voici ce qu'il fait pour chaque utilisateur sortant de la société
@@ -63,7 +63,7 @@ C:\Logs\PS\Désactivation_Archivage_Utilisateurs.log.
 
 La féminisation des intitulés de poste est un enjeu important pour l'entreprise, car elle contribue à une meilleure représentation et reconnaissance des collaboratrices au sein de l'organisation. Au-delà de l'aspect linguistique, cette démarche participe à une culture d'entreprise plus inclusive et égalitaire, en alignant les documents RH, les organigrammes et les systèmes d'information (comme l'Active Directory) avec les valeurs de diversité que l'entreprise souhaite porter. C'est aussi un signal fort, tant en interne qu'en externe, de la volonté de l'entreprise de moderniser ses pratiques et de refléter fidèlement la réalité de ses équipes.
 
-#### Le fichier CSV
+### Le fichier CSV
 
 Comme pour le script précedent le fichier CSV est placé dans le meme dossier que le scripts le chemin est 
 ```
@@ -75,7 +75,7 @@ Pour le fichier CSV qui servira a la féminisation je me suis basé sur le fichi
 ```
 Il comprends les informations tel que le nom et prenom mais aussi la civilité des utilisateurs pour differencier les hommes des femmes.
 
-#### Le script
+### Le script
 Vous retrouverez le script juste [ici](Ressources/Scripts/Féminisation_De_Poste.ps1)
 
 Ce que fait le scrit
