@@ -1,9 +1,10 @@
 # Sommaire
-1. [Dossiers Partagés](#1-Dossiers-Partagés)
-2. [Mappage Réseau](#2-Mappage-Réseau)
-   2.1 [Mappage des dossiers départements](#21-Mappage-des-dossiers-départements)
-   2.2 [Mappage des dossiers individuels](#22-Mappage-des-dossiers-individuels)
-   2.3 [Mappage des dossiers services](#23-Mappage-des-dossiers-services)
+
+1. [Dossiers Partagés](#1-Dossiers-Partagés)  
+2. [Mappage Réseau](#2-Mappage-Réseau)  
+   2.1 [Mappage des dossiers départements](#21-Mappage-des-dossiers-départements)  
+   2.2 [Mappage des dossiers individuels](#22-Mappage-des-dossiers-individuels)  
+   2.3 [Mappage des dossiers services](#23-Mappage-des-dossiers-services)  
 
 
 ### Mappage Réseau
