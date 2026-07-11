@@ -82,8 +82,17 @@ foreach ($personne in $Collaborateurs) {
         continue
     }
 
+    # --- Fonction lue directement depuis le CSV (colonne 'fonction'), pas depuis l'AD ---
+    $fonction = $personne.'fonction'
+
+    if (-not $fonction) {
+        Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "Pas de fonction renseignée dans le CSV, ignoré : $prenom $nom"
+        $compteurSkip++
+        continue
+    }
+
     $utilisateur = Get-ADUser -Filter "GivenName -eq '$prenom' -and Surname -eq '$nom'" `
-                    -Properties Title -ErrorAction SilentlyContinue
+                    -Properties Description -ErrorAction SilentlyContinue
 
     if (-not $utilisateur) {
         Write-XTechLog -ScriptName $ScriptName -Level "ERROR" -Message "NON TROUVÉ dans AD : $prenom $nom"
@@ -97,24 +106,19 @@ foreach ($personne in $Collaborateurs) {
         continue
     }
 
-    if (-not $utilisateur.Title) {
-        Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "Pas de titre renseigné, ignoré : $($utilisateur.SamAccountName)"
-        $compteurSkip++
-        continue
-    }
-
-    # Savoir si le poste est déjà féminisé ou non
-    if ($MappingTitres.ContainsValue($utilisateur.Title)) {
+    # Savoir si le poste est déjà féminisé ou non (d'après la colonne 'fonction' du CSV)
+    if ($MappingTitres.ContainsValue($fonction)) {
         Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "Déjà féminisé, ignoré : $($utilisateur.SamAccountName)"
         $compteurSkip++
         continue
     }
 
-    if ($MappingTitres.ContainsKey($utilisateur.Title)) {
-        $nouveauTitre = $MappingTitres[$utilisateur.Title]
+    if ($MappingTitres.ContainsKey($fonction)) {
+        $nouveauTitre = $MappingTitres[$fonction]
         try {
-            Set-ADUser -Identity $utilisateur.DistinguishedName -Replace @{Title = $nouveauTitre} -ErrorAction Stop
-            Write-XTechLog -ScriptName $ScriptName -Level "SUCCESS" -Message "Modifié : $($utilisateur.SamAccountName) : '$($utilisateur.Title)' -> '$nouveauTitre'"
+            # Écrit dans Description, l'attribut réellement peuplé par Création_Users_Avec_Fichier.ps1
+            Set-ADUser -Identity $utilisateur.DistinguishedName -Replace @{Description = $nouveauTitre} -ErrorAction Stop
+            Write-XTechLog -ScriptName $ScriptName -Level "SUCCESS" -Message "Modifié : $($utilisateur.SamAccountName) : '$fonction' -> '$nouveauTitre'"
             $compteurOK++
         }
         catch {
@@ -123,7 +127,7 @@ foreach ($personne in $Collaborateurs) {
         }
     }
     else {
-        Write-XTechLog -ScriptName $ScriptName -Level "WARNING" -Message "Pas de correspondance trouvée pour le titre : '$($utilisateur.Title)' ($($utilisateur.SamAccountName))"
+        Write-XTechLog -ScriptName $ScriptName -Level "WARNING" -Message "Pas de correspondance trouvée pour la fonction : '$fonction' ($($utilisateur.SamAccountName))"
         $compteurSkip++
     }
 }
