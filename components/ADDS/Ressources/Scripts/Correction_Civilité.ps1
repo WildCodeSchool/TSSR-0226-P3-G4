@@ -5,7 +5,7 @@ Import-Module ActiveDirectory -ErrorAction Stop
 Import-Module "C:\Scripts\Modules\XTechLogging.psm1" -ErrorAction Stop
 $ScriptName = "CorrectionCivilite"
 
-$FilePath = "C:\Data"    # <-- adapte au dossier réel où se trouve le fichier
+$FilePath = "C:\Data\"
 $File     = "$FilePath\Creation_Users2.txt"
 
 Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Début de l'exécution ==="
