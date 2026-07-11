@@ -5,32 +5,24 @@
 #############################################################
 
 Import-Module ActiveDirectory -ErrorAction Stop
+Import-Module "C:\Scripts\Modules\XTechLogging.psm1" -ErrorAction Stop
+$ScriptName = "DeplacementOrdinateursOU"
 
-# --- Mapping : motif du nom -> OU cible (à adapter à ta structure) ---
+# Mapping : motif du nom -> OU cible
 $Mapping = @(
     @{ Pattern = "XTAD-*"; OU = "OU=PRS-OAD,OU=PRS-O,OU=Paris,DC=Xtech,DC=green" }
     @{ Pattern = "XT-OD*"; OU = "OU=PRS-OCL,OU=PRS-O,OU=Paris,DC=Xtech,DC=green" }
     @{ Pattern = "XTSE-*"; OU = "OU=PRS-OSE,OU=PRS-O,OU=Paris,DC=Xtech,DC=green" }
     @{ Pattern = "XTRO-*"; OU = "OU=PRS-OSE,OU=PRS-O,OU=Paris,DC=Xtech,DC=green" }
 )
-# --------------------------------------------------------------------
 
-# Journalisation (pour vérifier l'exécution par la tâche planifiée)
-$LogFile = "C:\Logs\DeplacementOU.log"
-$null = New-Item -ItemType Directory -Path (Split-Path $LogFile) -Force -ErrorAction SilentlyContinue
-
-function Write-Log {
-    param([string]$Message)
-    Add-Content -Path $LogFile -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - $Message"
-}
-
-Write-Log "=== Début de l'exécution ==="
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Début de l'exécution ==="
 
 foreach ($regle in $Mapping) {
 
     # Vérifie que l'OU cible existe
     if (-not (Get-ADOrganizationalUnit -Filter "DistinguishedName -eq '$($regle.OU)'" -ErrorAction SilentlyContinue)) {
-        Write-Log "ERREUR : OU introuvable -> $($regle.OU)"
+        Write-XTechLog -ScriptName $ScriptName -Level "ERROR" -Message "OU introuvable -> $($regle.OU)"
         continue
     }
 
@@ -43,12 +35,12 @@ foreach ($regle in $Mapping) {
 
         try {
             Move-ADObject -Identity $pc.DistinguishedName -TargetPath $regle.OU -ErrorAction Stop
-            Write-Log "Déplacé : $($pc.Name) -> $($regle.OU)"
+            Write-XTechLog -ScriptName $ScriptName -Level "SUCCESS" -Message "Déplacé : $($pc.Name) -> $($regle.OU)"
         }
         catch {
-            Write-Log "Échec : $($pc.Name) -> $($_.Exception.Message)"
+            Write-XTechLog -ScriptName $ScriptName -Level "ERROR" -Message "Échec : $($pc.Name) -> $($_.Exception.Message)"
         }
     }
 }
 
-Write-Log "=== Fin de l'exécution ===`n"
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Fin de l'exécution ==="
