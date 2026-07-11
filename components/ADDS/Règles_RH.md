@@ -37,7 +37,7 @@ ijovanovic
 Pas besoin d'autres colonnes le script s'occupe du reste.
 
 #### Le script
-Vous retrouverez le script [ici](Ressources/Scripts/Désactivation_et_archivage-des-utilisateurs-sortants.ps1)
+Vous retrouverez le script [juste ici](Ressources/Scripts/Désactivation_et_archivage-des-utilisateurs-sortants.ps1)
 
 Le script est concu de telle facon que seule le SamAccountName a besoin d'etre renseigner et voivi ce qu'il fait pour chaque utilisateur sortant de la société
 - Désactive le compte AD
@@ -76,7 +76,7 @@ Pour le fichier CSV qui servira a la féminisation je me suis basé sur le fichi
 Il comprends les informations tel que le nom et prenom mais aussi la civilité des utilisateurs pour differencier les hommes des femmes.
 
 #### Le script
-Vous retrouverez le script [ici](Ressources/Scripts/Féminisation_De_Poste.ps1)
+Vous retrouverez le script [juste ici](Ressources/Scripts/Féminisation_De_Poste.ps1)
 
 Ce que fait le scrit
 - Filtre les profils féminins (Mme) à partir de la colonne civilité, pour ne traiter que les comptes concernés.
