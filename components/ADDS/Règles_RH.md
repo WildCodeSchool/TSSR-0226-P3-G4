@@ -39,19 +39,19 @@ Pas besoin d'autres colonnes le script s'occupe du reste.
 #### Le script
 Vous retrouverez le script juste [ici](Ressources/Scripts/Désactivation_et_archivage-des-utilisateurs-sortants.ps1)
 
-Le script est concu de telle facon que seule le SamAccountName a besoin d'etre renseigner et voivi ce qu'il fait pour chaque utilisateur sortant de la société
+Le script est concu de telle facon que seule le SamAccountName doive etre renseigné et voici ce qu'il fait pour chaque utilisateur sortant de la société
 - Désactive le compte AD
 - Retire l'utilisateur de tous les groupes de sécurité/distribution pour couper tout accès restant, sauf le Domain Users car se groupe ne donne accès a aucune information possiblement sensible.
 - Met a jour la description de l'utilisateur avec la date de désactivation, afin de garder une traçabilité en interne.
 - Déplace le compte de/des utilisateur(s) vers l'OU d'archivage dédiée (PRS-UAR)
 Deux modes d'utilisation sont possible en fonction des besoins
 
-- Le mode CSV pour désactiver des utilisateurs en masse
+**Le mode CSV** pour désactiver des utilisateurs en masse
 ```
 .\Désactivation_Archivage_Utilisateurs.ps1
 ```
 
-- Le mode Manuel au cas ou il n'y a que très peu d'utilisateurs
+**Le mode Manuel** au cas ou il n'y a que très peu d'utilisateurs
 ```
 .\Désactivation_Archivage_Utilisateurs.ps1 -SamAccountName "jdupont"
 ```
