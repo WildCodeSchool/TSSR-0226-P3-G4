@@ -21,7 +21,7 @@
 Ce processus attribue automatiquement à chaque utilisateur de l'OU OU=PRS-U,OU=PRS,$DomainDN un dossier personnel sur le serveur de fichiers, avec les permissions NTFS adaptées, puis relie ce dossier à son compte AD en tant que lecteur réseau personnel (I:).
 
 ### Script associé
-Ajout_du_dossier_partagé_individuel.ps1
+Vous trouverez le script [ici](Ressources/Scripts/Ajout_du_dossier_partagé_individuel.psm1)
 
 ### Fonctionnement du script
 Pour chaque utilisateur trouvé dans l'OU cible, le script :
