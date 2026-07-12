@@ -6,7 +6,7 @@
 
 **Plage couverte : `172.16.64.0` → `172.16.95.255` (32 sous-réseaux en `/24` `.64` à `.95`)**
 
-### Plan d'adressage  — 24 départements de l'entreprise
+### Plan d'adressage  — 25 départements de l'entreprise
 
 | VLAN ID | Nom              | Réseau /24       | Passerelle pfSense | Rôle                                 |
 | ------- | ---------------- | ---------------- | ------------------ | ------------------------------------ |
