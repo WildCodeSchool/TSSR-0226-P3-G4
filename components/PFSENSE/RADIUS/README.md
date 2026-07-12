@@ -13,7 +13,7 @@ FreeRADIUS est un serveur d'authentification centralisé utilisant le protocole 
 ### 1. Garantir la responsabilité juridique et l'imputabilité
 Dans un environnement professionnel ou public, l'accès à Internet constitue une responsabilité légale. En l'absence d'authentification, tout utilisateur branchant un appareil sur le réseau navigue sous l'adresse IP publique de l'organisation. En cas d'usage illicite (téléchargement illégal, attaques informatiques), la responsabilité de l'administrateur réseau est engagée. L'implémentation d'un système de login et de mot de passe permet d'associer de manière irréfutable chaque activité réseau à une identité humaine précise, assurant ainsi une traçabilité probante.
 
-### 2. Appliquer un contrôle granulaire des accès
+### 2. Appliquer un contrôle des accès
 Sans RADIUS ni portail captif, la gestion réseau se limite à une logique binaire "tout ou rien". Le déploiement d'un système d'authentification permet de restreindre l'accès à des groupes d'utilisateurs spécifiques. Il devient possible de définir des politiques de filtrage fines, telles que l'autorisation d'accès à Internet pour les stagiaires tout en restreignant l'accès aux serveurs de fichiers, tandis que d'autres groupes bénéficient de privilèges étendus. Cette configuration offre la possibilité de révoquer l'accès d'un utilisateur instantanément depuis le serveur central, sans nécessité d'intervenir sur la configuration de chaque équipement.
 
 ## Position dans l'infrastructure
