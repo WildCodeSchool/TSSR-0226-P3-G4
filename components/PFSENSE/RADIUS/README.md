@@ -18,7 +18,9 @@ Sans RADIUS ni portail captif, la gestion réseau se limite à une logique binai
 
 ## Position dans l'infrastructure
 
-Agir comme le moteur d'authentification principal hébergé sur pfSense. Interroger la base d'utilisateurs locale lors de chaque tentative de connexion au portail captif et valider les accès avant d'autoriser le trafic réseau vers l'extérieur.
+Le portail captif et le serveur FreeRadius sont hébergés sur le pare-feu pfSense sur l'interface LAN `172.16.64.254`.
+
+Agir comme le moteur d'authentification principal hébergé sur pfSense. Interroger la base d'utilisateurs locale lors de chaque tentative de connexion au portail captif et vider les accès avant d'autoriser le trafic réseau vers l'extérieur.
 
 ### 3. Renforcer la protection contre les accès non autorisés
 Le couple login et mot de passe agit comme un verrou supplémentaire contre les intrusions physiques et logiques. Lorsqu'un visiteur branche un équipement sur une prise murale en l'absence de portail captif, l'accès au réseau est immédiat. Avec un portail captif, l'appareil connecté est confiné dans un environnement sécurisé, restreignant ses capacités d'interaction tant qu'une authentification valide auprès du serveur RADIUS n'est pas établie. Cette approche transforme le réseau en un espace *zero-trust*, où aucune confiance n'est accordée par défaut.
