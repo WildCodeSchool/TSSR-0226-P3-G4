@@ -1,4 +1,4 @@
-# README - Déploiement de FreeRADIUS sur pfSense
+# Déploiement de FreeRADIUS sur pfSense
 
 ## Sommaire   
 
@@ -9,7 +9,9 @@
 
 
 ## Rôle du service
-Centraliser l'authentification réseau via le protocole RADIUS. Utiliser FreeRADIUS pour sécuriser les accès et coupler le service à un portail captif pour filtrer la connexion des utilisateurs.
+FreeRADIUS est un serveur d'authentification centralisé utilisant le protocole RADIUS (Remote Authentication Dial-In User Service). Son rôle est de sécuriser l'accès au réseau en vérifiant les identifiants des utilisateurs avant de leur accorder l'accès aux ressources (Internet, serveurs, etc.).
+
+Dans cette configuration, il est couplé à un Portail Captif pour forcer l'authentification des clients via une page de connexion web (login/mot de passe).
 
 ## Position dans l'infrastructure
 Agir comme le moteur d'authentification principal hébergé sur pfSense. Interroger la base d'utilisateurs locale lors de chaque tentative de connexion au portail captif et valider les accès avant d'autoriser le trafic réseau vers l'extérieur.
