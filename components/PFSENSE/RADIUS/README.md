@@ -20,7 +20,7 @@ Disposer d'une instance pfSense opérationnelle avec une interface LAN configur�
 ## Documentation
 Consulter les guides techniques pour effectuer la mise en place complète du système :
 
-**[Consulter le guide d'installation](install.md)** pour configurer le package et le serveur FreeRADIUS.
+**[Consulter le guide d'installation](./Install.md)** pour configurer le package et le serveur FreeRADIUS.
 
-**[Consulter le guide d'utilisation](user_guide.md)** pour gérer les utilisateurs et configurer le portail captif.
+**[Consulter le guide d'utilisation](./User_guide.md)** pour gérer les utilisateurs et configurer le portail captif.
 
