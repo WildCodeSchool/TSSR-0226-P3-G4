@@ -100,8 +100,35 @@ Il suffit simplement d'activer le Portail Captif, et de sélectionner l'interfac
 
 ---
 
+Et tout en bas, dans la partie Authentification, pour la méthode d'authentification, il suffit de prendre Use an Authentication backend, et ensuite de sélectionner le serveur d'authentification (ce que nous avons créé avant, dans le gestionnaire d'usages.), il suffit ensuite de sauvegarder la configuration.
 
 
+<img width="1709" height="931" alt="10" src="https://github.com/user-attachments/assets/a8e5832f-24a1-415e-8378-e55cf585c87e" />
 
+---
+
+## Essaie avec un client du Portail Captif
+
+Maintenant, imaginons qu'un client se connecte à son ordinateur et décide d'aller sur Google, le serveur lui redirigera et demandera un nom d'utilisateur et un mot de passe.
+
+<img width="1681" height="1020" alt="Capture d&#39;écran 2026-06-26 184200" src="https://github.com/user-attachments/assets/7a5863dc-4b10-45c5-b537-c2f0e22ae3db" />
+
+---
+
+<img width="427" height="431" alt="Capture d&#39;écran 2026-06-26 184229" src="https://github.com/user-attachments/assets/ed2c68de-d2db-4821-b071-d6f262b2fa49" />
+
+---
+
+Le portail fonctionne, isaidi est bien connecté 
+
+<img width="973" height="580" alt="Capture d&#39;écran 2026-06-26 194324" src="https://github.com/user-attachments/assets/0ef8dc0e-4e61-4b92-92fe-38c8292bc980" />
+
+---
+
+Vérification des logs pour la traçabilité 
+
+<img width="1264" height="456" alt="Capture d&#39;écran 2026-06-26 185300" src="https://github.com/user-attachments/assets/5e7cfbc3-d6ef-4219-81bf-05ca83d5c909" />
+
+---
 
 
