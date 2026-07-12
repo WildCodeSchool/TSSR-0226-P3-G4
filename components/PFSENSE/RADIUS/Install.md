@@ -11,4 +11,4 @@
 ---
 
 Nous utiliserons pfSense pour configurer notre serveur FreeRadius.
-Installer pfSense dans une machine virtuelle ici : [pfSense](https://www.pfsense.org/download/)
+Installer pfSense dans une machine virtuelle ici : **[pfSense](https://www.pfsense.org/download/)**
