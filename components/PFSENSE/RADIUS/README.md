@@ -1,5 +1,9 @@
 # Déploiement de FreeRADIUS et Portail Captif sur pfSense
 
+<img width="1549" height="517" alt="Capture d&#39;écran 2026-06-26 171624" src="https://github.com/user-attachments/assets/69aece99-d79d-4871-972b-ce84d412bac8" />
+
+---
+
 ## Sommaire
 - **[Rôle du service](#rôle-du-service)**    
 - **[Position dans l'infrastructure](#position-dans-linfrastructure)**    
