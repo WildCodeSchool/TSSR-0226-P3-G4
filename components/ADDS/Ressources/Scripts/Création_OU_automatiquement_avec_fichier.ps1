@@ -1,9 +1,7 @@
 Clear-Host
 #############################################################################
-#                                                                           #
 #    Création OU automatiquement avec fichier                               #
 #    (avec suppression protection contre la suppression)                    #
-#                                                                           #
 #############################################################################
 
 Import-Module "C:\Scripts\Modules\XTechLogging.psm1" -ErrorAction Stop
@@ -14,7 +12,7 @@ $FilePath = [System.IO.Path]::GetDirectoryName($MyInvocation.MyCommand.Definitio
 $DomainDN = (Get-ADDomain).DistinguishedName
 $File     = "$FilePath\FichierOU2.txt"
 
-Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Démarrage du script CreationOU ==="
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message " Démarrage du script CreationOU "
 Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "Domaine : $DomainDN | Fichier : $File"
 
 if (-not (Test-Path $File)) {
@@ -52,4 +50,4 @@ foreach ($ligne in $OUList) {
     CreateOU -OU $ligne.OU -Path $ligne.Path
 }
 
-Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Fin du script CreationOU ==="
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message " Fin du script CreationOU "
