@@ -5,7 +5,7 @@
 Import-Module "C:\Scripts\Modules\XTechLogging.psm1" -ErrorAction Stop
 $ScriptName = "TachePlanifieeGenerique"
 
-Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Démarrage du script $ScriptName ==="
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message " Démarrage du script $ScriptName "
 
 try {
     # Défini ce que je veux executer
@@ -34,4 +34,4 @@ catch {
     Write-XTechLog -ScriptName $ScriptName -Level "ERROR" -Message "Échec de création de la tâche planifiée : $($_.Exception.Message)"
 }
 
-Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message "=== Fin du script $ScriptName ==="
+Write-XTechLog -ScriptName $ScriptName -Level "INFO" -Message " Fin du script $ScriptName "
